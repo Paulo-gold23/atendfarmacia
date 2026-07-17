@@ -15,6 +15,23 @@ const CONFIG = {
 
   // Timing constants (ms)
   greetingInitialDelay: 800,
+/**
+ * Farmacia WhatsApp Frontend — app.js
+ * Handles chat logic, local simulation, webhook integration, and UI interactions.
+ */
+
+// ============ CONFIG ============
+const CONFIG = {
+  simulationMode: false, // Se true, simula localmente no navegador. Se false, envia para o webhook n8n.
+  webhookUrl: 'https://n8n.srv1181762.hstgr.cloud/webhook/sofia/chat',
+  sessionKey: 'farmacia_session_id',
+  historyKey: 'farmacia_history',
+  soundKey: 'farmacia_sound',
+  maxRetries: 2,
+  retryDelay: 2000,
+
+  // Timing constants (ms)
+  greetingInitialDelay: 800,
   greetingSecondDelay: 1000,
   newChatGreetingDelay: 600,
   botName: 'Sofia',
@@ -46,6 +63,8 @@ const state = {
   pendingUpsell: null,
   upsellOffered: false,
   deliveryMethod: '',
+  cpf: null,
+  discountPercent: 0,
 };
 
 // ============ DOM REFS ============
@@ -88,7 +107,10 @@ function cacheDom() {
   dom.menuClearChat2 = document.getElementById('menuClearChat2');
   dom.menuExport = document.getElementById('menuExport');
   dom.soundLabel = document.getElementById('soundLabel');
-  dom.btnAttach = document.querySelector('.btn-attach');
+  dom.btnAttach = document.getElementById('attachBtn');
+  dom.micBtn = document.getElementById('micBtn');
+  dom.imageFileInput = document.getElementById('imageFileInput');
+  dom.docFileInput = document.getElementById('docFileInput');
 }
 
 // ============ INIT ============
@@ -155,6 +177,102 @@ function saveHistory() {
 }
 
 // ============ EVENTS ============
+let mediaRecorder;
+let audioChunks = [];
+let isRecording = false;
+
+async function toggleRecording() {
+  if (!isRecording) {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      audioChunks = [];
+      
+      mediaRecorder.addEventListener("dataavailable", event => {
+        audioChunks.push(event.data);
+      });
+      
+      mediaRecorder.addEventListener("stop", async () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/ogg' });
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Audio = reader.result;
+          addUserMessage('🎙️ *Mensagem de Áudio* (Áudio enviado)');
+          showTyping();
+          try {
+            const response = await sendToWebhook(base64Audio, 'audio');
+            hideTyping();
+            
+            const responseText = typeof response === 'string' ? response : JSON.stringify(response);
+            const messages = responseText.split('||');
+            for (let i = 0; i < messages.length; i++) {
+              const msg = messages[i].trim();
+              if (msg) {
+                if (i > 0) {
+                  showTyping();
+                  await delay(Math.min(msg.length * 30 + 500, 2000));
+                  hideTyping();
+                }
+                addBotMessage(msg);
+              }
+            }
+          } catch (error) {
+            hideTyping();
+            addBotMessage('Desculpe, ocorreu um erro na comunicação.');
+            console.error('[ClinicAI] Webhook error:', error);
+          }
+        };
+        reader.readAsDataURL(audioBlob);
+        
+        stream.getTracks().forEach(track => track.stop());
+      });
+      
+      mediaRecorder.start();
+      isRecording = true;
+      dom.micBtn.classList.add('recording');
+      showToast('🎙️ Gravando áudio... Clique no microfone novamente para enviar.');
+    } catch (err) {
+      console.error('Error starting recording:', err);
+      showToast('⚠️ Não foi possível acessar o microfone. Enviando áudio simulado...');
+      sendSimulatedAudio();
+    }
+  } else {
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+      mediaRecorder.stop();
+    }
+    isRecording = false;
+    dom.micBtn.classList.remove('recording');
+  }
+}
+
+async function sendSimulatedAudio() {
+  addUserMessage('🎙️ *Mensagem de Áudio* (Simulado)');
+  showTyping();
+  try {
+    const dummyAudioBase64 = 'data:audio/ogg;base64,T2dnUwACAAAAAAAAAAA+AAAAAAAAAAAAAAABaGVhZAAAAAA=';
+    const response = await sendToWebhook(dummyAudioBase64, 'audio');
+    hideTyping();
+    
+    const responseText = typeof response === 'string' ? response : JSON.stringify(response);
+    const messages = responseText.split('||');
+    for (let i = 0; i < messages.length; i++) {
+      const msg = messages[i].trim();
+      if (msg) {
+        if (i > 0) {
+          showTyping();
+          await delay(Math.min(msg.length * 30 + 500, 2000));
+          hideTyping();
+        }
+        addBotMessage(msg);
+      }
+    }
+  } catch (error) {
+    hideTyping();
+    addBotMessage('Desculpe, ocorreu um erro na comunicação.');
+    console.error('[ClinicAI] Webhook error:', error);
+  }
+}
+
 function setupEventListeners() {
   // Send on button click
   dom.sendBtn.addEventListener('click', handleSend);
@@ -167,13 +285,25 @@ function setupEventListeners() {
     }
   });
 
-  // Auto-resize textarea
+  // Auto-resize textarea and toggle send/mic buttons
   dom.messageInput.addEventListener('input', () => {
     dom.messageInput.style.height = 'auto';
     dom.messageInput.style.height = Math.min(dom.messageInput.scrollHeight, 120) + 'px';
-    // Toggle send button state
-    dom.sendBtn.classList.toggle('active', dom.messageInput.value.trim().length > 0);
+    
+    const hasText = dom.messageInput.value.trim().length > 0;
+    if (hasText) {
+      dom.sendBtn.style.display = 'flex';
+      dom.micBtn.style.display = 'none';
+      dom.sendBtn.classList.add('active');
+    } else {
+      dom.sendBtn.style.display = 'none';
+      dom.micBtn.style.display = 'flex';
+      dom.sendBtn.classList.remove('active');
+    }
   });
+
+  // Mic button click
+  dom.micBtn.addEventListener('click', toggleRecording);
 
   // Mobile: sidebar toggle
   dom.backBtn.addEventListener('click', () => {
@@ -203,7 +333,44 @@ function setupEventListeners() {
   dom.btnNewChatHeader.addEventListener('click', () => showNewChatDialog());
 
   dom.btnAttach.addEventListener('click', () => {
-    handleAttachRecipe();
+    dom.imageFileInput.click();
+  });
+
+  dom.imageFileInput.addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    showToast('Processando imagem...');
+    const reader = new FileReader();
+    reader.onloadend = async () => {
+      const base64Image = reader.result;
+      addUserMessage(`📷 *Imagem enviada:* ${file.name}`);
+      showTyping();
+      try {
+        const response = await sendToWebhook(base64Image, 'image', file.name);
+        hideTyping();
+        
+        const responseText = typeof response === 'string' ? response : JSON.stringify(response);
+        const messages = responseText.split('||');
+        for (let i = 0; i < messages.length; i++) {
+          const msg = messages[i].trim();
+          if (msg) {
+            if (i > 0) {
+              showTyping();
+              await delay(Math.min(msg.length * 30 + 500, 2000));
+              hideTyping();
+            }
+            addBotMessage(msg);
+          }
+        }
+      } catch (error) {
+        hideTyping();
+        addBotMessage('Desculpe, ocorreu um erro ao processar a imagem.');
+        console.error('[ClinicAI] Webhook error:', error);
+      }
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
   });
 
   // Dropdown menus
@@ -287,54 +454,6 @@ function setupEventListeners() {
   });
 }
 
-async function handleAttachRecipe() {
-  if (state.isSending) return;
-  state.isSending = true;
-
-  // Mostrar toast indicativo
-  showToast('Simulando envio de receita...');
-
-  // Adicionar mensagem do usuário no chat
-  addUserMessage('📷 *Receita_Lucas_Rocha.jpg* (Receita enviada)');
-
-  // Mostrar indicador de digitação
-  showTyping();
-  await delay(1200);
-  hideTyping();
-
-  // Exibir feedback de OCR escaneando a receita
-  addBotMessage('🔎 *Escaneando receita médica...*');
-
-  showTyping();
-  await delay(1800);
-  hideTyping();
-
-  // Chamar o motor de simulação passando o marcador de receita
-  try {
-    const response = await sendToWebhook('FOTO_RECEITA_SIMULADA');
-    const responseText = typeof response === 'string' ? response : JSON.stringify(response);
-    const messages = responseText.split('||');
-    
-    for (let i = 0; i < messages.length; i++) {
-      const msg = messages[i].trim();
-      if (msg) {
-        if (i > 0) {
-          showTyping();
-          await delay(Math.min(msg.length * 30 + 500, 2000));
-          hideTyping();
-        }
-        addBotMessage(msg);
-      }
-    }
-  } catch (error) {
-    console.error('Attach error:', error);
-    addBotMessage('Ocorreu um erro ao processar a receita. Tente novamente.');
-  }
-
-  state.isSending = false;
-  dom.messageInput.focus();
-}
-
 // ============ SEND MESSAGE ============
 async function handleSend() {
   const text = dom.messageInput.value.trim();
@@ -344,18 +463,16 @@ async function handleSend() {
   dom.messageInput.value = '';
   dom.messageInput.style.height = 'auto';
   dom.sendBtn.classList.remove('active');
+  dom.sendBtn.style.display = 'none';
+  dom.micBtn.style.display = 'flex';
 
-  // Add user message to UI
   addUserMessage(text);
-
-  // Show typing indicator
   showTyping();
 
   try {
     const response = await sendToWebhook(text);
     hideTyping();
     
-    // Separar a resposta pelo delimitador || para simular mensagens múltiplas
     const responseText = typeof response === 'string' ? response : JSON.stringify(response);
     const messages = responseText.split('||');
     
@@ -363,7 +480,6 @@ async function handleSend() {
       const msg = messages[i].trim();
       if (msg) {
         if (i > 0) {
-          // Mostrar "digitando..." antes da próxima mensagem
           showTyping();
           await delay(Math.min(msg.length * 30 + 500, 2000));
           hideTyping();
@@ -381,1123 +497,8 @@ async function handleSend() {
   dom.messageInput.focus();
 }
 
-const MEDICINES_DB = [
-  // MIP / Venda Livre (no prescription, delivery OK)
-  { 
-    name: 'Dipirona Gotas', 
-    aliases: ['dipirona', 'dipirona gotas', 'dipirona liquida', 'novalgina'], 
-    price: 12.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'frasco de 20ml', 
-    unitName: 'frasco',
-    activeIngredient: 'Dipirona Sódica',
-    indication: 'Alívio de dores de cabeça, no corpo, febre e cólicas',
-    dosage: '30 a 40 gotas a cada 6 horas (adultos)',
-    contraindications: 'Hipersensibilidade a pirazolonas ou asma induzida por analgésicos',
-    manufacturer: 'EMS Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Novalgina 1g', 
-    aliases: ['novalgina', 'novalgina 1g', 'novalgina comprimido'], 
-    price: 18.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 10 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Dipirona Sódica',
-    indication: 'Dor intensa e febre alta resistente',
-    dosage: '1 comprimido de 12 em 12 horas ou de 8 em 8 horas',
-    contraindications: 'Alergia a dipirona ou gravidez no último trimestre',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-  { 
-    name: 'Paracetamol 500mg', 
-    aliases: ['paracetamol', 'paracetamol comprimido'], 
-    price: 7.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Paracetamol',
-    indication: 'Redução da febre e alívio temporário de dores leves',
-    dosage: '1 a 2 comprimidos a cada 6 horas se necessário',
-    contraindications: 'Doença de fígado grave (insuficiência hepática grave)',
-    manufacturer: 'Medley Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Tylenol 750mg', 
-    aliases: ['tylenol', 'tylenol 750mg'], 
-    price: 15.00, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Paracetamol',
-    indication: 'Alívio rápido de dores de dente, musculares, articulares e febre',
-    dosage: '1 comprimido a cada 6 horas',
-    contraindications: 'Doença hepática ativa ou alcoolismo crônico',
-    manufacturer: 'Kenvue S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Buscopan Composto', 
-    aliases: ['buscopan', 'buscopan composto', 'buscopan comprimido'], 
-    price: 18.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Butilbrometo de Escopolamina + Dipirona',
-    indication: 'Dores de cólica no estômago, intestino, rins e vias biliares',
-    dosage: '1 a 2 comprimidos de 8 em 8 horas',
-    contraindications: 'Alergia a dipirona, glaucoma ou miastenia grave',
-    manufacturer: 'Boehringer Ingelheim',
-    isGeneric: false
-  },
-  {
-    name: 'Butilbrometo de Escopolamina',
-    aliases: ['butilbrometo', 'escopolamina', 'buscopan generico'],
-    price: 9.90,
-    category: 'MIP',
-    needsRecipe: false,
-    allowsDelivery: true,
-    presentation: 'caixa com 20 comprimidos',
-    unitName: 'caixa',
-    activeIngredient: 'Butilbrometo de Escopolamina',
-    indication: 'Tratamento de cólicas gastrointestinais e uterinas',
-    dosage: '1 comprimido até 4 vezes ao dia',
-    contraindications: 'Glaucoma agudo ou aumento da próstata',
-    manufacturer: 'Neo Química',
-    isGeneric: true
-  },
-  { 
-    name: 'Neosaldina', 
-    aliases: ['neosaldina', 'neosa', 'neosaldina comprimido'], 
-    price: 21.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Dipirona + Mucato de Isometepteno + Cafeína',
-    indication: 'Tratamento de dor de cabeça crônica e crises de enxaqueca',
-    dosage: '1 a 2 comprimidos a cada 6 horas se houver sintomas',
-    contraindications: 'Hipertensão descontrolada ou alergia a dipirona',
-    manufacturer: 'Takeda Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Neosoro', 
-    aliases: ['neosoro', 'sorine', 'descongestionante', 'rinosoro'], 
-    price: 8.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'frasco de 30ml', 
-    unitName: 'frasco',
-    activeIngredient: 'Cloridrato de Naftazolina',
-    indication: 'Descongestionamento nasal rápido por gripes ou sinusites',
-    dosage: '2 a 4 gotas em cada narina até 4 vezes ao dia',
-    contraindications: 'Glaucoma de ângulo estreito ou uso com antidepressivos IMAO',
-    manufacturer: 'Neo Química',
-    isGeneric: false
-  },
-  { 
-    name: 'Dorflex', 
-    aliases: ['dorflex', 'dorflex comprimido'], 
-    price: 14.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 36 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Dipirona + Citrato de Orfenadrina + Cafeína Anidra',
-    indication: 'Alívio da dor muscular decorrente de contraturas dolorosas',
-    dosage: '1 a 2 comprimidos até 4 vezes ao dia',
-    contraindications: 'Glaucoma, fraqueza muscular grave ou alergia a dipirona',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-  { 
-    name: 'Advil 400mg', 
-    aliases: ['advil', 'ibuprofeno comprimido'], 
-    price: 18.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 8 cápsulas gelatinosas', 
-    unitName: 'caixa',
-    activeIngredient: 'Ibuprofeno',
-    indication: 'Redução rápida de inflamações, dor de garganta, muscular e dente',
-    dosage: '1 cápsula mole a cada 8 horas',
-    contraindications: 'Úlcera gástrica ativa ou asma desencadeada por anti-inflamatórios',
-    manufacturer: 'Haleon Brasil',
-    isGeneric: false
-  },
-  {
-    name: 'Ibuprofeno 600mg',
-    aliases: ['ibuprofeno', 'ibuprofeno generico'],
-    price: 10.90,
-    category: 'MIP',
-    needsRecipe: false,
-    allowsDelivery: true,
-    presentation: 'caixa com 20 comprimidos',
-    unitName: 'caixa',
-    activeIngredient: 'Ibuprofeno',
-    indication: 'Tratamento de processos inflamatórios e de dor intensa',
-    dosage: '1 comprimido a cada 12 horas pós-refeição',
-    contraindications: 'Sangramento gastrointestinal ou insuficiência renal severa',
-    manufacturer: 'Prati-Donaduzzi',
-    isGeneric: true
-  },
-  { 
-    name: 'Eno Efervescente', 
-    aliases: ['eno', 'sal de fruta eno', 'sal de fruta'], 
-    price: 6.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'envelope de 5g', 
-    unitName: 'envelope',
-    activeIngredient: 'Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico',
-    indication: 'Azia, queimação no estômago e má digestão em segundos',
-    dosage: '1 envelope dissolvido em um copo d\'água se necessário',
-    contraindications: 'Hipertensão severa ou dieta restritiva de sódio',
-    manufacturer: 'Haleon Brasil',
-    isGeneric: false
-  },
-  { 
-    name: 'Sonrisal', 
-    aliases: ['sonrisal'], 
-    price: 5.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 2 comprimidos efervescentes', 
-    unitName: 'caixa',
-    activeIngredient: 'Ácido Acetilsalicílico + Carbonato de Sódio',
-    indication: 'Indigestão ácida acompanhada de dor de cabeça',
-    dosage: '1 a 2 comprimidos efervescentes dissolvidos em água',
-    contraindications: 'Alergia a AAS, asma ou histórico de sangramento gástrico',
-    manufacturer: 'Haleon Brasil',
-    isGeneric: false
-  },
-  { 
-    name: 'Estomazil', 
-    aliases: ['estomazil'], 
-    price: 7.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 6 envelopes', 
-    unitName: 'caixa',
-    activeIngredient: 'Bicarbonato de Sódio + Carbonato de Cálcio',
-    indication: 'Alívio rápido de queimação estomacal e refluxo ácido',
-    dosage: '1 envelope dissolvido em meio copo de água',
-    contraindications: 'Insuficiência renal grave ou hipocalcemia',
-    manufacturer: 'Hypera Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Luftal Gotas', 
-    aliases: ['luftal', 'simeticona', 'luftal gotas'], 
-    price: 16.20, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'frasco de 15ml', 
-    unitName: 'frasco',
-    activeIngredient: 'Simeticona',
-    indication: 'Alívio de excesso de gases no estômago e intestino',
-    dosage: '10 a 20 gotas até 3 vezes ao dia',
-    contraindications: 'Nenhuma contraindicação severa relatada',
-    manufacturer: 'Reckitt Benckiser',
-    isGeneric: false
-  },
-  { 
-    name: 'Benegrip', 
-    aliases: ['benegrip', 'antigripal'], 
-    price: 14.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 12 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Dipirona + Maleato de Clorfeniramina + Cafeína',
-    indication: 'Alívio dos sintomas decorrentes de gripe e resfriados',
-    dosage: '1 comprimido verde e 1 amarelo ao mesmo tempo até 4 vezes ao dia',
-    contraindications: 'Alergia a dipirona, glaucoma ou hipertensão grave',
-    manufacturer: 'Hypera Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Cimegripe', 
-    aliases: ['cimegripe'], 
-    price: 10.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Paracetamol + Maleato de Clorfeniramina + Fenilefrina',
-    indication: 'Febre, dores corporais, coriza e nariz entupido por resfriado',
-    dosage: '1 cápsula a cada 4 horas',
-    contraindications: 'Problemas de tireoide ou doença cardíaca coronária grave',
-    manufacturer: 'Cimed Indústria',
-    isGeneric: false
-  },
-  { 
-    name: 'Resfenol', 
-    aliases: ['resfenol'], 
-    price: 13.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Paracetamol + Clorfeniramina + Cloridrato de Fenilefrina',
-    indication: 'Alívio sintomático da gripe e congestão nasal',
-    dosage: '1 cápsula de 4 em 4 horas',
-    contraindications: 'Doença hepática ativa ou hipertensão grave',
-    manufacturer: 'Kley Hertz',
-    isGeneric: false
-  },
-  { 
-    name: 'Strepsils pastilha', 
-    aliases: ['strepsils', 'pastilha para garganta'], 
-    price: 18.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 8 pastilhas', 
-    unitName: 'caixa',
-    activeIngredient: 'Flurbiprofeno',
-    indication: 'Alívio da dor e inflamação da garganta inflamada',
-    dosage: 'Dissolver 1 pastilha na boca a cada 3 a 6 horas',
-    contraindications: 'Histórico de asma induzida por AINEs ou úlcera ativa',
-    manufacturer: 'Reckitt Benckiser',
-    isGeneric: false
-  },
-  { 
-    name: 'Benalet pastilhas', 
-    aliases: ['benalet'], 
-    price: 14.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 12 pastilhas', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Difenhidramina',
-    indication: 'Alívio sintomático da tosse irritativa e dor de garganta',
-    dosage: 'Dissolver 1 pastilha lentamente a cada 2 ou 3 horas',
-    contraindications: 'Uso com sedativos, asma aguda ou menores de 12 anos',
-    manufacturer: 'Kenvue S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Flogoral Spray', 
-    aliases: ['flogoral'], 
-    price: 26.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'frasco spray de 30ml', 
-    unitName: 'frasco',
-    activeIngredient: 'Cloridrato de Benzidamina',
-    indication: 'Dor e inflamação na boca e garganta (aftas, amigdalite)',
-    dosage: '2 a 6 nebulizações na garganta de 4 a 6 vezes ao dia',
-    contraindications: 'Hipersensibilidade à benzidamina',
-    manufacturer: 'Aché Laboratórios',
-    isGeneric: false
-  },
-  { 
-    name: 'Cataflan Emulgel', 
-    aliases: ['cataflan', 'cataflan emulgel', 'pomada cataflan'], 
-    price: 29.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'bisnaga de 60g', 
-    unitName: 'bisnaga',
-    activeIngredient: 'Diclofenaco Dietilamônio',
-    indication: 'Alívio local de dor por contusões, torções e dores nas costas',
-    dosage: 'Aplicar na região dolorida massageando levemente até 4 vezes ao dia',
-    contraindications: 'Terceiro trimestre de gravidez ou feridas na pele',
-    manufacturer: 'Novartis Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Lubrificante KY', 
-    aliases: ['ky', 'lubrificante ky', 'gel ky', 'lubrificante'], 
-    price: 24.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'bisnaga de 50g', 
-    unitName: 'bisnaga',
-    activeIngredient: 'Glicerol + Água (Gel à base de água)',
-    indication: 'Lubrificação íntima para alívio da secura vaginal',
-    dosage: 'Aplicar quantidade desejada na região íntima',
-    contraindications: 'Hipersensibilidade aos componentes da fórmula',
-    manufacturer: 'Kenvue S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Preservativo Jontex', 
-    aliases: ['jontex', 'camisinha', 'preservativo'], 
-    price: 12.00, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'pacote com 3 unidades', 
-    unitName: 'pacote',
-    activeIngredient: 'Látex Natural',
-    indication: 'Planejamento familiar e prevenção de ISTs',
-    dosage: 'Colocar antes de iniciar qualquer contato genital',
-    contraindications: 'Alergia conhecida ao látex de borracha natural',
-    manufacturer: 'Reckitt Benckiser',
-    isGeneric: false
-  },
-  { 
-    name: 'Protetor Solar Sundown SPF 50', 
-    aliases: ['sundown', 'protetor solar'], 
-    price: 49.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'frasco de 120ml', 
-    unitName: 'frasco',
-    activeIngredient: 'Filtros químicos UVA/UVB',
-    indication: 'Prevenção de queimaduras solares e envelhecimento precoce',
-    dosage: 'Aplicar abundantemente antes da exposição solar e reaplicar a cada 2 horas',
-    contraindications: 'Irritação de pele grave aos componentes',
-    manufacturer: 'Kenvue S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Xantinon', 
-    aliases: ['xantinon', 'xantinon comprimido', 'xanitinom'], 
-    price: 16.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Citrato de Colina + Metionina',
-    indication: 'Facilitação da digestão e eliminação de gorduras no fígado',
-    dosage: '1 comprimido 3 vezes ao dia',
-    contraindications: 'Nenhuma contraindicação severa relatada',
-    manufacturer: 'Mensa S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Imosec 2mg', 
-    aliases: ['imosec', 'loperamida', 'imosec comprimido'], 
-    price: 18.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 12 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Loperamida',
-    indication: 'Tratamento sintomático de diarreia aguda sem infecção bacteriana',
-    dosage: '2 comprimidos iniciais, seguidos de 1 comprimido após evacuação líquida',
-    contraindications: 'Diarreia com febre alta ou fezes escuras e com sangue',
-    manufacturer: 'Janssen-Cilag',
-    isGeneric: false
-  },
-  { 
-    name: 'Floratil 200mg', 
-    aliases: ['floratil', 'floratil capsula', 'floratil sachê'], 
-    price: 29.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 6 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Saccharomyces boulardii',
-    indication: 'Restauração da flora intestinal bacteriana benéfica',
-    dosage: '1 cápsula duas vezes ao dia',
-    contraindications: 'Pacientes imunocomprometidos ou com cateter venoso central',
-    manufacturer: 'Biocodex',
-    isGeneric: false
-  },
-  { 
-    name: 'Dramin B6', 
-    aliases: ['dramin', 'dramin b6', 'dramin comprimido'], 
-    price: 15.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Dimenidrinato + Piridoxina',
-    indication: 'Prevenção de náuseas, tonturas e vômitos por cinetose (viagens)',
-    dosage: '1 comprimido de 4 em 4 horas se houver náusea',
-    contraindications: 'Porfiria aguda ou hipersensibilidade ao dimenidrinato',
-    manufacturer: 'Takeda Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Vonau Flash 4mg', 
-    aliases: ['vonau', 'vonau flash', 'ondansetrona'], 
-    price: 32.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 10 comprimidos sublinguais', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Ondansetrona',
-    indication: 'Prevenção e tratamento rápido de enjoos e vômitos agudos',
-    dosage: '1 comprimido sublingual dissolver na boca sob a língua',
-    contraindications: 'Uso concomitante com apomorfina',
-    manufacturer: 'Biolab',
-    isGeneric: false
-  },
-  { 
-    name: 'Nebacetin', 
-    aliases: ['nebacetin', 'pomada nebacetin', 'neomicina'], 
-    price: 19.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'bisnaga de 15g', 
-    unitName: 'bisnaga',
-    activeIngredient: 'Sulfato de Neomicina + Bacitracina Zíncica',
-    indication: 'Tratamento de infecções de pele, cortes, ralados e pequenas queimaduras',
-    dosage: 'Aplicar fina camada sobre a ferida 2 a 5 vezes ao dia',
-    contraindications: 'Feridas abertas extensas ou insuficiência renal grave',
-    manufacturer: 'Takeda Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Tandrilax', 
-    aliases: ['tandrilax', 'tandrilax comprimido', 'tandrilas'], 
-    price: 28.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Carisoprodol + Cafeína + Diclofenaco Sódico + Paracetamol',
-    indication: 'Espasmos musculares dolorosos, gota e reumatismo',
-    dosage: '1 comprimido a cada 12 horas',
-    contraindications: 'Úlcera ativa, hipertensão grave ou doença cardíaca instável',
-    manufacturer: 'Aché Laboratórios',
-    isGeneric: false
-  },
-  { 
-    name: 'Loratadina 10mg', 
-    aliases: ['loratadina', 'loratadina comprimido'], 
-    price: 14.20, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 12 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Loratadina',
-    indication: 'Rinite alérgica, espirros, coceira no nariz e olhos',
-    dosage: '1 comprimido uma vez ao dia',
-    contraindications: 'Alergia a loratadina ou idade menor de 2 anos',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Engov', 
-    aliases: ['engov', 'engov comprimido'], 
-    price: 9.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 6 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Maleato de Mepiramina + AAS + Hidróxido de Alumínio + Cafeína',
-    indication: 'Alívio sintomático da cefaleia decorrente de ressaca',
-    dosage: '1 a 2 comprimidos antes ou após o consumo de álcool',
-    contraindications: 'Caso haja suspeita de dengue (contém AAS), hemofilia ou úlcera',
-    manufacturer: 'Hypera Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Epocler', 
-    aliases: ['epocler', 'flaconete epocler'], 
-    price: 3.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'flaconete de 10ml', 
-    unitName: 'flaconete',
-    activeIngredient: 'Citrato de Colina + Betaina + Metionina',
-    indication: 'Ação antitóxica no fígado após abusos alimentares ou de álcool',
-    dosage: '1 flaconete até 3 vezes ao dia antes das principais refeições',
-    contraindications: 'Insuficiência renal grave',
-    manufacturer: 'Hypera Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Aspirina 500mg', 
-    aliases: ['aspirina', 'acido acetilsalicilico'], 
-    price: 11.50, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'caixa com 10 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Ácido Acetilsalicílico',
-    indication: 'Dores de cabeça tensionais e febre moderada',
-    dosage: '1 a 2 comprimidos a cada 4 ou 6 horas',
-    contraindications: 'Hemofilia, úlcera ou suspeita de dengue',
-    manufacturer: 'Bayer S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Bepantol Derma', 
-    aliases: ['bepantol', 'bepantol derma', 'pomada bepantol'], 
-    price: 34.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'bisnaga de 20g', 
-    unitName: 'bisnaga',
-    activeIngredient: 'Dexpantenol',
-    indication: 'Proteção e cicatrização acelerada de assaduras e pele ressecada',
-    dosage: 'Aplicar fina camada sobre a pele limpa sempre que necessário',
-    contraindications: 'Hipersensibilidade aos componentes',
-    manufacturer: 'Bayer S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Hipoglós Amêndoas', 
-    aliases: ['hipoglos', 'pomada hipoglos'], 
-    price: 18.90, 
-    category: 'MIP', 
-    needsRecipe: false, 
-    allowsDelivery: true, 
-    presentation: 'bisnaga de 40g', 
-    unitName: 'bisnaga',
-    activeIngredient: 'Óxido de Zinco + Vitaminas A e D + Óleo de Amêndoas',
-    indication: 'Prevenção e tratamento de assaduras em bebês e adultos',
-    dosage: 'Aplicar a cada troca de fraldas ou conforme necessidade na pele seca',
-    contraindications: 'Lesões de pele abertas e infeccionadas',
-    manufacturer: 'Johnson & Johnson',
-    isGeneric: false
-  },
+// MEDICINES_DB is loaded from medicines_database.js
 
-  // Tarja Vermelha - Receita Simples (prescription simple, delivery OK)
-  { 
-    name: 'Losartana 50mg', 
-    aliases: ['losartana', 'losartana 50mg', 'losartana comprimido'], 
-    price: 14.90, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Losartana Potássica',
-    indication: 'Hipertensão arterial crônica e insuficiência cardíaca crônica',
-    dosage: '1 comprimido pela manhã',
-    contraindications: 'Uso de alisquireno em pacientes diabéticos',
-    manufacturer: 'EMS Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Omeprazol 20mg', 
-    aliases: ['omeprazol', 'omeprazol 20mg'], 
-    price: 22.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 28 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Omeprazol',
-    indication: 'Tratamento de gastrite aguda, refluxo esofágico e úlceras',
-    dosage: '1 cápsula pela manhã em jejum de 30 minutos antes do café',
-    contraindications: 'Uso combinado com nelfinavir',
-    manufacturer: 'EMS Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Pantoprazol 40mg', 
-    aliases: ['pantoprazol', 'pantoprazol 40mg'], 
-    price: 38.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 28 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Pantoprazol',
-    indication: 'Doença de refluxo grave e esofagite erosiva moderada',
-    dosage: '1 comprimido ao dia antes do café da manhã',
-    contraindications: 'Doença hepática moderada a grave',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Allegra 120mg', 
-    aliases: ['allegra', 'allegra 120mg', 'desalex', 'antialergico', 'claritin'], 
-    price: 34.90, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 10 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Fexofenadina',
-    indication: 'Rinite alérgica crônica e urticária cutânea leve',
-    dosage: '1 comprimido uma vez ao dia pela manhã',
-    contraindications: 'Menores de 12 anos ou gravidez sem orientação médica',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-  { 
-    name: 'Nimesulida 100mg', 
-    aliases: ['nimesulida', 'nimesulida 100mg'], 
-    price: 12.50, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 12 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Nimesulida',
-    indication: 'Dor aguda, processos inflamatórios de garganta, articulações e febre',
-    dosage: '1 comprimido de 12 em 12 horas após as refeições',
-    contraindications: 'Insuficiência hepática, úlcera péptica ou asma por AAS',
-    manufacturer: 'Medley Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Meloxicam 15mg', 
-    aliases: ['meloxicam', 'meloxicam 15mg'], 
-    price: 18.90, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 10 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Meloxicam',
-    indication: 'Tratamento de artrite reumatoide crônica e osteoartrite dolorosa',
-    dosage: '1 comprimido de 15mg uma vez ao dia',
-    contraindications: 'Insuficiência renal grave ou sangramento gástrico ativo',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Sinvastatina 20mg', 
-    aliases: ['sinvastatina', 'remedio de colesterol'], 
-    price: 16.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Sinvastatina',
-    indication: 'Redução dos níveis elevados de colesterol total, LDL e triglicerídeos',
-    dosage: '1 comprimido à noite antes de dormir',
-    contraindications: 'Doença hepática ativa ou gravidez confirmada',
-    manufacturer: 'Medley Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Puran T4 50mcg', 
-    aliases: ['puran', 'puran t4', 'levotiroxina', 'remedio de tireoide'], 
-    price: 19.50, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Levotiroxina Sódica',
-    indication: 'Terapia de reposição de hormônio da tireoide no hipotireoidismo',
-    dosage: '1 comprimido ao dia em jejum total de pelo menos 30 a 60 minutos',
-    contraindications: 'Insuficiência adrenal não tratada ou infarto agudo recente',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-  { 
-    name: 'Sertralina 50mg', 
-    aliases: ['sertralina', 'sertralina 50mg'], 
-    price: 35.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Sertralina',
-    indication: 'Tratamento de depressão crônica, ansiedade social, TOC e pânico',
-    dosage: '1 comprimido pela manhã ou à noite',
-    contraindications: 'Uso combinado com inibidores da MAO ou pimozida',
-    manufacturer: 'Teuto Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Fluoxetina 20mg', 
-    aliases: ['fluoxetina', 'fluoxetina 20mg'], 
-    price: 28.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Fluoxetina',
-    indication: 'Tratamento da depressão, transtorno disfórico pré-menstrual e bulimia',
-    dosage: '1 cápsula pela manhã',
-    contraindications: 'Uso combinado de IMAOs ou tioridazina',
-    manufacturer: 'Neo Química Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Escitalopram 10mg', 
-    aliases: ['escitalopram', 'escitalopram 10mg'], 
-    price: 48.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Oxalato de Escitalopram',
-    indication: 'Ansiedade generalizada, depressão unipolar e agorafobia',
-    dosage: '1 comprimido de 10mg ao dia',
-    contraindications: 'Prolongamento do intervalo QT no eletrocardiograma',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Metformina 850mg', 
-    aliases: ['metformina', 'glifage', 'glifage xr', 'metformina 850mg'], 
-    price: 15.00, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Metformina',
-    indication: 'Controle de glicemia em diabetes mellitus tipo 2',
-    dosage: '1 comprimido duas vezes ao dia durante refeições',
-    contraindications: 'Insuficiência renal grave (gfr inferior a 30ml/min)',
-    manufacturer: 'EMS Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Aerolin Spray', 
-    aliases: ['aerolin', 'aerolin spray', 'bombinha aerolin', 'salbutamol'], 
-    price: 26.50, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'frasco spray de 200 doses', 
-    unitName: 'frasco',
-    activeIngredient: 'Sulfato de Salbutamol',
-    indication: 'Alívio rápido de falta de ar crônica por asma ou bronquite',
-    dosage: '1 a 2 inalações jateadas em crises de espasmo brônquico',
-    contraindications: 'Alergia ao salbutamol ou arritmia cardíaca acelerada grave',
-    manufacturer: 'GlaxoSmithKline (GSK)',
-    isGeneric: false
-  },
-  { 
-    name: 'Tadalafila 5mg', 
-    aliases: ['tadalafila', 'tadalafina', 'tadalafila 5mg'], 
-    price: 29.90, 
-    category: 'Tarja Vermelha', 
-    needsRecipe: true, 
-    recipeType: 'simples', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Tadalafila',
-    indication: 'Disfunção erétil e tratamento de hiperplasia prostática benigna',
-    dosage: '1 comprimido uma vez ao dia no mesmo horário',
-    contraindications: 'Uso de medicamentos doadores de óxido nítrico ou nitratos',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-
-  // Tarja Vermelha - Receita Retida (antibiotic, delivery OK, must hand recipe to driver)
-  { 
-    name: 'Amoxicilina 500mg', 
-    aliases: ['amoxicilina', 'amoxicilina 500mg', 'amoxilina'], 
-    price: 28.00, 
-    category: 'Antibiótico', 
-    needsRecipe: true, 
-    recipeType: 'retida', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 21 cápsulas', 
-    unitName: 'caixa', 
-    unitPills: 21,
-    activeIngredient: 'Amoxicilina tri-hidratada',
-    indication: 'Infecções respiratórias superiores, amigdalite e pneumonia bacteriana',
-    dosage: '1 cápsula de 8 em 8 horas por 7 a 10 dias',
-    contraindications: 'Alergia a penicilinas e derivados beta-lactâmicos',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Azitromicina 500mg', 
-    aliases: ['azitromicina', 'azitromicina 500mg', 'zitromax'], 
-    price: 24.50, 
-    category: 'Antibiótico', 
-    needsRecipe: true, 
-    recipeType: 'retida', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 5 comprimidos', 
-    unitName: 'caixa', 
-    unitPills: 5,
-    activeIngredient: 'Azitromicina di-hidratada',
-    indication: 'Infecções bacterianas das vias aéreas e infecções de pele leves',
-    dosage: '1 comprimido de 500mg ao dia por 3 a 5 dias',
-    contraindications: 'Histórico de icterícia associada ao uso deste antibiótico',
-    manufacturer: 'EMS Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Cefalexina 500mg', 
-    aliases: ['cefalexina', 'cefalexina 500mg'], 
-    price: 39.90, 
-    category: 'Antibiótico', 
-    needsRecipe: true, 
-    recipeType: 'retida', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 40 comprimidos', 
-    unitName: 'caixa', 
-    unitPills: 40,
-    activeIngredient: 'Cefalexina monoidratada',
-    indication: 'Infecções bacterianas de tecidos moles, urinárias e ósseas',
-    dosage: '1 comprimido a cada 6 horas por 7 a 14 dias',
-    contraindications: 'Alergia grave a cefalosporinas ou penicilina',
-    manufacturer: 'Medley Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Ciprofloxacino 500mg', 
-    aliases: ['ciprofloxacino', 'cipro'], 
-    price: 32.00, 
-    category: 'Antibiótico', 
-    needsRecipe: true, 
-    recipeType: 'retida', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 14 comprimidos', 
-    unitName: 'caixa', 
-    unitPills: 14,
-    activeIngredient: 'Cloridrato de Ciprofloxacino',
-    indication: 'Infecções urinárias graves, diarreia bacteriana e otite média',
-    dosage: '1 comprimido a cada 12 horas por 3 a 7 dias',
-    contraindications: 'Uso concomitante com tizanidina ou gravidez',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Bactrim', 
-    aliases: ['bactrim', 'bactrim comprimido'], 
-    price: 21.00, 
-    category: 'Antibiótico', 
-    needsRecipe: true, 
-    recipeType: 'retida', 
-    allowsDelivery: true, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa', 
-    unitPills: 20,
-    activeIngredient: 'Sulfametoxazol + Trimetoprima',
-    indication: 'Infecções bacterianas respiratórias, urinárias e renais',
-    dosage: '1 comprimido a cada 12 horas por 10 dias',
-    contraindications: 'Disfunção hepática crônica grave ou anemia megaloblástica',
-    manufacturer: 'Roche S.A.',
-    isGeneric: false
-  },
-
-  // Tarja Preta (controlled, NO delivery, presencial only)
-  { 
-    name: 'Rivotril 2mg', 
-    aliases: ['rivotril', 'clonazepam', 'rivotril 2mg'], 
-    price: 19.90, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Clonazepam',
-    indication: 'Espasmos musculares, ansiedade patológica crônica, crises focais e fobia social',
-    dosage: '0.5mg a 2mg ao deitar ou conforme receita controlada',
-    contraindications: 'Glaucoma agudo ou insuficiência respiratória grave',
-    manufacturer: 'Roche S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Ritalina 10mg', 
-    aliases: ['ritalina', 'ritalina 10mg', 'metilfenidato'], 
-    price: 45.00, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 60 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Metilfenidato',
-    indication: 'Transtorno de Déficit de Atenção e Hiperatividade (TDAH) e narcolepsia',
-    dosage: '1 comprimido pela manhã e 1 após almoço',
-    contraindications: 'Psicose ativa, tiques motores severos ou glaucoma de ângulo fechado',
-    manufacturer: 'Novartis Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Lexotan 3mg', 
-    aliases: ['lexotan', 'bromazepam', 'lexotan 3mg'], 
-    price: 26.90, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Bromazepam',
-    indication: 'Ansiedade acentuada, tensão, depressão ansiosa crônica e insônia',
-    dosage: '1.5mg a 3mg até 3 vezes ao dia conforme prescrição',
-    contraindications: 'Miastenia grave ou insuficiência pulmonar crônica grave',
-    manufacturer: 'Roche S.A.',
-    isGeneric: false
-  },
-  { 
-    name: 'Frontal 0.5mg', 
-    aliases: ['frontal', 'alprazolam', 'frontal 0.5mg'], 
-    price: 38.50, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Alprazolam',
-    indication: 'Ansiedade reativa, pânico, fobia social e insônia tensional',
-    dosage: '1 comprimido ao deitar ou de 12 em 12 horas',
-    contraindications: 'Glaucoma agudo de ângulo fechado',
-    manufacturer: 'Pfizer Brasil',
-    isGeneric: false
-  },
-  { 
-    name: 'Diazepam 10mg', 
-    aliases: ['diazepam', 'diazepam 10mg'], 
-    price: 15.00, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Diazepam',
-    indication: 'Tensão ansiosa crônica, abstinência alcoólica ou espasmos musculares',
-    dosage: '5mg a 10mg ao deitar ou conforme orientação',
-    contraindications: 'Alergia a benzodiazepínicos, dependência de drogas',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Stilnox 10mg', 
-    aliases: ['stilnox', 'zolpidem', 'stilnox 10mg'], 
-    price: 62.00, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Hemitartarato de Zolpidem',
-    indication: 'Tratamento de curto prazo da insônia grave ou incapacitante',
-    dosage: '1 comprimido sublingual ou oral ao deitar imediatamente',
-    contraindications: 'Insuficiência respiratória severa ou apneia do sono',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-  { 
-    name: 'Venvanse 30mg', 
-    aliases: ['venvanse', 'lisdexanfetamina', 'venvanse 30mg'], 
-    price: 390.00, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 28 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Dimesilato de Lisdexanfetamina',
-    indication: 'Tratamento de TDAH em crianças e adultos e transtorno de compulsão alimentar',
-    dosage: '1 cápsula ao dia pela manhã',
-    contraindications: 'Cardiopatia grave, arteriosclerose avançada ou hipertensão grave',
-    manufacturer: 'Takeda Pharma',
-    isGeneric: false
-  },
-  { 
-    name: 'Sibutramina 15mg', 
-    aliases: ['sibutramina', 'sibutramina 15mg'], 
-    price: 54.00, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Cloridrato de Sibutramina',
-    indication: 'Tratamento auxiliar de perda de peso em obesidade com IMC > 30',
-    dosage: '1 cápsula ao dia em jejum pela manhã',
-    contraindications: 'Histórico de doença arterial coronariana, derrame (AVC) ou arritmia',
-    manufacturer: 'Eurofarma Genéricos',
-    isGeneric: true
-  },
-  { 
-    name: 'Gardenal 100mg', 
-    aliases: ['gardenal', 'fenobarbital', 'gardenal 100mg'], 
-    price: 14.20, 
-    category: 'Tarja Preta', 
-    needsRecipe: true, 
-    recipeType: 'azul', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 20 comprimidos', 
-    unitName: 'caixa',
-    activeIngredient: 'Fenobarbital',
-    indication: 'Prevenção e controle de crises convulsivas de epilepsia e convulsões tônico-clônicas',
-    dosage: '1 comprimido à noite antes de deitar',
-    contraindications: 'Porfiria intermitente aguda ou insuficiência hepática severa',
-    manufacturer: 'Sanofi-Aventis',
-    isGeneric: false
-  },
-
-  // Retinoide / Especial (controlled, NO delivery, special paperwork)
-  { 
-    name: 'Roacutan 20mg', 
-    aliases: ['roacutan', 'isotretinoina', 'roacutan 20mg'], 
-    price: 150.00, 
-    category: 'Especial', 
-    needsRecipe: true, 
-    recipeType: 'especial', 
-    allowsDelivery: false, 
-    presentation: 'caixa com 30 cápsulas', 
-    unitName: 'caixa',
-    activeIngredient: 'Isotretinoína',
-    indication: 'Tratamento de formas graves de acne vulgar (nódulo-cística e conglobata) resistentes',
-    dosage: '0.5 a 1.0 mg/kg ao dia conforme receita especial e peso',
-    contraindications: 'Mulheres em idade fértil sem contracepção ativa (risco extremo de malformação fetal)',
-    manufacturer: 'Roche S.A.',
-    isGeneric: false
-  }
-];
 
 function normalizeText(text) {
   return text.toLowerCase()
@@ -1541,6 +542,9 @@ function runSimulation(message) {
     case 'idle':
       return handleIdleState(norm, message);
 
+    case 'waiting_cpf':
+      return handleWaitingCpf(norm, message);
+
     case 'confirm_brand_or_generic':
       return handleConfirmBrandOrGeneric(norm);
 
@@ -1574,69 +578,89 @@ function runSimulation(message) {
   }
 }
 
+const COLLOQUIAL_MAP = {
+  'remedio de pressao': ['pressão', 'hipertensão'],
+  'remedio de pressao alta': ['pressão', 'hipertensão'],
+  'remedio para pressao': ['pressão', 'hipertensão'],
+  'remedio de acucar': ['diabetes'],
+  'remedio de diabetes': ['diabetes'],
+  'remedio para diabetes': ['diabetes'],
+  'remedio pra dormir': ['sono', 'insônia'],
+  'remedio para dormir': ['sono', 'insônia'],
+  'remedio de dor': ['dor'],
+  'remedio para dor': ['dor'],
+  'remedio de dor de cabeca': ['cabeça', 'dor'],
+  'remedio para dor de cabeca': ['cabeça', 'dor'],
+  'bombinha': ['bombinha', 'asma', 'falta de ar'],
+  'remedio de colesterol': ['colesterol'],
+  'remedio para colesterol': ['colesterol'],
+  'remedio de tireoide': ['tireoide'],
+  'remedio para tireoide': ['tireoide']
+};
+
+function escapeRegex(string) {
+  return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
 function parseMedicinesFromText(text) {
   const norm = normalizeText(text);
   const itemsFound = [];
   
-  // Lista de partes separadas por "e", ",", "mais"
-  const parts = text.split(/\s+e\s+|\s*,\s*|\s+mais\s+/i);
+  // Split input by potential separators for multiple items
+  const parts = text.split(/\s+e\s+|\s*,\s*|\s+mais\s+|\s*\+\s*/i);
   
   for (const part of parts) {
     const normPart = normalizeText(part);
     if (!normPart) continue;
     
-    // Lista de palavras proibidas que desqualificam a parte como nome de medicamento
-    const invalidWords = [
-      'estou', 'preciso', 'remedio', 'medicamento', 'dor', 'barriga', 'cabeca', 
-      'garganta', 'gripe', 'azia', 'comprar', 'gostaria', 'quero', 'ajudar', 
-      'saber', 'preco', 'horario', 'endereco', 'farmacia', 'receita', 'entrega', 
-      'delivery', 'enviar', 'foto', 'bom', 'dia', 'tarde', 'noite', 'ola', 'oi', 
-      'tudo', 'bem', 'obrigado', 'por', 'favor', 'como', 'tomar', 'para', 'com'
-    ];
-    
-    const hasInvalid = invalidWords.some(w => normPart.split(/\s+/).includes(w));
-    if (hasInvalid) continue;
-    
-    // Tentar encontrar quantidade (padrão: número seguido ou não por caixas/un/etc.)
+    // Look for quantity
     let quantity = 1;
-    const qtyMatch = normPart.match(/(\d+)\s*(caixas?|frascos?|unidades?|un|cps?|comprimidos?)?/i);
+    const qtyMatch = normPart.match(/(\d+)\s*(caixas?|frascos?|unidades?|un|cps?|comprimidos?|envelopes?|bisnagas?)/i);
     if (qtyMatch) {
       quantity = parseInt(qtyMatch[1]);
     }
     
-    // Tentar encontrar o nome do medicamento na parte
-    let cleanName = normPart
-      .replace(/(\d+)\s*(caixas?|frascos?|unidades?|un|cps?|comprimidos?)?/i, '')
+    // Clean the text to search for name
+    let searchText = normPart
+      .replace(/(\d+)\s*(caixas?|frascos?|unidades?|un|cps?|comprimidos?|envelopes?|bisnagas?)/gi, '')
       .replace(/^(de|da|do|para|com|comprar|tem|vcs\s+tem|gostaria\s+de|gostaria|quero|preciso\s+de|preciso|me\s+ve)\s+/i, '')
       .trim();
       
-    // Limpar pontuações e emojis
-    cleanName = cleanName.replace(/[^\w\s-]/g, '').trim();
+    // Clear punctuation
+    searchText = searchText.replace(/[^\w\s-]/g, '').trim();
+    if (searchText.length < 3) continue;
     
-    if (cleanName.length < 3) continue; // Nome muito curto
-    
-    // Se o nome limpo tem mais de 3 palavras, provavelmente é uma frase, não um remédio
-    if (cleanName.split(/\s+/).length > 3) continue;
-    
-    // Tentar casar com a base de dados
+    // Try to find matching drug in MEDICINES_DB using exact word boundaries
     let matchedDrug = null;
+    let longestMatchLen = 0;
+    
     for (const drug of MEDICINES_DB) {
       for (const alias of drug.aliases) {
-        if (cleanName.includes(alias) || alias.includes(cleanName)) {
-          matchedDrug = drug;
-          break;
+        const regex = new RegExp('\\b' + escapeRegex(alias) + '\\b', 'i');
+        if (regex.test(searchText)) {
+          if (alias.length > longestMatchLen) {
+            matchedDrug = drug;
+            longestMatchLen = alias.length;
+          }
         }
       }
-      if (matchedDrug) break;
     }
     
-    // Se não encontrou na base de dados, não geramos medicamento fictício
-    if (!matchedDrug) {
-      continue;
+    // Fallback: substring matching if search text is longer and no exact match found
+    if (!matchedDrug && searchText.length >= 4) {
+      for (const drug of MEDICINES_DB) {
+        for (const alias of drug.aliases) {
+          if (alias.includes(searchText) || searchText.includes(alias)) {
+            matchedDrug = drug;
+            break;
+          }
+        }
+        if (matchedDrug) break;
+      }
     }
     
     if (matchedDrug) {
-      itemsFound.push({ drug: matchedDrug, quantity: quantity });
+      itemsFound.push({ drug: matchedDrug, quantity });
     }
   }
   
@@ -1644,90 +668,13 @@ function parseMedicinesFromText(text) {
 }
 
 function generateMockDrug(name) {
-  const cleanName = name.charAt(0).toUpperCase() + name.slice(1);
-  const norm = name.toLowerCase();
-  
-  // Evitar simular palavras comuns de conversação como medicamento
-  const stopWords = ['ola', 'tudo bem', 'bom dia', 'boa tarde', 'boa noite', 'obrigado', 'por favor', 'endereco', 'pagamento', 'sim', 'nao', 'tudo certo', 'cancelar', 'humano', 'atendente', 'remedio', 'medicamento', 'receita', 'delivery', 'caixa', 'caixas', 'comprimido', 'gotas'];
-  if (stopWords.includes(norm) || norm.length < 3) {
-    return null;
-  }
-  
-  // Classificar de acordo com o nome
-  let category = 'MIP';
-  let needsRecipe = false;
-  let recipeType = null;
-  let allowsDelivery = true;
-  let presentation = 'caixa com 20 comprimidos';
-  
-  // Tarja Preta (controlled)
-  if (norm.match(/(pam|lam|pax|tril|italin|rital|dorm|zolpid|codein|morfin|tramad)/i)) {
-    category = 'Tarja Preta';
-    needsRecipe = true;
-    recipeType = 'azul';
-    allowsDelivery = false;
-    presentation = 'caixa com 30 comprimidos';
-  } 
-  // Antibiótico (receita retida)
-  else if (norm.match(/(cina|xina|lina|mox|clav|cef|cefale|azitro)/i)) {
-    category = 'Antibiótico';
-    needsRecipe = true;
-    recipeType = 'retida';
-    allowsDelivery = true;
-    presentation = 'caixa com 21 cápsulas';
-  } 
-  // Tarja Vermelha (receita simples)
-  else if (norm.match(/(tada|fil|pril|art|stat|cort|pred|glic|metfor|omepra|panto)/i)) {
-    category = 'Tarja Vermelha';
-    needsRecipe = true;
-    recipeType = 'simples';
-    allowsDelivery = true;
-    presentation = 'caixa com 30 comprimidos';
-  } 
-  // Lubrificantes e correlatos
-  else if (norm.match(/(ky|lubrificante|gel|preservativo|camisinha|sabonete|creme|pomada)/i)) {
-    category = 'MIP';
-    needsRecipe = false;
-    allowsDelivery = true;
-    presentation = 'unidade';
-  }
-  // MIP Padrão
-  else {
-    category = 'MIP';
-    needsRecipe = false;
-    allowsDelivery = true;
-    presentation = 'caixa com 20 comprimidos';
-  }
-  
-  // Gerar um preço estável baseado no nome
-  let hash = 0;
-  for (let i = 0; i < norm.length; i++) {
-    hash = norm.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  let basePrice = Math.abs(hash % 50) + 10;
-  
-  if (category === 'Tarja Preta') basePrice += 20;
-  
-  const mockDrug = {
-    name: cleanName,
-    aliases: [norm],
-    price: Math.round(basePrice * 10) / 10 + 0.90,
-    category: category,
-    needsRecipe: needsRecipe,
-    recipeType: recipeType,
-    allowsDelivery: allowsDelivery,
-    presentation: presentation,
-    isMocked: true
-  };
-  
-  MEDICINES_DB.push(mockDrug);
-  return mockDrug;
+  return null;
 }
 
 function getGenericAlternative(drug) {
   if (!drug.activeIngredient || drug.isGeneric) return null;
   
-  // Buscar na base por um equivalente que seja genérico
+  // Find in DB for an equivalent that is generic
   const genericAlt = MEDICINES_DB.find(d => 
     d.activeIngredient === drug.activeIngredient && 
     d.isGeneric === true
@@ -1735,217 +682,301 @@ function getGenericAlternative(drug) {
   
   if (genericAlt) return genericAlt;
 
-  // Fallback seguro baseado em texto caso não esteja totalmente mapeado
+  // Manual fallback for common ones
   const nameLower = drug.name.toLowerCase();
   if (nameLower.includes('tylenol')) {
-    return MEDICINES_DB.find(d => d.name.includes('Paracetamol'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('paracetamol'));
   }
   if (nameLower.includes('novalgina')) {
-    return MEDICINES_DB.find(d => d.name.includes('Dipirona'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('dipirona'));
   }
   if (nameLower.includes('buscopan composto')) {
-    return MEDICINES_DB.find(d => d.name.includes('Butilbrometo'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('butilbrometo de escopolamina') && d.name.toLowerCase().includes('dipirona')) || MEDICINES_DB.find(d => d.name.toLowerCase().includes('butilbrometo'));
   }
   if (nameLower.includes('glifage')) {
-    return MEDICINES_DB.find(d => d.name.includes('Metformina'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('metformina'));
   }
   if (nameLower.includes('rivotril')) {
-    return MEDICINES_DB.find(d => d.name.includes('Clonazepam'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('clonazepam'));
   }
   if (nameLower.includes('ritalina')) {
-    return MEDICINES_DB.find(d => d.name.includes('Metilfenidato'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('metilfenidato'));
   }
   if (nameLower.includes('lexotan')) {
-    return MEDICINES_DB.find(d => d.name.includes('Bromazepam'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('bromazepam'));
   }
   if (nameLower.includes('frontal')) {
-    return MEDICINES_DB.find(d => d.name.includes('Alprazolam'));
+    return MEDICINES_DB.find(d => d.name.toLowerCase().includes('alprazolam'));
   }
   return null;
+}
+
+function formatCPF(digits) {
+  const d = digits.slice(0, 11);
+  return d.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+}
+
+function handleWaitingCpf(norm, rawMsg) {
+  if (norm.match(/(nao|no|na|pular|continuar|sem)/i)) {
+    state.cpf = 'não';
+    state.discountPercent = 0;
+    localStorage.setItem('sofia_cpf', 'não');
+    localStorage.setItem('sofia_discount_percent', '0');
+    return proceedToQuoteAfterCpf();
+  }
+  
+  const digits = rawMsg.replace(/\D/g, '');
+  if (digits.length >= 11) {
+    const cpfFormatted = formatCPF(digits);
+    state.cpf = cpfFormatted;
+    const discount = 10 + Math.floor(Math.random() * 21);
+    state.discountPercent = discount;
+    localStorage.setItem('sofia_cpf', cpfFormatted);
+    localStorage.setItem('sofia_discount_percent', discount.toString());
+    return `CPF *${cpfFormatted}* localizado! 🎉\nVocê ganhou um desconto de *${discount}%* fidelidade nos medicamentos de marca para este pedido.||` + proceedToQuoteAfterCpf();
+  } else {
+    return `Por favor, digite um CPF válido (11 números) ou digite *não* para prosseguir sem desconto fidelidade.`;
+  }
+}
+
+function proceedToQuoteAfterCpf() {
+  const parsedItems = state.pendingItemsList || [];
+  state.pendingItemsList = [];
+  
+  if (parsedItems.length === 0) {
+    state.simState = 'idle';
+    return "No que posso ajudar? Digite o nome do medicamento.";
+  }
+  
+  if (parsedItems.length === 1) {
+    const pItem = parsedItems[0];
+    const drug = pItem.drug;
+    const quantity = pItem.quantity;
+    
+    if (!drug.allowsDelivery) {
+      state.simState = 'idle';
+      if (drug.recipeType === 'especial' || drug.name.toLowerCase().includes('roacutan')) {
+        return `${drug.name} tem controle especial e exige termo de consentimento. Precisa vir presencialmente com receita e documentação. Não fazemos delivery desse. 🚫||Quer ver outro remédio?`;
+      }
+      return `${drug.name} é controlado e precisa de receita especial que fica retida. Por regras da Anvisa, só vendemos presencialmente na farmácia - não dá pra entregar. 🚫||Quer ver outro remédio?`;
+    }
+    
+    let price = drug.price;
+    let discountNotice = '';
+    if (state.discountPercent > 0 && !drug.isGeneric) {
+      const originalPrice = drug.price;
+      price = originalPrice * (1 - state.discountPercent / 100);
+      discountNotice = ` (de R$ ${originalPrice.toFixed(2)} por *R$ ${price.toFixed(2)}* com ${state.discountPercent}% desc. fidelidade)`;
+    }
+    
+    const isGotas = state.pendingActionRawText ? state.pendingActionRawText.match(/(\d+)\s*gotas?/i) : null;
+    const isComprimidos = state.pendingActionRawText ? state.pendingActionRawText.match(/(\d+)\s*(comprimidos?|capsulas?|cp|caps)/i) : null;
+    
+    // Suggest generic if available
+    const genericAlt = getGenericAlternative(drug);
+    if (genericAlt) {
+      state.pendingBrand = { drug, quantity, finalPrice: price };
+      state.pendingGeneric = { drug: genericAlt, quantity, finalPrice: genericAlt.price };
+      state.simState = 'confirm_brand_or_generic';
+      
+      const priceQuoteText = quantity > 1
+        ? `tá R$ ${drug.price.toFixed(2)} cada${discountNotice} (total R$ ${(price * quantity).toFixed(2)})`
+        : `tá R$ ${drug.price.toFixed(2)}${discountNotice}`;
+        
+      const genericPriceText = quantity > 1
+        ? `R$ ${genericAlt.price.toFixed(2)} cada (total de R$ ${(genericAlt.price * quantity).toFixed(2)})`
+        : `R$ ${genericAlt.price.toFixed(2)}`;
+        
+      const cleanGenericName = genericAlt.name.replace(' (Genérico)', '').replace(' 500mg', '').replace(' Gotas', '');
+      
+      let infoMsg = '';
+      if (drug.activeIngredient) {
+        infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n⚠️ *Nota de Segurança:* ${drug.safetyNote}`;
+      }
+
+      return `Temos o de referência *${drug.name}* que ${priceQuoteText}.${infoMsg}||Mas ó, temos o genérico dele (${cleanGenericName}) por ${genericPriceText}.||Quer levar o genérico pra economizar?`;
+    }
+    
+    state.pendingItem = { drug, quantity, finalPrice: price };
+    state.simState = 'confirm_add_cart';
+    
+    let recipeMsg = '';
+    if (drug.recipeType === 'retida') {
+      recipeMsg = '||Como é antibiótico, o entregador vai precisar recolher a receita física (duas vias) na hora da entrega. Você tem ela aí?';
+    } else if (drug.needsRecipe) {
+      recipeMsg = '||Esse precisa de receita simples.';
+    }
+    
+    const finalPriceText = quantity > 1 
+      ? `${quantity} unidades ficam R$ ${(quantity * price).toFixed(2)}`
+      : `tá R$ ${price.toFixed(2)}`;
+      
+    let infoMsg = '';
+    if (drug.activeIngredient) {
+      infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n⚠️ *Nota de Segurança:* ${drug.safetyNote}`;
+    }
+    
+    return `O *${drug.name}* (${drug.presentation}) ${finalPriceText}${discountNotice}.${recipeMsg}${infoMsg}||Posso colocar no carrinho?`;
+    
+  } else {
+    let responseText = '';
+    let subtotal = 0;
+    let hasControlled = false;
+    let hasAntibiotic = false;
+    const pendingList = [];
+    
+    parsedItems.forEach((pItem) => {
+      const drug = pItem.drug;
+      const qty = pItem.quantity;
+      
+      let price = drug.price;
+      let discountLabel = '';
+      if (state.discountPercent > 0 && !drug.isGeneric) {
+        price = drug.price * (1 - state.discountPercent / 100);
+        discountLabel = ` (com ${state.discountPercent}% desc.)`;
+      }
+      
+      const totalItem = price * qty;
+      subtotal += totalItem;
+      pendingList.push({ drug, quantity: qty, finalPrice: price });
+      
+      if (!drug.allowsDelivery) {
+        hasControlled = true;
+      }
+      if (drug.recipeType === 'retida') {
+        hasAntibiotic = true;
+      }
+      
+      const recipeNote = drug.needsRecipe 
+        ? (drug.recipeType === 'retida' ? ' (antibiótico)' : ' (precisa de receita)') 
+        : '';
+        
+      responseText += `• ${qty}x ${drug.name} - R$ ${totalItem.toFixed(2)}${discountLabel}${recipeNote}\n`;
+    });
+    
+    if (hasControlled) {
+      state.simState = 'idle';
+      return `Olha, vi que você incluiu medicamentos controlados (tarja preta/amarela). Por regras da Anvisa, a gente não pode entregar esses.||Nesse caso, você precisaria vir buscar aqui na loja física com a receita original em mãos. Quer que eu tire eles do carrinho e continue com os outros?`;
+    }
+    
+    state.pendingItemsList = pendingList;
+    state.simState = 'confirm_add_cart';
+    
+    let warnings = '';
+    if (hasAntibiotic) {
+      warnings = '||E lembrando que a receita do antibiótico precisa ser física em duas vias (uma fica com a gente na entrega), beleza?';
+    }
+    
+    return `Achei os itens por aqui! Olha os preços (com desconto fidelidade aplicado):\n${responseText}\n*Total:* R$ ${subtotal.toFixed(2)}.${warnings}||Posso colocar todos eles no carrinho?`;
+  }
 }
 
 function handleIdleState(norm, rawMsg) {
   // 1. Simulação OCR de Receita
   if (norm.match(/(foto\s+da\s+receita|minha\s+receita|enviar\s+receita|receita\s+medica|foto_receita_simulada)/i)) {
-    const amox = MEDICINES_DB.find(d => d.name === 'Amoxicilina 500mg');
-    const advil = MEDICINES_DB.find(d => d.name.includes('Advil'));
+    const amox = MEDICINES_DB.find(d => d.name.toLowerCase().includes('amoxicilina')) || MEDICINES_DB.find(d => d.name === 'Amoxicilina 500mg');
+    const advil = MEDICINES_DB.find(d => d.name.toLowerCase().includes('advil')) || MEDICINES_DB.find(d => d.name.includes('Advil'));
     
-    state.pendingItemsList = [
-      { drug: amox, quantity: 1 },
-      { drug: advil, quantity: 1 }
-    ];
-    state.simState = 'confirm_add_cart';
-    
-    return `Identifiquei na receita:\n• 1x Amoxicilina 500mg (Antibiótico) - R$ 28,00\n• 1x Advil 400mg (MIP) - R$ 18,90\n\n*Total:* R$ 46,90.||Amoxicilina é antibiótico e exige receita física em duas vias (uma fica retida). O entregador precisará recolhê-la na entrega.||Quer que eu adicione todos eles ao seu pedido?`;
-  }
-
-  // 2. Verificar correspondência de sintomas comuns primeiro
-  if (norm.match(/\b(cabeca|enxaqueca|cefaleia)\b/i)) {
-    return "Nossa, dor de cabeça forte é ruim demais. Melhoras, viu!||Temos Tylenol, Novalgina e Dorflex por aqui. Qual você prefere?";
-  }
-  if (norm.match(/\b(azia|queimacao|refluxo|gastrite|estomago|digestao)\b/i)) {
-    return "Putz, azia e queimação incomodam bastante.||Temos Eno, Sonrisal e Estomazil pra aliviar. Prefere algum desses?";
-  }
-  if (norm.match(/\b(gripe|resfriado|coriza|espirro|resfriada)\b/i)) {
-    return "Eita, resfriado é chato demais. Se cuida!||Temos Benegrip, Cimegripe e Resfenol. Qual deles você costuma tomar?";
-  }
-  if (norm.match(/\b(garganta|pastilha|tosse|rouquidao)\b/i)) {
-    return "Dor de garganta e tosse incomodam muito.||Temos pastilhas Strepsils e Benalet, ou Flogoral spray. Quer que eu veja o preço de algum?";
-  }
-  if (norm.match(/\b(barriga|diarreia|intestino|enjoo|nausea|vomito|colica|abdominal|dor no ventre)\b/i)) {
-    return "Putz, dor de barriga ou desconforto intestinal incomoda bastante.||Temos Buscopan Composto, Imosec e Floratil por aqui. Qual você prefere?";
-  }
-  if (norm.match(/\b(febre|quente|temperatura)\b/i)) {
-    return "Eita, febre é chato e dá uma moleza no corpo. Se cuida!||Temos Novalgina e Tylenol pra ajudar. Qual você prefere?";
-  }
-  if (norm.match(/\b(muscular|costas|corpo|torcicolo|contusao|lesao|articulacao|junta)\b/i)) {
-    return "Nossa, dor muscular e no corpo é bem incômoda.||Temos Dorflex, Tandrilax e pomada Cataflan por aqui. Qual você prefere?";
-  }
-  if (norm.match(/\b(alergia|espirro|coceira|rinite|nariz entupido)\b/i)) {
-    return "Eita, rinite e alergia incomodam bastante.||Temos Neosoro, Allegra e Loratadina por aqui. Quer que eu veja o preço de algum?";
-  }
-
-  // 3. Extrair medicamentos e quantidades da mensagem
-  const parsedItems = parseMedicinesFromText(rawMsg);
-  
-  if (parsedItems.length > 0) {
-    if (parsedItems.length === 1) {
-      const pItem = parsedItems[0];
-      const drug = pItem.drug;
-      const quantity = pItem.quantity;
+    if (amox && advil) {
+      const extractedList = [
+        { drug: amox, quantity: 1 },
+        { drug: advil, quantity: 1 }
+      ];
       
-      if (!drug.allowsDelivery) {
-        if (drug.recipeType === 'especial' || drug.name.toLowerCase().includes('roacutan')) {
-          return `${drug.name} tem controle especial e exige termo de consentimento. Precisa vir presencialmente com receita e documentação. Não fazemos delivery desse. 🚫||Quer ver outro remédio?`;
-        }
-        return `${drug.name} é controlado e precisa de receita especial que fica retida. Por regras da Anvisa, só vendemos presencialmente na farmácia - não dá pra entregar. 🚫||Quer ver outro remédio?`;
+      if (!state.cpf) {
+        state.pendingItemsList = extractedList;
+        state.simState = 'waiting_cpf';
+        return `🔎 *Escaneando receita médica...*\n\nIdentifiquei na receita:\n• 1x ${amox.name}\n• 1x ${advil.name}\n\nAntes de passar a cotação, você tem CPF cadastrado para descontos de fidelidade? 🏷️\nDigite o CPF ou digite *não* para prosseguir.`;
       }
       
-      const isGotas = rawMsg.match(/(\d+)\s*gotas?/i);
-      const isComprimidos = rawMsg.match(/(\d+)\s*(comprimidos?|capsulas?|cp|caps)/i);
-      
-      let frequency = 1;
-      const freqHrsMatch = rawMsg.match(/(de\s*)?(\d+)\s*(em\s*)?(\d+)\s*(horas|h)/i);
-      const freqTimesMatch = rawMsg.match(/(\d+)\s*(vezes|x)\s*ao\s*dia/i);
-      if (freqHrsMatch) {
-        const hrs = parseInt(freqHrsMatch[4] || freqHrsMatch[2]);
-        if (hrs > 0) frequency = Math.round(24 / hrs);
-      } else if (freqTimesMatch) {
-        frequency = parseInt(freqTimesMatch[1]);
-      }
-      
-      const durationMatch = rawMsg.match(/(\d+)\s*dias/i);
-      
-      if (isGotas || isComprimidos) {
-        const dose = parseInt(isGotas ? isGotas[1] : isComprimidos[1]);
-        const type = isGotas ? 'gotas' : 'comprimidos';
-        
-        if (durationMatch) {
-          const days = parseInt(durationMatch[1]);
-          return performCalculationAndOffer(drug, dose, frequency, days, type);
-        } else {
-          state.pendingCalculation = { drug, dose, frequency, type };
-          state.simState = 'waiting_calculation_days';
-          return `Quantos dias vai ser o tratamento? Assim calculo certinho quantos frascos ou caixas você precisa.`;
-        }
-      }
-
-      // Se não for posologia detalhada e houver genérico disponível para o item de marca
-      const genericAlt = getGenericAlternative(drug);
-      if (genericAlt && !drug.isMocked) {
-        state.pendingBrand = { drug, quantity };
-        state.pendingGeneric = { drug: genericAlt, quantity };
-        state.simState = 'confirm_brand_or_generic';
-        
-        const priceText = quantity > 1
-          ? `tá R$ ${drug.price.toFixed(2)} cada (${quantity} unidades ficam R$ ${(drug.price * quantity).toFixed(2)})`
-          : `tá R$ ${drug.price.toFixed(2)}`;
-          
-        const genericPriceText = quantity > 1
-          ? `R$ ${genericAlt.price.toFixed(2)} cada (total de R$ ${(genericAlt.price * quantity).toFixed(2)})`
-          : `R$ ${genericAlt.price.toFixed(2)}`;
-          
-        const cleanGenericName = genericAlt.name.replace(' (Genérico)', '').replace(' 500mg', '').replace(' Gotas', '');
-        
-        let infoMsg = '';
-        if (drug.activeIngredient) {
-          infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n• **Indicação:** ${drug.indication}\n• **Posologia sugerida:** ${drug.dosage}`;
-          if (drug.contraindications) {
-            infoMsg += `\n• **Importante:** ${drug.contraindications}`;
-          }
-        }
-
-        return `A ${drug.name} ${priceText}.${infoMsg}||Mas ó, temos o genérico dele (${cleanGenericName}) por ${genericPriceText}.||Quer levar o genérico pra economizar?`;
-      }
-      
-      state.pendingItem = { drug, quantity };
-      state.simState = 'confirm_add_cart';
-      
-      let recipeMsg = '';
-      if (drug.recipeType === 'retida') {
-        recipeMsg = '||Como é antibiótico, o entregador vai precisar recolher a receita física (duas vias) na hora da entrega. Você tem ela aí?';
-      } else if (drug.needsRecipe) {
-        recipeMsg = '||Esse precisa de receita simples, viu?';
-      }
-      
-      const priceText = quantity > 1 
-        ? `${quantity} unidades ficam R$ ${(quantity * drug.price).toFixed(2)}`
-        : `tá R$ ${drug.price.toFixed(2)}`;
-        
-      let infoMsg = '';
-      if (drug.activeIngredient) {
-        infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n• **Indicação:** ${drug.indication}\n• **Posologia sugerida:** ${drug.dosage}`;
-        if (drug.contraindications) {
-          infoMsg += `\n• **Importante:** ${drug.contraindications}`;
-        }
-      }
-      
-      return `A ${drug.name} (${drug.presentation}) ${priceText}.${recipeMsg}${infoMsg}||Posso colocar no carrinho?`;
-      
-    } else {
-      let responseText = '';
-      let subtotal = 0;
-      let hasControlled = false;
-      let hasAntibiotic = false;
-      const pendingList = [];
-      
-      parsedItems.forEach((pItem) => {
-        const drug = pItem.drug;
-        const qty = pItem.quantity;
-        const totalItem = drug.price * qty;
-        subtotal += totalItem;
-        pendingList.push(pItem);
-        
-        if (!drug.allowsDelivery) {
-          hasControlled = true;
-        }
-        if (drug.recipeType === 'retida') {
-          hasAntibiotic = true;
-        }
-        
-        const recipeNote = drug.needsRecipe 
-          ? (drug.recipeType === 'retida' ? ' (antibiótico)' : ' (precisa de receita)') 
-          : '';
-          
-        responseText += `• ${qty}x ${drug.name} - R$ ${totalItem.toFixed(2)}${recipeNote}\n`;
-      });
-      
-      if (hasControlled) {
-        return `Olha, vi que você incluiu medicamentos controlados (tarja preta/amarela). Por regras da Anvisa, a gente não pode entregar esses.||Nesse caso, você precisaria vir buscar aqui na loja física com a receita original em mãos. Quer que eu tire eles do carrinho e continue com os outros?`;
-      }
-      
-      state.pendingItemsList = pendingList;
-      state.simState = 'confirm_add_cart';
-      
-      let warnings = '';
-      if (hasAntibiotic) {
-        warnings = '||E lembrando que a receita do antibiótico precisa ser física em duas vias (uma fica com a gente na entrega), beleza?';
-      }
-      
-      return `Achei os itens por aqui! Olha os preços:\n${responseText}\n*Total:* R$ ${subtotal.toFixed(2)}.${warnings}||Posso colocar todos eles no carrinho?`;
+      state.pendingItemsList = extractedList;
+      return proceedToQuoteAfterCpf();
     }
   }
 
+  // 2. Extract specific medicines from message
+  const parsedItems = parseMedicinesFromText(rawMsg);
+  
+  if (parsedItems.length > 0) {
+    state.pendingActionRawText = rawMsg;
+    if (!state.cpf) {
+      state.pendingItemsList = parsedItems;
+      state.simState = 'waiting_cpf';
+      return `Localizei o(s) medicamento(s) no estoque! 🔎\nAntes de passar o valor, você tem cadastro na nossa fidelidade com CPF? 🏷️\n\nDigite o seu CPF para consultar descontos de 10% a 30% (ou digite *não* para continuar sem desconto).`;
+    }
+    
+    state.pendingItemsList = parsedItems;
+    return proceedToQuoteAfterCpf();
+  }
+
+  // 3. Check Colloquial map
+  let matchedColloquialTags = null;
+  let colloquialLabel = "";
+  for (const [colKey, tags] of Object.entries(COLLOQUIAL_MAP)) {
+    if (norm.includes(colKey)) {
+      matchedColloquialTags = tags;
+      colloquialLabel = colKey;
+      break;
+    }
+  }
+  
+  if (matchedColloquialTags) {
+    const suggestions = MEDICINES_DB.filter(d => 
+      matchedColloquialTags.some(tag => d.tags.includes(tag))
+    ).slice(0, 3);
+    
+    if (suggestions.length > 0) {
+      const listStr = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
+      return `Temos estas opções para ${colloquialLabel}:\n${listStr}\n\nQual você costuma tomar?`;
+    }
+  }
+
+  // 4. Check dynamic symptoms mapping
+  const symptoms = {
+    cabeca: { tag: 'cabeça', label: 'dor de cabeça' },
+    enxaqueca: { tag: 'enxaqueca', label: 'enxaqueca' },
+    cefaleia: { tag: 'cabeça', label: 'dor de cabeça' },
+    azia: { tag: 'azia', label: 'azia' },
+    queimacao: { tag: 'azia', label: 'queimação' },
+    refluxo: { tag: 'azia', label: 'refluxo' },
+    gastrite: { tag: 'azia', label: 'gastrite' },
+    estomago: { tag: 'azia', label: 'dor de estômago' },
+    gripe: { tag: 'gripe', label: 'gripe' },
+    resfriad: { tag: 'gripe', label: 'resfriado' },
+    coriza: { tag: 'gripe', label: 'coriza' },
+    espirro: { tag: 'gripe', label: 'espirros' },
+    garganta: { tag: 'garganta', label: 'dor de garganta' },
+    tosse: { tag: 'tosse', label: 'tosse' },
+    barriga: { tag: 'diarreia', label: 'dor de barriga' },
+    diarreia: { tag: 'diarreia', label: 'diarreia' },
+    intestino: { tag: 'diarreia', label: 'desconforto intestinal' },
+    enjoo: { tag: 'enjoo', label: 'enjoo' },
+    nausea: { tag: 'enjoo', label: 'náusea' },
+    vomito: { tag: 'enjoo', label: 'vômitos' },
+    colica: { tag: 'colica', label: 'cólica' },
+    febre: { tag: 'febre', label: 'febre' },
+    quente: { tag: 'febre', label: 'febre' },
+    muscular: { tag: 'muscular', label: 'dor muscular' },
+    costas: { tag: 'muscular', label: 'dor nas costas' },
+    corpo: { tag: 'dor', label: 'dor no corpo' },
+    alergia: { tag: 'alergia', label: 'alergia' },
+    rinite: { tag: 'alergia', label: 'rinite' },
+    micose: { tag: 'micose', label: 'micose' },
+    frieira: { tag: 'micose', label: 'frieira' },
+    laxante: { tag: 'laxante', label: 'prisão de ventre' }
+  };
+
+  for (const [key, info] of Object.entries(symptoms)) {
+    if (norm.includes(key)) {
+      const suggestions = MEDICINES_DB.filter(d => d.tags.includes(info.tag)).slice(0, 3);
+      if (suggestions.length > 0) {
+        const listStr = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
+        return `Nossa, ${info.label} é bem incômodo. Melhoras!||Temos estas opções para ajudar:\n${listStr}\n\nQual delas você prefere?`;
+      }
+    }
+  }
+
+  // 5. Global Command Answers
   if (norm.match(/(horario|aberto|funcionamento|que horas)/i)) {
     return "Funcionamos de segunda a sábado das 7h às 22h, e aos domingos das 8h às 18h. ⏰";
   }
@@ -1965,7 +996,7 @@ function handleIdleState(norm, rawMsg) {
     return "Medicamento comum precisa de receita simples. Antibiótico precisa de 2 vias (uma retida, entregamos no delivery). Tarja Preta e Roacutan só presencialmente na farmácia. 🚫";
   }
 
-  return "Desculpa, não entendi muito bem. Você pode me falar o nome do remédio ou me perguntar sobre preços e horários?";
+  return "Desculpa, não encontrei esse medicamento na nossa base. 🤔\nPode verificar se escreveu o nome certinho? Se precisar, a gente pode transferir pra um atendente humano verificar pra você.";
 }
 
 function performCalculationAndOffer(drug, dose, frequency, days, type) {
@@ -1974,16 +1005,29 @@ function performCalculationAndOffer(drug, dose, frequency, days, type) {
   if (type === 'gotas') {
     const totalDrops = dose * frequency * days;
     const mlNeeded = totalDrops / 20;
-    const bottlesNeeded = Math.ceil(mlNeeded / 20);
+    let bottleSize = 20;
+    const mlMatch = drug.presentation.match(/(\d+)\s*ml/i);
+    if (mlMatch) bottleSize = parseInt(mlMatch[1]);
+    const bottlesNeeded = Math.ceil(mlNeeded / bottleSize);
     quantityNeeded = bottlesNeeded;
   } else {
     const totalPills = dose * frequency * days;
-    const pillsPerBox = drug.unitPills || 20;
+    let pillsPerBox = 20;
+    const cpMatch = drug.presentation.match(/(\d+)\s*(comprimidos|capsulas|cps|envelopes|pastilhas)/i);
+    if (cpMatch) pillsPerBox = parseInt(cpMatch[1]);
     const boxesNeeded = Math.ceil(totalPills / pillsPerBox);
     quantityNeeded = boxesNeeded;
   }
 
-  state.pendingItem = { drug, quantity: quantityNeeded };
+  let price = drug.price;
+  let discountNotice = '';
+  if (state.discountPercent > 0 && !drug.isGeneric) {
+    const originalPrice = drug.price;
+    price = originalPrice * (1 - state.discountPercent / 100);
+    discountNotice = ` (de R$ ${originalPrice.toFixed(2)} por *R$ ${price.toFixed(2)}* com ${state.discountPercent}% desc. fidelidade)`;
+  }
+
+  state.pendingItem = { drug, quantity: quantityNeeded, finalPrice: price };
   state.simState = 'confirm_add_cart';
 
   let recipeMsg = '';
@@ -1999,13 +1043,10 @@ function performCalculationAndOffer(drug, dose, frequency, days, type) {
 
   let infoMsg = '';
   if (drug.activeIngredient) {
-    infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n• **Indicação:** ${drug.indication}\n• **Posologia sugerida:** ${drug.dosage}`;
-    if (drug.contraindications) {
-      infoMsg += `\n• **Importante:** ${drug.contraindications}`;
-    }
+    infoMsg = `||*Ficha do Medicamento:*\n• **Princípio Ativo:** ${drug.activeIngredient}\n• **Laboratório:** ${drug.manufacturer}\n⚠️ *Nota de Segurança:* ${drug.safetyNote}`;
   }
 
-  return `Pro tratamento completo de ${days} dias, você vai precisar de ${quantityNeeded} ${containerName} de ${drug.name}.||Fica R$ ${(quantityNeeded * drug.price).toFixed(2)} no total.${recipeMsg}${infoMsg}||Quer que eu adicione ao pedido?`;
+  return `Pro tratamento completo de ${days} dias, você vai precisar de ${quantityNeeded} ${containerName} de ${drug.name}.||Fica R$ ${(quantityNeeded * price).toFixed(2)} no total${discountNotice}.${recipeMsg}${infoMsg}||Quer que eu adicione ao pedido?`;
 }
 
 function handleConfirmBrandOrGeneric(norm) {
@@ -2017,12 +1058,7 @@ function handleConfirmBrandOrGeneric(norm) {
     return "Ocorreu um erro no fluxo do pedido. No que posso ajudar?";
   }
   
-  if (norm.match(/(generico|segundo|mais barato|outro|economizar|simil|2)/i)) {
-    const existing = MEDICINES_DB.find(d => d.name === pGeneric.drug.name);
-    if (!existing) {
-      MEDICINES_DB.push(pGeneric.drug);
-    }
-    
+  if (norm.match(/(generico|segundo|mais barato|outro|economizar|simil|2|sim|quero)/i)) {
     state.pendingItem = pGeneric;
     state.pendingGeneric = null;
     state.pendingBrand = null;
@@ -2032,7 +1068,8 @@ function handleConfirmBrandOrGeneric(norm) {
       ? (pGeneric.drug.recipeType === 'retida' ? '||Como é antibiótico, o entregador vai precisar recolher a receita original de duas vias na entrega. Você tem ela?' : '||Esse precisa de receita simples. A receita não fica retida, mas precisa estar válida.')
       : '';
       
-    const totalText = pGeneric.quantity > 1 ? ` R$ ${(pGeneric.drug.price * pGeneric.quantity).toFixed(2)} no total` : ` R$ ${pGeneric.drug.price.toFixed(2)}`;
+    const price = pGeneric.finalPrice || pGeneric.drug.price;
+    const totalText = pGeneric.quantity > 1 ? ` R$ ${(price * pGeneric.quantity).toFixed(2)} no total` : ` R$ ${price.toFixed(2)}`;
     return `Combinado, vamos levar o Genérico (${pGeneric.drug.name}). Fica${totalText}.${recipeMsg}||Posso colocar no carrinho?`;
   } else {
     state.pendingItem = pBrand;
@@ -2044,249 +1081,88 @@ function handleConfirmBrandOrGeneric(norm) {
       ? (pBrand.drug.recipeType === 'retida' ? '||Como é antibiótico, o entregador vai precisar recolher a receita original de duas vias na entrega. Você tem ela?' : '||Esse precisa de receita simples. A receita não fica retida, mas precisa estar válida.')
       : '';
       
-    const totalText = pBrand.quantity > 1 ? ` R$ ${(pBrand.drug.price * pBrand.quantity).toFixed(2)} no total` : ` R$ ${pBrand.drug.price.toFixed(2)}`;
-    return `Beleza, então vai ser o de marca mesmo (${pBrand.drug.name}). Fica${totalText}.${recipeMsg}||Posso colocar no carrinho?`;
-  }
-}
-
-function handleConfirmUpsell(norm) {
-  const pUpsell = state.pendingUpsell;
-  state.pendingUpsell = null;
-
-  if (norm.match(/(sim|pode|quero|adiciona|ok|confirm|positivo|isso|boa|1|aceito|quero)/i) && pUpsell) {
-    const existing = state.cart.find(item => item.drug.name === pUpsell.drug.name);
-    if (existing) {
-      existing.quantity += pUpsell.quantity;
-    } else {
-      state.cart.push(pUpsell);
-    }
-    
-    state.simState = 'waiting_delivery_method';
-    return `Adicionado! 🛒||Você prefere que a gente faça a entrega (delivery taxa de R$ 5,00) ou prefere retirar na nossa loja (grátis)?`;
-  } else {
-    state.simState = 'waiting_delivery_method';
-    return `Tudo bem!||Você prefere que a gente faça a entrega (delivery taxa de R$ 5,00) ou prefere retirar na nossa loja (grátis)?`;
-  }
-}
-
-function handleWaitingDeliveryMethod(norm) {
-  if (norm.match(/(retira|loja|buscar|presencial|pegar)/i)) {
-    state.deliveryMethod = 'Retirada';
-    state.deliveryAddress = 'Retirada presencial na loja física';
-    state.simState = 'waiting_payment';
-    return `Combinado! Você retira aqui na loja (Rua da Saúde, 500). Estará pronto em 30 min.||Qual vai ser a forma de pagamento? Aceitamos Pix, cartão ou dinheiro.`;
-  } else if (norm.match(/(entrega|delivery|entregam|receber|casa|endereco)/i)) {
-    state.deliveryMethod = 'Delivery';
-    state.simState = 'waiting_address';
-    return `Beleza! Me passa seu endereço completo com ponto de referência pra entrega, por favor?`;
-  } else {
-    return `Desculpa, não entendi. Você prefere que a gente faça a entrega (Delivery) ou quer retirar aqui na loja (Retirada)?`;
-  }
-}
-
-function handleConfirmAddCartState(norm) {
-  if (norm.match(/(sim|pode|quero|adiciona|ok|confirm|positivo|isso|boa|coloca|vai)/i)) {
-    if (state.pendingItemsList && state.pendingItemsList.length > 0) {
-      state.pendingItemsList.forEach(pItem => {
-        const existing = state.cart.find(item => item.drug.name === pItem.drug.name);
-        if (existing) {
-          existing.quantity += pItem.quantity;
-        } else {
-          state.cart.push(pItem);
-        }
-      });
-      state.pendingItemsList = [];
-    } else if (state.pendingItem) {
-      const existing = state.cart.find(item => item.drug.name === state.pendingItem.drug.name);
-      if (existing) {
-        existing.quantity += state.pendingItem.quantity;
-      } else {
-        state.cart.push(state.pendingItem);
-      }
-      state.pendingItem = null;
-    }
-    state.simState = 'more_items';
-    return "Adicionado! 🛒||Quer aproveitar e levar mais alguma coisa?";
-  } else {
-    state.pendingItem = null;
-    state.pendingItemsList = [];
-    state.simState = 'more_items';
-    return "Tudo bem, não adicionei.||Precisa de mais alguma coisa?";
-  }
-}
-
-function handleWaitingCalculationDays(norm) {
-  const daysMatch = norm.match(/(\d+)/);
-  if (!daysMatch) {
-    return "Não entendi a quantidade de dias. Por favor, me fale apenas o número de dias do tratamento (ex: 7 ou 10 dias).";
-  }
-
-  const days = parseInt(daysMatch[1]);
-  const calc = state.pendingCalculation;
-  if (!calc) {
-    state.simState = 'idle';
-    return "Opa, ocorreu um errinho no cálculo. Vamos começar de novo? Qual remédio você precisa?";
-  }
-
-  const response = performCalculationAndOffer(calc.drug, calc.dose, calc.frequency, days, calc.type);
-  state.pendingCalculation = null;
-  return response;
-}
-
-function handleMoreItemsState(norm, rawMsg) {
-  if (norm.match(/(so isso|nao|nada|finalizar|fechar|entregar|checkout|concluir)/i)) {
-    if (state.cart.length === 0) {
-      state.simState = 'idle';
-      return "Seu carrinho tá vazio! Qual medicamento você gostaria de pedir?";
-    }
-
-    // Verificar se já oferecemos upsell nesta sessão
-    if (!state.upsellOffered) {
-      state.upsellOffered = true;
-      
-      const hasAntigripal = state.cart.some(item => 
-        item.drug.name.toLowerCase().match(/(benegrip|cimegripe|resfenol)/i)
-      );
-      if (hasAntigripal) {
-        state.pendingUpsell = { 
-          drug: { name: 'Vitamina C Efervescente 1g', price: 14.90, category: 'MIP', needsRecipe: false, allowsDelivery: true, presentation: 'tubo com 10 comprimidos efervescentes', unitName: 'tubo' },
-          quantity: 1 
-        };
-        state.simState = 'confirm_upsell';
-        return "Vi que você pegou remédio pra gripe. Quer aproveitar e levar uma Vitamina C efervescente por R$ 14,90 pra ajudar na imunidade?";
-      }
-
-      const hasAnalgesico = state.cart.some(item => 
-        item.drug.name.toLowerCase().match(/(dipirona|tylenol|dorflex|advil|neosaldina)/i)
-      );
-      if (hasAnalgesico) {
-        state.pendingUpsell = { 
-          drug: { name: 'Termômetro Digital G-Tech', price: 19.90, category: 'MIP', needsRecipe: false, allowsDelivery: true, presentation: 'unidade', unitName: 'unidade' },
-          quantity: 1 
-        };
-        state.simState = 'confirm_upsell';
-        return "Quer aproveitar e levar um Termômetro Digital por R$ 19,90 pra acompanhar a temperatura?";
-      }
-    }
-
-    state.simState = 'waiting_delivery_method';
-    return "Combinado!||Você prefere que a gente entregue ou quer passar aqui pra retirar?";
-  }
-
-  state.simState = 'idle';
-  return handleIdleState(norm, rawMsg);
-}
-
-function handleWaitingAddressState(rawMsg) {
-  state.deliveryAddress = rawMsg.trim();
-  state.simState = 'waiting_payment';
-  return "Anotado! Qual vai ser a forma de pagamento? Aceitamos Pix, cartão ou dinheiro.";
-}
-
-function handleWaitingPaymentState(norm) {
-  let matched = '';
-  if (norm.match(/pix/i)) {
-    matched = 'Pix';
-  } else if (norm.match(/(cartao|credito|debito|maquininha)/i)) {
-    matched = 'Cartão';
-  } else if (norm.match(/(dinheiro|troco)/i)) {
-    matched = 'Dinheiro';
-  } else {
-    return "Desculpa, não entendi a forma de pagamento. Aceitamos Pix, cartão ou dinheiro. Qual prefere?";
-  }
-
-  state.paymentMethod = matched;
-  state.simState = 'waiting_confirm';
-
-  let subtotal = 0;
-  let itemsLines = '';
-  let containsAntibiotic = false;
-
-  state.cart.forEach(item => {
-    const itemTotal = item.drug.price * item.quantity;
-    subtotal += itemTotal;
-    itemsLines += ` • ${item.drug.name} - ${item.quantity}un - R$ ${itemTotal.toFixed(2)}\n`;
-    if (item.drug.category === 'Antibiótico') {
-      containsAntibiotic = true;
-    }
-  });
-
-  const isRetirada = state.deliveryMethod === 'Retirada';
-  const deliveryFee = isRetirada ? 0.00 : 5.00;
-  const total = subtotal + deliveryFee;
-
-  let antibioticNotice = '';
-  if (containsAntibiotic) {
-    if (isRetirada) {
-      antibioticNotice = `\n⚠️ *Aviso de Receita:* Como seu pedido possui antibiótico, você precisará trazer a receita original física (2 vias) para retenção no momento da retirada.\n`;
-    } else {
-      antibioticNotice = `\n⚠️ *Aviso de Receita:* Como seu pedido possui antibiótico, o entregador vai precisar recolher a receita original física (2 vias) na hora da entrega.\n`;
-    }
-  }
-
-  const deliveryText = isRetirada ? 'Retirada na loja' : 'Delivery';
-  const deliveryTime = isRetirada ? 'Pronto em 30 minutos' : '30 a 50 minutos';
-
-  const responseText = `📋 *Confirmando seu pedido:*
-
-*Itens:*
-${itemsLines}
-*Subtotal produtos:* R$ ${subtotal.toFixed(2)}
-*Taxa de entrega:* ${isRetirada ? 'Grátis' : 'R$ ' + deliveryFee.toFixed(2)}
-*Total:* R$ ${total.toFixed(2)}
-
-*Modalidade:* ${deliveryText}
-*Local/Endereço:* ${state.deliveryAddress}
-*Pagamento:* ${state.paymentMethod}
-*Previsão:* ${deliveryTime}
-${antibioticNotice}
-Tudo certo? Posso confirmar?`;
-
-  return responseText;
-}
-
-function handleWaitingConfirmState(norm) {
-  if (norm.match(/(sim|confirmo|pode|tudo certo|ok|confirmado|isso|positivo)/i)) {
-    const payment = state.paymentMethod;
-    const isRetirada = state.deliveryMethod === 'Retirada';
-    state.cart = [];
-    state.deliveryAddress = '';
-    state.paymentMethod = '';
-    state.deliveryMethod = '';
-    state.upsellOffered = false;
-    state.simState = 'idle';
-
-    if (isRetirada) {
-      if (payment === 'Pix') {
-        return "Pedido confirmado! 🎉 Estará pronto para retirada em 30 minutos.||Aqui está nossa chave Pix CNPJ: *12.345.678/0001-99* (Farmácia Sofia Ltda). Assim que fizer o pagamento, traga o comprovante ou nos envie aqui. Obrigado!";
-      }
-      return "Pedido confirmado! 🎉 Já estamos separando. Estará pronto para retirada em 30 minutos na Rua da Saúde, 500. Te esperamos!";
-    } else {
-      if (payment === 'Pix') {
-        return "Pedido confirmado! 🛵 Chega em cerca de 30 a 50 min.||Aqui está nossa chave Pix CNPJ: *12.345.678/0001-99* (Farmácia Sofia Ltda). Assim que fizer o pagamento, pode mandar o comprovante aqui. Obrigado!";
-      }
-      return "Pedido confirmado! 🛵 Já estamos preparando o envio. Chega na sua casa em cerca de 30 a 50 min. Obrigado pela preferência!";
-    }
-  } else if (norm.match(/(nao|cancelar|editar|alterar|mudar)/i)) {
-    state.cart = [];
-    state.deliveryAddress = '';
-    state.paymentMethod = '';
-    state.deliveryMethod = '';
-    state.upsellOffered = false;
-    state.simState = 'idle';
-    return "Pedido cancelado. Como posso ajudar com outra coisa?";
-  } else {
-    return "Não entendi sua resposta. Tudo certo com o resumo acima? Responda 'Sim' para confirmar o pedido, ou 'Não' para cancelar.";
+    const price = pBrand.finalPrice || pBrand.drug.price;
+    const totalText = pBrand.quantity > 1 ? ` R$ ${(price * pBrand.quantity).toFixed(2)} no total` : ` R$ ${price.toFixed(2)}`;
+    return `Beleza, então vai ser o de referência mesmo (${pBrand.drug.name}). Fica${totalText}.${recipeMsg}||Posso colocar no carrinho?`;
   }
 }
 
 // ============ WEBHOOK ============
-async function sendToWebhook(message, attempt = 0) {
+async function sendToWebhook(message, mediaType = 'text', fileName = '', attempt = 0) {
   if (CONFIG.simulationMode) {
-    // Simula atraso na resposta de rede
     await delay(600 + Math.random() * 400);
+    if (mediaType === 'image') {
+      return runSimulation('foto_receita_simulada');
+    }
+    if (mediaType === 'audio') {
+      return "Recebi seu áudio e já estou analisando...||Identifiquei que você precisa de Amoxicilina e Advil. Deseja adicionar ao carrinho?";
+    }
     return runSimulation(message);
   }
+
+  const timestamp = Math.floor(Date.now() / 1000);
+  const messageId = 'WEB' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 8).toUpperCase();
+  const remoteJid = '5500000000000@s.whatsapp.net';
+  const INSTANCE_NAME = 'minha-empresa-d4bdb5';
+  const USER_NAME = 'Cliente Web';
+
+  let messageContent = {};
+  let msgType = 'conversation';
+
+  if (mediaType === 'audio') {
+    msgType = 'audioMessage';
+    messageContent = {
+      audioMessage: {
+        url: message,
+        mimetype: 'audio/ogg'
+      }
+    };
+  } else if (mediaType === 'image') {
+    msgType = 'imageMessage';
+    messageContent = {
+      imageMessage: {
+        url: message,
+        caption: '',
+        mimetype: 'image/jpeg'
+      }
+    };
+  } else if (mediaType === 'document') {
+    msgType = 'documentMessage';
+    messageContent = {
+      documentMessage: {
+        url: message,
+        fileName: fileName || 'documento.pdf',
+        mimetype: 'application/pdf'
+      }
+    };
+  } else {
+    messageContent = {
+      conversation: message
+    };
+  }
+
+  const payload = {
+    event: 'messages.upsert',
+    instance: INSTANCE_NAME,
+    data: {
+      key: {
+        remoteJid: remoteJid,
+        fromMe: false,
+        id: messageId
+      },
+      pushName: USER_NAME,
+      status: 'DELIVERY_ACK',
+      message: messageContent,
+      messageType: msgType,
+      messageTimestamp: timestamp,
+      source: 'web',
+      conversationId: state.sessionId
+    },
+    sender: remoteJid,
+    server_url: window.location.origin,
+    apikey: 'web-client',
+    conversationId: state.sessionId
+  };
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
@@ -2295,26 +1171,34 @@ async function sendToWebhook(message, attempt = 0) {
     const res = await fetch(CONFIG.webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: message,
-        session_id: state.sessionId,
-      }),
+      body: JSON.stringify(payload),
       signal: controller.signal,
     });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const data = await res.json();
-
-    if (Array.isArray(data)) {
-      return data[0]?.message || data[0]?.output || data[0]?.text || JSON.stringify(data[0]);
+    let data;
+    const rawText = await res.text();
+    try {
+      data = JSON.parse(rawText);
+    } catch {
+      throw new Error('Resposta inválida do servidor');
     }
-    return data.message || data.output || data.text || data.response || JSON.stringify(data);
+
+    const extracted = Array.isArray(data)
+      ? (data[0]?.message || data[0]?.output || data[0]?.text)
+      : (data.message || data.output || data.text || data.response);
+
+    if (!extracted || typeof extracted !== 'string' || extracted.trim() === '') {
+      throw new Error('Sem resposta da Sofia');
+    }
+
+    return extracted;
 
   } catch (err) {
     if (attempt < CONFIG.maxRetries) {
       await delay(CONFIG.retryDelay);
-      return sendToWebhook(message, attempt + 1);
+      return sendToWebhook(message, mediaType, fileName, attempt + 1);
     }
     throw err;
   } finally {

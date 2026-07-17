@@ -1303,3 +1303,24 @@ body {
   }
 }
 
+.btn-mic {
+  color: var(--wa-icon) !important;
+  transition: transform 0.15s ease, color 0.15s ease !important;
+}
+
+.btn-mic.recording {
+  color: #ef4444 !important;
+  animation: pulseRecording 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseRecording {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-mic:active {
+  transform: scale(0.92);
+}
+
+
