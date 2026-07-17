@@ -5,8 +5,10 @@
  */
 
 // ============ CONFIG ============
+// simulationMode: true  → funciona sem n8n (GitHub Pages / demo)
+// simulationMode: false → envia para o webhook n8n real
 const CONFIG = {
-  simulationMode: false, // Se true, simula localmente no navegador. Se false, envia para o webhook n8n.
+  simulationMode: true,
   webhookUrl: 'https://n8n.srv1181762.hstgr.cloud/webhook/sofia/chat',
   sessionKey: 'farmacia_session_id',
   historyKey: 'farmacia_history',
@@ -107,6 +109,10 @@ function init() {
   setupEventListeners();
   renderSavedMessages();
   handleResize();
+
+  // Garantir que o micBtn esteja visível ao carregar (sendBtn começa hidden)
+  if (dom.micBtn) dom.micBtn.style.display = 'flex';
+  if (dom.sendBtn) dom.sendBtn.style.display = 'none';
 
   // If no messages yet, show initial bot greeting
   if (state.messages.length === 0) {
@@ -1169,15 +1175,28 @@ async function sendToWebhook(message, mediaType = 'text', fileName = '', attempt
       throw new Error('Resposta inválida do servidor');
     }
 
-    const extracted = Array.isArray(data)
-      ? (data[0]?.message || data[0]?.output || data[0]?.text)
-      : (data.message || data.output || data.text || data.response);
+    // Extração tolerante a múltiplos formatos de resposta do n8n/Evolution API
+    let extracted = null;
+    if (Array.isArray(data)) {
+      const first = data[0];
+      extracted = first?.message || first?.output || first?.text || first?.response ||
+                  first?.data?.message || first?.content;
+    } else if (typeof data === 'object' && data !== null) {
+      extracted = data.message || data.output || data.text || data.response ||
+                  data.data?.message || data.content ||
+                  // Evolution API format: data.data.message.conversation
+                  data.data?.data?.message?.conversation ||
+                  data.body?.message;
+    } else if (typeof data === 'string') {
+      extracted = data;
+    }
 
     if (!extracted || typeof extracted !== 'string' || extracted.trim() === '') {
+      console.warn('[Sofia] Resposta inesperada do webhook:', JSON.stringify(data).slice(0, 200));
       throw new Error('Sem resposta da Sofia');
     }
 
-    return extracted;
+    return extracted.trim();
 
   } catch (err) {
     if (attempt < CONFIG.maxRetries) {
