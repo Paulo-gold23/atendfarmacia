@@ -1,20 +1,4 @@
-/**
- * Farmacia WhatsApp Frontend — app.js
- * Handles chat logic, local simulation, webhook integration, and UI interactions.
- */
 
-// ============ CONFIG ============
-const CONFIG = {
-  simulationMode: false, // Se true, simula localmente no navegador. Se false, envia para o webhook n8n.
-  webhookUrl: 'https://n8n.srv1181762.hstgr.cloud/webhook/sofia/chat',
-  sessionKey: 'farmacia_session_id',
-  historyKey: 'farmacia_history',
-  soundKey: 'farmacia_sound',
-  maxRetries: 2,
-  retryDelay: 2000,
-
-  // Timing constants (ms)
-  greetingInitialDelay: 800,
 /**
  * Farmacia WhatsApp Frontend — app.js
  * Handles chat logic, local simulation, webhook integration, and UI interactions.
