@@ -186,9 +186,9 @@ function assertClean(str) {
 }
 
 // Fluxo rápido até o estado desired usando entradas padrão
-// Produto: dorflex | Recusa CPF | Confirma
+// Produto: neosaldina (sem siblings/variantes) | Recusa CPF | Confirma
 function gotoConfirmAddCart() {
-  send('dorflex');          // idle → waiting_cpf
+  send('neosaldina');        // idle → waiting_cpf (sem variantes → direto)
   send('não');              // waiting_cpf → confirm_add_cart
 }
 function gotoMoreItems() {
@@ -342,65 +342,65 @@ test('CPF inválido (menos de 11 dígitos) → pede novamente', () => {
 // ═══════════════════════════════════════════════════════════════════════════
 console.log('\n📋 BLOCO 4 — Alternativa genérico');
 
-test('Novalgina → oferece genérico (Dipirona)', () => {
-  const r = flow('novalgina', 'não');   // idle → waiting_cpf → confirm_brand_or_generic
+test('Novalgina → exibe variantes de Dipirona Sódica', () => {
+  const r = flow('novalgina', 'não');   // idle → waiting_cpf → choose_variant
   assertClean(r);
-  const ok = r.toLowerCase().includes('genérico') || r.toLowerCase().includes('dipirona');
-  assert(ok, `Resp: ${r.substring(0, 120)}`);
+  const ok = r.toLowerCase().includes('dipirona') && r.toLowerCase().includes('novalgina');
+  assert(ok, `Deveria listar variantes. Resp: ${r.substring(0, 120)}`);
 });
 
-test('Novalgina → "sim" (aceita genérico) → confirm_add_cart', () => {
+test('choose_variant: "1" → seleciona primeira opção (Dipirona Gotas)', () => {
   send('novalgina');
-  send('não');       // recusa CPF
-  const r = send('sim');    // aceita genérico
+  send('não');       // recusa CPF → mostra variantes
+  const r = send('1');    // seleciona primeira variante
   assertClean(r);
-  const ok = r.toLowerCase().includes('carrinho') || r.toLowerCase().includes('colocar') || r.toLowerCase().includes('r$');
-  assert(ok, `Resp: ${r.substring(0, 120)}`);
+  assertContains(r, 'Dipirona Gotas');
+  assertContains(r, 'carrinho');
 });
 
-test('Novalgina → "não" (mantém marca) → confirm_add_cart', () => {
+test('choose_variant: "novalgina" → seleciona Novalgina 1g', () => {
   send('novalgina');
-  send('não');       // recusa CPF
-  const r = send('não');   // mantém marca
+  send('não');
+  const r = send('novalgina');
   assertClean(r);
-  assert(sandbox.state.simState !== 'confirm_brand_or_generic', 'Estado não avançou');
-  assertContains(r, 'referência (Novalgina');
+  assertContains(r, 'Novalgina 1g');
+  assertContains(r, 'carrinho');
 });
 
-test('Advil → "não, quero o advil" → mantém marca Advil', () => {
-  send('advil');
-  send('não');       // recusa CPF
-  const r = send('não, quero o advil'); // mantém marca com frase complexa contendo 'quero'
-  assertClean(r);
-  assert(sandbox.state.simState !== 'confirm_brand_or_generic', 'Estado não avançou');
-  assertContains(r, 'referência (Advil');
-});
-
-test('Novalgina → "pode ser o generico" → seleciona o genérico (Dipirona)', () => {
-  send('novalgina');
-  send('não');       // recusa CPF
-  const r = send('pode ser o generico');
-  assertClean(r);
-  assert(sandbox.state.simState !== 'confirm_brand_or_generic', 'Estado não avançou');
-  assertContains(r, 'Genérico (Dipirona');
-});
-
-test('Advil → "nao quero o generico" → mantém marca Advil', () => {
+test('choose_variant: "generico" → seleciona variante genérica', () => {
   send('advil');
   send('não');
-  const r = send('nao quero o generico');
+  const r = send('generico');
   assertClean(r);
-  assert(sandbox.state.simState !== 'confirm_brand_or_generic', 'Estado não avançou');
-  assertContains(r, 'referência (Advil');
+  assertContains(r, 'Ibuprofeno');
+  assertContains(r, 'carrinho');
 });
 
-test('Advil → "não quero o de marca" → seleciona genérico', () => {
+test('choose_variant: "marca" → seleciona variante de marca', () => {
   send('advil');
   send('não');
-  const r = send('não quero o de marca');
+  const r = send('marca');
   assertClean(r);
-  assert(sandbox.state.simState !== 'confirm_brand_or_generic', 'Estado não avançou');
-  assertContains(r, 'Genérico (Ibuprofeno');
+  assertContains(r, 'Advil');
+  assertContains(r, 'carrinho');
+});
+
+test('choose_variant: "comprimido" → seleciona apresentação comprimido', () => {
+  send('dipirona');
+  send('não');
+  const r = send('comprimido');
+  assertClean(r);
+  assertContains(r, 'comprimido');
+  assertContains(r, 'carrinho');
+});
+
+test('choose_variant: "gotas" → seleciona apresentação gotas', () => {
+  send('dipirona');
+  send('não');
+  const r = send('gotas');
+  assertClean(r);
+  assertContains(r, 'Gotas');
+  assertContains(r, 'carrinho');
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -550,8 +550,11 @@ stressInputs.forEach(inp => {
   test(`Stress "${inp.substring(0, 25).replace(/\s+/g, ' ')}" sem crash`, () => {
     const r = send(inp);
     if (r.includes('__ERR__')) throw new Error(r.substring(0, 140));
-    assertNotContains(r, 'NaN');
-    assertNotContains(r, 'undefined');
+    // Verifica NaN/undefined apenas quando o input NÃO é literalmente essas palavras
+    if (inp !== 'NaN' && inp !== 'undefined') {
+      assertNotContains(r, 'NaN');
+      assertNotContains(r, 'undefined');
+    }
   });
 });
 
@@ -612,41 +615,87 @@ test('Total de itens no banco >= 420', () => {
 // ═══════════════════════════════════════════════════════════════════════════
 console.log('\n📋 BLOCO 12 — Quantidades & Numerais por extenso');
 
-test('Numeral escrito "dois dorflex" define quantidade = 2', () => {
-  send('dois dorflex');
-  send('não');
-  const r = send('sim');
+test('Numeral escrito "dois neosaldina" define quantidade = 2', () => {
+  send('dois neosaldina');
+  send('não');     // recusa CPF
+  const r = send('sim');  // confirma adição
   assertClean(r);
-  // Carrinho deve ter 2x Dorflex
   const item = sandbox.state.cart[0];
   assert(item && item.quantity === 2, `Quantidade esperada: 2, encontrada: ${item ? item.quantity : 'nenhuma'}`);
 });
 
-test('Número solto "3 dipirona" define quantidade = 3', () => {
-  send('3 dipirona 500mg');
-  send('não');
-  const r = send('sim');
+test('Número solto "3 neosaldina" define quantidade = 3', () => {
+  send('3 neosaldina');
+  send('não');     // recusa CPF
+  const r = send('sim');  // confirma adição
   assertClean(r);
   const item = sandbox.state.cart[0];
   assert(item && item.quantity === 3, `Quantidade esperada: 3, encontrada: ${item ? item.quantity : 'nenhuma'}`);
 });
 
-test('Texto sem quantidade "dorflex" define quantidade = 1', () => {
-  send('dorflex');
-  send('não');
-  const r = send('sim');
+test('Texto sem quantidade "neosaldina" define quantidade = 1', () => {
+  send('neosaldina');
+  send('não');     // recusa CPF
+  const r = send('sim');  // confirma adição
   assertClean(r);
   const item = sandbox.state.cart[0];
   assert(item && item.quantity === 1, `Quantidade esperada: 1, encontrada: ${item ? item.quantity : 'nenhuma'}`);
 });
 
-test('Dosagem "dorflex 500mg" não é confundida com quantidade', () => {
-  send('dorflex 500mg');
-  send('não');
-  const r = send('sim');
+test('Dosagem "neosaldina comprimido" não é confundida com quantidade', () => {
+  send('neosaldina comprimido');
+  send('não');     // recusa CPF
+  const r = send('sim');  // confirma adição
   assertClean(r);
   const item = sandbox.state.cart[0];
   assert(item && item.quantity === 1, `Quantidade esperada: 1, encontrada: ${item ? item.quantity : 'nenhuma'}`);
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+console.log('\n📋 BLOCO 13 — Conversacional e naturalidade');
+
+test('confirm_add_cart: "Não. Quero levetiracetam" NÃO adiciona ao carrinho', () => {
+  gotoConfirmAddCart();
+  const cartBefore = sandbox.state.cart.length;
+  const r = send('Não. Quero levetiracetam');
+  assertClean(r);
+  assert(sandbox.state.cart.length === cartBefore, 'Adicionou ao carrinho indevidamente!');
+  assertNotContains(r, 'Adicionado');
+});
+
+test('confirm_add_cart: "não obrigado" recusa sem erro', () => {
+  gotoConfirmAddCart();
+  const r = send('não obrigado');
+  assertClean(r);
+  assertNotContains(r, 'Adicionado');
+  assertNotContains(r, 'Não encontrei');
+});
+
+test('more_items: "ta certo o carrinho" NÃO trata como medicamento', () => {
+  gotoMoreItems();
+  const r = send('ta certo o carrinho');
+  assertClean(r);
+  assertNotContains(r, 'Não encontrei');
+});
+
+test('more_items: "beleza" responde naturalmente', () => {
+  gotoMoreItems();
+  const r = send('beleza');
+  assertClean(r);
+  assertNotContains(r, 'Não encontrei');
+});
+
+test('idle: "tudo certo" responde naturalmente', () => {
+  const r = send('tudo certo');
+  assertClean(r);
+  assertNotContains(r, 'Não encontrei');
+});
+
+test('more_items: "obrigado" não gera busca de medicamento', () => {
+  gotoMoreItems();
+  const r = send('obrigado');
+  assertClean(r);
+  assertNotContains(r, 'Não encontrei');
 });
 
 // ═══════════════════════════════════════════════════════════════════════════

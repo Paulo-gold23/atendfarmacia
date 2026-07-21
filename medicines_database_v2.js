@@ -1,5 +1,5 @@
 // medicines_database.js
-// Gerado em: 20/07/2026, 15:53:31
+// Gerado em: 21/07/2026, 14:22:33
 // Original: 423 | Adicionados: 0 | Total: 423
 const MEDICINES_DB = [
   {
