@@ -23,3 +23,7 @@ desktop.ini
 # Logs
 *.log
 npm-debug.log*
+
+# Backups
+medicines_database_backup_*.js
+
