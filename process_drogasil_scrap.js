@@ -10,7 +10,10 @@
 const fs   = require('fs');
 const path = require('path');
 
-const SCRAP_FILE  = path.join(__dirname, 'docs', 'drogasil-2026-07-28.json');
+const inputParam = process.argv[2];
+const latestFile = path.join(__dirname, 'docs', 'drogasil-latest.json');
+const defaultFile = path.join(__dirname, 'docs', 'drogasil-2026-07-28.json');
+const SCRAP_FILE = inputParam ? path.resolve(inputParam) : (fs.existsSync(latestFile) ? latestFile : defaultFile);
 const DB_FILE     = path.join(__dirname, 'medicines_database.js');
 const DB_V2_FILE  = path.join(__dirname, 'medicines_database_v2.js');
 const APP_V8_FILE = path.join(__dirname, 'app_v8.js');

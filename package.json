@@ -1,4 +1,11 @@
 {
+  "name": "atendimento-project",
+  "version": "1.0.0",
+  "scripts": {
+    "scrape": "node scraper_easy_automated.js",
+    "process-scrap": "node process_drogasil_scrap.js",
+    "update-db": "node run_pipeline.js"
+  },
   "devDependencies": {
     "playwright": "^1.61.1"
   },

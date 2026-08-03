@@ -1,6 +1,6 @@
 // medicines_database.js
-// Gerado automaticamente via process_drogasil_scrap.js em: 28/07/2026, 15:45:46
-// Original: 423 | Atualizados: 51 | Adicionados: 1691 | Total: 2114
+// Gerado automaticamente via process_drogasil_scrap.js em: 28/07/2026, 17:17:16
+// Original: 2114 | Atualizados: 1742 | Adicionados: 0 | Total: 2114
 
 const MEDICINES_DB = [
   {
@@ -10403,7 +10403,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 125mg 20 cápsulas Medley Genérico",
@@ -10431,7 +10431,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Estéril Não Aderente 10 Unidades",
@@ -10459,7 +10459,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 20mg 30 comprimidos EMS Genérico",
@@ -10488,7 +10488,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Epocler 100mg/ml + 50mg/ml + 10mg/ml Sabor Abacaxi 1 Flaconete 10ml",
@@ -10519,7 +10519,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato Desvenlafaxina 50mg 30 comprimidos Eurofarma Genérico",
@@ -10548,7 +10548,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 75mg Sabor Cereja Gotas 15ml Medley Genérico",
@@ -10579,7 +10579,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuprofeno 400mg 10 cápsulas Medley Genérico",
@@ -10607,7 +10607,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atenolol 25mg 30 comprimidos Medley Genérico",
@@ -10635,7 +10635,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 20mg 10 comprimidos EMS Genérico",
@@ -10662,7 +10662,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 750mg 20 comprimidos União Química Genérico",
@@ -10691,7 +10691,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 20mg 30 comprimidos Eurofarma Genérico",
@@ -10720,7 +10720,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xantinon Complex Acetilracemetionina 40mg + Citrato de colina 53mg + Betaína 50mg Flaconete 10ml",
@@ -10755,7 +10755,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Composto Butilbrometo de Escopolamina 10mg + Dipirona Sódica 250mg 20 comprimidos",
@@ -10788,7 +10788,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 10mg 30 Comprimidos Althaia Genérico",
@@ -10817,7 +10817,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Tradicional Pó Efervescente 5g 2 envelopes",
@@ -10845,7 +10845,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mounjaro Tirzepatida 7,5mg Solução Injetável 0,5ml + 4 Canetas Aplicadoras",
@@ -10875,7 +10875,7 @@ const MEDICINES_DB = [
       "aplicadoras"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 200mg 30 comprimidos Cimed Genérico",
@@ -10903,7 +10903,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 100mg 30 comprimidos Biosintética Genérico",
@@ -10933,7 +10933,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alopurinol 100mg Medley 30 comprimidos - Genérico",
@@ -10961,7 +10961,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atorvastatina Cálcica 40mg 30 comprimidos EMS Genérico",
@@ -10989,7 +10989,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Enalapril 10mg 30 comprimidos Cimed Genérico",
@@ -11019,7 +11019,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Tramadol 50mg 10 cápsulas EMS Genérico",
@@ -11048,7 +11048,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 30 comprimidos Eurofarma Genérico",
@@ -11075,7 +11075,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico ADV Farma 500ml",
@@ -11103,7 +11103,7 @@ const MEDICINES_DB = [
       "500ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Dipirona 1g 10 comprimidos",
@@ -11129,7 +11129,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 50mg 8 comprimidos Prati Donaduzzi Genérico",
@@ -11160,7 +11160,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 25mg 30 comprimidos Biolab Genérico",
@@ -11190,7 +11190,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Loperamida 2mg 12 comprimidos Sandoz Genérico",
@@ -11219,7 +11219,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Loratadina 10mg 12 comprimidos Neo Química Genérico",
@@ -11247,7 +11247,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Domperidona 10mg 60 comprimidos EMS Genérico",
@@ -11274,7 +11274,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Utrogestan Progesterona 100mg 30 cápsulas",
@@ -11301,7 +11301,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 10mg 30 comprimidos revestidos Cimed Genérico",
@@ -11332,7 +11332,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dramin B6 Dimenidrinato 50mg + Vitamina B6 10mg 30 comprimidos",
@@ -11362,7 +11362,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ezetimiba 10mg 30 comprimidos Althaia Genérico",
@@ -11390,7 +11390,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naridrin Nafazolina 1mg + Mepiramina 0,2mg + Pantotenol 5mg Solução Nasal 30ml",
@@ -11420,7 +11420,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esomeprazol Magnésico 40mg 28 comprimidos Ranbaxy Genérico",
@@ -11449,7 +11449,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Font D 50.000UI 4 comprimidos",
@@ -11476,7 +11476,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Jardiance Empagliflozina 25mg 30 comprimidos",
@@ -11503,7 +11503,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg 1 comprimido mastigável Prati Donaduzzi Genérico",
@@ -11533,7 +11533,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Isotretinoina 20mg 30 cápsulas Althaia Genérico",
@@ -11561,7 +11561,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Enalapril 20mg 30 Comprimidos EMS Genérico",
@@ -11590,7 +11590,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick VapoRub Descongestionante Pomada 12g",
@@ -11618,7 +11618,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Wegovy Semaglutida 2,4mg Solução Injetável 3ml + 4 agulhas",
@@ -11647,7 +11647,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg 3 comprimidos Prati Donaduzzi Genérico",
@@ -11676,7 +11676,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex Analgésico e Relaxante Muscular 50 comprimidos",
@@ -11704,7 +11704,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diad Levonorgestrel 1,5mg 1 comprimido",
@@ -11731,7 +11731,7 @@ const MEDICINES_DB = [
       "comprimido"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gabapentina 300mg 30 cápsulas Prati Donaduzzi Genérico",
@@ -11760,7 +11760,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Imosec Cloridrato de Loperamida 2mg 12 comprimidos",
@@ -11788,7 +11788,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desloratadina 5mg 10 comprimidos Biosintética Genérico",
@@ -11815,7 +11815,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Estéril Cremer com 10 unidades",
@@ -11843,7 +11843,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexametasona 4mg 10 comprimidos EMS Genérico",
@@ -11869,7 +11869,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 100mg 30 comprimidos Teuto Genérico",
@@ -11899,7 +11899,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Paroxetina 20mg 30 comprimidos Medley Genérico",
@@ -11929,7 +11929,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 50mg 30 comprimidos Neo Química Genérico",
@@ -11959,7 +11959,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Pyrena Paracetamol 500mg/5g Camomila e Erva-Cidreira Pó para Solução Oral 5g",
@@ -11993,7 +11993,7 @@ const MEDICINES_DB = [
       "oral"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metformina 850mg 30 comprimidos Prati Donaduzzi Genérico",
@@ -12024,7 +12024,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 5mg 30 comprimidos EMS Genérico",
@@ -12051,7 +12051,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Loratadina 10mg 12 comprimidos Cimed Genérico",
@@ -12079,7 +12079,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 875mg + Clavulanato de Potássio 125mg 14 comprimidos EMS Genérico",
@@ -12109,7 +12109,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Supositório de Glicerina Granado Adulto 12 Supositórios",
@@ -12137,7 +12137,7 @@ const MEDICINES_DB = [
       "supositorios"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Espironolactona 25mg 30 comprimidos EMS Genérico",
@@ -12164,7 +12164,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluconazol 150mg 2 cápsulas Medley Genérico",
@@ -12192,7 +12192,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nasonex Furoato de Mometasona 50mcg Suspensão Nasal 120 doses",
@@ -12223,7 +12223,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aradois Losartana Potássica 50mg 30 comprimidos",
@@ -12252,7 +12252,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Pyrena Paracetamol 500mg/5g Maçã e Canela Pó para Solução Oral 5g",
@@ -12285,7 +12285,7 @@ const MEDICINES_DB = [
       "oral"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ambroxol 30mg/5ml xarope 120ml Aché Biosintética Genérico",
@@ -12317,7 +12317,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Avamys Spray Nasal 120 doses",
@@ -12344,7 +12344,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Neopiridin Sabor Menta 12 unidades",
@@ -12372,7 +12372,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Dipirona 1g 20 comprimidos",
@@ -12398,7 +12398,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Naratriptana 2,5mg 4 comprimidos EMS Genérico",
@@ -12426,7 +12426,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benegrip Dipirona Monoidratada 500mg + Maleato de Clorfeniramina 2mg + Cafeína 30mg 6 comprimidos",
@@ -12459,7 +12459,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ivermectina 6mg 4 comprimidos Germed Genérico",
@@ -12486,7 +12486,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemitartarato de Zolpidem 10mg 30 comprimidos Sandoz Genérico",
@@ -12516,7 +12516,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sumaxpro Succinato de Sumatriptana 50mg + Naproxeno Sódico 500mg 2 comprimidos",
@@ -12548,7 +12548,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cefadroxila 500mg 8 cápsulas EMS Genérico",
@@ -12575,7 +12575,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 50mg 30 comprimidos Eurofarma Genérico",
@@ -12605,7 +12605,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 75mcg 30 comprimidos",
@@ -12634,7 +12634,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Álcool Etílico 70% Antisséptico 50ml",
@@ -12662,7 +12662,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico Cloreto de Sódio 0,9% Needs 10 Ampolas de 5ml",
@@ -12692,7 +12692,7 @@ const MEDICINES_DB = [
       "ampolas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 500mg 10 comprimidos Prati Donaduzzi Genérico",
@@ -12722,7 +12722,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 125mg 10 cápsulas Cimed Genérico",
@@ -12750,7 +12750,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antialérgico Allegra Pediátrico Cloridrato de Fexofenadina 6mg/ml Suspensão Oral 60ml com Seringa",
@@ -12783,7 +12783,7 @@ const MEDICINES_DB = [
       "seringa"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Torsilax Diclofenaco Sódico 50mg + Carisoprodol 125mg + Paracetamol 300mg + Cafeína 30mg 12 comprimidos",
@@ -12818,7 +12818,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo Salonpas Grande 4 unidades",
@@ -12845,7 +12845,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 1g 10 comprimidos Neo Química Genérico",
@@ -12873,7 +12873,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Magnésia Bisurada Sabor Menta 10 pastilhas",
@@ -12901,7 +12901,7 @@ const MEDICINES_DB = [
       "pastilhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex Analgésico e Relaxante Muscular 36 comprimidos",
@@ -12929,7 +12929,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 15mg 30 comprimidos EMS Genérico",
@@ -12958,7 +12958,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 40mg/ml Xarope Sabor Framboesa 120ml EMS Genérico",
@@ -12988,7 +12988,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Donaren Cloridrato de Trazodona 50mg 60 comprimidos",
@@ -13017,7 +13017,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 100mcg 30 comprimidos",
@@ -13046,7 +13046,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Stilgrip Paracetamol 400mg + Cloridrato Fenillefrina 4mg + Maleato de Clorfeniramina 4mg Sabor Mel e Limão Pó para Solução Oral 5g",
@@ -13081,7 +13081,7 @@ const MEDICINES_DB = [
       "oral"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Forxiga Dapagliflozina 10mg 30 comprimidos",
@@ -13108,7 +13108,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 2mg/5ml + Betametasona 0,25mg/5ml Xarope 120ml Teuto Genérico",
@@ -13140,7 +13140,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato Desvenlafaxina 100mg 30 comprimidos Medley Genérico",
@@ -13169,7 +13169,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável BD Plastipak 10ml",
@@ -13197,7 +13197,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kóide D Maleato de Dexclorfeniramina 2mg + Betametasona 0,25mg/5ml Xarope 120ml",
@@ -13227,7 +13227,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levonorgestrel 1,5mg 1 comprimido Cimed Genérico",
@@ -13254,7 +13254,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Systen Conti Estradiol 50mcg/dia + Acetato de Noretisterona 170mcg/dia 8 Adesivos Transdérmicos",
@@ -13287,7 +13287,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexilant Dexlansoprazol 60mg 30 cápsulas",
@@ -13314,7 +13314,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cefaliv Mesilato de Di-Hidroergotamina 1mg + Dipirona Monoidratada 350mg + Cafeína 100mg 12 comprimidos",
@@ -13347,7 +13347,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Qlaira 3mg + 2mg 28 comprimidos",
@@ -13372,7 +13372,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "AAS Protect Ácido Acetilsalicílico 100mg 30 comprimidos",
@@ -13401,7 +13401,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Indapamida 1,5mg 30 comprimidos EMS Genérico",
@@ -13427,7 +13427,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 10mg 30 comprimidos Cimed Genérico",
@@ -13456,7 +13456,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omeprazol 20mg 56 cápsulas Cimed Genérico",
@@ -13484,7 +13484,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Torsilax Diclofenaco Sódico 50mg + Carisoprodol 125mg + Paracetamol 300mg + Cafeína 30mg 30 comprimidos",
@@ -13519,7 +13519,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 0,4mg/ml + Betametasona 0,05mg/ml Xarope 120ml Cimed Genérico",
@@ -13551,7 +13551,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sonridor Caf Paracetamol 500mg + Cafeína 65mg 4 comprimidos efervescentes",
@@ -13582,7 +13582,7 @@ const MEDICINES_DB = [
       "efervescentes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atenolol 50mg 30 comprimidos Sandoz Genérico",
@@ -13610,7 +13610,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 50mg Creme 10g Cimed Genérico",
@@ -13638,7 +13638,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mounjaro Tirzepatida 10mg Solução Injetável 0,5ml + 4 Canetas Aplicadoras",
@@ -13668,7 +13668,7 @@ const MEDICINES_DB = [
       "aplicadoras"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sinvastatina 20mg 30 Comprimidos Cimed Genérico",
@@ -13696,7 +13696,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilhas para Garganta Strepsils Mel e Limão 16 Unidades",
@@ -13725,7 +13725,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neolefrin Paracetamol 800mg + Cloridrato Fenillefrina 20mg + Maleato de Carbinoxamina 4mg 20 comprimidos",
@@ -13757,7 +13757,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 1mg 30 comprimidos Medley Genérico",
@@ -13784,7 +13784,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitacid Tretinoína 0,25mg/g Gel 25g",
@@ -13811,7 +13811,7 @@ const MEDICINES_DB = [
       "25mg"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nasoar 0,9% Refil Granulado para Solução Nasal 30 envelopes",
@@ -13840,7 +13840,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Jardiance Empagliflozina 10mg 30 comprimidos",
@@ -13867,7 +13867,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 25mg 30 comprimidos Neo Química Genérico",
@@ -13897,7 +13897,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ondansetrona 4mg Sabor Menta 10 comprimidos Althaia Genérico",
@@ -13928,7 +13928,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azitromicina Di-Hidratada 500mg 5 comprimidos Aché Genérico",
@@ -13958,7 +13958,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Decongex Plus Maleato de Bronfeniramina 12mg + Cloridrato Fenillefrina 15mg 12 comprimidos",
@@ -13991,7 +13991,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Laxante Dulcolax 5mg 20 comprimidos",
@@ -14017,7 +14017,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 1mg/ml Solução Oral 30ml Nova Química Genérico",
@@ -14047,7 +14047,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Asparte Fiasp Flextouch 100U/ml Solução Injetável 1 Sistema de Aplicação de 3ml Geladeira",
@@ -14081,7 +14081,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 75mg/ml Sabor Cereja Gotas 15ml Cimed Genérico",
@@ -14112,7 +14112,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aripiprazol 10mg 30 comprimidos Sandoz Genérico",
@@ -14140,7 +14140,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Composto 10mg + 250mg Blister - 4 Comprimidos",
@@ -14169,7 +14169,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 100mg 30 comprimidos Eurofarma Genérico",
@@ -14199,7 +14199,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Extrato de Própolis Aquoso Propomax Sem Álcool 30ml",
@@ -14229,7 +14229,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 40mg/ml Suspensão Oral 10ml Prati Donaduzzi Genérico",
@@ -14260,7 +14260,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 62,5mcg 30 comprimidos",
@@ -14289,7 +14289,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 30 comprimidos Medley Genérico",
@@ -14316,7 +14316,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 25mcg 30 comprimidos",
@@ -14345,7 +14345,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Allexofedrin Cloridrato de Fexofenadina 120mg 10 comprimidos",
@@ -14374,7 +14374,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Não Estéril 10 Unidades",
@@ -14401,7 +14401,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuprofeno 100mg/ml Cimed Suspensão Oral Sabor Tutti-Frutti 20ml",
@@ -14433,7 +14433,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pote Coletor Universal 70ml Needs 1 Unidade",
@@ -14463,7 +14463,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Espironolactona 100mg 30 Comprimidos EMS Genérico",
@@ -14490,7 +14490,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Drospirenona 3mg + Etinilestradiol 0,03mg 21 comprimidos EMS Genérico",
@@ -14518,7 +14518,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rinosoro Jet 0,9% Descongestionante Spray Jato Contínuo 100ml",
@@ -14548,7 +14548,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oestrogel 0,6mg Gel 80g + Válvula Dosadora",
@@ -14574,7 +14574,7 @@ const MEDICINES_DB = [
       "dosadora"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Lantus Solostar 100U/ml Solulão Injetável 1 Caneta Preenchida Descartável de 3ml Geladeira",
@@ -14608,7 +14608,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 600mg Laranja bwell 16 Envelopes com 5g cada",
@@ -14637,7 +14637,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 10mg 30 Comprimidos Medley Genérico",
@@ -14666,7 +14666,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 1g 20 comprimidos Prati Donaduzzi Genérico",
@@ -14695,7 +14695,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Cremer Max com 5 unidades",
@@ -14722,7 +14722,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hepatilon 1 Flaconete de 10ml",
@@ -14748,7 +14748,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clotrimazol 20mg/g Creme Vaginal 20g Medley Genérico",
@@ -14777,7 +14777,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Histamin Maleato de Dexclorfeniramina 2mg 20 comprimidos",
@@ -14805,7 +14805,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atensina Clonidina 0,100mg 30 comprimidos",
@@ -14833,7 +14833,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sulfato de Neomicina 5mg + Bacitracina 250UI Pomada Dermatológica 15g Medley Genérico",
@@ -14865,7 +14865,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seki Fendizoato de Cloperastina 3,54mg/ml Sabor Coco Xarope 120ml",
@@ -14897,7 +14897,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexametasona 4mg 10 comprimidos Teuto Genérico",
@@ -14924,7 +14924,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 0,075mg 28 comprimidos Novartis Genérico",
@@ -14952,7 +14952,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Losartana Potássica 50mg 30 comprimidos Neo Química Genérico",
@@ -14981,7 +14981,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Duloxetina 60mg 30 cápsulas Legrand Genérico",
@@ -15011,7 +15011,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Budesonida 64mcg Spray Nasal 120 doses EMS Genérico",
@@ -15040,7 +15040,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesulida 100mg 12 comprimidos Cimed Genérico",
@@ -15068,7 +15068,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bissulfato de Clopidogrel 75mg 28 comprimidos Novartis Genérico",
@@ -15098,7 +15098,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Needs em Caneta 1 unidade",
@@ -15126,7 +15126,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetoprofeno 100mg 20 comprimidos Medley Genérico",
@@ -15154,7 +15154,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Roacutan 20mg 30 cápsulas",
@@ -15180,7 +15180,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Wegovy Semaglutida 1mg Solução Injetável 3ml + 4 agulhas",
@@ -15208,7 +15208,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clenil A Dipropionato de Beclometasona 400mcg/ml Suspensão para Nebulização 10 flaconetes de 2ml cada",
@@ -15240,7 +15240,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 40mg 30 comprimidos Eurofarma Genérico",
@@ -15269,7 +15269,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "LuftaGastro Dupla Ação Menta Sachê 10ml",
@@ -15299,7 +15299,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 100mg/ml 5 ampolas União Química Genérico",
@@ -15328,7 +15328,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Finasterida 1mg 30 comprimidos revestidos Cimed Genérico",
@@ -15356,7 +15356,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omeprazol 20mg 28 cápsulas Teuto Genérico",
@@ -15384,7 +15384,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dropropizina 3,0mg/ml Xarope 120ml Aché Genérico",
@@ -15412,7 +15412,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex DIP Dipirona 1g 10 comprimidos",
@@ -15439,7 +15439,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 20mg/ml Xarope Infantil 120ml EMS Genérico",
@@ -15468,7 +15468,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vonau Flash Cloridrato de Ondansetrona 4mg 10 comprimidos",
@@ -15497,7 +15497,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xantinon Racemetionina 100mg + Colina 20mg 30 comprimidos",
@@ -15526,7 +15526,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Domperidona 10mg 30 comprimidos Eurofarma Genérico",
@@ -15554,7 +15554,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alivium Infantil Ibuprofeno 100mg/ml Gotas 20ml",
@@ -15584,7 +15584,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Infantil Dipirona 50mg/ml Solução Oral 100ml + Seringa Dosadora",
@@ -15617,7 +15617,7 @@ const MEDICINES_DB = [
       "dosadora"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa para Insulina Needs 6mm x 25G 1ml",
@@ -15645,7 +15645,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antialérgico Allegra Cloridrato de Fexofenadina 60mg 10 comprimidos",
@@ -15675,7 +15675,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 37,5mcg 30 comprimidos",
@@ -15704,7 +15704,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Miosan Cloridrato de Ciclobenzaprina 10mg 10 comprimidos",
@@ -15733,7 +15733,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Indux Clomifeno 50mg 10 comprimidos",
@@ -15760,7 +15760,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Drospirenona 3mg + Etinilestradiol 0,02mg 24 comprimidos EMS Genérico",
@@ -15788,7 +15788,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Propranolol 10mg 30 comprimidos Medley Genérico",
@@ -15818,7 +15818,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neosaldina Analgésico 10 drágeas",
@@ -15844,7 +15844,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nebacetin 250UI/g + 5mg/g Pomada 15g",
@@ -15870,7 +15870,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 50mcg 30 comprimidos Merck Genérico",
@@ -15899,7 +15899,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Somalgin Cardio Ácido Acetilsalicílico 100mg 60 comprimidos",
@@ -15929,7 +15929,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naldecon Pack Dia e Noite Paracetamol 800mg + Cloridrato de Fenilefrina 20mg + Maleato de Carbinoxamina 4mg 6 Comprimidos",
@@ -15964,7 +15964,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Muvinlax Pó 20 Envelopes de 14g cada",
@@ -15991,7 +15991,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Corus Losartana Potássica 50mg 30 comprimidos",
@@ -16020,7 +16020,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pantoprazol Sódico Sesqui-Hidratado 40mg 14 comprimidos Medley Genérico",
@@ -16052,7 +16052,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Insulina 50UI Agulha Fixa 6mm x 0,25mm Needs 10 unidades",
@@ -16083,7 +16083,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável 3ml Agulha Fixa 25mm x 0,7mm Needs 1un",
@@ -16112,7 +16112,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dapagliflozina 10mg 30 comprimidos Medley Genérico",
@@ -16140,7 +16140,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ciclo 21 Levonorgestrel 0,15mg + Etinilestradiol 0,03mg 21 comprimidos",
@@ -16170,7 +16170,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclofenaco Sódico 50mg 20 comprimidos Medley Genérico",
@@ -16199,7 +16199,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 100mcg 30 comprimidos Merck Genérico",
@@ -16228,7 +16228,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "LuftaGastro Sachê Líquido Menta 10ml",
@@ -16257,7 +16257,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sonrisal Tradicional 2 comprimidos",
@@ -16283,7 +16283,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 500mg caixa 10 comprimidos Medley Genérico",
@@ -16313,7 +16313,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Captopril 25mg 30 Comprimidos Medley Genérico",
@@ -16341,7 +16341,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Proctfis H 0,5% + 2,0% + 2,0% + 10,0% Pomada 20g e 10 aplicadores",
@@ -16367,7 +16367,7 @@ const MEDICINES_DB = [
       "aplicadores"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável Solomed BD com Agulha 30mm x 7mm com 3ml",
@@ -16396,7 +16396,7 @@ const MEDICINES_DB = [
       "30mm"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Advil Ibuprofeno 400mg 12 cápsulas",
@@ -16423,7 +16423,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Guaraná Pó Efervescente 5g 2 envelopes",
@@ -16451,7 +16451,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pant Sec Minoxidil 50mg/ml Solução Capilar 3 Frascos com 50ml cada",
@@ -16483,7 +16483,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bilastina 20mg 15 Comprimidos EMS Genérico",
@@ -16510,7 +16510,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ivermectina 6mg 4 comprimidos Neo Química Genérico",
@@ -16537,7 +16537,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg 1 comprimido mastigável Medley Genérico",
@@ -16566,7 +16566,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezete Rosuvastatina 20mg + Ezetimiba 10mg 30 comprimidos",
@@ -16595,7 +16595,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluconazol 150mg 1 cápsula Cimed Genérico",
@@ -16623,7 +16623,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lidexor Lisdexanfetamina 30mg 30 Comprimidos",
@@ -16650,7 +16650,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glifage XR Cloridrato de Metformina 850mg 30 comprimidos",
@@ -16679,7 +16679,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Orlistate 120mg 84 cápsulas EMS Genérico",
@@ -16706,7 +16706,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbamazepina 200mg 30 comprimidos Teuto Genérico",
@@ -16734,7 +16734,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclofenaco Potássico 50mg 20 comprimidos Medley Genérico",
@@ -16763,7 +16763,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rybelsus Semaglutida 14mg 30 Comprimidos",
@@ -16790,7 +16790,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Venlafaxina 75mg 30 Cápsulas de Liberação Controlada Medley Genérico",
@@ -16822,7 +16822,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 75mcg 30 comprimidos Merck Genérico",
@@ -16851,7 +16851,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Venlafaxina 150mg 30 Cápsulas de Liberação Controlada Medley Genérico",
@@ -16883,7 +16883,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dozemast Mecobalamina 1000mcg 30 comprimidos sublinguais",
@@ -16911,7 +16911,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 20mg + Hidroclorotiazida 12,5mg 30 comprimidos Eurofarma Genérico",
@@ -16941,7 +16941,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Bisoprolol 2,5mg 30 comprimidos Merck Genérico",
@@ -16970,7 +16970,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Estéril Needs 10 unidades",
@@ -16998,7 +16998,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maresis Baby 0,9% Descongestionante Spray Nasal Infantil Jato Suave Contínuo 100ml",
@@ -17032,7 +17032,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Decongex Plus Maleato de Bronfeniramina 2mg/5ml + Cloridrato Fenillefrina 5mg/5ml Xarope 120ml",
@@ -17064,7 +17064,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 500mg/ml Solução Gotas 20ml EMS Genérico",
@@ -17094,7 +17094,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nistatina 25.000UI/g Creme Vaginal 60g + 14 aplicadores Medley Genérico",
@@ -17124,7 +17124,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 100mg 30 Comprimidos Biosintética Genérico",
@@ -17154,7 +17154,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 600mg Granulado Sabor Laranja 16 envelopes EMS Genérico",
@@ -17184,7 +17184,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol Bebê 100mg/ml Suspensão Oral Sabor Cereja 15ml EMS Genérico",
@@ -17216,7 +17216,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spray para Garganta Natz Mel e Própolis 30ml",
@@ -17246,7 +17246,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitacid Tretinoína 0,50mg/g Creme 25g",
@@ -17274,7 +17274,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Clindamicina 300mg 16 cápsulas União Química Genérico",
@@ -17305,7 +17305,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Busonid Budesonida 50mcg Spray Nasal 120 doses 6ml",
@@ -17334,7 +17334,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Deca-Durabolin Decanoato de Nandrolona 50mg Solução Injetável Ampola 1ml",
@@ -17366,7 +17366,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Propranolol 40mg 30 comprimidos Medley Genérico",
@@ -17396,7 +17396,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Anlodipino 10mg 30 comprimidos Cimed Genérico",
@@ -17426,7 +17426,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável BD Plastipak 5ml",
@@ -17453,7 +17453,7 @@ const MEDICINES_DB = [
       "plastipak"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromidrato de Citalopram 20mg 30 Comprimidos Medley Genérico",
@@ -17483,7 +17483,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Toragesic SL Trometamol Cetorolaco 10mg 20 Comprimidos Sublinguais",
@@ -17513,7 +17513,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Mefenâmico 500mg 12 comprimidos Medley Genérico",
@@ -17542,7 +17542,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neosaldina Analgésico 20 drágeas",
@@ -17568,7 +17568,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fexofenadina 180mg 10 comprimidos Cimed Genérico",
@@ -17598,7 +17598,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lacto-Purga 5mg 6 comprimidos",
@@ -17624,7 +17624,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromoprida 10mg 20 cápsulas Medley Genérico",
@@ -17652,7 +17652,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mec 12 Mecobalamina 1000mcg 30 Comprimidos Sublinguais",
@@ -17680,7 +17680,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Propranolol 40mg 30 Comprimidos Neo Química Genérico",
@@ -17710,7 +17710,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Proctyl 50mg Pomada 30g + 10 aplicadores",
@@ -17737,7 +17737,7 @@ const MEDICINES_DB = [
       "aplicadores"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tylenol Sinus Paracetamol 500mg + Cloridrato de Pseudoefedrina 30mg 36 comprimidos",
@@ -17769,7 +17769,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Andrews Sulfato de Magnésio 0,88g Sachê Efervescente 5g",
@@ -17798,7 +17798,7 @@ const MEDICINES_DB = [
       "efervescente"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Resfenol Paracetamol 400mg + Cloridrato Fenillefrina 4mg + Maleato de Clorfeniramina 4mg 20 cápsulas",
@@ -17829,7 +17829,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atadura de Crepom Needs 100% Algodão 1 Rolo de 10cm x 1,8m",
@@ -17858,7 +17858,7 @@ const MEDICINES_DB = [
       "10cm"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Eparema Hortelã 1 Flaconete de 10ml",
@@ -17886,7 +17886,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Waryz Diosmina 450mg + Hesperidina 50mg 30 comprimidos",
@@ -17915,7 +17915,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naproxeno Sódico 550mg 10 Comprimidos Germed Genérico",
@@ -17944,7 +17944,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclofenaco Dietilamônio Neo Química Gel Creme 60g",
@@ -17972,7 +17972,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naproxeno Sódico 550mg 10 comprimidos Neo Química Genérico",
@@ -18001,7 +18001,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neutrofer Glicinato Férrico 500mg 30 comprimidos",
@@ -18030,7 +18030,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 500mg/ml Solução Gotas 10ml EMS Genérico",
@@ -18060,7 +18060,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inzelm Fumarato de Vonoprazana 20mg 30 comprimidos",
@@ -18089,7 +18089,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Poviztra Semaglutida 1mg Solução Injetável 3ml + Caneta Aplicadora com 4 Agulhas",
@@ -18119,7 +18119,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glifage XR Cloridrato de Metformina 1g 30 comprimidos",
@@ -18147,7 +18147,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 0,5mg 30 comprimidos EMS Genérico",
@@ -18173,7 +18173,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "PredSim Prednisolona 20mg 10 comprimidos",
@@ -18200,7 +18200,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aspirina Prevent Ácido Acetilsalicílico 100mg 30 comprimidos",
@@ -18230,7 +18230,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pepsamar Sabor Menta 10 comprimidos mastigáveis",
@@ -18258,7 +18258,7 @@ const MEDICINES_DB = [
       "mastigaveis"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bisalax 5mg 20 drágeas",
@@ -18283,7 +18283,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Figatil 1 Flaconete 10ml",
@@ -18309,7 +18309,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Clearblue Detecção Rápida 1 Unidade",
@@ -18338,7 +18338,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ressaliv Pré Sabor Abacaxi Solução Oral 10ml",
@@ -18368,7 +18368,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mesilato de Doxazosina 2mg 30 comprimidos Eurofarma Genérico",
@@ -18397,7 +18397,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Annita Nitazoxanida 500mg 6 comprimidos",
@@ -18424,7 +18424,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gynpro Progesterona Natural Micronizada 100mg 30 cápsulas",
@@ -18454,7 +18454,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Dprev Colecalciferol 50.000UI 4 comprimidos",
@@ -18482,7 +18482,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Folifolin Ácido Fólico 5mg 30 comprimidos",
@@ -18510,7 +18510,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fluoxetina 20mg 30 cápsulas EMS Genérico",
@@ -18539,7 +18539,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sulfato de Neomicina 5mg + Bacitracina 250UI Pomada Dermatológica 50g Medley Genérico",
@@ -18571,7 +18571,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Utrogestan Progesterona 200mg 14 cápsulas",
@@ -18598,7 +18598,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omcilon-A Orabase Triancinolona Acetonida 1,0mg/g Pomada 10g",
@@ -18626,7 +18626,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fosfato Sódico de Prednisolona 3mg/ml Solução Oral 60ml Aché Biosintética Genérico",
@@ -18659,7 +18659,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lisador Dip Dipirona Monoidratada 1g 10 comprimidos",
@@ -18687,7 +18687,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável 3ml Agulha Fixa 30mm x 0,7mm Needs 1un",
@@ -18716,7 +18716,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ondif 4mg 10 filmes",
@@ -18741,7 +18741,7 @@ const MEDICINES_DB = [
       "filmes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alginac Diclofenaco Sódico 50mg + B1 50mg + B6 50mg + B12 1000mcg 15 comprimidos",
@@ -18773,7 +18773,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benegrip Dipirona Monoidratada 500mg + Maleato de Clorfeniramina 2mg + Cafeína 30mg 20 comprimidos",
@@ -18806,7 +18806,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risedronato Sódico 150mg 1 comprimido Althaia Genérico",
@@ -18835,7 +18835,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Amitriptilina 25mg 30 comprimidos Medley Genérico",
@@ -18865,7 +18865,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Digeplus Cloridrato de Metoclopramida 7mg + Dimeticona 40mg + Pepsina 50mg 30 cápsulas",
@@ -18897,7 +18897,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neutrofer Ferro Quelato Glicinato 300mg 30 comprimidos",
@@ -18927,7 +18927,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ammy 4mg - Drospirenona - 28 comprimidos",
@@ -18953,7 +18953,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dramin Capsgel Dimenidrinato 50mg 10 cápsulas",
@@ -18982,7 +18982,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Luftal Simeticona 75mg/ml Gotas 15ml",
@@ -19010,7 +19010,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vagifem Estradiol 10mcg 18 comprimidos",
@@ -19037,7 +19037,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 500mg 10 comprimidos Prati Donaduzzi Genérico",
@@ -19066,7 +19066,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antialérgico Allegra Cloridrato de Fexofenadina 180mg 10 comprimidos",
@@ -19096,7 +19096,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Curativo Transparente Needs 40 Unidades",
@@ -19123,7 +19123,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuliv Ibuprofeno 400mg 8 Cápsulas",
@@ -19150,7 +19150,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 10mg 60 comprimidos EMS Genérico",
@@ -19179,7 +19179,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Natifa Pro Estradiol 1mg + Noretisterona 0,5mg 28 comprimidos",
@@ -19207,7 +19207,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furoato de Mometasona 50mcg Spray Nasal 120 doses Eurofarma Genérico",
@@ -19239,7 +19239,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 20mg 10 comprimidos Eurofarma Genérico",
@@ -19267,7 +19267,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Inalador Descongestionante Nasal 0,5g 1 unidade",
@@ -19296,7 +19296,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 200mg Granulado Sabor Laranja 16 envelopes EMS Genérico",
@@ -19326,7 +19326,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maxalt Rizatriptano 10mg 2 comprimidos",
@@ -19353,7 +19353,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Systen 50 Estradiol 3,2mg 8 Adesivos Transdérmicos",
@@ -19381,7 +19381,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dymista Cloridrato Azelastina 1mg + Propionato Fluticosona 0,365mg Spray Nasal 120 doses",
@@ -19414,7 +19414,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemitartarato de Zolpidem 5mg 30 comprimidos sublinguais Eurofarma Genérico",
@@ -19444,7 +19444,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 25mcg 30 comprimidos Merck Genérico",
@@ -19473,7 +19473,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 2mg 30 comprimidos Aché Genérico",
@@ -19500,7 +19500,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bilastina 20mg 30 comprimidos Eurofarma Genérico",
@@ -19528,7 +19528,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 2mg 30 comprimidos Medley Genérico",
@@ -19555,7 +19555,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Profergan Cloridrato de Prometazina 25mg 20 comprimidos",
@@ -19584,7 +19584,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Wegovy Semaglutida 0,25mg Solução Injetável 1,5ml + 4 agulhas",
@@ -19614,7 +19614,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Secnidazol 1000mg 2 Comprimidos Sandoz Genérico",
@@ -19642,7 +19642,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estomazil Abacaxi Pó Efervescente Envelope 5g",
@@ -19670,7 +19670,7 @@ const MEDICINES_DB = [
       "envelope"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick 44E Xarope Expectorante 120ml",
@@ -19698,7 +19698,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pyridium Fenazopiridina 200mg 18 drágeas",
@@ -19725,7 +19725,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venlift OD Cloridrato de Venlafaxin 150mg 30 Cápsulas",
@@ -19754,7 +19754,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Narix Cloridrato de Nafazolina 0,5mg/ml Solução Nasal 30ml",
@@ -19784,7 +19784,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nitazoxanida 500mg 6 comprimidos Althaia Genérico",
@@ -19812,7 +19812,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dprev Colecalciferol 14.000UI 4 comprimidos",
@@ -19840,7 +19840,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fluoxetina 20mg 30 Cápsulas Eurofarma Genérico",
@@ -19870,7 +19870,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Montelucaste de Sódio 10mg 30 Comprimidos - Teuto Genérico",
@@ -19900,7 +19900,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cimegripe Cloridrato Fenillefrina 4mg + Paracetamol 400mg + Maleato de Clorfeniramina 4mg 10 cápsulas",
@@ -19932,7 +19932,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omeprazol 20mg 56 cápsulas Teuto Genérico",
@@ -19960,7 +19960,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Repoflor 200mg 6 cápsulas",
@@ -19987,7 +19987,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetoconazol 20mg + Dipropionato de Betametasona 0,64mg + Sulfato de Neomicina 2,5mg Pomada Dermatológica 30g Eurofarma Genérico",
@@ -20021,7 +20021,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Tramadol 50mg 10 cápsulas Teuto Genérico",
@@ -20051,7 +20051,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Timolol 0,5% Solução Oftalmológica 5ml Teuto Genérico",
@@ -20081,7 +20081,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex MAX Analgésico e Relaxante Muscular 16 comprimidos",
@@ -20109,7 +20109,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Minilax 7 bisnagas",
@@ -20133,7 +20133,7 @@ const MEDICINES_DB = [
       "bisnagas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clomid Clomifeno 50mg 10 comprimidos",
@@ -20160,7 +20160,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Abacaxi Pó Efervescente 5g 2 envelopes",
@@ -20188,7 +20188,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 5mg 15 comprimidos revestidos Aché Biosintética Genérico",
@@ -20219,7 +20219,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Selozok Succinato de Metoprolol 25mg 60 comprimidos",
@@ -20248,7 +20248,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kaloba Pelargonium Sidoides 825mg/ml Solução Oral 20ml",
@@ -20279,7 +20279,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furoato de Mometasona 1mg/g Creme 20g EMS Genérico",
@@ -20307,7 +20307,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico Cloreto de Sódio 0,9% Needs 100ml",
@@ -20337,7 +20337,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antialérgico Allegra Cloridrato de Fexofenadina 120mg 10 comprimidos",
@@ -20367,7 +20367,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furosemida 40mg 20 comprimidos Neo Química Genérico",
@@ -20395,7 +20395,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Enxak Mesilato de di-hidroergotamina 1mg + Dipirona monoidratada 350mg + Cafeína 100mg 12 comprimidos",
@@ -20428,7 +20428,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rapilax 7,5mg/ml Gotas 30ml",
@@ -20454,7 +20454,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 4 comprimidos Medley Genérico",
@@ -20482,7 +20482,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Iumi Drospirenona 3mg + Etinilestradiol 0,02mg 24 comprimidos",
@@ -20510,7 +20510,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 125mcg 30 comprimidos",
@@ -20539,7 +20539,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zinpass Eze Rosuvastatina Cálcica 20mg + Ezetimiba 10mg 30 comprimidos",
@@ -20570,7 +20570,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Phosfoenema Solução 130ml",
@@ -20596,7 +20596,7 @@ const MEDICINES_DB = [
       "130ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 1mg 30 comprimidos Novartis Genérico",
@@ -20623,7 +20623,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 8 comprimidos Prati Donaduzzi Genérico",
@@ -20652,7 +20652,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Engov 6 comprimidos",
@@ -20676,7 +20676,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Água Oxigenada Antisséptica 10 Volumes Needs 100ml",
@@ -20706,7 +20706,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naramig Cloridrato de Naratriptana 2,5mg 4 comprimidos",
@@ -20734,7 +20734,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciprofloxacino 500mg 14 comprimidos Neo Química Genérico",
@@ -20764,7 +20764,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pulmicort Budesonida 0,25mg 5 ampolas",
@@ -20792,7 +20792,7 @@ const MEDICINES_DB = [
       "ampolas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo Salonpas Pequeno 4 unidades",
@@ -20819,7 +20819,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 500mg/ml Solução Oral 20ml Medley Genérico",
@@ -20850,7 +20850,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesulida 100mg 12 comprimidos EMS Genérico",
@@ -20877,7 +20877,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bala de Gengibre, Mel e Própolis Natz 40g",
@@ -20905,7 +20905,7 @@ const MEDICINES_DB = [
       "natz"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Daforin Cloridrato de Fluoxetina 20mg 60 comprimidos",
@@ -20934,7 +20934,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 25mg 30 comprimidos Teuto Genérico",
@@ -20964,7 +20964,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Labirin Dicloridrato de Betaistina 24mg 30 comprimidos",
@@ -20993,7 +20993,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Deposteron 200mg/2ml 3 ampolas com 2ml cada",
@@ -21020,7 +21020,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neo Fólico Ácido Fólico 5mg 20 comprimidos",
@@ -21048,7 +21048,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valsartana 320mg 30 comprimidos Germed Genérico",
@@ -21076,7 +21076,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexilant Dexlansoprazol 30mg 30 cápsulas",
@@ -21103,7 +21103,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vonau Flash Cloridrato de Ondansetrona 8mg 10 comprimidos",
@@ -21132,7 +21132,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Termômetro Digital Clínico G-Tech Branco 1 unidade",
@@ -21161,7 +21161,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 200mg 6 cápsulas",
@@ -21188,7 +21188,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Luftal Max Gel 250mg 10 Cápsulas",
@@ -21215,7 +21215,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neolefrin Dia Paracetamol 800mg + Cloridrato Fenillefrina 20mg 20 comprimidos",
@@ -21246,7 +21246,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Complexo Homeopático Senna 46 Almeida Prado 60 comprimidos",
@@ -21275,7 +21275,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 250mg 6 cápsulas",
@@ -21302,7 +21302,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Promestrieno 10mg/g Creme Vaginal 30g + 20 aplicadores Eurofarma Genérico",
@@ -21332,7 +21332,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Allexofedrin Cloridrato de Fexofenadina 180mg 10 comprimidos",
@@ -21361,7 +21361,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "MecoBe Mecobalamina 1.000mcg 90 comprimidos sublinguais",
@@ -21390,7 +21390,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atorvastatina Cálcica 10mg 30 comprimidos EMS Genérico",
@@ -21418,7 +21418,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metilfenidato 10mg 60 comprimidos EMS Genérico",
@@ -21447,7 +21447,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alektos Bilastina 20mg 20 comprimidos",
@@ -21474,7 +21474,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atrovent Brometo de Ipratrópio 0,25mg/ml Solução para Inalação Gotas 20ml",
@@ -21507,7 +21507,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezete Rosuvastatina 10mg + Ezetimiba 10mg 30 comprimidos",
@@ -21536,7 +21536,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Miosan Cloridrato de Ciclobenzaprina 5mg 10 comprimidos",
@@ -21564,7 +21564,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Iumi Drospirenona 3mg + Etinilestradiol 0,02mg 72 comprimidos",
@@ -21592,7 +21592,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Yaz Drospirenona 3mg + Etinilestradiol 0,02mg 24+4 comprimidos",
@@ -21619,7 +21619,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 500mg 21 cápsulas Farmaco Prati Genérico",
@@ -21648,7 +21648,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alenia Fumarato de Formoterol 12mcg + Budesonida 400mcg 60 Refil cápsulas para inalação",
@@ -21682,7 +21682,7 @@ const MEDICINES_DB = [
       "inalacao"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dastene Dutasterida 0,5mg 30 cápsulas",
@@ -21709,7 +21709,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Coristina D Pro Cloridrato Fenillefrina 4mg + Paracetamol 400mg + Maleato de Clorfeniramina 4mg 4 comprimidos",
@@ -21740,7 +21740,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Expectorante Mucos Expec Acetilcisteína 600mg Solução Sabor Laranja 10 envelopes com 5g cada",
@@ -21774,7 +21774,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lidexor Lisdexanfetamina 50mg 30 Comprimidos",
@@ -21801,7 +21801,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Plenance Eze Rosuvastatina Cálcica 10mg + Ezetimiba 10mg 30 Cápsulas",
@@ -21832,7 +21832,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Edistride 10mg - Dapagliflozina - 30 comprimidos",
@@ -21859,7 +21859,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisona 20mg 10 comprimidos Medley Genérico",
@@ -21887,7 +21887,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tiorfan Racecadotrila 100mg 9 cápsulas",
@@ -21914,7 +21914,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sinvastatina 40mg 30 Comprimidos Cimed Genérico",
@@ -21942,7 +21942,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Clearblue Saiba Antes 1 Unidade",
@@ -21971,7 +21971,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bactrim F Sulfametoxazol 800mg + Trimetoprima 160mg 10 comprimidos",
@@ -22000,7 +22000,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Busonid Budesonida 64mcg Spray Nasal 120 doses 6ml",
@@ -22029,7 +22029,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Estéril Não Aderente 5 Unidades",
@@ -22057,7 +22057,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg 3 comprimidos Cimed Genérico",
@@ -22085,7 +22085,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Luftal Gel Caps Simeticona 125mg 10 cápsulas",
@@ -22114,7 +22114,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 100mg 30 comprimidos Prati Donaduzzi Genérico",
@@ -22143,7 +22143,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Slinda Drospirenona 4mg 72 + 12 Comprimidos",
@@ -22169,7 +22169,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mirtazapina 30mg 30 comprimidos orodipersíveis Medley Genérico",
@@ -22198,7 +22198,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 50mg 30 comprimidos Medley Genérico",
@@ -22228,7 +22228,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clavulin Bd Amoxicilina Tri-hidratada 875mg + Clavulanato de Potássio 125mg 14 comprimidos",
@@ -22260,7 +22260,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apresolina Hidralazina 50mg 60 drágeas",
@@ -22287,7 +22287,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 12,5mcg 30 comprimidos",
@@ -22316,7 +22316,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atentah Cloridrato de Atomoxetina 40mg 30 Cápsulas",
@@ -22345,7 +22345,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Plasil Cloridrato de Metoclopramida 10mg 20 comprimidos",
@@ -22374,7 +22374,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sonrisal Dupla Ação Tradicional 10 comprimidos",
@@ -22402,7 +22402,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Acetilsalicílico 100mg Infantil Sabor Morango 30 comprimidos EMS Genérico",
@@ -22433,7 +22433,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nicorette Icemint 4mg Goma Mastigável para Parar de Fumar 30 unidades",
@@ -22464,7 +22464,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuprofeno 100mg/ml Suspensão Oral Sabor Frutas 20ml Medley Genérico",
@@ -22496,7 +22496,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ciprofibrato 100mg 30 comprimidos Neo Química Genérico",
@@ -22524,7 +22524,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Allegra D Pseudofedrina 120mg + Fexofenadina 60mg 10 comprimidos",
@@ -22553,7 +22553,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisona 5mg 20 comprimidos Medley Genérico",
@@ -22580,7 +22580,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ozempic 1mg Solução Injetável 3ml + 4 agulhas - Geladeira",
@@ -22608,7 +22608,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Needs Simeticona 125mg 10 Cápsulas",
@@ -22635,7 +22635,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamitor CD Lamotrigina 100mg 60 comprimidos",
@@ -22663,7 +22663,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 25mg 30 comprimidos Prati Donaduzzi Genérico",
@@ -22692,7 +22692,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nevralgex Dipirona Monoidratada 300mg + Cafeína 50 mg + Citrato de Orfenadrina 35 mg 10 comprimidos",
@@ -22724,7 +22724,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Anlodipino 5mg 30 comprimidos Medley Genérico",
@@ -22753,7 +22753,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 2mg 60 comprimidos EMS Genérico",
@@ -22779,7 +22779,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metilfenidato 10mg 30 comprimidos EMS Genérico",
@@ -22808,7 +22808,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Resfenol 10 cápsulas",
@@ -22833,7 +22833,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vaselina Sólida Emoliente e Hidratante Needs 25g",
@@ -22862,7 +22862,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Metrexato Metotrexato Sódico 2,5mg 24 comprimidos",
@@ -22890,7 +22890,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pantoprazol Sesqui-Hidratado 40mg 42 comprimidos Aché Biosintética Genérico",
@@ -22922,7 +22922,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Budesonida 32mcg 120 doses EMS Genérico",
@@ -22949,7 +22949,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar Olmesartana Medoxomila 20mg 30 comprimidos",
@@ -22978,7 +22978,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "AtivB Mecobalamina 1000mcg 90 comprimidos",
@@ -23005,7 +23005,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscofem Ibuprofeno 400mg 10 cápsulas",
@@ -23032,7 +23032,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gliclazida 60mg 60 comprimidos Pharlab Genérico",
@@ -23060,7 +23060,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pitavastatina Cálcica 2mg 30 comprimidos Biolab Genérico",
@@ -23088,7 +23088,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar Anlo Olmesartana Medoxomila 40mg + Besilato de Anlodipino 5mg 30 comprimidos",
@@ -23120,7 +23120,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benzoato de Rizatriptana 10mg - 2 comprimidos Zydus Genérico",
@@ -23150,7 +23150,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Velija Cloridrato de Duloxetina 60mg 60 cápsulas",
@@ -23179,7 +23179,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tinidazol 30mg + Nitrato de Miconazol 20mg Creme Vaginal 40g + 7 aplicadores Eurofarma Genérico",
@@ -23212,7 +23212,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Toragesic SL Trometamol Cetorolaco 10mg 30 Comprimidos Sublinguais",
@@ -23242,7 +23242,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Varylift Diosmina 900mg + Hesperidina 100mg 30 comprimidos",
@@ -23271,7 +23271,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zoloft Cloridrato de Sertralina 50mg 30 comprimidos",
@@ -23300,7 +23300,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha para Garganta com Anti-inflamatório e Analgésico Strepsils Sabor Laranja Sem Açúcar - 8 unidades",
@@ -23334,7 +23334,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Stezza Acetato Nomegestrol 2,5mg + Estradiol 1,5mg 28 comprimidos",
@@ -23363,7 +23363,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Enalapril 10mg 30 comprimidos EMS Genérico",
@@ -23392,7 +23392,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hora H Levonorgestrel 1,5mg 1 comprimido",
@@ -23418,7 +23418,7 @@ const MEDICINES_DB = [
       "comprimido"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Slinda Drospirenona 4mg 28 Comprimidos",
@@ -23444,7 +23444,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexfer Ferripolimaltose 400mg (Ferro Elementar 100mg) 30 comprimidos",
@@ -23474,7 +23474,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 75mg/ml Morango Gotas 15ml EMS",
@@ -23502,7 +23502,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lidexor Lisdexanfetamina 70mg 30 Comprimidos",
@@ -23529,7 +23529,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 500mg + Cloridrato de Pseudoefedrina 30mg 24 comprimidos EMS Genérico",
@@ -23559,7 +23559,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex MAX Analgésico e Relaxante Muscular 8 comprimidos",
@@ -23587,7 +23587,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 40mg + Hidroclorotiazida 12,5mg 30 comprimidos Eurofarma Genérico",
@@ -23617,7 +23617,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Limão Pó Efervescente 5g 2 envelopes",
@@ -23645,7 +23645,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naproxeno 500mg Generico 10 comprimidos União Química",
@@ -23674,7 +23674,7 @@ const MEDICINES_DB = [
       "quimica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesilam Nimesulida 100mg 12 comprimidos",
@@ -23701,7 +23701,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Predsim Fosfato Sódico de Prednisolona 3mg/ml Solução Oral 60ml",
@@ -23732,7 +23732,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 200mg 25 comprimidos Sandoz Genérico",
@@ -23760,7 +23760,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 1g 20 Comprimidos Neo Química Genérico",
@@ -23788,7 +23788,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Estéril Needs 5 unidades",
@@ -23816,7 +23816,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gelo-Bio Aerosol 60ml",
@@ -23843,7 +23843,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bedoze Hidroxocobalamina 5mg/ml Solução Injetável 2 Ampolas 1ml cada",
@@ -23872,7 +23872,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metformina 500mg 60 comprimidos Prati Donaduzzi Genérico",
@@ -23903,7 +23903,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Extrato Aquoso de Própolis Verde Natz Sem Álcool 30ml",
@@ -23934,7 +23934,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Vaporub Descongestionante Pomada 30g",
@@ -23962,7 +23962,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo Térmico Bwell Hot 1 unidade",
@@ -23989,7 +23989,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Decongex Plus 4 comprimidos",
@@ -24015,7 +24015,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atentah Cloridrato de Atomoxetina 25mg 30 Cápsulas",
@@ -24044,7 +24044,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Noripurum EV Sacarato de Óxido Férrico 100mg/5ml Endovenoso com 5 ampolas de 5ml cada",
@@ -24076,7 +24076,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zinpass Eze Rosuvastatina Cálcica 40mg + Ezetimiba 10mg 30 comprimidos",
@@ -24107,7 +24107,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Plenance Eze Rosuvastatina Cálcica 20mg + Ezetimiba 10mg 30 cápsulas",
@@ -24138,7 +24138,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Naratriptana 2,5mg 4 comprimidos Medley Genérico",
@@ -24167,7 +24167,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estreva Estradiol 1mg/g Gel 50g",
@@ -24192,7 +24192,7 @@ const MEDICINES_DB = [
       "estradiol"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pantoprazol Sódico Sesqui-Hidratado 20mg 42 comprimidos EMS Genérico",
@@ -24223,7 +24223,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 50mg 30 comprimidos Eurofarma Genérico",
@@ -24251,7 +24251,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estomazil Laranja Pó Efervescente Envelope 5g",
@@ -24279,7 +24279,7 @@ const MEDICINES_DB = [
       "envelope"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tandrilax Diclofenaco Sódico 50mg + Carisoprodol 125mg + Paracetamol 300mg + Cafeína 30mg 15 comprimidos",
@@ -24314,7 +24314,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inzelm Fumarato de Vonoprazana 20mg 60 comprimidos",
@@ -24343,7 +24343,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aturgyl Cloridrato de Oximetazolina 0,5mg/ml Solução Nasal Spray 15ml",
@@ -24374,7 +24374,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Tranexâmico 250mg 12 comprimidos Legrand Genérico",
@@ -24403,7 +24403,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita Microporosa Needs Bege 1 Unidade 2,5cm x 1,35m",
@@ -24431,7 +24431,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Espironolactona 50mg 30 comprimidos EMS Genérico",
@@ -24458,7 +24458,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Loratadina 1mg/ml Xarope 100ml Cimed Genérico",
@@ -24486,7 +24486,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 40mg/ml EMS Suspensão Oral 10ml - Genérico",
@@ -24515,7 +24515,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Histamin 2mg/5ml Xarope 100ml",
@@ -24541,7 +24541,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 100mg 30 comprimidos EMS Genérico",
@@ -24570,7 +24570,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desloratadina 0,5mg/ml Xarope 60ml Eurofarma Genérico",
@@ -24598,7 +24598,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antialérgico Allegra Pediátrico Cloridrato de Fexofenadina 6mg/ml Suspensão Oral 150ml com Seringa",
@@ -24631,7 +24631,7 @@ const MEDICINES_DB = [
       "seringa"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Miorrelax Dipirona Monoidratada 300mg + Citrato de Orfenadrina 35mg + Cafeina 50mg 10 comprimidos",
@@ -24665,7 +24665,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscofem Ibuprofeno 400mg 2 cápsulas",
@@ -24692,7 +24692,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 20mg 30 comprimidos Sandoz Genérico",
@@ -24721,7 +24721,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 50mg 60 comprimidos EMS Genérico",
@@ -24748,7 +24748,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venlift OD Cloridrato de Venlafaxina 75mg 30 cápsulas",
@@ -24777,7 +24777,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Busonid Budesonida 32mcg Spray Nasal 120 doses 6ml",
@@ -24806,7 +24806,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Infralax Cafeína 30mg + Carisoprodol 125mg + Diclofenaco Sódico 50mg + Paracetamol 300mg 30 comprimidos",
@@ -24840,7 +24840,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nevrix IM Tiamina 100mg + Piridoxina 100mg + Cianocobalamina 5mg Solução Injetável 3 ampolas de 2ml cada",
@@ -24874,7 +24874,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuprofeno 400mg 10 comprimidos Neo Química Genérico",
@@ -24902,7 +24902,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbonato de Lítio 300mg 60 comprimidos Eurofarma Genérico",
@@ -24932,7 +24932,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 50mg 4 Comprimidos Neo Química Genérico",
@@ -24962,7 +24962,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbolitium CR Carbonato de Lítio 450mg 60 Comprimidos",
@@ -24991,7 +24991,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 50mg 8 comprimidos Sandoz Genérico",
@@ -25021,7 +25021,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sumaxpro Succinato de Sumatriptana 85mg + Naproxeno Sódico 500mg 2 comprimidos",
@@ -25053,7 +25053,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seakalm 260mg 20 comprimidos",
@@ -25079,7 +25079,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prolopa BD Levodopa 100mg + Benserazida 25mg 30 comprimidos",
@@ -25109,7 +25109,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Leite de Magnésia Phillips Original 120ml",
@@ -25138,7 +25138,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Óleo Mineral União Química 100ml",
@@ -25167,7 +25167,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inilok Pantoprazol Magnésico Di-Hidratado 40mg 30 comprimidos",
@@ -25197,7 +25197,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 500mg 21 cápsulas Neo Química Genérico",
@@ -25225,7 +25225,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bolsa Térmica Gel Termogel Pequena 1 unidade",
@@ -25253,7 +25253,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rybelsus Semaglutida 7mg 30 Comprimidos",
@@ -25279,7 +25279,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 88mcg 30 comprimidos Merck Genérico",
@@ -25308,7 +25308,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valsartana 160mg 30 comprimidos Aché Genérico",
@@ -25336,7 +25336,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 20mg 30 comprimidos Medley Genérico",
@@ -25366,7 +25366,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sumax Succinato de Sumatriptana 50mg 6 comprimidos",
@@ -25395,7 +25395,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Brometo de N Butil Escopolamina 10mg 20 drágeas",
@@ -25425,7 +25425,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 100mg 30 comprimidos EMS Genérico",
@@ -25454,7 +25454,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Band-Aid Curativos Transparentes com 10 unidades",
@@ -25481,7 +25481,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetoprofeno 150mg 10 comprimidos Medley Genérico",
@@ -25509,7 +25509,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 0,5mg 30 comprimidos Medley Genérico",
@@ -25536,7 +25536,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metformina 500mg 30 comprimidos Teuto Genérico",
@@ -25566,7 +25566,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Doril Enxaqueca Ácido Acetilsalicílico 250mg + Paracetamol 250mg + Cafeína 65mg 8 comprimidos",
@@ -25600,7 +25600,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Somalgin Cardio Ácido Acetilsalicílico 81mg 60 comprimidos",
@@ -25630,7 +25630,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipirona Monoidratada 50mg/ml Solução Oral Sabor Framboesa 100ml Medley Genérico",
@@ -25663,7 +25663,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Melagrião Mikania Glomerata + Associações Xarope 150ml",
@@ -25693,7 +25693,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 200mg/ml Solução Oral 15ml EMS Genérico",
@@ -25722,7 +25722,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisona 5mg 20 Comprimidos EMS Genérico",
@@ -25748,7 +25748,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 25mg 60 comprimidos EMS Genérico",
@@ -25775,7 +25775,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Dipirona 1g 10 comprimidos efervescentes",
@@ -25802,7 +25802,7 @@ const MEDICINES_DB = [
       "efervescentes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tylenol Paracetamol Bebê 100mg/ml Suspensão Oral Sabor Frutas 15ml",
@@ -25835,7 +25835,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 25mg 30 comprimidos Medley Genérico",
@@ -25865,7 +25865,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D3 Colecalciferol 7.000 UI Neo Química 30 cápsulas",
@@ -25892,7 +25892,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maxidrate 6mg Descongestionante Gel Nasal 30g",
@@ -25918,7 +25918,7 @@ const MEDICINES_DB = [
       "nasal"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lansoprazol 30mg 28 cápsulas Legrand Genérico",
@@ -25946,7 +25946,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 4 comprimidos Eurofarma Genérico",
@@ -25974,7 +25974,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "AAS Ácido Acetilsalicílico 100mg Infantil 30 comprimidos",
@@ -26003,7 +26003,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Camomilina C Matricaria Chamomila L. 25mg + Glycyrrhiza Globra L. 5mg + Vitamina C 25mg + Vitamina D3 150UI 20 cápsulas",
@@ -26037,7 +26037,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxcarbazepina 600mg 30 comprimidos Medley Genérico",
@@ -26065,7 +26065,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xarope de Guaco Natulab Sabor Mel Mentolado 150ml",
@@ -26095,7 +26095,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 125mcg 30 comprimidos Merck Genérico",
@@ -26124,7 +26124,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cerazette Desogestrel 75mcg 28 comprimidos",
@@ -26151,7 +26151,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nextela Estetrol Monoidratado 15mg + Drospirenona 3mg 28 comprimidos",
@@ -26181,7 +26181,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apresolina Hidralazina 25mg 60 drágeas",
@@ -26208,7 +26208,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Velija Cloridrato de Duloxetina 30mg 60 cápsulas",
@@ -26237,7 +26237,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 400mg com 30 comprimidos EMS Genérico",
@@ -26264,7 +26264,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Flash Dipirona 1g + Cafeína 130mg 8 comprimidos",
@@ -26294,7 +26294,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mylanta Plus Sabor Morango Suspensão Oral 240ml",
@@ -26325,7 +26325,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Advil 12h Ibuprofeno 600mg 6 comprimidos",
@@ -26353,7 +26353,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Terbinafina 250mg 28 comprimidos Aché Biosintética Genérico",
@@ -26384,7 +26384,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antiácido Hidróxido de Alumínio 61,5mg EMS Sabor Hortelã Suspensão Oral 240ml",
@@ -26416,7 +26416,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 40mg + Hidroclorotiazida 25mg 30 comprimidos EMS Genérico",
@@ -26446,7 +26446,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kaloba Pelargonium Sidoides 825mg/ml Solução Oral 50ml",
@@ -26477,7 +26477,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fenobarbital 100mg 30 comprimidos União Química Genérico",
@@ -26506,7 +26506,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diamicron MR Gliclazida 60mg 30 comprimidos",
@@ -26534,7 +26534,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Toragesic SL Trometamol Cetorolaco 10mg 10 Comprimidos Sublinguais",
@@ -26564,7 +26564,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fluoxetina 20mg 30 cápsulas Teuto Genérico",
@@ -26594,7 +26594,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Benalet Sabor Menta 12 unidades",
@@ -26622,7 +26622,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Monuril Fosfomicina Trometamol 5,631g 1 envelope",
@@ -26651,7 +26651,7 @@ const MEDICINES_DB = [
       "envelope"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibupril Ibuprofeno 600mg 20 comprimidos",
@@ -26678,7 +26678,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Percof Levodropropizina 6mg/ml Xarope 120ml + Copo de Medida",
@@ -26707,7 +26707,7 @@ const MEDICINES_DB = [
       "medida"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Propionato de Clobetasol 0,5mg/g Creme 30g Medley Genérico",
@@ -26736,7 +26736,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dutasterida 0,5mg + Cloridrato de Tansulosina 0,4mg 30 cápsulas Zydus Genérico",
@@ -26765,7 +26765,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Claritromicina 500mg 14 comprimidos Medley Genérico",
@@ -26793,7 +26793,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amome Furoato de Mometasona 50mcg Spray Nasal 120 doses",
@@ -26824,7 +26824,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Multigrip Paracetamol 400mg + Cloridrato Fenillefrina 4mg + Maleato de Clorfeniramina 4mg 20 cápsulas",
@@ -26855,7 +26855,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxcarbazepina 300mg 30 comprimidos Medley Genérico",
@@ -26883,7 +26883,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sonrisal Dupla Ação Limão 2 comprimidos",
@@ -26911,7 +26911,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esomeprazol Magnésico Tri-Hidratado 40mg 28 comprimidos EMS Genérico",
@@ -26941,7 +26941,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Acetilsalicílico Infantil 100mg 10 comprimidos EMS Genérico",
@@ -26971,7 +26971,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alginac Retard Diclofenaco Sódico 100mg + B1 100mg + B6 100mg + B12 1000mcg 10 comprimidos",
@@ -27004,7 +27004,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Tansulosina 0,4mg 30 Comprimidos EMS Genérico",
@@ -27032,7 +27032,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Dprev Colecalciferol 7.000UI 8 comprimidos",
@@ -27060,7 +27060,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 4 comprimidos Cimed Genérico",
@@ -27088,7 +27088,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo para Alívio da Febre Bye Bye Fever Bebês 0 a 2 Anos - 2 Unidades",
@@ -27119,7 +27119,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ômega 3 Needs Vita 120 Cápsulas",
@@ -27145,7 +27145,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Wegovy Semaglutida 1,7mg Solução Injetável 3ml + 4 agulhas",
@@ -27174,7 +27174,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Drospirenona 3mg + Etinilestradiol 0,02mg 24 comprimidos Eurofarma Genérico",
@@ -27203,7 +27203,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sumax Succinato de Sumatriptana 25mg 6 comprimidos",
@@ -27232,7 +27232,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D3 Colecalciferol 50.000 UI Neo Química 4 cápsulas",
@@ -27259,7 +27259,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desloratadina 0,5mg/ml Eurofarma Xarope com 100ml",
@@ -27286,7 +27286,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algestona Acetofenida 150mg + Enantato de Estradiol 10mg 1 ampola de 1ml EMS Genérico",
@@ -27317,7 +27317,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 40mg 7 comprimidos Aché Genérico",
@@ -27345,7 +27345,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa Refrescante Xô Febre Likluc 4 Unidades",
@@ -27373,7 +27373,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar Olmesartana Medoxomila 40mg 30 comprimidos",
@@ -27402,7 +27402,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sorine Infantil Jet Baby Descongestionante Spray 100ml",
@@ -27432,7 +27432,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluconazol 150mg 1 cápsula EMS Genérico",
@@ -27459,7 +27459,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Losartana + Hidroclorotiazida 50/12,5mg 30 comprimidos Sandoz Genérico",
@@ -27488,7 +27488,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estomazil Abacaxi Pó Efervescente 6 envelopes de 5g cada",
@@ -27517,7 +27517,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Venlafaxina 75mg 30 cápsulas Eurofarma Genérico",
@@ -27547,7 +27547,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo Salonpas Grande 2 unidades",
@@ -27574,7 +27574,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Dprev Colecalciferol 7.000UI 30 comprimidos",
@@ -27602,7 +27602,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D3 Colecalciferol 50.000 UI Neo Química 8 cápsulas",
@@ -27629,7 +27629,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivaxa Rivaroxabana 20mg 30 Comprimidos",
@@ -27656,7 +27656,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Abrilar Hedera Helix L. 7mg/ml Xarope 100ml + Copo Medida",
@@ -27687,7 +27687,7 @@ const MEDICINES_DB = [
       "medida"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemax Eritron Alfaepoetina 4.000UI Pó Liofilizado para Suspensão Injetável",
@@ -27719,7 +27719,7 @@ const MEDICINES_DB = [
       "injetavel"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 0,075mg 28 comprimidos Sandoz Genérico",
@@ -27747,7 +27747,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trok-N Cetoconazol 20mg + Betametasona 0,5mg + Neomicina 1,5mg Pomada 10g",
@@ -27776,7 +27776,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algodão Bola Needs 95g",
@@ -27803,7 +27803,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lacto-Purga 5mg 16 comprimidos",
@@ -27829,7 +27829,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína 40mg/ml Eurofarma Xarope 120ml - Genérico",
@@ -27858,7 +27858,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seriga Insulina 100UI Agulha Fixa 8mm x 0,3mm Needs 10un",
@@ -27888,7 +27888,7 @@ const MEDICINES_DB = [
       "10un"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flancox Etodolaco 600mg 14 comprimidos",
@@ -27915,7 +27915,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Leite de Magnésia Phillips Original 350ml",
@@ -27944,7 +27944,7 @@ const MEDICINES_DB = [
       "350ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neocopan Composto Brometo de N Butil Escopolamina 10mg + Dipirona Sódica 250mg 20 comprimidos",
@@ -27978,7 +27978,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Enalapril 5mg 30 comprimidos Neo Química Genérico",
@@ -28007,7 +28007,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xarelto 20mg 28 comprimidos",
@@ -28033,7 +28033,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 0,075mg 84 comprimidos Sandoz Genérico",
@@ -28061,7 +28061,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Poviztra Semaglutida 0,50mg Solução Injetável 1,5ml + Caneta Aplicadora com 4 Agulhas",
@@ -28093,7 +28093,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nasoar 0,9% Descongestionante 30 envelopes + Lavador Nasal 240ml",
@@ -28122,7 +28122,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Benalet Sabor Mel e Limão 12 unidades",
@@ -28150,7 +28150,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Selene Etinilestradiol 0,035mg + Acetato de Ciproterona 2mg 63 comprimidos",
@@ -28180,7 +28180,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Nortriptilina 25mg 30 cápsulas Ranbaxy Genérico",
@@ -28210,7 +28210,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Laranja Pó Efervescente 100g",
@@ -28238,7 +28238,7 @@ const MEDICINES_DB = [
       "100g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naldecon Multi Paracetamol 800mg + Cloridrato Fenillefrina 20mg 16 comprimidos",
@@ -28270,7 +28270,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 750mg 20 comprimidos EMS Genérico",
@@ -28297,7 +28297,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Doralgina Dipirona Sódica 300mg + Isometepteno 30mg + Cafeína 30mg 10 drágeas",
@@ -28330,7 +28330,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 50mg 30 comprimidos Medley Genérico",
@@ -28360,7 +28360,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fosfomicina Trometamol 5,631g Granulado 1 Envelope 8g Genérico PharmaScience",
@@ -28391,7 +28391,7 @@ const MEDICINES_DB = [
       "pharmascience"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trometamol Cetorolaco 10mg 10 comprimidos sublinguais União Química Genérico",
@@ -28422,7 +28422,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Venlafaxina 37,5mg 30 Cápsulas de Liberação Controlada Medley Genérico",
@@ -28453,7 +28453,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gastrol 20 pastilhas mastigáveis",
@@ -28479,7 +28479,7 @@ const MEDICINES_DB = [
       "mastigaveis"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Dexametasona 1mg/g Creme 10g União Química Genérico",
@@ -28509,7 +28509,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 5mg 20 comprimidos Eurofarma Genérico",
@@ -28536,7 +28536,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metformina 500mg 30 comprimidos Prati Donaduzzi Genérico",
@@ -28567,7 +28567,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Laxante Fitoterápico Tamarine Sabor Ameixa Zero Açúcar Geleia 250g",
@@ -28600,7 +28600,7 @@ const MEDICINES_DB = [
       "250g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Leucogen Timomodulina 200mg/ml Xarope 120ml",
@@ -28628,7 +28628,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sulfato de Hidroxicloroquina 400mg 30 comprimidos EMS Genérico",
@@ -28657,7 +28657,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rybelsus Semaglutida 3mg 30 comprimidos",
@@ -28683,7 +28683,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sal de Fruta Eno Tradicional Pó Efervescente 100g",
@@ -28711,7 +28711,7 @@ const MEDICINES_DB = [
       "100g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha para Garganta com Anti-inflamatório e Analgésico Strepsils Sabor Laranja Sem Açúcar - 16 unidades",
@@ -28745,7 +28745,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Donaren Retard 150mg 30 comprimidos",
@@ -28772,7 +28772,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zinpass Eze Rosuvastatina Cálcica 10mg + Ezetimiba 10mg 30 comprimidos",
@@ -28803,7 +28803,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pote Coletor Universal 80ml Needs 1 Unidade",
@@ -28833,7 +28833,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 150mcg 30 comprimidos",
@@ -28862,7 +28862,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 250mg 10 cápsulas",
@@ -28889,7 +28889,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nitrofurantoina 100mg 28 cápsulas Teuto Genérico",
@@ -28917,7 +28917,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naturetti Extratos Vegetais Sem Açúcar 16 cápsulas",
@@ -28945,7 +28945,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar Anlo Olmesartana Medoxomila 20mg + Besilato de Anlodipino 5mg 30 comprimidos",
@@ -28977,7 +28977,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flanax XR Naproxeno Sódico 660mg 8 Comprimidos",
@@ -29006,7 +29006,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 75mcg 30 comprimidos",
@@ -29035,7 +29035,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fenergan Cloridrato de Prometazina 25mg 20 comprimidos",
@@ -29064,7 +29064,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Concor Hemifumarato de Bisoprolol 2,5mg 30 comprimidos",
@@ -29092,7 +29092,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naldecon Pack Dia e Noite Paracetamol + Cloridrato Fenillefrina + Maleato de Carbinoxamina 24 comprimidos",
@@ -29124,7 +29124,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cerumin Hidroxiquinolina 0,4mg/ml + Trolamina 140mg/ml Solução Otológica 8ml",
@@ -29154,7 +29154,7 @@ const MEDICINES_DB = [
       "otologica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Metildopa 250mg 30 comprimidos EMS Genérico",
@@ -29181,7 +29181,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Metformina 500mg 30 comprimidos Liberação Prolongada Prati Donaduzzi Genérico",
@@ -29214,7 +29214,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Stodal Droser 3CH + Associações Xarope 150ml",
@@ -29243,7 +29243,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 100mg 30 comprimidos Zydus Nikkho Genérico",
@@ -29274,7 +29274,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 100mcg 30 comprimidos",
@@ -29303,7 +29303,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Evra 6mg + 0,6mg 3 Adesivos Transdérmicos",
@@ -29329,7 +29329,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lasix Furosemida 40mg 20 comprimidos",
@@ -29356,7 +29356,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tropinal Dipirona Monoidratada 300mg + Butilbrometo de Escopolamina 6,5mcg + Hiosciamina 104mcg + Homatropina 1mg 20 comprimidos",
@@ -29391,7 +29391,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hidroclorotiazida 50mg 20 comprimidos Neo Química Genérico",
@@ -29419,7 +29419,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brometo de Ipratrópio 0,25mg/ml Solução para Inalação 20ml Teuto Genérico",
@@ -29452,7 +29452,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuflex Ibuprofeno 400mg 8 cápsulas",
@@ -29479,7 +29479,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "BetaTrinta Dipropionato de Betametasona 5mg/ml + Fosfato Dissodico de Betametasona 2mg/ml Suspensão Injetável 1 ampola 1ml + seringa",
@@ -29513,7 +29513,7 @@ const MEDICINES_DB = [
       "seringa"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezor Rosuvastatina Cálcica 10mg 60 comprimidos",
@@ -29542,7 +29542,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bolsa Térmica Gel Quente e Fria Needs 500ml",
@@ -29572,7 +29572,7 @@ const MEDICINES_DB = [
       "500ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ondif 8mg 10 filmes",
@@ -29597,7 +29597,7 @@ const MEDICINES_DB = [
       "filmes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Epocler Abacaxi 6 flaconetes 10ml cada",
@@ -29626,7 +29626,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esparadrapo Impermeável Nexcare Bege de 25mm x 0,9m com 1 unidade",
@@ -29655,7 +29655,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xantinon Racemetionina 100mg + Colina 20mg 10 comprimidos",
@@ -29684,7 +29684,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bicarbonato de Sódio Needs 100g",
@@ -29712,7 +29712,7 @@ const MEDICINES_DB = [
       "100g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fexofenadina 120mg 10 comprimidos Cimed Genérico",
@@ -29742,7 +29742,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rinosoro Jet Infantil 0,9% Descongestionante Spray Jato Suave 100ml",
@@ -29773,7 +29773,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetonida de Triancinolona Orabase 1,0mg/g Pomada 10g EMS Genérico",
@@ -29802,7 +29802,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ômega 3 1000mg Catarinense com 60 cápsulas",
@@ -29829,7 +29829,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nicorette Icemint 2mg Goma Mastigável para Parar de Fumar 30 unidades",
@@ -29860,7 +29860,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flanax Naproxeno Sódico 550mg 15 comprimidos",
@@ -29889,7 +29889,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Infantil Dipirona 500mg/ml Gotas 10ml",
@@ -29919,7 +29919,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bup XL Cloridrato de Bupropiona 150mg 60 comprimidos revestidos de liberação prolongada",
@@ -29950,7 +29950,7 @@ const MEDICINES_DB = [
       "prolongada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Semtri Maleato de Fluvoxamina 50mg 30 comprimidos",
@@ -29979,7 +29979,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ritalina Cloridrato de Metilfenidato 10mg 30 comprimidos",
@@ -30008,7 +30008,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atentah Cloridrato de Atomoxetina 10mg 30 Cápsulas",
@@ -30037,7 +30037,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico Cloreto de Sódio 0,9% ADV Farma Sem Conservantes com 250ml",
@@ -30068,7 +30068,7 @@ const MEDICINES_DB = [
       "250ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furosemida 40mg 20 comprimidos Prati Donaduzzi Genérico",
@@ -30097,7 +30097,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aspirina Prevent Ácido Acetilsalicílico 100mg 100 comprimidos",
@@ -30127,7 +30127,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Selozok Succinato de Metoprolol 25mg 30 comprimidos",
@@ -30156,7 +30156,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Amitriptilina 25mg 30 comprimidos Neo Química Genérico",
@@ -30186,7 +30186,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 25mg 30 comprimidos Eurofarma Genérico",
@@ -30216,7 +30216,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Donaren Cloridrato de Trazodona 100mg 30 comprimidos",
@@ -30245,7 +30245,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Meloxicam 15mg 10 comprimidos Genérico Pharlab",
@@ -30273,7 +30273,7 @@ const MEDICINES_DB = [
       "pharlab"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Luftal Infantil Simeticona 75mg/ml Gotas 15ml",
@@ -30303,7 +30303,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina Tri-Hidratada 875mg + Clavulanato de Potássio 125mg 20 comprimidos EMS Genérico",
@@ -30335,7 +30335,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esomeprazol Magnésico 20mg 28 comprimidos Ranbaxy Genérico",
@@ -30364,7 +30364,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 100mg 30 Comprimidos Eurofarma Genérico",
@@ -30394,7 +30394,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atensina Clonidina 0,150mg 30 comprimidos",
@@ -30422,7 +30422,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Propranolol 40mg 30 Comprimidos Teuto Genérico",
@@ -30452,7 +30452,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Avodart Dutasterida 0,5mg 90 cápsulas",
@@ -30479,7 +30479,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 50mg 60 comprimidos EMS Genérico",
@@ -30508,7 +30508,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 4 comprimidos EMS Genérico",
@@ -30535,7 +30535,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sucrafilm Sucralfato 2g 20 flaconetes",
@@ -30561,7 +30561,7 @@ const MEDICINES_DB = [
       "flaconetes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Notuss Dropropizina 3mg/ml Xarope Sabor Mel 120ml",
@@ -30589,7 +30589,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Symbicort Spray Fumarato de Formoterol 6mcg + Budesonida 200mcg 120 doses",
@@ -30621,7 +30621,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duphaston Didrogesterona 10mg 28 comprimidos",
@@ -30648,7 +30648,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Dipirona 500mg/ml Gotas 20ml",
@@ -30676,7 +30676,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tanduo Dutasterida 0,5mg + Cloridrato de Tansulosina 0,4mg 30 cápsulas",
@@ -30705,7 +30705,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maracujá Passiflora Incarnata 320mg Herbarium 20 comprimidos",
@@ -30735,7 +30735,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sorine Cloridrato de Nafazolina 0,5mg/ml Solução Nasal 30ml",
@@ -30765,7 +30765,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sensor de Glicose FreeStyle Libre - 1 unidade",
@@ -30793,7 +30793,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hexomedine Isetionato de Hexamidina 1mg + Cloridrato de Tetracaína 0,5mg Spray Colutório 50ml",
@@ -30825,7 +30825,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neutrofer Ferro Quelato Glicinato 150mg 30 comprimidos",
@@ -30855,7 +30855,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Advantan Aceponato de Metilprednisona 1mg/g Creme 15g",
@@ -30883,7 +30883,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adesivo Salonpas Grande 8 unidades",
@@ -30910,7 +30910,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 5mg 10 comprimidos Eurofarma Genérico",
@@ -30937,7 +30937,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venvanse 30mg 28 cápsulas",
@@ -30963,7 +30963,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 0,4mg/ml Solução Oral 120ml Prati Donaduzzi Genérico",
@@ -30995,7 +30995,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 30 comprimidos Cimed Genérico",
@@ -31022,7 +31022,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 50mg - 30 comprimidos Zydus Nikkho Genérico",
@@ -31053,7 +31053,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Deller Succinato de Desvenlafaxina Monoidratado 100mg 60 Comprimidos",
@@ -31083,7 +31083,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sinvastatina 10mg 30 comprimidos Sandoz Genérico",
@@ -31111,7 +31111,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Crevagin Tinidazol 30mg + Nitrato de Miconazol 20mg Creme Vaginal 40g + 7 aplicadores",
@@ -31143,7 +31143,7 @@ const MEDICINES_DB = [
       "aplicadores"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Salonpas Gel Patch com 3 unidades",
@@ -31169,7 +31169,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tylenol Paracetamol 750mg Múltiplas Dores 10 comprimidos",
@@ -31198,7 +31198,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bilastina 20mg 30 comprimidos EMS Genérico",
@@ -31225,7 +31225,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vastarel LP Trimetazidina 80mg 30 cápsulas",
@@ -31253,7 +31253,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valsartana 160mg 30 comprimidos Cimed Genérico",
@@ -31281,7 +31281,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zyad Tadalafila 5mg 60 Comprimidos Revestidos",
@@ -31308,7 +31308,7 @@ const MEDICINES_DB = [
       "revestidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 50mg 30 comprimidos Althaia Genérico",
@@ -31336,7 +31336,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dramin B6 Dimenidrinato 25mg/ml + Cloridrato de Piridoxina 5mg/ml Solução Oral 30ml",
@@ -31368,7 +31368,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 40mg 20 comprimidos Medley Genérico",
@@ -31396,7 +31396,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benegrip Dipirona Monoidratada 500mg + Maleato de Clorfeniramina 2mg + Cafeína 30mg 12 comprimidos",
@@ -31429,7 +31429,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivotril Clonazepam 2,5mg Solução Oral 20ml",
@@ -31458,7 +31458,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lenço Umedecido Antisséptico Free Wipes com 20 unidades",
@@ -31487,7 +31487,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neosaldina Analgésico 30 drágeas",
@@ -31513,7 +31513,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Suplemento Alimentar Omegafor Plus 1g Ômega 3 - 120 cápsulas",
@@ -31543,7 +31543,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 112mcg 30 comprimidos Merck Genérico",
@@ -31572,7 +31572,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Solomed Seringa Descartável 5ml com Agulha 30mm x 7mm",
@@ -31601,7 +31601,7 @@ const MEDICINES_DB = [
       "30mm"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 2mg/5ml Solução Oral Sabor Laranja 120ml Cimed Genérico",
@@ -31634,7 +31634,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levoid Levotiroxina Sódica 50mcg 30 comprimidos",
@@ -31663,7 +31663,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Composto Solução Gotas 20ml",
@@ -31692,7 +31692,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Álcool Gel Giovanna Baby Classic com 60ml",
@@ -31721,7 +31721,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vorpro Vortioxetina 10mg 30 Comprimidos Revestidos",
@@ -31749,7 +31749,7 @@ const MEDICINES_DB = [
       "revestidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neosaldina Analgésico 4 drágeas",
@@ -31775,7 +31775,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Therapsor Propionato de Clobetasol 0,5mg Solução Capilar 25ml",
@@ -31805,7 +31805,7 @@ const MEDICINES_DB = [
       "25ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aradois Losartana Potássica 50mg 60 comprimidos",
@@ -31834,7 +31834,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa de Gaze Cicatrisan Não Aderente Estéril 10 unidades",
@@ -31863,7 +31863,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 10mg 10 comprimidos revestidos EMS Genérico",
@@ -31893,7 +31893,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Secnidazol 1000mg 4 Comprimidos Medley Genérico",
@@ -31921,7 +31921,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitacid Plus Hidroquinona 40mg/g + Tretinoína 0,5mg/g + Fluocinolona Acetonida 0,1mg/g Creme 15g",
@@ -31953,7 +31953,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Repoflor 250mg 10 Cápsulas",
@@ -31979,7 +31979,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromazepam 3mg 30 comprimidos Medley Genérico",
@@ -32006,7 +32006,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Hidrocortisona 10mg/g Creme Dermatológico 20g União Química Genérico",
@@ -32038,7 +32038,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 20mg 4 comprimidos Neo Química Genérico",
@@ -32066,7 +32066,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Proctan 5mg/g + 20mg/g + 20mg/g + 100mg/g Pomada 25g",
@@ -32094,7 +32094,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico Cloreto de Sódio 0,9% ADV Farma 10 ampolas de 5ml",
@@ -32124,7 +32124,7 @@ const MEDICINES_DB = [
       "ampolas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Finalop Finasterida 1mg 30 comprimidos",
@@ -32150,7 +32150,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pondera XR Cloridrato de Paroxetina 25mg 30 comprimidos",
@@ -32179,7 +32179,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Decontosse 40mg/ml Suspensão Oral 100ml + Copo Dosador",
@@ -32209,7 +32209,7 @@ const MEDICINES_DB = [
       "dosador"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Pyrena Grip-7 Paracetamol 400mg + Cloridrato Fenillefrina 4mg + Maleato de Clorfeniramina 4mg 5 cápsulas",
@@ -32243,7 +32243,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexfer Ferripolimaltose 100mg/ml Solução Gotas 30ml + Adaptador",
@@ -32273,7 +32273,7 @@ const MEDICINES_DB = [
       "adaptador"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 20mg 30 Comprimidos Medley Genérico",
@@ -32302,7 +32302,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dicloridrato de Levocetirizina 5mg 10 comprimidos Ranbaxy Genérico",
@@ -32331,7 +32331,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cefalexina 500mg 10 comprimidos EMS Genérico",
@@ -32358,7 +32358,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zart Losartana Potássica 50mg 30 comprimidos",
@@ -32387,7 +32387,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Laxante Fitoterápico Tamarine 12mg 20 cápsulas",
@@ -32416,7 +32416,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dicloridrato de Levocetirizina 5mg 10 comprimidos Eurofarma Genérico",
@@ -32445,7 +32445,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina NovoRapid FlexPen 100U/ml Solução Injetável 1 Sistema de Aplicação de 3ml Geladeira",
@@ -32478,7 +32478,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venaflon Diosmina 450mg + Hesperidina 50mg 30 comprimidos",
@@ -32507,7 +32507,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Berotec Bromidrato de Fenoterol 100mcg Aerosol 10ml",
@@ -32537,7 +32537,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valsartana 160mg + Hidroclorotiazida 12,5mg 30 comprimidos Aché Genérico",
@@ -32566,7 +32566,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Loxonin Flex 100mg 7 Adesivos",
@@ -32593,7 +32593,7 @@ const MEDICINES_DB = [
       "adesivos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Sumatriptana 50mg 6 Comprimidos Biolab Genérico",
@@ -32623,7 +32623,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neosaldina Analgésico e Relaxante Muscular 10 comprimidos",
@@ -32651,7 +32651,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "AtivB Mecobalamina 1000mcg 30 comprimidos",
@@ -32678,7 +32678,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Agulha para Caneta Novofine 32G 4mm 7 unidades",
@@ -32707,7 +32707,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mesigyna Enantato de Noretisterona 50mg/ml + Valerato de Estradiol 5mg/ml Seringa Pré-Carregada 1ml",
@@ -32739,7 +32739,7 @@ const MEDICINES_DB = [
       "carregada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "LuftaGastro Sachê Líquido Alginato de Sódio 100mg/ml + Bicarbonato de Potássio 20mg/ml Sabor Menta Suspensão Oral 12 Sachês com 10ml cada",
@@ -32779,7 +32779,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexilant Dexlansoprazol 60mg 60 cápsulas",
@@ -32806,7 +32806,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Poviztra Semaglutida 0,25mg Solução Injetável 1,5ml + Caneta Aplicadora com 4 Agulhas",
@@ -32838,7 +32838,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Natifa Estradiol 1mg 28 comprimidos",
@@ -32864,7 +32864,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apracur Maleato de Clorfeniramina 1mg + Ácido Ascórbico 50mg + Dipirona Monoidratada 100mg 6 comprimidos",
@@ -32898,7 +32898,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sandrena Estradiol 1mg 28 sachês",
@@ -32924,7 +32924,7 @@ const MEDICINES_DB = [
       "saches"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 400mg/5ml + Clavulanato de Potássio 57mg/5ml Suspensão Oral 70ml EMS Genérico",
@@ -32956,7 +32956,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Duloxetina 30mg 30 cápsulas Nova Química Genérico",
@@ -32987,7 +32987,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 0,25mg 30 comprimidos Medley Genérico",
@@ -33015,7 +33015,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Transamin Ácido Tranexâmico 250mg 12 comprimidos",
@@ -33044,7 +33044,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diprospan Dipropionato de Betametasona 5mg/ml + Fosfato Dissodico de Betametasona 2mg/ml Suspensão Injetável 1 ampola 1ml + seringa",
@@ -33078,7 +33078,7 @@ const MEDICINES_DB = [
       "seringa"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ezetimiba 10mg 60 comprimidos Althaia Genérico",
@@ -33106,7 +33106,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável 5ml Agulha Fixa 25mm x 0,7mm Needs 1un",
@@ -33135,7 +33135,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esparadrapo Needs Branco Impermeável 2,5cm x 4,5m 1 unidade",
@@ -33163,7 +33163,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Noripurum Hidróxido de Ferro III 100mg 30 comprimidos mastigáveis",
@@ -33193,7 +33193,7 @@ const MEDICINES_DB = [
       "mastigaveis"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estriol 1mg/g Creme Vaginal 50g Biolab Genérico",
@@ -33221,7 +33221,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 50mcg 30 comprimidos",
@@ -33250,7 +33250,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Slow-K Cloreto de Potássio 30 comprimidos",
@@ -33276,7 +33276,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar HCT Olmesartana Medoxomila 20mg + Hidroclorotiazida 12,5mg 30 Comprimidos",
@@ -33306,7 +33306,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Firialta Finerenona 10mg 28 comprimidos",
@@ -33333,7 +33333,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "PredSim Prednisolona 40mg 7 comprimidos",
@@ -33360,7 +33360,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xigduo XR 5mg + 1000mg 60 comprimidos",
@@ -33386,7 +33386,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dramavit B6 Dimenidrinato 25mg/ml + Cloridrato de Piridoxina 5mg/ml Solução em Gotas 20ml",
@@ -33418,7 +33418,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antisséptico Tópico Merthiolate Spray 30ml",
@@ -33447,7 +33447,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Stanglit 30mg 60 comprimidos",
@@ -33473,7 +33473,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hirudoid Polisulfato de Mucopolissacarídeo 500mg Pomada 40g",
@@ -33502,7 +33502,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 100mg 30 comprimidos Althaia Genérico",
@@ -33530,7 +33530,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Extrato de Própolis Verde 70 Apis Flora Solução Gotas 30ml",
@@ -33562,7 +33562,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar HCT Olmesartana Medoxomila 40mg + Hidroclorotiazida 12,5mg 30 Comprimidos",
@@ -33592,7 +33592,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 50mg Creme 10g Medley Genérico",
@@ -33620,7 +33620,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Água Boricada Needs Solução Tópica 100ml",
@@ -33650,7 +33650,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Imussuprex Azatioprina 50mg 50 comprimidos",
@@ -33677,7 +33677,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Extensior Semaglutida 1mg Solução Injetável 3ml + Caneta Aplicadora com 4 Agulhas",
@@ -33707,7 +33707,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Bupropiona 150mg 60 comprimidos de Liberação Prolongada 12 horas Eurofarma Genérico",
@@ -33740,7 +33740,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ondansetrona 4mg 10 comprimidos Neo Química Genérico",
@@ -33769,7 +33769,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Uninaltrex Cloridrato de Naltrexona 50mg 30 comprimidos",
@@ -33798,7 +33798,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cimelide Nimesulida 100mg 12 comprimidos",
@@ -33825,7 +33825,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivotril Clonazepam 2mg 30 comprimidos",
@@ -33851,7 +33851,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Selene Etinilestradiol 0,035mg + Acetato de Ciproterona 2mg 21 comprimidos",
@@ -33881,7 +33881,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Octifen Fumarato de Cetotifeno 0,25mg/ml Solução Oftálmica 5ml",
@@ -33911,7 +33911,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levotiroxina Sódica 150mcg 30 comprimidos Merck Genérico",
@@ -33940,7 +33940,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Metronidazol 250mg 20 comprimidos Neo Química Genérico",
@@ -33968,7 +33968,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 125mg Bwell 10 cápsulas",
@@ -33995,7 +33995,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ansitec Cloridrato de Buspirona 10mg 60 comprimidos",
@@ -34024,7 +34024,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 25mg 30 Comprimidos Cimed Genérico",
@@ -34054,7 +34054,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flutinol Fluorometolona 1mg/g Suspensão Oftálmica Estéril 5ml",
@@ -34082,7 +34082,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Divalcon Er Divalproato de Sódio 500mg 60 comprimidos",
@@ -34111,7 +34111,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tecnomet Metotrexato Sódico 2,5mg 20 comprimidos",
@@ -34139,7 +34139,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aristab Aripiprazol 1mg/ml Suspensão Oral 150ml",
@@ -34167,7 +34167,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Coristina D Pro Cloridrato Fenillefrina 4mg + Paracetamol 400mg + Maleato de Clorfeniramina 4mg 16 comprimidos",
@@ -34198,7 +34198,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Candicort Cetoconazol 20mg + Betametasona 0,64mg Creme 30g",
@@ -34227,7 +34227,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pratium Paracetamol 140mg/ml Gotas 15ml",
@@ -34255,7 +34255,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bolsa Térmica Gel Termogel Grande 1 unidade",
@@ -34283,7 +34283,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesulida 100mg 12 comprimidos Neo Química Genérico",
@@ -34311,7 +34311,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 2mg 30 comprimidos Aché Genérico",
@@ -34338,7 +34338,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Biofenac 11mg/g Aerosol 85ml",
@@ -34365,7 +34365,7 @@ const MEDICINES_DB = [
       "85ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ômega 3 EPA DHA Vitafor com 60 cápsulas",
@@ -34390,7 +34390,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nuvaring Etonogestrel 11,7mg + Einilestradiol 2,7mg 1 Anel Vaginal",
@@ -34419,7 +34419,7 @@ const MEDICINES_DB = [
       "vaginal"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexason Dexametasona 4mg 10 comprimidos",
@@ -34445,7 +34445,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Amiodarona 200mg 30 comprimidos Medley Genérico",
@@ -34475,7 +34475,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olanzapina 10mg 30 comprimidos Eurofarma Genérico",
@@ -34503,7 +34503,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pomada Desodorante Massageadora Fisiofort+ Premium Bio Instinto 150g",
@@ -34534,7 +34534,7 @@ const MEDICINES_DB = [
       "150g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex Analgésico e Relaxante Muscular 24 comprimidos",
@@ -34562,7 +34562,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omeprazol 10mg 14 cápsulas Medley Genérico",
@@ -34590,7 +34590,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Entresto Sacubitril Valsartana 50mg 28 comprimidos",
@@ -34619,7 +34619,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Tranexâmico 250mg 12 comprimidos EMS Genérico",
@@ -34647,7 +34647,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 88mcg 30 comprimidos",
@@ -34676,7 +34676,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina Tri-Hidratada 500mg + Clavulanato de Potássio 125mg 21 comprimidos Sandoz Genérico",
@@ -34709,7 +34709,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "LuftaGastro Dupla Ação Menta 12 Sachês 10ml cada",
@@ -34740,7 +34740,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Sany D 14.000 UI 4 comprimidos",
@@ -34765,7 +34765,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Concor Hemifumarato de Bisoprolol 5mg 30 comprimidos",
@@ -34793,7 +34793,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algodão Quadrado Needs Baby 100 Unidades",
@@ -34821,7 +34821,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 20mg 60 Comprimidos Sandoz Genérico",
@@ -34850,7 +34850,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Basaglar KwikPen 100UI/ml Solução Injetável 5 Canetas Descartáveis de 3ml cada Geladeira",
@@ -34884,7 +34884,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Ciflogex Diet Sabor Menta 12 unidades",
@@ -34913,7 +34913,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atentah Cloridrato de Atomoxetina 18mg 30 Cápsulas",
@@ -34942,7 +34942,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Humalog KwikPen 100UI/ml Solução Injetável 1 Caneta Injetora Descartável de 3ml Geladeira",
@@ -34976,7 +34976,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furoato de Mometasona 50mcg Suspensão Nasal 120 doses Glenmark Genérico",
@@ -35008,7 +35008,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Finasterida 5mg 30 comprimidos revestidos Cimed Genérico",
@@ -35036,7 +35036,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hirudoid 500mg Gel Azul Claro 40g",
@@ -35063,7 +35063,7 @@ const MEDICINES_DB = [
       "claro"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seakalm Passiflora Incarnata L. 600mg - 30 comprimidos",
@@ -35092,7 +35092,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nasojet 9mg Descongestionante Spray 50ml",
@@ -35119,7 +35119,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Calman 20 comprimidos",
@@ -35144,7 +35144,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acnova Isotretinoína 20mg 30 cápsulas",
@@ -35171,7 +35171,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 1mg/ml Solução Oral 30ml EMS Genérico",
@@ -35199,7 +35199,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Allexofedrin D Fexofenadina 60mg + Pseudofedrina 120mg 10 comprimidos",
@@ -35228,7 +35228,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Primosiston Noretisterona 2mg + Etinilestradiol 0,01mg 30 comprimidos",
@@ -35256,7 +35256,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Colchicina 0,5mg 30 comprimidos Geolab Genérico",
@@ -35283,7 +35283,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flebon Pycnogenol 50mg 60 comprimidos",
@@ -35310,7 +35310,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ambroxmel Cloridrato de Ambroxol 30mg/5ml Xarope Sabor Mel e Eucalípto 120ml",
@@ -35342,7 +35342,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 50mg - 60 comprimidos Eurofarma Genérico",
@@ -35372,7 +35372,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Daflon Diosmina 900mg + Hesperidina 100mg 30 comprimidos",
@@ -35401,7 +35401,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tandrilax Diclofenaco Sódico 50mg + Carisoprodol 125mg + Paracetamol 300mg + Cafeína 30mg 30 comprimidos",
@@ -35436,7 +35436,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carverol 250mg com 20 comprimidos",
@@ -35462,7 +35462,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Revoc Maleato de Fluvoxamina 50mg 30 comprimidos",
@@ -35491,7 +35491,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Advil Ibuprofeno 400mg 3 cápsulas",
@@ -35518,7 +35518,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivaroxabana 20mg 30 Comprimidos EMS Genérico",
@@ -35545,7 +35545,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pyridium Fenazopiridina 100mg 25 drágeas",
@@ -35572,7 +35572,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maxidex Acetato de Dexametasona 1mg/ml Suspensão Oftálmica Estéril 5ml",
@@ -35602,7 +35602,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Oximetazolina 0,5mg/ml Solução Nasal 30ml EMS Genérico",
@@ -35632,7 +35632,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 0,4mg/ml + Betametasona 0,05mg/ml Xarope 120ml EMS Genérico",
@@ -35663,7 +35663,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gastrol 10 pastilhas mastigáveis",
@@ -35689,7 +35689,7 @@ const MEDICINES_DB = [
       "mastigaveis"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Memantina 10mg 30 comprimidos Eurofarma Genérico",
@@ -35719,7 +35719,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spray para Garganta Neopiridin Menta 50ml",
@@ -35749,7 +35749,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável Tuberculina BD 13x3,8 1ml",
@@ -35777,7 +35777,7 @@ const MEDICINES_DB = [
       "13x3"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gardenal Fenobarbital 100mg 20 comprimidos",
@@ -35804,7 +35804,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valerimed Valeriana Officinalis 50mg 20 comprimidos",
@@ -35833,7 +35833,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ablok Atenolol 25mg 30 comprimidos",
@@ -35860,7 +35860,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick BabyRub Bálsamo Infantil com Camomila e Aloe Vera 12g",
@@ -35891,7 +35891,7 @@ const MEDICINES_DB = [
       "vera"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alektos Ped Bilastina 2,5mg/ml Solução Oral 120ml",
@@ -35920,7 +35920,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cialis Tadalafila 5mg 30 comprimidos",
@@ -35946,7 +35946,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Bisoprolol 1,25mg 30 comprimidos Merck Genérico",
@@ -35976,7 +35976,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Jardiance Duo Empagliflozina 12,5mg + Metformina 1000mg 60 Comprimidos",
@@ -36005,7 +36005,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Celecoxibe 200mg 10 cápsulas Eurofarma Genérico",
@@ -36033,7 +36033,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dutam Dutasterida 0,5mg + Cloridrato de Tansulosina 0,4mg 30 cápsulas",
@@ -36062,7 +36062,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lenço Umedecido Antisséptico Needs 20 unidades",
@@ -36090,7 +36090,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mirtazapina 15mg 30 comprimidos Neo Química Genérico",
@@ -36118,7 +36118,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citoneurin 5000 30 comprimidos",
@@ -36144,7 +36144,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amiodarona 100mg Medley 30 comprimidos - Genérico",
@@ -36172,7 +36172,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kalonat Ácido Salicílico 20% + Ácido Láctico 15% Solução Tópica 10ml",
@@ -36204,7 +36204,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gabapentina 400mg 30 cápsulas Prati Donaduzzi Genérico",
@@ -36233,7 +36233,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fosfato de Oseltamivir 75mg 10 cápsulas Natcofarma Genérico",
@@ -36263,7 +36263,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclofenaco Dietilamônio 10mg/g Medley Gel Creme com 60g",
@@ -36291,7 +36291,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spray para Garganta Extrato de Própolis Apis Vida Sabor Gengibre 30ml",
@@ -36325,7 +36325,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apresolina Hidralazina 50mg 20 drágeas",
@@ -36352,7 +36352,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Coristina D Congest Maleato de Bronfeniramina 12mg + Cloridrato de Filefrina 15mg 4 comprimidos",
@@ -36384,7 +36384,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Semtri Maleato de Fluvoxamina 100mg 60 comprimidos",
@@ -36413,7 +36413,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bactroban Mupirocina 20mg/g Pomada 10g",
@@ -36440,7 +36440,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venvanse Dimesilato de Lisdexanfetamina 50mg 28 cápsulas",
@@ -36469,7 +36469,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezete Rosuvastatina Cálcica 10mg + Ezetimiba 10mg 60 Comprimidos",
@@ -36500,7 +36500,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Losartana Potássica 50mg 30 comprimidos EMS Genérico",
@@ -36528,7 +36528,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Picoprep Picossulfato de Sódio 10mg + Óxido de Magnésio 3,5g + Ácido Cítrico Anidro 12g Pó para Solução 2 sachês",
@@ -36564,7 +36564,7 @@ const MEDICINES_DB = [
       "saches"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glibenclamida 5mg 30 comprimidos Neo Química Genérico",
@@ -36591,7 +36591,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Máscara Descartável Needs Tripla Camada 5 unidades",
@@ -36620,7 +36620,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glifage XR Cloridrato de Metformina 750mg 30 comprimidos",
@@ -36649,7 +36649,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Flogoral Sabor Menta 12 unidades",
@@ -36677,7 +36677,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Flogoral Imune Mel e Limão 8 Unidades",
@@ -36705,7 +36705,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 100mg - 30 comprimidos Eurofarma Genérico",
@@ -36735,7 +36735,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oscillococcinum 200k Anas Barbariae Hepatis Et Cordis Extractum 200k 6 Tubos de 1g cada",
@@ -36769,7 +36769,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sais para Reidratação bwell Hidrataliv Laranja 4 envelopes",
@@ -36799,7 +36799,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Extensior Semaglutida 0,25mg Solução Injetável 1,5ml + Caneta Aplicadora com 6 Agulhas",
@@ -36831,7 +36831,7 @@ const MEDICINES_DB = [
       "agulhas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemitartarato de Zolpidem 10mg 30 comprimidos EMS Genérico",
@@ -36860,7 +36860,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar HCT Olmesartana Medoxomila 40mg + Hidroclorotiazida 25mg 30 Comprimidos",
@@ -36891,7 +36891,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Anador Dipirona Monoidratada 500mg 4 comprimidos",
@@ -36920,7 +36920,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topison Furoato de Mometasona 1mg/g Creme 20g",
@@ -36948,7 +36948,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tiras para Teste de Glicemia Freestyle Optium 50 Unidades",
@@ -36978,7 +36978,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Level Levonorgestrel 0,1mg + Etinilestradiol 0,02mg 21 comprimidos",
@@ -37007,7 +37007,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Confira 1 Tira",
@@ -37034,7 +37034,7 @@ const MEDICINES_DB = [
       "tira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 2mg 30 comprimidos Medley Genérico",
@@ -37061,7 +37061,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venvanse Dimesilato de Lisdexanfetamina 70mg 28 cápsulas",
@@ -37090,7 +37090,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Enalapril 5mg 30 comprimidos EMS Genérico",
@@ -37118,7 +37118,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Junno Progesterona 100mg 30 cápsulas",
@@ -37145,7 +37145,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Creon Pancreatina 25.000UI 30 cápsulas",
@@ -37173,7 +37173,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick Pyrena Paracetamol 500mg/5g Sabor Mel e Limão Pó para Solução Oral 5 envelopes com 5g cada",
@@ -37208,7 +37208,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezor Rosuvastatina Cálcica 10mg 30 Comprimidos",
@@ -37237,7 +37237,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cisteil 600mg Granulado Solúvel Expectorante 16 envelopes com 5g cada",
@@ -37267,7 +37267,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Needs Simeticona 125mg 30 Cápsulas",
@@ -37294,7 +37294,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mirabegrona 50mg 30 Comprimidos Althaia Genérico",
@@ -37322,7 +37322,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atentah Cloridrato de Atomoxetina 60mg 30 Cápsulas",
@@ -37351,7 +37351,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lyberdia Dimesilato de Lisdexanfetamina 40mg Solução Gotas 50ml",
@@ -37382,7 +37382,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorflex UNO Dipirona 1g 20 comprimidos",
@@ -37409,7 +37409,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naridrin Alto Volume Cloreto de Sódio 9mg/ml 30 envelopes Refil",
@@ -37440,7 +37440,7 @@ const MEDICINES_DB = [
       "refil"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mucos Expec Acetilcisteína 40mg Xarope 120ml",
@@ -37470,7 +37470,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Proctyl 100mg + 27mg 15 Supositórios",
@@ -37497,7 +37497,7 @@ const MEDICINES_DB = [
       "supositorios"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Annita Nitazoxanida 20mg/ml Pó para Suspensão Oral 45ml",
@@ -37527,7 +37527,7 @@ const MEDICINES_DB = [
       "45ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Adapaleno 1mg/g Medley Gel 30g - Genérico",
@@ -37553,7 +37553,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 10mg Medley 60 comprimidos - Genérico",
@@ -37582,7 +37582,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Avide Racecadotrila 100mg 9 cápsulas",
@@ -37609,7 +37609,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Propionato de Clobetasol 0,5mg/g Pomada 30g Neo Química Genérico",
@@ -37638,7 +37638,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezor Rosuvastatina Cálcica 20mg 30 comprimidos",
@@ -37667,7 +37667,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosucor Eze Rosuvastatina Cálcica 10mg + Ezetimiba 10mg - 30 cápsulas",
@@ -37698,7 +37698,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 25mg 30 comprimidos Medley Genérico",
@@ -37728,7 +37728,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 50mg 30 comprimidos Eurofarma Genérico",
@@ -37758,7 +37758,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Celerg Maleato de Dexclorfeniramina 2mg + Betametasona 0,25mg 20 comprimidos",
@@ -37788,7 +37788,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Infralax Cafeína 30mg + Carisoprodol 125mg + Diclofenaco Sódico 50mg + Paracetamol 300mg 15 comprimidos",
@@ -37822,7 +37822,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seriga Insulina 30UI Agulha Fixa 8mm x 0,3mm Needs 10un",
@@ -37852,7 +37852,7 @@ const MEDICINES_DB = [
       "10un"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carvedilol 25mg 30 Comprimidos Cimed Genérico",
@@ -37880,7 +37880,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seretide Xinafoato de Salmeterol 25mcg + Propionato de Fluticazona 125mcg Spray 120 doses",
@@ -37913,7 +37913,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glaucotrat Maleato de Timolol 0,5% Solução Oftálmica 5ml",
@@ -37942,7 +37942,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Elani 28 Drospirenona 3mg + Etinilestradiol 0,03mg 84 comprimidos",
@@ -37971,7 +37971,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Metildopa 500mg 30 comprimidos EMS Genérico",
@@ -37998,7 +37998,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ondansetrona 4mg 10 Comprimidos Medley Genérico",
@@ -38025,7 +38025,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Imipra Imipramina 25mg 20 comprimidos",
@@ -38052,7 +38052,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flixotide Fluticasona 50mcg Spray 120 doses",
@@ -38080,7 +38080,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Anastrozol 1mg 30 comprimidos Eurofarma Genérico",
@@ -38107,7 +38107,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Clearblue Digital com 1 Unidade",
@@ -38135,7 +38135,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Orlistate 120mg 30 cápsulas Germed Genérico",
@@ -38163,7 +38163,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 10mg/g Creme Dermatológico 30g EMS Genérico",
@@ -38193,7 +38193,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fumagum 4mg Menta 36 Gomas",
@@ -38219,7 +38219,7 @@ const MEDICINES_DB = [
       "gomas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Astro Azitromicina Di-Hidratada 500mg 5 comprimidos",
@@ -38248,7 +38248,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alprazolam 0,5mg 30 comprimidos Medley Genérico",
@@ -38275,7 +38275,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Engov 24 comprimidos",
@@ -38300,7 +38300,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Doss Colecalciferol 15.000UI 8 cápsulas",
@@ -38328,7 +38328,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Quetiapina 25mg 30 comprimidos Biosintética Genérico",
@@ -38358,7 +38358,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oto-Xilodase Cloridrato de Lidocaína 50mg + Sulfato de Neomicina 5mg + Hialuronidase 100 UTR Solução Otológica 8ml",
@@ -38391,7 +38391,7 @@ const MEDICINES_DB = [
       "otologica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Sumatriptana 50mg 2 comprimidos Biolab Genérico",
@@ -38421,7 +38421,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Solução Nasal Sorine XTM Jet 0,9% 100ml",
@@ -38449,7 +38449,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clotrimazol 20mg/g Creme Vaginal 20g + 3 Aplicadores Germed Genérico",
@@ -38479,7 +38479,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bup XL Cloridrato de Bupropiona 150mg 30 comprimidos",
@@ -38507,7 +38507,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Plenance Eze Rosuvastatina Cálcica 5mg + Ezetimiba 10mg 30 cápsulas",
@@ -38537,7 +38537,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana 20mg 30 comprimidos Medley Genérico",
@@ -38565,7 +38565,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosucor Rosuvastatina Cálcica 10mg 60 comprimidos",
@@ -38594,7 +38594,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dienogeste 2mg 30 comprimidos Eurofarma Genérico",
@@ -38621,7 +38621,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Magnésia Bisurada Sabor Menta 40 pastilhas mastigáveis",
@@ -38650,7 +38650,7 @@ const MEDICINES_DB = [
       "mastigaveis"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bupium XL Cloridrato de Bupropiona 300mg 60 comprimidos",
@@ -38679,7 +38679,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D3 Colecalciferol 50.000UI 8 cápsulas",
@@ -38707,7 +38707,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Epithelize Dexpantenol 50mg/g Gel Oftálmico 10ml",
@@ -38735,7 +38735,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Repoflor 100mg 12 cápsulas",
@@ -38762,7 +38762,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Meclin JET Dicloridrato de Meclozina 25mg 10 comprimidos",
@@ -38791,7 +38791,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Otociriax Cloridrato de Ciprofloxacino 2mg + Hidrocortisona 10mg Suspensão Otológica 5ml",
@@ -38822,7 +38822,7 @@ const MEDICINES_DB = [
       "otologica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Coledue R Ezetimiba 10mg + Rosuvastatina 10mg 30 cápsulas",
@@ -38851,7 +38851,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 500mg + Fosfato de Codeína 30mg 12 comprimidos EMS Genérico",
@@ -38881,7 +38881,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gliclazida 60mg 30 comprimidos Legrand Genérico",
@@ -38909,7 +38909,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Andolba Benzocaina 45mg + Triclosana 5mg + Mentol 5mg Aerosol 43g",
@@ -38938,7 +38938,7 @@ const MEDICINES_DB = [
       "aerosol"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pralivio 100 mg/ml Suspensão Oral 20ml",
@@ -38966,7 +38966,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Levanlodipino 2,5mg 30 Comprimidos Neo Química Genérico",
@@ -38995,7 +38995,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemitartarato de Zolpidem 5mg 30 comprimidos orodispersíveis Biolab Genérico",
@@ -39025,7 +39025,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duepoli ER 500mg caixa 60 comprimidos",
@@ -39052,7 +39052,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbolitium CR Carbonato de Lítio 450mg 30 comprimidos",
@@ -39081,7 +39081,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Triplixam Perindopril Arginina 5mg + Indapamida 1,25mg + Anlodipino 5mg 30 comprimidos",
@@ -39112,7 +39112,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Daflon Diosmina 900mg + Hesperidina 100mg 60 comprimidos",
@@ -39141,7 +39141,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Linadib Linagliptina 5mg 60 comprimidos",
@@ -39167,7 +39167,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Escabin Pro 4% Emulsão Capilar com 100ml",
@@ -39195,7 +39195,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carvedilol 12,5mg 30 Comprimidos Biolab Genérico",
@@ -39222,7 +39222,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 25mg 4 comprimidos Prati Donaduzzi Genérico",
@@ -39253,7 +39253,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bravan Duo Valsartana 160mg + Besilato de Anlodipino 5mg 30 comprimidos",
@@ -39283,7 +39283,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Toalha Umedecida Needs DryCare 80 Unidades",
@@ -39311,7 +39311,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Motilium Domperidona 10mg 30 comprimidos",
@@ -39338,7 +39338,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spray para Garganta Natz Romã 30ml",
@@ -39368,7 +39368,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Tetraciclina 500mg 12 cápsulas Prati Donaduzzi Genérico",
@@ -39399,7 +39399,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maresis 0,9% Descongestionante Spray Nasal Jato Contínuo 100ml",
@@ -39429,7 +39429,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pantoprazol Sódico Sesqui-Hidratado 40mg 28 comprimidos EMS Genérico",
@@ -39460,7 +39460,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Coledue R Ezetimiba 10mg + Rosuvastatina 20mg 30 cápsulas",
@@ -39489,7 +39489,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flavonid Diosmina 900mg + Hesperidina 100mg 30 comprimidos",
@@ -39518,7 +39518,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Furoato de Mometasona 0,5mg/g Spray Nasal 60 doses Eurofarma Genérico",
@@ -39549,7 +39549,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cystex Cloridrato de Acriflavina 15mg + Metenamina 250mg + Cloreto de Metiltionínio 20mg + Atropa Belladonna L. 15mg 24 drágeas",
@@ -39586,7 +39586,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prurok Cloridrato de Olopatadina 2mg/ml Solução Oftálmica 2,5ml",
@@ -39615,7 +39615,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 100mg 60 Comprimidos Althaia Genérico",
@@ -39645,7 +39645,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ansitec Cloridrato de Buspirona 10mg 90 comprimidos",
@@ -39674,7 +39674,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clexane Safety Lock Enoxaparina Sódica 40mg/0,4ml Solução Injetável 10 seringas",
@@ -39707,7 +39707,7 @@ const MEDICINES_DB = [
       "seringas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 50mg 30 Comprimidos Cimed Genérico",
@@ -39737,7 +39737,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trometamol Cetorolaco 10mg - 10 comprimidos Eurofarma Genérico",
@@ -39766,7 +39766,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibuprofeno 600mg 30 comprimidos Prati Donaduzzi Genérico",
@@ -39795,7 +39795,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levofloxacino 500mg 7 comprimidos Cimed Genérico",
@@ -39823,7 +39823,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pregabalina 150mg 30 cápsulas Teuto Genérico",
@@ -39851,7 +39851,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Yasmin Drospirenona 3mg + Etinilestradiol 0,03mg 21+7 comprimidos",
@@ -39879,7 +39879,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dutasterida 0,5mg 30 cápsulas Aché Genérico",
@@ -39906,7 +39906,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Revipel Minoxidil 50mg/ml Solução Capilar 50ml",
@@ -39935,7 +39935,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cortador de Comprimidos Needs 1 Unidade",
@@ -39962,7 +39962,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cefalexina 1g 8 comprimidos EMS Genérico",
@@ -39988,7 +39988,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 100mg 60 comprimidos Eurofarma Genérico",
@@ -40016,7 +40016,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Koli D3 Colecalciferol 14000UI 8 cápsulas moles",
@@ -40045,7 +40045,7 @@ const MEDICINES_DB = [
       "moles"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lisador Muscular Dipirona 600mg + Cafeína 100mg + Citrato de Orfenadrina 70mg 16 comprimidos",
@@ -40079,7 +40079,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mamades Desogestrel 75mcg 28 comprimidos",
@@ -40106,7 +40106,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Domperidona 1mg/ml Suspensão Oral 100ml Medley Genérico",
@@ -40135,7 +40135,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lidocaína 50mg/g Pomada Dermatológica Sabor Laranja 25g EMS Genérico",
@@ -40165,7 +40165,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inalador Nebulizador Portátil CareTech Air Mesh Rede Vibratória MD4600AZE RD",
@@ -40196,7 +40196,7 @@ const MEDICINES_DB = [
       "md4600aze"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Novolin N 100UI/ml Suspensão Injetável 1 Ampola de 10ml Geladeira",
@@ -40228,7 +40228,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sinvastatina 20mg 30 Comprimidos EMS Genérico",
@@ -40255,7 +40255,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ammy Drospirenona 4mg 84 Comprimidos",
@@ -40281,7 +40281,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diamicron MR Gliclazida 60mg 60 comprimidos",
@@ -40309,7 +40309,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 10mg 15 comprimidos revestidos Cimed Genérico",
@@ -40340,7 +40340,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 125mcg 30 comprimidos",
@@ -40369,7 +40369,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glicazida 30mg 30 comprimidos Torrent Genérico",
@@ -40397,7 +40397,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glimepirida 4mg 30 comprimidos Cimed Genérico",
@@ -40424,7 +40424,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levoid Levotiroxina Sódica 38mcg 30 comprimidos",
@@ -40453,7 +40453,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamitor CD Lamotrigina 50mg 30 comprimidos",
@@ -40481,7 +40481,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dozemast Mecobalamina 1000mcg 90 comprimidos sublinguais",
@@ -40509,7 +40509,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zeforus Eletriptana 20mg 4 comprimidos",
@@ -40536,7 +40536,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 50mg 30 comprimidos Geolab Genérico",
@@ -40566,7 +40566,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Frisium Clobazam 10mg 20 comprimidos",
@@ -40593,7 +40593,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Descartável 5ml Agulha Fixa 30mm x 0,7mm Needs 1un",
@@ -40622,7 +40622,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esparadrapo Needs Branco Impermeável 5cm x 4,5m 1 unidade",
@@ -40650,7 +40650,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluimucil D Acetilcisteína 600mg Granulado Sabor Laranja Solução Oral 16 envelopes de 5g cada",
@@ -40683,7 +40683,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insit Pregabalina 25mg 30 Cápsulas",
@@ -40710,7 +40710,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Laxante Fitoterápico Tamarine Zero Açúcar Geleia 150g",
@@ -40741,7 +40741,7 @@ const MEDICINES_DB = [
       "150g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 200mg Tutti Frutti 4 envelopes de 1g",
@@ -40770,7 +40770,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Bisoprolol 10,0mg 30 comprimidos Merck Genérico",
@@ -40799,7 +40799,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Doss Colecalciferol 3.000UI 30 cápsulas",
@@ -40827,7 +40827,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kaloba Pelargonium Sidoides 111,111mg 21 comprimidos",
@@ -40856,7 +40856,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atak Clav Amoxicilina 875mg + Clavulanato de Potássio 125mg 14 comprimidos",
@@ -40888,7 +40888,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maxsulid Nimesulida Betaciclodextrina 400mg 10 comprimidos",
@@ -40917,7 +40917,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Eliquis 5mg 60 comprimidos",
@@ -40942,7 +40942,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valerato de Betametasona 1mg/g Pomada 30g Medley Genérico",
@@ -40971,7 +40971,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lorazepam 2mg 30 comprimidos Germed Genérico",
@@ -40998,7 +40998,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zyloric Alopurinol 100mg 30 comprimidos",
@@ -41025,7 +41025,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Creme Térmico Coliflax Mulher Sachê 2,5g",
@@ -41054,7 +41054,7 @@ const MEDICINES_DB = [
       "sache"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amytril Cloridrato de Amitriptilina 10mg 30 comprimidos",
@@ -41083,7 +41083,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Antux Levodropropizina 6mg Xarope 120ml",
@@ -41110,7 +41110,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato Escitalopram 20mg 30 comprimidos Cimed Genérico",
@@ -41139,7 +41139,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Nebivolol 5mg 30 comprimidos Biolab Genérico",
@@ -41168,7 +41168,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Keltrina Plus 5% Loção Cremosa 60ml",
@@ -41197,7 +41197,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Althaia 15.000UI 10 cápsulas",
@@ -41224,7 +41224,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Puran T4 Levotiroxina Sódica 112mcg 30 comprimidos",
@@ -41253,7 +41253,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zetron Xl Cloridrato de Bupropiona 150mg 60 comprimidos",
@@ -41282,7 +41282,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Reuquinol Sulfato de Hidroxicloroquina 400mg 30 comprimidos",
@@ -41311,7 +41311,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Facoba Moxifloxacino 5mg + Fosfato de Dexametasona 1mg Solução Oftálmica 5ml",
@@ -41340,7 +41340,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 2,5mg/ml Solução Oral 20ml EMS Genérico",
@@ -41368,7 +41368,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Etodolaco 500mg 14 comprimidos Genérico Althaia",
@@ -41396,7 +41396,7 @@ const MEDICINES_DB = [
       "althaia"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insit Pregabalina 75mg 60 cápsulas",
@@ -41423,7 +41423,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Exodus Oxalato de Escitalopram 10mg 60 Comprimidos",
@@ -41452,7 +41452,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diprosalic Dipropionato de Betametasona 0,5mg/ml + Ácido Salicílico 20mg/ml Solução 30ml",
@@ -41484,7 +41484,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trayenta Linagliptina 5mg 30 comprimidos",
@@ -41510,7 +41510,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hidantal Fenitoína 100mg 25 comprimidos",
@@ -41537,7 +41537,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maleato de Dexclorfeniramina 0,4mg/ml + Betametasona 0,05mg/ml Xarope 120ml Neo Química Genérico",
@@ -41569,7 +41569,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Icacort Nitrato de Isoconazol 10mg/g + Valerato de Diflucortolona 1mg/g Creme Dermatológico 30g",
@@ -41601,7 +41601,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pulmicort 0,50mg/ml Suspensão para Nebulização 5 ampolas",
@@ -41630,7 +41630,7 @@ const MEDICINES_DB = [
       "ampolas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 50mg 4 Comprimidos Medley Genérico",
@@ -41660,7 +41660,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acertanlo Perindopril Arginina 7mg + Besilato de Anlodipino 5mg 30 comprimidos",
@@ -41690,7 +41690,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 875mg 14 comprimidos EMS Genérico",
@@ -41717,7 +41717,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Addera D3 50.000UI 4 cápsulas",
@@ -41744,7 +41744,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamotrigina 100mg 30 comprimidos Eurofarma Genérico",
@@ -41772,7 +41772,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 100mg 30 comprimidos Neo Química Genérico",
@@ -41802,7 +41802,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cobi-12 Mecobalamina 1000mcg 60 Comprimidos Sublinguais",
@@ -41831,7 +41831,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tantin Gestodeno 0,060mg + Etinilestradiol 0,015mg 28 comprimidos",
@@ -41861,7 +41861,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Euthyrox Levotiroxina Sódica 50mcg 50 comprimidos",
@@ -41890,7 +41890,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg 5 comprimidos Prati Donaduzzi Genérico",
@@ -41919,7 +41919,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hixizine Dicloridrato de Hidroxizina 2mg Xarope 120ml",
@@ -41948,7 +41948,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Undecilato de Testosterona 250mg/ml Eurofarma Solução Injetável 4ml - Genérico",
@@ -41979,7 +41979,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Advil Mulher Ibuprofeno 400mg 2 cápsulas",
@@ -42008,7 +42008,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ferisept 10mg/ml Solução Spray com 45ml",
@@ -42036,7 +42036,7 @@ const MEDICINES_DB = [
       "45ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "CataflamPRO XT Diclofenaco Dietilamônio 23,2mg/g Emulgel 50g",
@@ -42064,7 +42064,7 @@ const MEDICINES_DB = [
       "emulgel"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "CataflamPRO Diclofenaco Dietilamônio 11,6mg/g Emulgel 30g",
@@ -42092,7 +42092,7 @@ const MEDICINES_DB = [
       "emulgel"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Memantina 10mg 60 Comprimidos Prati Donaduzzi Genérico",
@@ -42123,7 +42123,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ondansetrona 8mg 10 Comprimidos Biolab Genérico",
@@ -42152,7 +42152,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluimucil Acetilcisteína 40mg/ml Xarope abor Morango com Romã 120ml",
@@ -42183,7 +42183,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sonic Cloridrato de Trazodona 50mg 60 comprimidos",
@@ -42212,7 +42212,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pilha AAA Duracell Palito com 4 unidades",
@@ -42239,7 +42239,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pressat Besilato de Anlodipino 2,5mg 30 comprimidos",
@@ -42267,7 +42267,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ciprofibrato 100mg 30 comprimidos Aché Biosintética Genérico",
@@ -42296,7 +42296,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gliclazida 30mg 30 comprimidos Ranbaxy Genérico",
@@ -42324,7 +42324,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xantinon Capsgel 20 cápsulas",
@@ -42350,7 +42350,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Doxiciclina 100mg 15 comprimidos Sandoz Genérico",
@@ -42378,7 +42378,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Álcool Gel Giovanna Baby Blue 60ml",
@@ -42407,7 +42407,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Curativo Redondo Resistente à Água Needs 16 Unidades",
@@ -42436,7 +42436,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Verapamil 80mg 30 comprimidos Aché Biosintética Genérico",
@@ -42467,7 +42467,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Elani Ciclo Drospirenona 3mg + Etinilestradiol 0,03mg 63 comprimidos",
@@ -42497,7 +42497,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Euthyrox Levotiroxina Sódica 75mcg 50 comprimidos",
@@ -42526,7 +42526,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ansitec Cloridrato de Buspirona 5mg 60 comprimidos",
@@ -42554,7 +42554,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alopurinol 300mg 30 comprimidos Medley Genérico",
@@ -42582,7 +42582,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Valproico 250mg 25 cápsulas Biolab Genérico",
@@ -42611,7 +42611,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Myrafer Ferripolimaltose 400mg 30 comprimidos",
@@ -42638,7 +42638,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carvedilol 6,25mg 30 comprimidos Medley Genérico",
@@ -42666,7 +42666,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pamelor Cloridrato de Nortriptilina 10mg 30 cápsulas",
@@ -42695,7 +42695,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Elani Ciclo Drospirenona 3mg + Etinilestradiol 0,03mg 21 comprimidos",
@@ -42725,7 +42725,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Labcaina Cloridrato de Lidocaína 20mg/g Geléia 30g",
@@ -42754,7 +42754,7 @@ const MEDICINES_DB = [
       "geleia"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita Micropore Nexcare O Original Bege com 1 rolo de 25mmx4,5m",
@@ -42784,7 +42784,7 @@ const MEDICINES_DB = [
       "25mmx4"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Utrogestan 200mg 42 cápsulas",
@@ -42810,7 +42810,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neutrofer Ferro Quelato Glicinato 250mg/ml Gotas 30ml",
@@ -42841,7 +42841,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fluimucil Acetilcisteína 20mg/ml Xarope Expectorante Pediátrico 120ml",
@@ -42871,7 +42871,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Polaramine Maleato de Dexclorfeniramina 10mg/g Creme Dermatológico 30g",
@@ -42901,7 +42901,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Biosintética Simeticona Simeticona 125mg 10 cápsulas",
@@ -42930,7 +42930,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clavulin Bd Amoxicilina Tri-hidratada 875mg + Clavulanato de Potássio 125mg 20 comprimidos",
@@ -42962,7 +42962,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diane 35 Etinilestradiol 0,035mg + Acetato de Ciproterona 2mg 63 comprimidos",
@@ -42992,7 +42992,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cefalexina 250mg/5ml Pó para Suspensão Oral 100ml Teuto Genérico",
@@ -43023,7 +43023,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 40mg 7 Comprimidos Althaia Genérico",
@@ -43051,7 +43051,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mioflex A Carisoprodol 125mg + Diclofenaco Sódico 50mg + Paracetamol 300mg + Cafeína 30mg 12 comprimidos",
@@ -43085,7 +43085,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zyxem Dicloridrato de Levocetirizina 5mg/ml Gotas 20ml",
@@ -43114,7 +43114,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Nebivolol 5mg 60 comprimidos Aché Genérico",
@@ -43143,7 +43143,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lacto Purga 5mg 12 comprimidos",
@@ -43169,7 +43169,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Solução para Reidratação bwell Hidrataliv Uva 500ml",
@@ -43199,7 +43199,7 @@ const MEDICINES_DB = [
       "500ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maracugina PI 840mg Noite 20 comprimidos",
@@ -43226,7 +43226,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 112mcg 30 comprimidos",
@@ -43255,7 +43255,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lisinopril 10mg 30 comprimidos Medley Genérico",
@@ -43283,7 +43283,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 40mg - 10 comprimidos Neo Química Genérico",
@@ -43311,7 +43311,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Uro-Vaxom Lisado Bacteriano 6mg 30 cápsulas",
@@ -43339,7 +43339,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Uniprazol Omeprazol 20mg 28 cápsulas",
@@ -43366,7 +43366,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Niki com 24 comprimidos",
@@ -43391,7 +43391,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesulida 50mg/ml Gotas 15ml Neo Química Genérico",
@@ -43420,7 +43420,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Assert Cloridrato de Sertralina 100mg 30 comprimidos",
@@ -43449,7 +43449,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spiolto Brometo de Tiotropio Monoidratado 2,5mcg + Cloridrato de Olodaterol 2,5mg Solução 4ml + 60 Acionamentos",
@@ -43482,7 +43482,7 @@ const MEDICINES_DB = [
       "acionamentos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algodão Quadrado Needs Baby 50 Unidades",
@@ -43510,7 +43510,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prolia Denosumabe 60mg/ml Solução Injetável 1 seringa de 1ml Geladeira",
@@ -43540,7 +43540,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Donila Cloridrato de Donepezila 5mg 30 comprimidos",
@@ -43568,7 +43568,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 5mg 10 Comprimidos Althaia Genérico",
@@ -43595,7 +43595,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sorine H 3% Descongestionante Spray 50ml",
@@ -43622,7 +43622,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azulfin Sulfasalazina 500mg 60 comprimidos",
@@ -43649,7 +43649,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 20mg + Besilato de Anlodipino 5mg 30 comprimidos Neo Química Genérico",
@@ -43680,7 +43680,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sintocalmy 600mg 30 comprimidos",
@@ -43706,7 +43706,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nitazoxanida 500mg - 6 comprimidos Eurofarma Genérico",
@@ -43734,7 +43734,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aripiprazol 15mg 30 comprimidos Sandoz Genérico",
@@ -43762,7 +43762,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ferinject Carboximaltose Férrica 50mg/ml Solução Injetável Ampola 10ml",
@@ -43794,7 +43794,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Leite de Magnésia Phillips Sabor Hortelã Suspensão Oral 350ml",
@@ -43826,7 +43826,7 @@ const MEDICINES_DB = [
       "350ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 50mg 60 Comprimidos Althaia Genérico",
@@ -43856,7 +43856,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexametasona 0,1mg/ml Elixir 100ml Teuto Genérico",
@@ -43884,7 +43884,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Propafenona 300mg 60 comprimidos Prati Donaduzzi Genérico",
@@ -43915,7 +43915,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mytedom Cloridrato de Metadona 10mg 20 comprimidos",
@@ -43944,7 +43944,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Verutex Ácido Fusídico 20mg/g Creme 15g",
@@ -43973,7 +43973,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aceclofenaco 100mg 12 comprimidos EMS Genérico",
@@ -44000,7 +44000,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "PredSim Prednisolona 5mg 20 comprimidos",
@@ -44026,7 +44026,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sulfametoxazol 800mg + Trimetoprima 160mg 10 comprimidos Prati Donaduzzi Genérico",
@@ -44057,7 +44057,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Voextor Vortioxetina 10mg - 60 comprimidos",
@@ -44084,7 +44084,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brasart Valsartana 160mg 60 comprimidos",
@@ -44111,7 +44111,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Montelucaste de Sódio 10mg 30 comprimidos Biolab Genérico",
@@ -44141,7 +44141,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ciclopirox Olamina 10mg/ml Solução Tópica 15ml Medley Genérico",
@@ -44172,7 +44172,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 2mg 30 comprimidos Eurofarma Genérico",
@@ -44199,7 +44199,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclin Etinilestradiol 0,035mg + Acetato de Ciproterona 2mg 21 comprimidos",
@@ -44229,7 +44229,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Colírio Mydriacyl 10mg/ml com 5ml",
@@ -44255,7 +44255,7 @@ const MEDICINES_DB = [
       "10mg"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Bisoprolol 2,5mg 30 comprimidos Medley Genérico",
@@ -44284,7 +44284,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorto Risedronato Sódico 150mg 1 comprimido",
@@ -44313,7 +44313,7 @@ const MEDICINES_DB = [
       "comprimido"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Broncho-Vaxom Lisado Bacteriano 7mg Adulto 10 cápsulas",
@@ -44343,7 +44343,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Systen Sequi Estradiol Hemi-Hidratado 3,2mg + Acetato de Noretisterona 11,2mg 8 Adesivos Transdérmicos",
@@ -44376,7 +44376,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desduo Succinato de Desvenlafaxina 100mg 60 comprimidos",
@@ -44405,7 +44405,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Solifenacina 5mg 30 comprimidos Ranbaxy Genérico",
@@ -44434,7 +44434,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pant Sec Minoxidil 50mg/ml Solução Capilar Refil 50ml",
@@ -44465,7 +44465,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clortalidona 12,5mg 60 comprimidos EMS Genérico",
@@ -44491,7 +44491,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 875mg + Clavulanato de Potássio 125mg 14 comprimidos Ranbaxy Genérico",
@@ -44522,7 +44522,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venlift OD Cloridrato de Venlafaxin 75mg 60 Cápsulas",
@@ -44551,7 +44551,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 400mg com 30 comprimidos Novartis Genérico",
@@ -44579,7 +44579,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Momate Furoato de Mometasona 50mcg Spray Nasal 120 doses",
@@ -44610,7 +44610,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Addera D3 7.000UI 10 cápsulas",
@@ -44637,7 +44637,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atorvastatina Cálcica 20mg 30 comprimidos Medley Genérico",
@@ -44666,7 +44666,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mononitrato de Isossorbida 40mg 30 comprimidos Aché Biosintética Genérico",
@@ -44697,7 +44697,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teroquatro Trometamol Cetorolaco 4mg Solução Oftálmica 5ml",
@@ -44726,7 +44726,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spidufen 770mg Ibuprofeno 400mg+ Arginina 370mg 10 Comprimidos Revestidos",
@@ -44757,7 +44757,7 @@ const MEDICINES_DB = [
       "revestidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alenia Fumarato de Formoterol 6mcg + Budesonida 200mcg Inalador e 60 cápsulas para inalação",
@@ -44791,7 +44791,7 @@ const MEDICINES_DB = [
       "inalacao"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Psorex Propionato de Clobetasol 0,5mg/g Creme 30g",
@@ -44819,7 +44819,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetrolac MD Trometamol Cetorolaco 4mg/ml Solução Oftálmica Estéril 5ml",
@@ -44849,7 +44849,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Januvia Fosfato de Sitagliptina 100mg 28 comprimidos",
@@ -44878,7 +44878,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Osteoban Ibandronato de Sódio 150mg 3 comprimidos",
@@ -44907,7 +44907,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 30 comprimidos Germed Genérico",
@@ -44934,7 +44934,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brasart HCT Valsartana 160mg + Hidroclorotiazida 12,5mg 90 comprimidos",
@@ -44963,7 +44963,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dexfer Ferripolimaltose 400mg (Ferro Elementar 100mg) 60 comprimidos",
@@ -44993,7 +44993,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vynaxa Rivaroxabana 20mg 42 Comprimidos",
@@ -45020,7 +45020,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Profenid Cetoprofeno 100mg/2ml Solução Injetável 6 ampolas",
@@ -45049,7 +45049,7 @@ const MEDICINES_DB = [
       "ampolas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Frontal Alprazolam 1mg 30 comprimidos",
@@ -45075,7 +45075,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dozoito Succinato de Metoprolol 25mg 30 comprimidos",
@@ -45104,7 +45104,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ibandronato de Sódio 150mg 1 comprimido Althaia Genérico",
@@ -45134,7 +45134,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Hidrocortisona 10mg/g Creme Dermatológico 15g Teuto Genérico",
@@ -45165,7 +45165,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dipropionato de Beclometasona 50mcg Aerossol Oral 200 doses Glenmark Genérico",
@@ -45197,7 +45197,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Winter AP Maleato de Dexbronfeniramina 6mg + Sulfato de Pseudoefedrina 120mg 8 cápsulas",
@@ -45228,7 +45228,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nevanac Nepafenaco Suspensão Oftálmica Estéril 5ml",
@@ -45257,7 +45257,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Micardis Anlo Telmisartana 80mg + Besilato de Anlodipino 5mg 30 comprimidos",
@@ -45288,7 +45288,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Piascledine Persea Americana Mill. 200mg + Glycine Max (l.) Merr 100mg 90 cápsulas",
@@ -45321,7 +45321,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Umidificador e Aromatizador de Ar Infantil Caretech HC026RD 2,1L",
@@ -45348,7 +45348,7 @@ const MEDICINES_DB = [
       "hc026rd"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Acetilsalicílico 100mg 60 comprimidos Eurofarma Genérico",
@@ -45377,7 +45377,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nimesulida 100mg 12 comprimidos Vitamedic Genérico",
@@ -45405,7 +45405,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Voextor Vortioxetina 10mg - 30 comprimidos",
@@ -45432,7 +45432,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omnic Ocas Cloridrato de Tansulosina 0,4mg 60 comprimidos",
@@ -45461,7 +45461,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levetiracetam 750mg 60 comprimidos Sandoz Genérico",
@@ -45489,7 +45489,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Joelheira Needs com Orifício Patelar Reforçado M Preto 1 unidade",
@@ -45519,7 +45519,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duomo Mesilato de Doxazosina 4mg 30 Comprimidos",
@@ -45547,7 +45547,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Asmofen Fumarato de Cetotifeno 0,2mg/ml Xarope 120ml",
@@ -45576,7 +45576,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insulina Toujeo Solostar 300U/mL Solução Injetável 1 Caneta de 1,5ml Geladeira",
@@ -45608,7 +45608,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 400mg 60 comprimidos Sandoz Genérico",
@@ -45636,7 +45636,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dodibe 1000mcg 90 comprimidos sublinguais",
@@ -45663,7 +45663,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Estomazil Abacaxi Pó Efervescente 100g",
@@ -45691,7 +45691,7 @@ const MEDICINES_DB = [
       "100g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levoid Levotiroxina Sódica 150mcg 30 comprimidos",
@@ -45720,7 +45720,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bhena Benazepril 10mg 30 comprimidos",
@@ -45747,7 +45747,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Triancil Triancinolona 20mg Suspensão Injetável 1 Ampola 5ml",
@@ -45776,7 +45776,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desve Succinato Desvenlafaxina 50mg 30 comprimidos",
@@ -45805,7 +45805,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dimenidrinato 25mlg/ml + Cloridrato de Piridoxina 5mg/ml 20ml Solução Oral Vitamedic Genérico",
@@ -45837,7 +45837,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Quetipin SO 25mg Suspensão Oral 60ml",
@@ -45865,7 +45865,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Massageol Pomada com 15g",
@@ -45891,7 +45891,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fostair Dipropionato de beclometasona 200mcg + Fumarato de Formoterol 6mcg Solução Aerossol 120 Doses Geladeira",
@@ -45926,7 +45926,7 @@ const MEDICINES_DB = [
       "geladeira"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D3 Colecalciferol 7.000 UI Neo Química 4 cápsulas",
@@ -45953,7 +45953,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Desvenlafaxina 100mg 60 comprimidos Eurofarma Genérico",
@@ -45983,7 +45983,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Epocler Racemetionina 100mg + Cloreto de Colina 20mg 30 comprimidos",
@@ -46013,7 +46013,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dicloridrato de Betaistina 24mg 30 comprimidos Eurofarma Genérico",
@@ -46043,7 +46043,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trimusk Diclofenaco Sódico 50mg + Carisoprodol 125mg + Paracetamol 300mg + Cafeína 30mg 15 comprimidos",
@@ -46078,7 +46078,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gel Dermatológico Deriva Micro Adapaleno 1mg Bisnaga 30mg",
@@ -46108,7 +46108,7 @@ const MEDICINES_DB = [
       "30mg"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Otosporin Hidrocortisona 10mg + Sulfato de Neomicina 5mg + Sulfato de Polimixina B 10000UI Solução Otológica 10ml",
@@ -46142,7 +46142,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Glimepirida 2mg 30 comprimidos Cimed Genérico",
@@ -46169,7 +46169,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidon Risperidona 1mg Solução Oral 60ml",
@@ -46197,7 +46197,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sumax Succinato de Sumatriptana 50mg 2 comprimidos",
@@ -46226,7 +46226,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Holmes Olmesartana Medoxomila 40mg 30 comprimidos",
@@ -46255,7 +46255,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 100mg 60 comprimidos - EMS Genérico",
@@ -46282,7 +46282,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bálsamo Bengué Xtra Pomada 60g",
@@ -46310,7 +46310,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kalist Dienogeste 2mg 28 comprimidos",
@@ -46336,7 +46336,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cordarex Besilato de Anlodipino 2,5mg 30 comprimidos",
@@ -46364,7 +46364,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Latanoprosta 50mcg/ml + Maleato de Timolol 5mg/ml Geolab Solução Oftálmica Estéril 2,5ml - Genérico",
@@ -46396,7 +46396,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 150mcg + Etinilestradiol 20mcg 21 comprimidos Eurofarma Genérico",
@@ -46426,7 +46426,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azukon Mr Gliclazida 30mg 30 comprimidos",
@@ -46454,7 +46454,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivaroxabana 15mg 30 Comprimidos EMS Genérico",
@@ -46481,7 +46481,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Bupropiona 150mg 30 comprimidos Liberação Prolongada 24 horas Eurofarma Genérico",
@@ -46514,7 +46514,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Domperidona 10mg 60 comprimidos Eurofarma Genérico",
@@ -46542,7 +46542,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venalot Cumarina 15mg + Troxerrutina 90mg 60 comprimidos",
@@ -46571,7 +46571,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pepsogel Sabor Hortelã Suspensão Oral 240ml",
@@ -46601,7 +46601,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa de Insulina BD Ultra-Fine 8mm 50UI com 10 unidades",
@@ -46631,7 +46631,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vonau Flash Cloridrato de Ondansetrona 4mg 10 comprimidos sabor menta",
@@ -46662,7 +46662,7 @@ const MEDICINES_DB = [
       "menta"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 28 comprimidos Neo Química Genérico",
@@ -46689,7 +46689,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Meloxicam 15mg 10 comprimidos Medley Genérico",
@@ -46717,7 +46717,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ômega 3 bwell 180 Cápsulas",
@@ -46742,7 +46742,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duoflam Dipropionato de Betametasona 5mg/ml + Fosfato Dissodico de Betametasona 2mg/ml 1 ampola",
@@ -46773,7 +46773,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Tramadol 50mg 10 cápsulas Neo Química Genérico",
@@ -46803,7 +46803,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita Microporosa Needs Branca 1 Unidade 2,5cm x 1,35m",
@@ -46831,7 +46831,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Emla Lidocaina 25mg + Prilocaina 25mg Creme Dermatológico 1 bisnaga de 5g e 2 bandagens oclusivas",
@@ -46864,7 +46864,7 @@ const MEDICINES_DB = [
       "oclusivas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Volig Cloridrato de Ondansetrona Di-Hidratado 4mg 10 comprimidos",
@@ -46893,7 +46893,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rubia Desogestrel 75mcg 28 comprimidos",
@@ -46920,7 +46920,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hepatilon Solução Oral 150ml",
@@ -46948,7 +46948,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Levanlodipino 2,5mg 60 Comprimidos Neo Química Genérico",
@@ -46977,7 +46977,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Alta D Colecalciferol 50.000UI 4 cápsulas",
@@ -47005,7 +47005,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Descongestionante Nasal Infantil bwell Spray Jato Suave 100ml",
@@ -47037,7 +47037,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Losartana Potássica 50mg 30 comprimidos Aché Genérico",
@@ -47066,7 +47066,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Concardio Hemifumarato de Bisoprolol 2,5mg 30 comprimidos",
@@ -47094,7 +47094,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 50mg - 60 comprimidos Zydus Nikkho Genérico",
@@ -47125,7 +47125,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apixabana 2,5mg 20 comprimidos Natcofarma Genérico",
@@ -47152,7 +47152,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nitrato de Fenticonazol 0,02g/g Creme Vaginal Bisnaga 40g + 7 aplicadores descartáveis 5g Eurofarma Genérico",
@@ -47185,7 +47185,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venzer Candesartana Cilexetila 16mg 90 comprimidos",
@@ -47214,7 +47214,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Androsten UNO Tribulus Terrestris 280mg 15 comprimidos",
@@ -47243,7 +47243,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Concor Hemifumarato de Bisoprolol 10mg 30 comprimidos",
@@ -47272,7 +47272,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azitromicina Di-Hidratada 500mg 5 comprimidos EMS Genérico",
@@ -47301,7 +47301,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acebrofilina 25mg/5ml Xarope 120ml Cimed Genérico",
@@ -47330,7 +47330,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Daforin Cloridrato de Fluoxetina 20mg 30 comprimidos",
@@ -47359,7 +47359,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esparadrapo Needs Bege Impermeável 5cm x 3m 1 unidade",
@@ -47387,7 +47387,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Montelair Montelucaste de Sódio 10mg 60 comprimidos",
@@ -47416,7 +47416,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Depo-Medrol Acetato de Metilprednisolona 40mg/ml 1 ampola",
@@ -47446,7 +47446,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Urbanil Clobazam 20mg 20 comprimidos",
@@ -47473,7 +47473,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ritalina Cloridrato de Metilfenidato 10mg 60 comprimidos",
@@ -47502,7 +47502,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D DPrev Colecalciferol 1.000UI 30 comprimidos",
@@ -47530,7 +47530,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ebastel 1mg/ml Xarope 60ml",
@@ -47556,7 +47556,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Álcool Gel Giovanna Baby Blue 500ml",
@@ -47585,7 +47585,7 @@ const MEDICINES_DB = [
       "500ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aerodini Sulfato de Salbutamol 100mcg Spray 200 Doses",
@@ -47615,7 +47615,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 500mg + Fosfato de Codeína 30mg 24 comprimidos EMS Genérico",
@@ -47645,7 +47645,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Melocox ODT Meloxicam 15mg 10 Comprimidos",
@@ -47673,7 +47673,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venzer HCT Candesartana Cilexetila 16mg + Hidroclorotiazida 12,5mg 90 comprimidos",
@@ -47703,7 +47703,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Memantina 10mg 60 comprimidos Eurofarma Genérico",
@@ -47733,7 +47733,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Spray para Garganta Ciflogex Sabor Menta 30ml",
@@ -47764,7 +47764,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seretide Xinafoato de Salmeterol 25mcg + Propionato de Fluticazona 50mcg Spray 120 doses",
@@ -47797,7 +47797,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flebodia Diosmina 600mg 30 comprimidos",
@@ -47824,7 +47824,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zinnat Axetilcefuroxima 250mg/5ml Pó para Suspensão Oral 50ml + Copo Dosador + Seringa Dosadora",
@@ -47858,7 +47858,7 @@ const MEDICINES_DB = [
       "dosadora"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lonium Brometo de Otelonio 40mg 60 comprimidos",
@@ -47887,7 +47887,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venalot Cumarina 15mg + Troxerrutina 90mg 30 comprimidos",
@@ -47916,7 +47916,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Traumeel S Arnica Montana D3 + Associação Pomada com 50g",
@@ -47944,7 +47944,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cinarizina 25mg 30 comprimidos Ranbaxy Genérico",
@@ -47972,7 +47972,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Micardis Telmisartana 40mg 30 comprimidos",
@@ -47999,7 +47999,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bamifix Bamifilina 300mg 20 drágeas",
@@ -48026,7 +48026,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Profenid Cetoprofeno 20mg/ml Solução Oral Sabor Morango 20ml",
@@ -48057,7 +48057,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ocupress Cloridrato de Dorzolamida 20mg/ml Solução Oftálmica 5ml",
@@ -48087,7 +48087,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Serenata Cloridrato de Sertralina 50mg 60 comprimidos",
@@ -48116,7 +48116,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cataflam Diclofenaco Potássico 50mg 10 drágeas",
@@ -48145,7 +48145,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Minilax Pediátrico Sorbitol 714mg + Laurilsulfato de Sódio 7,70mg Solução Retal 7 bisnagas",
@@ -48179,7 +48179,7 @@ const MEDICINES_DB = [
       "bisnagas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ayerst Propran Cloridrato de Propranolol 10mg 30 comprimidos",
@@ -48209,7 +48209,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ceclor Bd Cefaclor 500mg 10 comprimidos",
@@ -48237,7 +48237,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Remilev Valeriana Officinalis 250mg + Humulus Lupulus 60mg 20 comprimidos",
@@ -48269,7 +48269,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dermomax Cloridrato de Lidocaina 40mg/g Creme Dermatológico em bisnaga 5g",
@@ -48300,7 +48300,7 @@ const MEDICINES_DB = [
       "bisnaga"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Famox Famotidina 40mg/5ml Pó para Suspensão Oral 50ml",
@@ -48330,7 +48330,7 @@ const MEDICINES_DB = [
       "50ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sais para Reidratação Oral Hidraplex Natulab Sabor Uva Pó para Solução Oral 4 envelopes de 27,9g cada",
@@ -48366,7 +48366,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Etinilestradiol 15mcg + Gestodeno 60mcg 28 Comprimidos Aché Biosintética Genérico",
@@ -48397,7 +48397,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Allestra 20 Gestodeno 75mcg + Etinilestradiol 20mcg 21 drágeas",
@@ -48427,7 +48427,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Clormadinoma 2mg + Etinilestradiol 0,03mg 21 comprimidos Eurofarma Genérico",
@@ -48458,7 +48458,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dermosalic Dipropionato de Betametasona 0,64mg + Ácido Salicílico 20mg/ml Solução Dermatológica 30ml",
@@ -48492,7 +48492,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Histadin D Loratadina 5mg + Sulfato de Pseudoefedrina 120mg 12 comprimidos",
@@ -48521,7 +48521,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risperidona 1mg/ml Solução Oral 30ml Prati-Donaduzzi Genérico",
@@ -48551,7 +48551,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 10mg 15 comprimidos revestidos Aché Biosintética Genérico",
@@ -48583,7 +48583,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ablok Atenolol 50mg 30 comprimidos",
@@ -48610,7 +48610,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dolamin Flex Clonixinato de Lisina 125mg + Cloridrato de Ciclobenzaprina 5mg 15 comprimidos",
@@ -48642,7 +48642,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lidocaína 5% 50mg/g Pomada Dermatológica 25g Pharlab Genérico",
@@ -48671,7 +48671,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Monuril Fosfomicina Trometamol 5,631g 2 envelopes",
@@ -48700,7 +48700,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Expectovic Guaifenesina 200mg/15ml Sabor Morango Xarope 120ml",
@@ -48731,7 +48731,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nasoar Infantil 0,9% Solução Nasal Refil 15 envelopes",
@@ -48760,7 +48760,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa de Insulina BD Ultra-Fine 6mm 50UI com 10 unidades",
@@ -48790,7 +48790,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Ciproterona 2mg + Etinilestradiol 0,035mg 63 comprimidos Biosintética Genérico",
@@ -48821,7 +48821,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ponstan Ácido Mefenâmico 500mg 24 comprimidos",
@@ -48850,7 +48850,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tradep 50mg 60 Comprimidos",
@@ -48876,7 +48876,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fosfato de Codeína 30mg 30 Comprimidos Nova Química Genérico",
@@ -48907,7 +48907,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Belarina Acetato de Clormadinona 2mg + Etinilestradiol 0,02mg 24 + 4 comprimidos",
@@ -48937,7 +48937,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 150mg 30 comprimidos Medley Genérico",
@@ -48967,7 +48967,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Deller Succinato de Desvenlafaxina Monoidratado 50mg 60 Comprimidos",
@@ -48997,7 +48997,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amora Etinilestradiol 0,03mg + Acetato de Clormadinona 2mg 21 comprimidos",
@@ -49027,7 +49027,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Arflex Retard Nimesulida 200mg 6 cápsulas",
@@ -49056,7 +49056,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciprofloxacino 500mg 10 comprimidos Sandoz Genérico",
@@ -49086,7 +49086,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dual Cloridrato de Duloxetina 60mg 60 cápsulas",
@@ -49115,7 +49115,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vigamox Cloridrato de Moxifloxacino 5,45mg/ml Solução Oftalmológica Estéril 5ml",
@@ -49146,7 +49146,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosucor Eze Rosuvastatina Cálcica 20mg + Ezetimiba 10mg - 30 cápsulas",
@@ -49177,7 +49177,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Halobex Propionato de Halobetasol 0,05mg/g Creme Dermatológico 30g",
@@ -49207,7 +49207,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dicloridrato de Hidroxizina 2mg/ml Solução Oral 120ml Germed Genérico",
@@ -49238,7 +49238,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seringa Nasal Multilaser HC398 2 unidades",
@@ -49266,7 +49266,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Yaz Flex Drospirenona 3mg + Etinilestradiol 0,02mg 30 comprimidos",
@@ -49295,7 +49295,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mirador Cólica 20 Comprimidos",
@@ -49321,7 +49321,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina 250mg/5ml Suspensão Oral 150ml Cimed Genérico",
@@ -49351,7 +49351,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Perola Desogestrel 75mcg 28 comprimidos",
@@ -49378,7 +49378,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trok Cetoconazol 20mg + Betametasona 0,5mg Pomada 10g",
@@ -49406,7 +49406,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rinosoro Jet XT Infantil 0,9% Descongestionante Spray Jato Suave 100ml",
@@ -49437,7 +49437,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Systen 25 Estradiol 1,6mg 8 Adesivos Transdérmicos",
@@ -49465,7 +49465,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brasart HCT Valsartana 320mg + Hidroclorotiazida 12,5mg 30 comprimidos",
@@ -49494,7 +49494,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita Microporosa Needs Bege 1,2cm x 4,5m 1 unidade",
@@ -49522,7 +49522,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Celestrat Maleato de Dexclorfeniramina 0,4mg/ml + Betametasona 0,05mg/ml Xarope 120ml + 1 Copo de Medida",
@@ -49555,7 +49555,7 @@ const MEDICINES_DB = [
       "medida"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aymee Cloridrato de Vilazodona 40mg 30 comprimidos",
@@ -49584,7 +49584,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tiras-teste de Glicemia Accu-Chek Active 50 tiras",
@@ -49614,7 +49614,7 @@ const MEDICINES_DB = [
       "tiras"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brasart HCT Valsartana 320mg + Hidroclorotiazida 25mg 30 comprimidos",
@@ -49644,7 +49644,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Humectol D 20 comprimidos",
@@ -49668,7 +49668,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gliclazida 60mg 30 comprimidos EMS Genérico",
@@ -49695,7 +49695,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fentizol Nitrato de Fenticonazol 600mg Óvulo Vaginal + 1 aplicador",
@@ -49726,7 +49726,7 @@ const MEDICINES_DB = [
       "aplicador"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Maresis HT 2% Descongestionante Spray Nasal Jato Contínuo 100ml",
@@ -49757,7 +49757,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ondansetrona 8mg 10 comprimidos Biolab Genérico Sabor Morango",
@@ -49788,7 +49788,7 @@ const MEDICINES_DB = [
       "morango"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ondansetrona 4mg 10 comprimidos Biolab Genérico Sabor Morango",
@@ -49819,7 +49819,7 @@ const MEDICINES_DB = [
       "morango"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clopin Bissulfato de Clopidogrel 75mg 30 comprimidos",
@@ -49848,7 +49848,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Labirin Dicloridrato de Betaistina 24mg 60 comprimidos",
@@ -49877,7 +49877,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ivermectina 6mg 8 comprimidos Vitamedic Genérico",
@@ -49904,7 +49904,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Trazodona 100mg 30 comprimidos EMS Genérico",
@@ -49933,7 +49933,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oftpred Acetato de Prednisolona 10mg/ml Suspensão Oftálmica 5ml",
@@ -49963,7 +49963,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nivux Nimesulida 100mg + Pantoprazol Sódico Sesqui-Hidratado 20mg 12 comprimidos",
@@ -49995,7 +49995,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dolamin Flex Clonixinato de Lisina 125mg + Cloridrato de Ciclobenzaprina 5mg 12 Comprimidos",
@@ -50027,7 +50027,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Doss Colecalciferol 50.000UI 12 cápsulas",
@@ -50055,7 +50055,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivaxa Rivaroxabana 10mg 30 Comprimidos",
@@ -50082,7 +50082,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 10mg 30 comprimidos EMS Genérico",
@@ -50110,7 +50110,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Synthroid Levotiroxina Sódica 150mcg 30 comprimidos",
@@ -50139,7 +50139,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Eliquis 2,5mg 60 comprimidos",
@@ -50164,7 +50164,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitanol-A Tretinoína 0,25mg/g Creme 30g",
@@ -50191,7 +50191,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fluoxetina 20mg 30 Comprimidos Revestidos Prati Donaduzzi Genérico",
@@ -50223,7 +50223,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Euthyrox Levotiroxina Sódica 88mcg 50 comprimidos",
@@ -50252,7 +50252,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esio Esomeprazol Magnésico Tri-Hidratado 20mg 28 comprimidos",
@@ -50282,7 +50282,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Albendazol 400mg Medley 3 Comprimidos - Genérico",
@@ -50310,7 +50310,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Deflazacorte 6mg 20 comprimidos EMS Genérico",
@@ -50336,7 +50336,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acertanlo Perindopril Arginina 3,5mg + Besilato de Anlodipino 2,5mg 30 comprimidos",
@@ -50366,7 +50366,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gabapentina 300mg 30 cápsulas Aché Biosintética Genérico",
@@ -50395,7 +50395,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Herpstal Cloridrato de Valaciclovir 500mg 10 comprimidos",
@@ -50424,7 +50424,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Venlafaxina 75mg 30 Comprimidos Ranbaxy Genérico",
@@ -50454,7 +50454,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 10mg 60 Comprimidos Medley Genérico",
@@ -50484,7 +50484,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Clormadinona 2mg + Etinilestradiol 0,03mg 21 comprimidos Althaia Genérico",
@@ -50515,7 +50515,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mefex Axetilcefuroxima 500mg 14 comprimidos",
@@ -50542,7 +50542,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosucor Rosuvastatina Cálcica 10mg 30 comprimidos",
@@ -50571,7 +50571,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algodão Hidrófilo Multiuso Needs 50g",
@@ -50599,7 +50599,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Suplemento Alimentar Ômegafor Plus Vitafor com 60 cápsulas",
@@ -50628,7 +50628,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tamisa 30 Gestodeno 75mcg + Etinilestradiol 30mcg 21 comprimidos",
@@ -50658,7 +50658,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Penvir Fanciclovir 125mg 10 comprimidos",
@@ -50685,7 +50685,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acertalix Perindopril Arginina 10mg + Indapamida 2,5mg 30 comprimidos",
@@ -50715,7 +50715,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esomex Esomeprazol Magnésico 40mg 56 comprimidos",
@@ -50744,7 +50744,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Linadib Linagliptina 5mg 30 comprimidos",
@@ -50770,7 +50770,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hisbila Bilastina 20mg 15 comprimidos",
@@ -50797,7 +50797,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kit Ômega 3 Catarinense 1000mg com 120 cápsulas + Ômega 3 1000mg com 60 cápsulas",
@@ -50828,7 +50828,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 20mg 60 comprimidos Medley Genérico",
@@ -50857,7 +50857,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Quenzor Succinato de Metoprolol 25mg 30 cápsulas",
@@ -50886,7 +50886,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sany D Colecalciferol 10.000Ui 4 Cápsulas",
@@ -50913,7 +50913,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dobeven Dobesilato 500mg 60 cápsulas",
@@ -50940,7 +50940,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lamitor CD Lamotrigina 25mg 30 comprimidos",
@@ -50968,7 +50968,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Wellbutrin XL Cloridrato de Bupropiona 300mg 30 comprimidos",
@@ -50997,7 +50997,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Repoflor Pediátrico 200mg Pó Oral Sabor Morango 4 envelopes de 1g",
@@ -51029,7 +51029,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trok-N Cetoconazol 20mg + Betametasona 0,5mg + Neomicina 1,5mg Pomada 30g",
@@ -51058,7 +51058,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mantidan Cloridrato de Amantadin 100mg 30 Comprimidos",
@@ -51087,7 +51087,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inilok Pantoprazol Magnésico Di-Hidratado 40mg 90 comprimidos",
@@ -51117,7 +51117,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Motilium Domperidona 10mg 90 comprimidos",
@@ -51144,7 +51144,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tacrolimo 0,1% Pomada Dermatológica 10g Leo Pharma Genérico",
@@ -51172,7 +51172,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rexulti Brexpiprazol 1mg 30 comprimidos",
@@ -51198,7 +51198,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Indapamida 1,5mg 30 comprimidos Eurofarma Genérico",
@@ -51225,7 +51225,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 0,075mg 84 comprimidos Novartis Genérico",
@@ -51253,7 +51253,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prolopa HBS Levodopa 100mg + Benserazida 25mg 30 cápsulas",
@@ -51283,7 +51283,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 2mg 60 comprimidos Medley Genérico",
@@ -51310,7 +51310,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inalador Nebulizador Caretech Air Comp MD 1500T",
@@ -51338,7 +51338,7 @@ const MEDICINES_DB = [
       "1500t"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lancetas Accu-Chek Softclix 25 unidades",
@@ -51366,7 +51366,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sotalol 160mg 30 comprimidos Sandoz Genérico",
@@ -51396,7 +51396,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Exelring® Etonogestrel 11,0mg + Etinilestradiol 3,474mg Anel Vaginal 1 unidade",
@@ -51427,7 +51427,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insit Pregabalina 50mg 30 cápsulas",
@@ -51454,7 +51454,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neutrofer Glicinato Férrico 150mg + Ácido Fólico 5mg 30 comprimidos",
@@ -51485,7 +51485,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gardenal Fenobarbital 40mg/ml Solução Oral 20ml",
@@ -51514,7 +51514,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lenix Cloridrato de Difenidramina 50mg caixa 14 comprimidos",
@@ -51544,7 +51544,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naprix Ramipril 5mg 30 comprimidos",
@@ -51570,7 +51570,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Caneta Aplicadora de Insulina HumaPen Ergo II com 1 unidade",
@@ -51599,7 +51599,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Epocler 100mg/ml + 10mg/ml + 50mg/ml Sabor Abacaxi 12 flaconetes de 10ml",
@@ -51630,7 +51630,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Etinilestradiol 30mcg + Gestodeno 75mcg 21 Comprimidos Aché Biosintética Genérico",
@@ -51661,7 +51661,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetato de Ciproterona + Etinilestradiol 21 comprimidos Biosintética Genérico",
@@ -51690,7 +51690,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simeticona 125mg 10 Cápsulas Neo Química Genérico",
@@ -51718,7 +51718,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clexane Safety Lock Enoxaparina Sódica 40mg/0,4ml Solução Injetável 6 seringas",
@@ -51751,7 +51751,7 @@ const MEDICINES_DB = [
       "seringas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Losartana Potássica 50mg 60 comprimidos Prati Donaduzzi Genérico",
@@ -51781,7 +51781,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alendronato de Sódio 70mg EMS 4 comprimidos - Genérico",
@@ -51810,7 +51810,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "PredSim Prednisolona 5mg 10 comprimidos",
@@ -51836,7 +51836,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diprogenta Betametasona 0,5mg + Gentamicina 1mg Creme 30g",
@@ -51864,7 +51864,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Betadine XR Dicloridrato Betaistina 48mg 30 comprimidos",
@@ -51893,7 +51893,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 100mg 12 cápsulas",
@@ -51920,7 +51920,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Contracep Acetato de Medroxiprogesterona 150mg 1 Ampola",
@@ -51949,7 +51949,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hidroclorotiazida 25mg 30 comprimidos EMS Genérico",
@@ -51976,7 +51976,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flanax Naproxeno Sódico 550mg 2 comprimidos",
@@ -52005,7 +52005,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromidrato de Vortioxetina 15mg 30 comprimidos Genérico Althaia",
@@ -52035,7 +52035,7 @@ const MEDICINES_DB = [
       "althaia"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Jardiance Duo Empagliflozina 12,5mg + Metformina 850mg 60 Comprimidos",
@@ -52064,7 +52064,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Litocit Citrato de Potássio 1080mg 60 comprimidos",
@@ -52093,7 +52093,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Orlistate 120mg Prati Donaduzzi 84 Cápsulas - Genérico",
@@ -52122,7 +52122,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezor Rosuvastatina Cálcica 5mg 60 Comprimidos",
@@ -52150,7 +52150,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Exforge HCT Valsartana 160mg + Hidroclorotiazida 12,5mg + Anlodipino 5mg 28 comprimidos",
@@ -52180,7 +52180,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tadalafila 5mg 30 Comprimidos Aché Genérico",
@@ -52207,7 +52207,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Tamoxifeno 20mg 30 comprimidos Sandoz Genérico",
@@ -52237,7 +52237,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 40mg 30 Comprimidos Biossintética Genérico",
@@ -52266,7 +52266,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citrato de Sildenafila 50mg 2 Comprimidos Neo Química Genérico",
@@ -52296,7 +52296,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Apixabana 5mg 60 comprimidos Natcofarma Genérico",
@@ -52323,7 +52323,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Soro Fisiológico Cloreto de Sódio 0,9% Needs 200ml",
@@ -52353,7 +52353,7 @@ const MEDICINES_DB = [
       "200ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desloratadina 5mg 10 comprimidos Eurofarma Genérico",
@@ -52380,7 +52380,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Miosan Caf Ciclobenzaprina 5mg + Cafeina 30mg 15 comprimidos",
@@ -52409,7 +52409,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Inzelm Fumarato de Vonoprazana 10mg 30 comprimidos",
@@ -52438,7 +52438,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diacqua Espironolactona 50mg 30 comprimidos",
@@ -52465,7 +52465,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levoid Levotiroxina Sódica 88mcg 30 comprimidos",
@@ -52494,7 +52494,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rexulti Brexpiprazol 0,5mg 30 comprimidos",
@@ -52521,7 +52521,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 10mg 30 comprimidos Eurofarma Genérico",
@@ -52551,7 +52551,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alivium Ibuprofeno 600mg 10 cápsulas",
@@ -52578,7 +52578,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Relvar Ellipta Furoato de Fluticasona 100mcg + Trifenatato de Vilanterol 25mcg Pó Inalante 30 doses",
@@ -52612,7 +52612,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Solução Nasal Sorine XTM Jet Baby 0,9% 100ml",
@@ -52641,7 +52641,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rivaroxabana 20mg 60 Comprimidos Prati Donaduzzi Genérico",
@@ -52670,7 +52670,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venlaxin XR Cloridrato de Venlafaxina 37,5mg 30 cápsulas",
@@ -52698,7 +52698,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desonida 0,5mg/g Gel Creme 30g Aché Genérico",
@@ -52725,7 +52725,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duxxen Cloridrato de Duloxetina 60mg 60 cápsulas",
@@ -52754,7 +52754,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cozaar Losartana Potássica 50mg 30 comprimidos",
@@ -52783,7 +52783,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Renovi B Cianocobalamina 5000mg + Piridoxina 100mg + Tiamina 100mg 30 Comprimidos",
@@ -52814,7 +52814,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Medidor de Glicose FreeStyle Optium Neo com 1 unidade",
@@ -52842,7 +52842,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Enavo Cloridrato de Ondansetrona Di-hidratado 8mg/ml 10ml Solução Gotas",
@@ -52873,7 +52873,7 @@ const MEDICINES_DB = [
       "gotas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Seakalm 90mg Solução 100ml",
@@ -52900,7 +52900,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levetiracetam 500mg 60 comprimidos Sandoz Genérico",
@@ -52928,7 +52928,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cialis Tadalafila 20mg 2 comprimidos",
@@ -52955,7 +52955,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bivolet Cloridrato de Nebivolol 5mg 30 comprimidos",
@@ -52983,7 +52983,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Piroxicam 20mg 10 cápsulas Pharlab Genérico",
@@ -53011,7 +53011,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Betina Dicloridrato de Betaistina 24mg 30 comprimidos",
@@ -53040,7 +53040,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Micolamina Ciclopirox Olamina 10mg/g Creme Dermatológico 20g",
@@ -53070,7 +53070,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Toperma Cloridrato de Lidocaína 5% 10 Adesivos Tópicos",
@@ -53098,7 +53098,7 @@ const MEDICINES_DB = [
       "topicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vicog Vimpocetina 5mg 90 comprimidos",
@@ -53124,7 +53124,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acheflan Cordia Verbenacea DC 5mg/g Creme 30g",
@@ -53152,7 +53152,7 @@ const MEDICINES_DB = [
       "creme"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diovan HCT Valsartana 320mg + Hidroclorotiazida 25mg 28 comprimidos",
@@ -53182,7 +53182,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Meia Feminina Kendall 3/4 Média Compressão Sem Ponteira M Bege 1 par",
@@ -53212,7 +53212,7 @@ const MEDICINES_DB = [
       "bege"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xantinon Complex Solução Oral 6 Flaconetes com 10ml cada",
@@ -53243,7 +53243,7 @@ const MEDICINES_DB = [
       "cada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Nordette Levonorgestrel 150mcg + Etinilestradiol 30mcg 21 drágeas",
@@ -53272,7 +53272,7 @@ const MEDICINES_DB = [
       "drageas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dimorf Sulfato de Morfina Pentaidratado 10mg 50 comprimidos",
@@ -53302,7 +53302,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Óleo Essencial de Lavanda Natz 10ml",
@@ -53331,7 +53331,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dicloridrato de Hidroxizina 2mg/ml Solução Oral 120ml Eurofarma Genérico",
@@ -53362,7 +53362,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neovangy Mr Trimetazidina 35mg 60 comprimidos",
@@ -53390,7 +53390,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosucor Rosuvastatina Cálcica 10mg 100 comprimidos",
@@ -53419,7 +53419,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Insit Pregabalina 150mg 30 cápsulas",
@@ -53446,7 +53446,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aurom Benzoato de Rizatriptana 10mg 2 Comprimidos",
@@ -53475,7 +53475,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Simbrinza Brinzolamida 10mg Tartarato de Brimonidina 2mg Solução Oftálmica 5ml",
@@ -53505,7 +53505,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xafac Rivaroxabana 20mg 28 Comprimidos",
@@ -53532,7 +53532,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atenolol 25mg 30 comprimidos Aché Biosintética Genérico",
@@ -53561,7 +53561,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Piroxicam 20mg 15 cápsulas EMS Genérico",
@@ -53588,7 +53588,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gaeso Esomeprazol Magnésico 40mg 28 comprimidos",
@@ -53617,7 +53617,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Risedross Risedronato Sódico 35mg 12 comprimidos",
@@ -53646,7 +53646,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Addera D3 50.000UI 8 cápsulas",
@@ -53673,7 +53673,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mirena Levonorgestrel 52mg 1 endoceptivo + 1 insertor",
@@ -53701,7 +53701,7 @@ const MEDICINES_DB = [
       "insertor"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Steaton Silimarina 300mg Hepatoprotetor 30 cápsulas",
@@ -53729,7 +53729,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Porta Comprimidos Semanal 14 Divisórias Needs 1 Unidade",
@@ -53758,7 +53758,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diprogenta Betametasona 0,5mg + Gentamicina 1mg Pomada 30g",
@@ -53786,7 +53786,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetrolac Trometamol Cetorolaco 5mg/ml Solução Oftálmica Estéril 5ml",
@@ -53816,7 +53816,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Anlodipino 5mg 60 Comprimidos Sandoz Genérico",
@@ -53845,7 +53845,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bhena Benazepril 5mg 30 comprimidos",
@@ -53871,7 +53871,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Varicell Duo Aesculus Hippocastanum 6 DH + Associação 30 comprimidos",
@@ -53899,7 +53899,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vastarel MR Trimetazidina 35mg 30 comprimidos",
@@ -53927,7 +53927,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 50mg 60 comprimidos Zydus Nikkho Genérico",
@@ -53956,7 +53956,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valerato de Betametasona 1mg/g Solução 50ml Neo Química Genérico",
@@ -53986,7 +53986,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Betrat Tiamina 100mg + Piridoxina 100mg + Cianocobalamina 5000mcg 42 comprimidos",
@@ -54017,7 +54017,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Topiramato 100mg 60 comprimidos Germed Genérico",
@@ -54045,7 +54045,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Oxalato de Escitalopram 15mg 30 comprimidos Eurofarma Genérico",
@@ -54075,7 +54075,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Herbarium Hedera Helix L. 7mg/ml Xarope 150ml",
@@ -54104,7 +54104,7 @@ const MEDICINES_DB = [
       "150ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pilha AA Duracell Alcalina com 4 unidades",
@@ -54131,7 +54131,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naldecon Multi Paracetamol 800mg + Cloridrato Fenillefrina 20mg 4 comprimidos",
@@ -54163,7 +54163,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ansiodoron Weleda 40 comprimidos",
@@ -54189,7 +54189,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valsartana 320mg 30 comprimidos Cimed Genérico",
@@ -54217,7 +54217,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Algodão Rolo Needs 25g",
@@ -54244,7 +54244,7 @@ const MEDICINES_DB = [
       "needs"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venzer HCT Candesartana Cilexetila 16mg + Hidroclorotiazida 12,5mg 30 comprimidos",
@@ -54274,7 +54274,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbonato de Lítio 300mg 60 comprimidos Biolab Genérico",
@@ -54304,7 +54304,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Reconter Oxalato de Escitalopram 10mg 60 Comprimidos",
@@ -54333,7 +54333,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Vick Drops Gengibre 20 unidades",
@@ -54361,7 +54361,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naldecon Noite Paracetamol 800mg + Cloridrato de Fenilefrina 20mg + Maleato de Carbinoxamina 4mg 4 Comprimidos",
@@ -54395,7 +54395,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bi-Profenid Cetoprofeno 150mg 10 comprimidos",
@@ -54421,7 +54421,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pastilha Flogoral Sabor Menta 4 unidades",
@@ -54449,7 +54449,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Rosuvastatina Cálcica 20mg 30 comprimidos Althaia Genérico",
@@ -54478,7 +54478,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prelone Prednisolona 20mg 10 comprimidos",
@@ -54505,7 +54505,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clo Cloridrato de Clomipramina 75mg 20 comprimidos",
@@ -54533,7 +54533,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Bupropiona 150mg 60 comprimidos Nova Química Genérico Liberação 12 horas",
@@ -54566,7 +54566,7 @@ const MEDICINES_DB = [
       "horas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esomeprazol Magnésico Tri-Hidratado 20mg 28 comprimidos Nova Química Genérico",
@@ -54598,7 +54598,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Levofloxacino Hemi-Hidratado 750mg 5 comprimidos Eurofarma Genérico",
@@ -54629,7 +54629,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fumagum 2mg Menta 36 Gomas",
@@ -54655,7 +54655,7 @@ const MEDICINES_DB = [
       "gomas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscofem Hot Adesivo Termico 2 sachês",
@@ -54682,7 +54682,7 @@ const MEDICINES_DB = [
       "saches"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Suganon Tartarato de Evogliptina 5mg 30 comprimidos",
@@ -54710,7 +54710,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flavonid Diosmina 450mg + Hesperidina 50mg 60 comprimidos",
@@ -54739,7 +54739,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Descon Maleato de Bronfeniramina 12mg + Cloridrato de Fenilefrina 15mg 4 comprimidos",
@@ -54771,7 +54771,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Paracetamol 500mg 20 comprimidos Prati Donaduzzi Genérico",
@@ -54800,7 +54800,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Brometo de N Butil Escopolamina 10mg/ml Solução Oral 20ml",
@@ -54832,7 +54832,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tylenol Paracetamol 200mg/ml Solução Gotas 15ml",
@@ -54861,7 +54861,7 @@ const MEDICINES_DB = [
       "15ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Neural Lamotrigina 100mg 30 comprimidos",
@@ -54888,7 +54888,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Broncho-Vaxom Lisado Bacteriano 3,5mg Granulado 30 sachês",
@@ -54918,7 +54918,7 @@ const MEDICINES_DB = [
       "saches"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Orlistate 120mg 42 cápsulas EMS Genérico",
@@ -54945,7 +54945,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vick 44E Xarope Expectorante 240ml",
@@ -54973,7 +54973,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olmesartana Medoxomila 40mg + Hidroclorotiazida 25mg 30 comprimidos Eurofarma Genérico",
@@ -55004,7 +55004,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Doss Colecalciferol 7.000UI 12 cápsulas",
@@ -55032,7 +55032,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gracial Desogestrel 25mcg/125mcg + Etinilestradio 40mcg/30mcg 22 comprimidos",
@@ -55063,7 +55063,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acebrofilina 50mg/5ml Xarope 120ml Cimed Genérico",
@@ -55092,7 +55092,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Curativos Band-Aid Pequenos Ferimentos 16 unidades",
@@ -55120,7 +55120,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Sertralina 50mg 30 comprimidos Torrent Genérico",
@@ -55150,7 +55150,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Entresto Sacubitril Valsartana 200mg 60 comprimidos",
@@ -55179,7 +55179,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Anlodipino 5mg Neo Química 30 comprimidos - Genérico",
@@ -55208,7 +55208,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acetilcisteína bwell 40mg/ml + Vitamina C 25mg/ml Xarope 120ml",
@@ -55238,7 +55238,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tapazol Tiamazol 5mg 100 comprimidos",
@@ -55264,7 +55264,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Succinato de Metoprolol 100mg 30 Comprimidos Cimed Genérico",
@@ -55294,7 +55294,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cylocort Cloridrato de Ciprofloxacino 3,5mg + Dexametasona 1mg Solução Oftálmica Estéril 5ml",
@@ -55325,7 +55325,7 @@ const MEDICINES_DB = [
       "esteril"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desogestrel 150mcg + Etinilestradiol 20mcg 21 comprimidos Aché Genérico",
@@ -55355,7 +55355,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aciclovir 50mg/g Creme Dermatológico 10g Aché Genérico",
@@ -55384,7 +55384,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Óleo Essencial de Melaleuca Natz 10ml",
@@ -55413,7 +55413,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bimatoprosta 0,3mg/ml Solução Oftálmica 3ml Medley Genérico",
@@ -55441,7 +55441,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naturetti Sabor Ameixa Sem Açúcar Geleia 130g",
@@ -55471,7 +55471,7 @@ const MEDICINES_DB = [
       "130g"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Penetro 33mg/ml + 22mg/ml + 22mg/ml Descongestionante Solução Via Inalatória 45ml",
@@ -55502,7 +55502,7 @@ const MEDICINES_DB = [
       "45ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Espinheira Santa Maytenus Ilicifolia + M. Aquifolium 380mg 45 cápsulas",
@@ -55533,7 +55533,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novanlo Besilato de Levanlodipino 2,5mg 30 comprimidos",
@@ -55561,7 +55561,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ezetimiba 10mg 30 Comprimidos EMS Genérico",
@@ -55588,7 +55588,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dorene Líquido 25mg/ml Solução Oral 60ml",
@@ -55617,7 +55617,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Exforge HCT Valsartana 320mg + Hidroclorotiazida 25mg + Anlodipino 10mg 28 comprimidos",
@@ -55649,7 +55649,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gynazole-1 Nitrato de Butoconazol 20mg/g Creme Vaginal 5g",
@@ -55678,7 +55678,7 @@ const MEDICINES_DB = [
       "vaginal"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esalerg Desloratadina 0,5mg/ml Xarope Tutti-Frutti 60ml",
@@ -55708,7 +55708,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bálsamo Bengué Xtra Pomada 20g",
@@ -55736,7 +55736,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naridrin Alto Volume Cloreto de Sódio 9mg/ml 30 envelopes + Frasco 240ml",
@@ -55768,7 +55768,7 @@ const MEDICINES_DB = [
       "240ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Artrolive Sulfato de Glicosamina 1,5g + Sulfato de Condroitina 1,2g 30 envelopes de 4g",
@@ -55798,7 +55798,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Monitor de Pressão Digital de Braço Automático G-Tech BSP11 com 1 unidade",
@@ -55829,7 +55829,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ciclopirox Olamina 10mg/g Creme Dermatológico 20g Medley Genérico",
@@ -55859,7 +55859,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lixiana Edoxabana 60mg 30 comprimidos",
@@ -55886,7 +55886,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azukon MR Gliclazida 30mg 60 comprimidos",
@@ -55914,7 +55914,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flavenos 1000 Diosmina 900mg + Hesperidina 100mg 30 comprimidos",
@@ -55945,7 +55945,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Iziz Acetato de Nomegestrol 2,5mg + Estradiol 1,5mg 84 Comprimidos",
@@ -55974,7 +55974,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prebictal Pregabalina 75mg 60 cápsulas",
@@ -56001,7 +56001,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dimesilato de Lisdexanfetamina 50mg 30 cápsulas Pharlab Genérico",
@@ -56031,7 +56031,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Buscopan Pediátrico Butilbrometo de Escopolamina 10mg/ml Solução Oral 20ml",
@@ -56063,7 +56063,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Decadron Fosfato Dissódico de Dexametasona 5mg + Neomicina 3,5mg + Cloridrato de Fenilefrina 5mg + Solução Nasal 20ml",
@@ -56097,7 +56097,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromoprida 10mg 20 cápsulas Germed Genérico",
@@ -56125,7 +56125,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naprix Ramipril 5mg 90 comprimidos",
@@ -56151,7 +56151,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Novalgina Dipirona 500mg 30 comprimidos",
@@ -56178,7 +56178,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Holmes H Olmesartana Medoxomil 20mg + Hidroclorotiazida 12,5mg 30 comprimidos",
@@ -56207,7 +56207,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Atadura de Crepom Needs 100% Algodão 1 Rolo de 8cm x 1,8cm",
@@ -56235,7 +56235,7 @@ const MEDICINES_DB = [
       "rolo"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Canabidiol 20mg/ml Solução Oral 30ml + 2 Seringas Dosadoras Prati Donaduzzi",
@@ -56267,7 +56267,7 @@ const MEDICINES_DB = [
       "donaduzzi"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vonau Flash Cloridrato de Ondansetrona 4mg 30 comprimidos",
@@ -56296,7 +56296,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Camilia Solução Oral 30 flaconetes de 1ml",
@@ -56324,7 +56324,7 @@ const MEDICINES_DB = [
       "flaconetes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Naxotec Naproxeno 500mg 24 comprimidos",
@@ -56351,7 +56351,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Belpele Adapaleno 1mg/g Gel 30g",
@@ -56376,7 +56376,7 @@ const MEDICINES_DB = [
       "adapaleno"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clonazepam 2,5mg/ml Solução Oral 20ml Teuto Genérico",
@@ -56405,7 +56405,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dual Cloridrato de Duloxetina 30mg 60 cápsulas",
@@ -56434,7 +56434,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Valproato de Sódio 500mg 50 comprimidos Biolab Genérico",
@@ -56464,7 +56464,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Verapamil 120mg 20 comprimidos Aché Biosintética Genérico",
@@ -56495,7 +56495,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trezete Ezetimiba 5mg + Rosuvastatina Cálcica 10mg 30 comprimidos revestidos",
@@ -56525,7 +56525,7 @@ const MEDICINES_DB = [
       "revestidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pratiprazol 40mg 28 Cápsulas de Liberação Retardada Prati Donaduzzi",
@@ -56555,7 +56555,7 @@ const MEDICINES_DB = [
       "donaduzzi"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hemifumarato de Bisoprolol 5mg 30 comprimidos Medley Genérico",
@@ -56584,7 +56584,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Daforin Cloridrato de Fluoxetina 20mg/ml Solução Oral 20ml",
@@ -56615,7 +56615,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Mytro Trometamol Cetorolaco 10mg 10 comprimidos sublinguais",
@@ -56645,7 +56645,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Carbonato de Lítio 300mg 90 comprimidos Biolab Genérico",
@@ -56675,7 +56675,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D DPrev Colecalciferol 5.000UI 30 comprimidos",
@@ -56703,7 +56703,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Besilato de Anlodipino 5mg 30 comprimidos Sandoz Genérico",
@@ -56732,7 +56732,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Nortriptilina 50mg 30 Cápsulas Ranbaxy Genérico",
@@ -56762,7 +56762,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Dozemast Mecobalamina 1000mcg 60 comprimidos sublinguais",
@@ -56790,7 +56790,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flebon Pycnogenol 50mg 30 Comprimidos",
@@ -56817,7 +56817,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Agulha para Caneta Aplicadora de Insulina Novofine 32G 4mm 100 unidades",
@@ -56848,7 +56848,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Depakene Valproato de Sódio 500mg 50 comprimidos",
@@ -56877,7 +56877,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sanasar 250mg/ml Emulsão 100ml",
@@ -56904,7 +56904,7 @@ const MEDICINES_DB = [
       "100ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Candicort Cetoconazol 20mg + Betametasona 0,64mg Pomada 30g",
@@ -56933,7 +56933,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Probiótico Floratil 250mg Tutti-Frutti 6 envelopes de 1,25g",
@@ -56962,7 +56962,7 @@ const MEDICINES_DB = [
       "envelopes"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Memantina 10mg 60 comprimidos Biolab Genérico",
@@ -56992,7 +56992,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Miogesic Lis Clonixinato de Lisina 125mg + Cloridrato de Ciclobenzaprina 5mg - 15 comprimidos",
@@ -57023,7 +57023,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Retemic Cloridrato de Oxibutinina 5mg 60 comprimidos",
@@ -57051,7 +57051,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sucrafilm Sucralfato 1g 30 comprimidos",
@@ -57077,7 +57077,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Leite de Magnésia EnoMagno Hortelã Suspensão Oral 10ml",
@@ -57108,7 +57108,7 @@ const MEDICINES_DB = [
       "10ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Forfig Silimarina 300mg 30 Càpsulas",
@@ -57135,7 +57135,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita para Curativo Transparente Nexcare com 1 rolo de 25mm x 1,35m",
@@ -57165,7 +57165,7 @@ const MEDICINES_DB = [
       "25mm"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Gamaline V Ácido Linoleico 30 cápsulas",
@@ -57191,7 +57191,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Zyad Tadalafila 5mg 30 comprimidos",
@@ -57217,7 +57217,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Candesartana 16mg 30 Comprimidos Biosintética Genéricos",
@@ -57245,7 +57245,7 @@ const MEDICINES_DB = [
       "genericos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Tormiv Sl Trometamol Cetorolaco 10mg 20 comprimidos",
@@ -57274,7 +57274,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Procimax Bromidrato de Citalopram 20mg 28 Comprimidos",
@@ -57303,7 +57303,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prednisolona 20mg 10 Comprimidos Althaia Genérico",
@@ -57331,7 +57331,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Propilracil Propiltiouracil 100mg 30 comprimidos",
@@ -57358,7 +57358,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Brasart BCC Valsartana 320mg + Besilato de Anlodipino 10mg 30 comprimidos",
@@ -57389,7 +57389,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Polivitamínico Inpruv D K 7.000UI + 100mcg 30 comprimidos",
@@ -57418,7 +57418,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Massageol Pomada com 30g",
@@ -57444,7 +57444,7 @@ const MEDICINES_DB = [
       "pomada"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Depo-Provera Acetato de Medroxiprogesterona 150mg/ml Suspensão Injetável Intramuscular 1 ampola de 1ml",
@@ -57477,7 +57477,7 @@ const MEDICINES_DB = [
       "ampola"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Flunacetil Acetilcisteína 40mg/ml Xarope 120ml",
@@ -57505,7 +57505,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Colpist MT Creme Vaginal com 40mg + 10 aplicadores",
@@ -57534,7 +57534,7 @@ const MEDICINES_DB = [
       "aplicadores"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Isotretinoína 20mg 30 cápsulas Nova Química Genérico",
@@ -57563,7 +57563,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Monitor de Pressão Arterial de Pulso Omron HEM-6181",
@@ -57592,7 +57592,7 @@ const MEDICINES_DB = [
       "6181"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lestalgyn Maleato de Dexclorfeniramina 2mg + Betametasona 0,25mg Xarope 120ml",
@@ -57623,7 +57623,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alphagan Z Tartarato de Brimonidina 1mg/ml Colírio 5ml",
@@ -57650,7 +57650,7 @@ const MEDICINES_DB = [
       "colirio"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cetoconazol 200mg 30 comprimidos Cimed Genérico",
@@ -57678,7 +57678,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Aristab Aripiprazol 10mg 30 comprimidos",
@@ -57705,7 +57705,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Diclofenaco Potássico 50mg 20 comprimidos Teuto Genérico",
@@ -57734,7 +57734,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Stavigile Modafinila 100mg 30 comprimidos",
@@ -57761,7 +57761,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Fluoxetina 20mg 60 cápsulas Eurofarma Genérico",
@@ -57791,7 +57791,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Restiva Buprenorfina 5mg 2 adesivos transdérmicos",
@@ -57818,7 +57818,7 @@ const MEDICINES_DB = [
       "transdermicos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Betnovate Valerato de Betametasona 1mg/g Creme Dermatológico 30g",
@@ -57847,7 +57847,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Irritratil Maleato de Trimebutina 200mg 30 cápsulas",
@@ -57876,7 +57876,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Prelone Fosfato Sódico de Prednisolona 11mg/ml Gotas 20ml",
@@ -57907,7 +57907,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cialis Tadalafila 20mg 4 comprimidos",
@@ -57934,7 +57934,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Kelac Trometamol Cetorolaco 10mg 10 Comprimidos Sublinguais",
@@ -57964,7 +57964,7 @@ const MEDICINES_DB = [
       "sublinguais"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sinvastacor Sinvastatina 20mg 30 Comprimidos",
@@ -57991,7 +57991,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Olopatadina 1mg/ml Solução Oftálmica 5ml Ranbaxy Genérico",
@@ -58019,7 +58019,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vynaxa Rivaroxabana 10mg 30 Comprimidos",
@@ -58046,7 +58046,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Hidroclorotiazida 25mg 30 comprimidos Cimed Genérico",
@@ -58074,7 +58074,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Ciclobenzaprina 5mg 30 comprimidos revestidos Aché Biosintética Genérico",
@@ -58105,7 +58105,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lansoprazol 30mg 28 cápsulas EMS Genérico",
@@ -58132,7 +58132,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Differin Adapaleno 3mg/g Gel Dermatológico 30g",
@@ -58158,7 +58158,7 @@ const MEDICINES_DB = [
       "dermatologico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lutab Cloridrato de Lurasidona 20mg 30 comprimidos",
@@ -58187,7 +58187,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Galvus Vildagliptina 50mg 56 comprimidos",
@@ -58214,7 +58214,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cinetol Cloridrato de Biperideno 2mg 80 comprimidos",
@@ -58242,7 +58242,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Renitec Maleato de Enalapril 5mg 30 comprimidos",
@@ -58270,7 +58270,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Irbesartana 300mg + Hidroclorotiazida 12,5mg 30 comprimidos Eurofarma Genérico",
@@ -58299,7 +58299,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Axonium Olanzapina 2,5mg 30 comprimidos",
@@ -58326,7 +58326,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Trok-G Dipropionato de Betametasona 0,5mg/g + Sulfato de Gentamicina 1mg/g Pomada Dermatológica 30g",
@@ -58356,7 +58356,7 @@ const MEDICINES_DB = [
       "dermatologica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Acertanlo Perindopril Arginina 14mg + Besilato de Anlodipino 10mg 30 comprimidos",
@@ -58388,7 +58388,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Duepoli ER 250mg caixa 60 comprimidos",
@@ -58415,7 +58415,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Menelat Odt Mirtazapina 15mg 30 comprimidos",
@@ -58443,7 +58443,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Xarope de Guaco Herbarium Expectorante com 120ml",
@@ -58472,7 +58472,7 @@ const MEDICINES_DB = [
       "120ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Alivium Ibuprofeno 200mg/ml Suspensão Gotas 20ml",
@@ -58501,7 +58501,7 @@ const MEDICINES_DB = [
       "20ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Compressa Não Aderente Needs Frozen Estéril 10 Unidades",
@@ -58530,7 +58530,7 @@ const MEDICINES_DB = [
       "unidades"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Sominex Composto com 20 Comprimidos",
@@ -58556,7 +58556,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Etna Hidroxocolabina 1,0mg + Uridina 1,5mg + Citidina 2,5mg 20 cápsulas",
@@ -58585,7 +58585,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Esio Esomeprazol Magnésico 40mg 28 comprimidos",
@@ -58614,7 +58614,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Elifore Succinato Desvenlafaxina 50mg 28 comprimidos",
@@ -58643,7 +58643,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Clenil HFA Dipropionato de Beclometasona 200mcg Spray 200 doses",
@@ -58673,7 +58673,7 @@ const MEDICINES_DB = [
       "doses"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Omeprazol 40mg 7 cápsulas Medley Genérico",
@@ -58701,7 +58701,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Pasalix PI 500mg 30 comprimidos",
@@ -58727,7 +58727,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bicerto Cetoprofeno 150mg 10 comprimidos",
@@ -58754,7 +58754,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Ácido Ursodesoxicólico 150mg Ranbaxy 30 comprimidos - Genérico",
@@ -58783,7 +58783,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Meticorten Prednisona 5mg 20 comprimidos",
@@ -58809,7 +58809,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Donepezila 10mg 30 comprimidos EMS Genérico",
@@ -58838,7 +58838,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Galvus Met Vildagliptina 50mg + Metformina 1000mg 56 comprimidos",
@@ -58868,7 +58868,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Bromoprida 4mg/ml Solução Oral 20ml EMS Genérico",
@@ -58896,7 +58896,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Cloridrato de Diltiazem 30mg 50 comprimidos EMS Genérico",
@@ -58925,7 +58925,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Teste de Gravidez Needs Indicador de Semanas 1 Unidade",
@@ -58954,7 +58954,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Telmisartana 80mg 60 comprimidos Althaia Genérico",
@@ -58982,7 +58982,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amato Topiramato 50mg 60 comprimidos",
@@ -59009,7 +59009,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Citobê Tiamina 100mg + Piridoxina 100mg + Cianocobalamina 5000mcg 30 comprimidos",
@@ -59040,7 +59040,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Lide Nimesulida Betaciclodextrina 400mg - 10 comprimidos",
@@ -59069,7 +59069,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Vitamina D Althaia 15.000UI 4 cápsulas",
@@ -59096,7 +59096,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Efexor XR Cloridrato de Venlafaxina 150mg 30 cápsulas",
@@ -59125,7 +59125,7 @@ const MEDICINES_DB = [
       "capsulas"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Holmes Olmesartana Medoxomila 20mg 30 comprimidos",
@@ -59154,7 +59154,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Azopt Brinzolamida 10mg/ml Suspensão Oftálmica 5ml",
@@ -59182,7 +59182,7 @@ const MEDICINES_DB = [
       "oftalmica"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Telmisartana 40mg 60 comprimidos Althaia Genérico",
@@ -59210,7 +59210,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Fita Microporosa Needs Bege 5cm x 4,5m 1 unidade",
@@ -59238,7 +59238,7 @@ const MEDICINES_DB = [
       "unidade"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Drenison Oclusivo Fludroxicortida 4mcg Curativo 200cm",
@@ -59268,7 +59268,7 @@ const MEDICINES_DB = [
       "200cm"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Desalex Desloratadina 0,5mg/ml Xarope 60ml",
@@ -59296,7 +59296,7 @@ const MEDICINES_DB = [
       "60ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Amoxicilina Tri-Hidratada 500mg + Clavulanato de Potássio 125mg 14 comprimidos Sandoz Genérico",
@@ -59329,7 +59329,7 @@ const MEDICINES_DB = [
       "generico"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "AAS Ácido acetilsalicílico 100mg 20 Comprimidos",
@@ -59357,7 +59357,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Venzer Candesartana Cilexetila 16mg 30 comprimidos",
@@ -59386,7 +59386,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Violeta Genciana Needs Solução Tópica Antisséptica 30ml",
@@ -59417,7 +59417,7 @@ const MEDICINES_DB = [
       "30ml"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   },
   {
     "name": "Benicar Triplo Olmesartana Medoxomila 20mg + Hidroclorotiazida 12,5mg + Anlodipino 5mg 30 Comprimidos",
@@ -59449,7 +59449,7 @@ const MEDICINES_DB = [
       "comprimidos"
     ],
     "safetyNote": "Siga a orientação do seu médico ou farmacêutico. Consulte a bula.",
-    "source": "drogasil_scraped"
+    "source": "drogasil_updated"
   }
 ];
 
