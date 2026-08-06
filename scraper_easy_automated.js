@@ -6,12 +6,11 @@
  * o arquivo docs/drogasil-latest.json para processamento automático.
  */
 
-const { chromium } = require('playwright-extra');
-const StealthPlugin = require('playwright-extra-plugin-stealth');
+const { chromium } = require('playwright');
+// Note: playwright-extra-plugin-stealth is deprecated and throws errors.
+// We use pure Playwright with anti-detection args instead.
 const fs = require('fs');
 const path = require('path');
-
-chromium.use(StealthPlugin());
 
 // Configurações do Scraper
 const HEADLESS = true;

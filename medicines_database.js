@@ -1,5 +1,5 @@
 // medicines_database.js
-// Gerado automaticamente via process_drogasil_scrap.js em: 28/07/2026, 17:17:16
+// Gerado automaticamente via process_drogasil_scrap.js em: 05/08/2026, 17:00:04
 // Original: 2114 | Atualizados: 1742 | Adicionados: 0 | Total: 2114
 
 const MEDICINES_DB = [

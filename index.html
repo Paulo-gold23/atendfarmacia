@@ -149,7 +149,13 @@
   <div class="toast-container" id="toastContainer"></div>
 
 </div>
-<script src="medicines_database.js?v=10"></script>
-<script src="app.js?v=10"></script>
+<script src="medicines_database.js?v=20250804d"></script>
+<script src="app.js?v=20250804prod"></script>
+<script>
+  // Force reload if cached version is stale
+  if (!window._findAllDosageVariants && typeof _findAllDosageVariants === 'undefined') {
+    console.warn('[Sofia] Detected stale cache, functions may need hard refresh (Ctrl+Shift+R)');
+  }
+</script>
 </body>
 </html>

@@ -17,7 +17,7 @@
 
 // ============ CONFIG ============
 const CONFIG = {
-  simulationMode: true,
+  simulationMode: false,
   webhookUrl: 'https://n8n.srv1181762.hstgr.cloud/webhook/sofia/chat',
   sessionKey: 'farmacia_session_id',
   historyKey: 'farmacia_history',
@@ -64,6 +64,9 @@ const state = {
   cpf: null,
   discountPercent: 0,
   pendingActionRawText: '',   // FIX #5: declared here, not added dynamically
+  lastMentionedProduct: null, // Contextual: last product discussed (for "quanto custa?", "esse mesmo")
+  lastImageContext: null,     // Contextual: result of last image analysis
+  hasGreeted: false,          // Track if bot has already greeted user in active session
 
   // Recording (FIX #9: moved from global scope)
   mediaRecorder: null,
@@ -136,6 +139,7 @@ function init() {
 
 // ============ GREETING ============
 function greetUser(initialDelay = CONFIG.greetingInitialDelay) {
+  state.hasGreeted = true;
   setTimeout(() => {
     addBotMessage(`Oi! Tudo bem? Sou a ${CONFIG.botName} da ${CONFIG.clinicName}.`);
     setTimeout(() => {
@@ -164,7 +168,10 @@ function loadOrCreateSession() {
 function loadHistory() {
   try {
     const saved = localStorage.getItem(CONFIG.historyKey);
-    if (saved) state.messages = JSON.parse(saved);
+    if (saved) {
+      state.messages = JSON.parse(saved);
+      state.hasGreeted = state.messages.some(m => m.sender === 'bot');
+    }
   } catch { state.messages = []; }
 }
 
@@ -396,11 +403,20 @@ function normalizeText(text) {
 }
 
 function runSimulation(message) {
+  // Null safety guard
+  if (!message || typeof message !== 'string') {
+    return 'Oi! Me diz o que você precisa. 😊';
+  }
   const norm = normalizeText(message);
 
-  // 1. Human transfer lock
+  // 1. Human transfer lock — but allow escape commands
   if (state.simState === 'human') {
-    return 'O atendimento humano está ativo. Um atendente entrará em contato em instantes por este canal.';
+    if (norm.match(/(cancelar|voltar|sair|bot|sofia|resetar)/i)) {
+      state.simState = 'idle';
+      setTimeout(() => { dom.chatStatus.textContent = 'online'; }, 100);
+      return 'Voltei! 😊 Sou a Sofia novamente. Como posso te ajudar?';
+    }
+    return 'O atendimento humano está ativo. Um atendente entrará em contato em instantes por este canal.\n\n_(Digite *voltar* para retornar ao atendimento automático)_';
   }
 
   // 2. Global overrides — always active regardless of simState
@@ -427,13 +443,14 @@ function runSimulation(message) {
     case 'confirm_brand_or_generic': return handleConfirmBrandOrGeneric(norm);
     case 'confirm_upsell':         return handleConfirmUpsell(norm);
     case 'confirm_add_cart':       return handleConfirmAddCartState(norm, message);
+    case 'waiting_dosage_selection': return handleWaitingDosageSelection(norm, message);
     case 'choose_variant':         return handleChooseVariant(norm, message);
     case 'waiting_calculation_days': return handleWaitingCalculationDays(norm, message);
     case 'more_items':             return handleMoreItemsState(norm, message);
-    case 'waiting_delivery_method': return handleWaitingDeliveryMethod(norm);
+    case 'waiting_delivery_method': return handleWaitingDeliveryMethod(norm, message);
     case 'waiting_address':        return handleWaitingAddressState(message);
     case 'waiting_payment':        return handleWaitingPaymentState(norm);
-    case 'waiting_confirm':        return handleWaitingConfirmState(norm);
+    case 'waiting_confirm':        return handleWaitingConfirmState(norm, message);
     default:
       state.simState = 'idle';
       return 'Oi! Desculpa, me perdi um pouco no fluxo. No que posso te ajudar? Digite o nome do remédio ou faça sua pergunta.';
@@ -445,20 +462,52 @@ const COLLOQUIAL_MAP = {
   'remedio de pressao':        ['pressão', 'hipertensão'],
   'remedio de pressao alta':   ['pressão', 'hipertensão'],
   'remedio para pressao':      ['pressão', 'hipertensão'],
+  'remedio pra pressao':       ['pressão', 'hipertensão'],
   'remedio de acucar':         ['diabetes'],
   'remedio de diabetes':       ['diabetes'],
   'remedio para diabetes':     ['diabetes'],
+  'remedio pra diabetes':      ['diabetes'],
   'remedio pra dormir':        ['sono', 'insônia'],
   'remedio para dormir':       ['sono', 'insônia'],
   'remedio de dor':            ['dor'],
   'remedio para dor':          ['dor'],
+  'remedio pra dor':           ['dor'],
   'remedio de dor de cabeca':  ['cabeça', 'dor'],
   'remedio para dor de cabeca':['cabeça', 'dor'],
+  'remedio pra dor de cabeca': ['cabeça', 'dor'],
   'bombinha':                  ['bombinha', 'asma', 'falta de ar'],
+  'spray para asma':           ['bombinha', 'asma', 'falta de ar'],
   'remedio de colesterol':     ['colesterol'],
   'remedio para colesterol':   ['colesterol'],
+  'remedio pra colesterol':    ['colesterol'],
   'remedio de tireoide':       ['tireoide'],
   'remedio para tireoide':     ['tireoide'],
+  'remedio pra tireoide':      ['tireoide'],
+  // Recovered from old prompt
+  'remedio de barriga':        ['barriga', 'diarreia', 'intestinal'],
+  'remedio para barriga':      ['barriga', 'diarreia', 'intestinal'],
+  'remedio pra barriga':       ['barriga', 'diarreia', 'intestinal'],
+  'remedio de enjoo':          ['enjoo', 'náusea'],
+  'remedio para enjoo':        ['enjoo', 'náusea'],
+  'remedio pra enjoo':         ['enjoo', 'náusea'],
+  'remedio de estomago':       ['azia', 'estômago'],
+  'remedio para estomago':     ['azia', 'estômago'],
+  'remedio pra estomago':      ['azia', 'estômago'],
+  'remedio de azia':           ['azia', 'estômago'],
+  'remedio para azia':         ['azia', 'estômago'],
+  'remedio para garganta':     ['garganta'],
+  'remedio pra garganta':      ['garganta'],
+  'remedio para tosse':        ['tosse'],
+  'remedio pra tosse':         ['tosse'],
+  'remedio para alergia':      ['alergia', 'rinite'],
+  'remedio pra alergia':       ['alergia', 'rinite'],
+  'remedio para micose':       ['micose'],
+  'remedio pra micose':        ['micose'],
+  'remedio para gripe':        ['gripe'],
+  'remedio pra gripe':         ['gripe'],
+  'laxante':                   ['laxante'],
+  'vitamina c':                ['vitamina'],
+  'complexo b':                ['vitamina'],
 };
 
 function escapeRegex(s) {
@@ -501,7 +550,7 @@ function _parseQuantityAndCleanText(text) {
 
   const qtyUnitMatch = clean.match(/(\d+)\s*(caixas?|frascos?|unidades?|un|cps?|comprimidos?|envelopes?|bisnagas?)(?:\s+de)?/i);
   if (qtyUnitMatch) {
-    quantity = parseInt(qtyUnitMatch[1]);
+    quantity = Math.max(1, parseInt(qtyUnitMatch[1]));
     remains = clean.replace(qtyUnitMatch[0], '');
     return { quantity, text: remains.trim() };
   }
@@ -571,15 +620,20 @@ function parseMedicinesFromText(text) {
       }
     }
 
-    // Fallback: substring match
-    if (!matchedDrug && searchText.length >= 4) {
-      outer: for (const { drug, patterns } of compiled) {
-        for (const { alias } of patterns) {
-          const normAlias = normalizeText(alias);
-          const isReverseMatch = normAlias.length >= 3 && searchText.includes(normAlias);
-          if (normAlias.includes(searchText) || isReverseMatch) {
-            matchedDrug = drug;
-            break outer;
+    // Fallback: substring match (CONSERVATIVE — avoid false positives)
+    if (!matchedDrug && searchText.length >= 5) {
+      // Skip substring matching if the text looks like a generic intent, not a product name
+      const isGenericPhrase = /^(fazer|pedido|comprar|compra|pedir|ajuda|ajudar|funciona|quanto|preco|valor|quero|preciso|gostaria|favor|bom|boa|dia|tarde|noite|oi|ola|sim|nao|obrigad|tchau|ate|beleza|legal|certo|isso|pode|entrega|pagamento|endereco|horario)\b/i.test(searchText);
+      if (!isGenericPhrase) {
+        outer: for (const { drug, patterns } of compiled) {
+          for (const { alias } of patterns) {
+            const normAlias = normalizeText(alias);
+            // Only match if alias is long enough (5+ chars) AND alias is INSIDE the search text
+            // Removed dangerous reverse match (searchText inside alias) that caused false positives
+            if (normAlias.length >= 5 && searchText.includes(normAlias)) {
+              matchedDrug = drug;
+              break outer;
+            }
           }
         }
       }
@@ -599,6 +653,11 @@ function parseMedicinesFromText(text) {
 function _extractMedicineRequest(rawMsg) {
   const norm = normalizeText(rawMsg);
   
+  // Se a mensagem contém anúncios/ações de foto, áudio ou conversa (ex: "mais um remedio irei enviar a foto") -> NÃO é produto!
+  if (norm.match(/(foto|imagem|enviar|mandar|mandei|vou|tirar|olha|ve|ver|passar|audio)/i)) {
+    return null;
+  }
+
   // Expressões funcionais, de cortesia ou status do carrinho que não representam produtos
   const ignorePhrases = [
     'por favor', 'porfavor', 'pf', 'pfv', 'obrigado', 'obrigada', 'valeu', 'grato', 'ok', 'okay',
@@ -608,7 +667,7 @@ function _extractMedicineRequest(rawMsg) {
     'beleza', 'legal', 'massa', 'top', 'boa', 'perfeito', 'otimo', 'entendi', 'entendo',
     'brigadao', 'vlw', 'hmm', 'hm', 'ah', 'ah ta', 'ahh', 'ta', 'uhum', 'aham',
     'ta bom', 'ta otimo', 'ta certo', 'blz', 'show', 'maravilha', 'combinado',
-    'tranquilo', 'de boa', 'suave', 'firmeza', 'fechou'
+    'tranquilo', 'de boa', 'suave', 'firmeza', 'fechou', 'mais um remedio', 'outro remedio'
   ];
 
   let stripped = norm
@@ -621,12 +680,18 @@ function _extractMedicineRequest(rawMsg) {
   // Limpa pontuações comuns
   stripped = stripped.replace(/[.!,?]/g, '').trim();
 
+  // Se a frase tem mais de 3 palavras -> é uma frase conversacional, não um nome limpo de remédio!
+  const wordCount = stripped.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 3) {
+    return null;
+  }
+
   if (ignorePhrases.includes(stripped) || stripped.length < 3) {
     return null;
   }
 
   // Verifica se a palavra resultante bate em palavras isoladas de controle
-  const skipWords = /^(mais|sim|nao|ok|claro|isso|bora|vai|pode|ja|aqui|la|tudo|nada|so|e|ou|por|favor|obrigado|obrigada|ta|certo|carrinho|carrinhos|beleza|legal|massa|top|boa|perfeito|otimo|entendi|show|blz|hmm|uhum|aham|tranquilo|suave|firmeza|fechou|combinado|maravilha)$/i;
+  const skipWords = /^(mais|sim|nao|ok|claro|isso|bora|vai|pode|ja|aqui|la|tudo|nada|so|e|ou|por|favor|obrigado|obrigada|ta|certo|carrinho|carrinhos|beleza|legal|massa|top|boa|perfeito|otimo|entendi|show|blz|hmm|uhum|aham|tranquilo|suave|firmeza|fechou|combinado|maravilha|remedio|remedios|produto|produtos)$/i;
   if (skipWords.test(stripped)) {
     return null;
   }
@@ -702,16 +767,66 @@ function handleChooseVariant(norm, rawMsg) {
     return 'Ocorreu um erro. No que posso ajudar?';
   }
 
-  // Match por número
-  const numMatch = norm.match(/^(\d+)$/);
-  if (numMatch) {
-    const idx = parseInt(numMatch[1]) - 1;
+  // Rejection
+  if (isUserRejecting(norm, rawMsg)) {
+    state.pendingVariants = null;
+    state.pendingVariantQty = null;
+    state.simState = state.cart.length > 0 ? 'more_items' : 'idle';
+    return state.cart.length > 0
+      ? 'Ok! Quer adicionar outro medicamento ou *finalizar* o pedido?'
+      : 'Sem problemas! Se precisar de algum remédio, é só me chamar. 😊';
+  }
+
+  // ── 1. Match por número direto ou "opção N" / "a N" / "o N" ──
+  const numPatterns = [
+    /^\s*(\d+)\s*$/,                                          // "3"
+    /(?:opc[aã]o|opcao|numero|num|item|a|o)\s+(\d+)/i,       // "opção 3", "a 3", "o 3"
+    /(\d+)\s*(?:por\s+favor|pfv|pf)?$/i                       // "3 por favor"
+  ];
+  for (const pat of numPatterns) {
+    const m = rawMsg.match(pat);
+    if (m) {
+      const idx = parseInt(m[1], 10) - 1;
+      if (idx >= 0 && idx < variants.length) {
+        return _selectVariant(variants[idx], qty);
+      }
+    }
+  }
+
+  // ── 2. Match por dosagem explícita (com unidade): "20mg", "5 mg" ──
+  const doseMatch = rawMsg.match(/(\d+([.,]\d+)?)\s*(mg|g|ml)/i);
+  if (doseMatch) {
+    const targetDose = doseMatch[0].toLowerCase().replace(/\s+/g, '');
+    const found = variants.find(v => {
+      const vName = (v.name + ' ' + (v.presentation || '')).toLowerCase().replace(/\s+/g, '');
+      return vName.includes(targetDose);
+    });
+    if (found) return _selectVariant(found, qty);
+  }
+
+  // ── 3. Match por número solto como dose: "de 20", "a de 20", "quero 5" ──
+  const bareNumMatch = rawMsg.match(/(?:de|o\s+de|a\s+de|quero|preciso)\s+(\d+([.,]\d+)?)\b/i)
+                    || rawMsg.match(/\b(\d+([.,]\d+)?)\s*$/);
+  if (bareNumMatch && !doseMatch) {
+    const num = bareNumMatch[1];
+    const numNorm = num.replace(',', '.');
+    // Try as dose (append mg, g, ml)
+    for (const unit of ['mg', 'g', 'ml']) {
+      const tryDose = numNorm + unit;
+      const found = variants.find(v => {
+        const vName = (v.name + ' ' + (v.presentation || '')).toLowerCase().replace(/\s+/g, '').replace(',', '.');
+        return vName.includes(tryDose);
+      });
+      if (found) return _selectVariant(found, qty);
+    }
+    // Fallback: try as option index
+    const idx = parseInt(num, 10) - 1;
     if (idx >= 0 && idx < variants.length) {
       return _selectVariant(variants[idx], qty);
     }
   }
 
-  // Match por ordinal
+  // ── 4. Match por ordinal ──
   const ordinals = {
     'primeiro': 0, 'primeira': 0,
     'segundo': 1, 'segunda': 1,
@@ -725,13 +840,20 @@ function handleChooseVariant(norm, rawMsg) {
     }
   }
 
-  // Match por nome ou alias do produto
+  // ── 5. Match por nome, alias ou fabricante ──
   for (const v of variants) {
     const nameNorm = normalizeText(v.name);
     if (norm.includes(nameNorm) || nameNorm.includes(norm)) {
       return _selectVariant(v, qty);
     }
-    for (const alias of v.aliases) {
+    // Match por fabricante: "da aché", "da ems", "da medley"
+    if (v.manufacturer) {
+      const mfNorm = normalizeText(v.manufacturer);
+      if (norm.includes(mfNorm) || rawMsg.toLowerCase().includes(mfNorm)) {
+        return _selectVariant(v, qty);
+      }
+    }
+    for (const alias of (v.aliases || [])) {
       const aliasNorm = normalizeText(alias);
       if (aliasNorm.length >= 4 && norm.includes(aliasNorm)) {
         return _selectVariant(v, qty);
@@ -739,7 +861,7 @@ function handleChooseVariant(norm, rawMsg) {
     }
   }
 
-  // Match por tipo de apresentação
+  // ── 6. Match por tipo de apresentação ──
   if (norm.match(/gota|liquido|liquida|frasco|xarope/i)) {
     const gotas = variants.find(v => v.presentation.match(/ml|gota|frasco|xarope/i) || v.name.toLowerCase().includes('gotas'));
     if (gotas) return _selectVariant(gotas, qty);
@@ -757,7 +879,7 @@ function handleChooseVariant(norm, rawMsg) {
     if (brand) return _selectVariant(brand, qty);
   }
 
-  // Tenta parsear como novo medicamento (o usuário mudou de ideia)
+  // ── 7. Tenta parsear como novo medicamento ──
   const newItems = parseMedicinesFromText(rawMsg);
   if (newItems.length > 0) {
     state.pendingVariants   = null;
@@ -817,6 +939,12 @@ function proceedToQuoteAfterCpf() {
   state.pendingItemsList = [];
 
   if (parsedItems.length === 0) {
+    // If cart has items, we came from checkout → proceed to delivery method
+    if (state.cart.length > 0) {
+      const total    = cartTotal();
+      state.simState = 'waiting_delivery_method';
+      return `Resumo do pedido:\n${cartSummary()}\n\n*Subtotal: R$ ${total.toFixed(2)}*\n*(+ R$ 5,00 taxa de entrega se delivery)*\n\nComo prefere receber: *entrega* no seu endereço ou *retirada* aqui na farmácia?`;
+    }
     state.simState = 'idle';
     return 'No que posso ajudar? Digite o nome do medicamento.';
   }
@@ -927,44 +1055,182 @@ function _quoteMultipleItems(parsedItems) {
 
   return `Achei os itens por aqui! Olha os preços:\n${responseText}\n*Total:* R$ ${subtotal.toFixed(2)}.${warnings}||Posso colocar todos eles no carrinho?`;
 }
+// ============ INTENT CLASSIFICATION (KEYWORD-BASED) ============
+/**
+ * Classifica a intenção do usuário ANTES de executar qualquer busca.
+ * Usa análise por TOKENS (palavras-chave), não frases exatas.
+ * Isso garante que qualquer variação natural de conversa seja compreendida.
+ */
 
-// ============ IDLE STATE ============
-function handleIdleState(norm, rawMsg) {
-  // 1. Interceptação de despedidas/conclusões educadas para evitar buscas desnecessárias
-  if (norm.match(/(^nao$|^nao\s+obrigad[oa]$|^nada$|^tchau$|^ate\s+logo$|^so\s+isso$|^por\s+enquanto\s+nao$|^por\s+agora\s+nao$|valeu|obrigad[oa])/i)) {
-    return 'De nada! Sempre que precisar de algum medicamento ou tiver alguma dúvida, é só me chamar por aqui. Tenha um ótimo dia! 😊';
+// Conjuntos de palavras-chave por categoria semântica
+const INTENT_KEYWORDS = {
+  greeting:   new Set(['oi','ola','hey','eai','salve','opa']),
+  greetTime:  new Set(['bom','boa','dia','tarde','noite']),
+  farewell:   new Set(['tchau','adeus','bye','flw','falou','ate']),
+  thanks:     new Set(['obrigado','obrigada','brigado','brigada','brigadao','valeu','vlw','agradeco','grato','grata','obg']),
+  negative:   new Set(['nao','n','nada','nope','nunca','nem']),
+  purchase:   new Set(['comprar','compra','pedir','pedido','encomendar','encomenda']),
+  wantVerb:   new Set(['quero','preciso','gostaria','pretendo','vim','vou','to','estou','precisando','querendo','desejo']),
+  makeVerb:   new Set(['fazer','montar','fechar','realizar','efetuar']),
+  help:       new Set(['ajuda','ajudar','auxilio','socorro','duvida','informacao','informacoes','info']),
+  price:      new Set(['preco','valor','custa','custo','quanto','barato','caro','desconto','promocao']),
+  avail:      new Set(['disponivel','estoque','tem','existe','encontra','acha']),
+  pronRef:    new Set(['esse','essa','isso','este','esta','isto','aquele','aquela','aquilo','dele','dela','mesmo','mesma','ele','ela']),
+  hours:      new Set(['horario','horarios','funcionamento','aberto','abre','fecha','horas']),
+  location:   new Set(['endereco','localizacao','onde','localiza','fica','enderecos']),
+  delivery:   new Set(['entrega','delivery','entregar','frete','taxa','trazer','levar']),
+  payment:    new Set(['pagamento','pagar','pix','cartao','dinheiro','debito','credito','boleto','transferencia']),
+  recipe:     new Set(['receita','prescricao','medica','medico','controlado','tarja','roacutan','antibiotico']),
+  recipeImg:  new Set(['foto','imagem','enviar','mandar','mandei','escaneando','escanear']),
+  ack:        new Set(['sim','s','ok','certo','beleza','legal','massa','top','perfeito','otimo','entendi','entendo','blz','show','maravilha','combinado','tranquilo','suave','firmeza','fechou','claro','certeza','positivo','exato','exatamente','verdade','aham','uhum','hmm','hm','ah','ta','ne','kk','kkk','kkkkk','rs','rsrs','haha','hahaha','obg','tmj']),
+  howWorks:   new Set(['como','funciona','funcionam','faz','fazem','uso','usar','serve']),
+  generic:    new Set(['algo','alguma','algumas','coisa','coisas','umas','uns','la','ai','aqui','tipo']),
+  catalog:    new Set(['vende','vendem','vender','catalogo','cardapio','oferece','oferecem','trabalha','trabalham','disponibiliza']),
+};
+
+// Palavras-chave que indicam "quero saber de" / "tudo bem?" sem ser produto
+const SMALL_TALK = new Set(['tudo','bem','bom','certo','vai','voce','vc','vcs','beleza','firmeza','suave','boa','bora','vamos','pode','ta']);
+
+function classifyIntent(norm, rawMsg) {
+  // Tokeniza em palavras
+  const tokens = norm.replace(/[?.!,;:]/g, '').split(/\s+/).filter(Boolean);
+  const tokenSet = new Set(tokens);
+  const wordCount = tokens.length;
+
+  // Helpers: verifica se algum token pertence a um conjunto
+  const has = (set) => tokens.some(t => set.has(t));
+  const hasAll = (...sets) => sets.every(s => has(s));
+  const count = (set) => tokens.filter(t => set.has(t)).length;
+
+  // ──── 0. ANÚNCIO DE ENVIO DE FOTO OU RECEITA (Prioridade máxima sobre conversa) ────
+  const isPhotoAnnounce = (has(INTENT_KEYWORDS.recipeImg) || /foto|imagem/.test(norm)) && /(enviar|mandar|mandei|vou|tirar|olha|ve|ver|passar)/.test(norm);
+  if (isPhotoAnnounce) {
+    return { type: 'PHOTO_ANNOUNCEMENT' };
   }
 
-  // 2. Receita OCR
-  if (norm.match(/(foto\s+da\s+receita|minha\s+receita|enviar\s+receita|receita\s+medica|foto_receita_simulada)/i)) {
-    const amox  = MEDICINES_DB.find(d => d.name.toLowerCase().includes('amoxicilina'));
-    const advil = MEDICINES_DB.find(d => d.name.toLowerCase().includes('advil'));
-    if (amox && advil) {
-      const list = [{ drug: amox, quantity: 1 }, { drug: advil, quantity: 1 }];
-      if (!state.cpf) {
-        state.pendingItemsList = list;
-        state.simState         = 'waiting_cpf';
-        return `🔎 *Escaneando receita médica...*\n\nIdentifiquei na receita:\n• 1x ${amox.name}\n• 1x ${advil.name}\n\nAntes de passar a cotação, você tem CPF cadastrado para descontos de fidelidade? 🏷️\nDigite o CPF ou *não* para prosseguir.`;
-      }
-      state.pendingItemsList = list;
-      return proceedToQuoteAfterCpf();
+  // ──── 1. MENSAGEM MUITO CURTA (1-2 palavras) ────
+  if (wordCount <= 2) {
+    // Saudação pura
+    if (has(INTENT_KEYWORDS.greeting)) return { type: 'GREETING' };
+    // "Bom dia" / "Boa tarde" / "Boa noite"
+    if (has(INTENT_KEYWORDS.greetTime) && wordCount <= 2) {
+      const hasTimeWord = tokenSet.has('dia') || tokenSet.has('tarde') || tokenSet.has('noite');
+      if (hasTimeWord) return { type: 'GREETING' };
+    }
+    // Despedida
+    if (has(INTENT_KEYWORDS.farewell)) return { type: 'FAREWELL' };
+    // Agradecimento / "não obrigado"
+    if (has(INTENT_KEYWORDS.thanks)) return { type: 'FAREWELL' };
+    // Negação pura: "não", "nada"
+    if (has(INTENT_KEYWORDS.negative) && wordCount === 1) return { type: 'FAREWELL' };
+    // "só isso" / "nao quero"
+    if (tokenSet.has('so') && (tokenSet.has('isso') || tokenSet.has('esse'))) return { type: 'FAREWELL' };
+    // Acknowledgment puro: "ok", "beleza", "sim", "kk"
+    if (count(INTENT_KEYWORDS.ack) >= wordCount) return { type: 'CONVERSATIONAL' };
+    // Small talk puro: "tudo bem", "tudo certo" — se já saudou, é conversa, não saudação
+    if (count(SMALL_TALK) >= wordCount) return { type: state.hasGreeted ? 'CONVERSATIONAL' : 'GREETING' };
+  }
+
+  // ──── 2. DESPEDIDA COMPOSTA ────
+  if (has(INTENT_KEYWORDS.negative) && has(INTENT_KEYWORDS.thanks)) return { type: 'FAREWELL' };
+  if (has(INTENT_KEYWORDS.farewell) && wordCount <= 4) return { type: 'FAREWELL' };
+  if (has(INTENT_KEYWORDS.thanks) && !has(INTENT_KEYWORDS.purchase) && !has(INTENT_KEYWORDS.wantVerb)) return { type: 'FAREWELL' };
+  // "só isso" / "é só" / "por enquanto não" / "por agora não"
+  if (norm.match(/(so\s+isso|e\s+so|por\s+(enquanto|agora)\s+nao|mais\s+nada|era\s+so\s+isso)/i)) return { type: 'FAREWELL' };
+
+  // ──── 3. SAUDAÇÃO COMPOSTA ────
+  // "fala" sozinho ou com saudação OK, mas "me fala" / "fala pra mim" é pedido, não saudação
+  const hasFala = tokenSet.has('fala');
+  const isFalaAsGreeting = hasFala && wordCount <= 2 && !norm.match(/(me\s+fala|fala\s+(pra|sobre|qual|quais|o\s+que))/i);
+  const hasRealGreeting = has(INTENT_KEYWORDS.greeting) || isFalaAsGreeting;
+  const hasGenericObj = has(INTENT_KEYWORDS.generic) || norm.match(/(remedios?|medicamentos?|produtos?|coisas?|itens?)/i);
+  const hasRequestIntent = has(INTENT_KEYWORDS.wantVerb) || has(INTENT_KEYWORDS.help) || hasGenericObj || has(INTENT_KEYWORDS.purchase);
+  if (hasRealGreeting && wordCount <= 5 && !hasRequestIntent) return { type: 'GREETING' };
+  // Saudação COM intenção de compra/ajuda: "oi, preciso de remedio", "ola, quero comprar"
+  if (hasRealGreeting && hasRequestIntent) return { type: 'GREETING_WITH_INTENT' };
+  // "tudo bem?", "como vai?", "e ai?" — se já saudou, é conversa
+  if (norm.match(/(tudo\s+(bem|bom|certo|ok|tranquilo|beleza)|como\s+(vai|voce\s+ta|ce\s+ta|vc\s+ta)|e\s+ai)/i) && wordCount <= 4) return { type: state.hasGreeted ? 'CONVERSATIONAL' : 'GREETING' };
+
+  // ──── 4. INTENÇÃO GENÉRICA DE COMPRA (sem produto mencionado) ────
+  // Detecta QUALQUER combinação de verbo de vontade + verbo/substantivo de compra
+  const hasPurchaseWords = has(INTENT_KEYWORDS.purchase) || has(INTENT_KEYWORDS.makeVerb);
+  const hasWantWords = has(INTENT_KEYWORDS.wantVerb);
+
+  if (hasPurchaseWords && (hasWantWords || hasGenericObj)) {
+    // Antes de classificar como purchase_intent, verificar se NÃO tem um nome de produto real
+    const parsedCheck = parseMedicinesFromText(rawMsg);
+    if (parsedCheck.length === 0) {
+      return { type: 'PURCHASE_INTENT' };
+    }
+    // Se tem produto, cai pro PRODUCT_SEARCH abaixo
+  }
+
+  // "quero pedir" / "vim comprar" / "vou precisar" sem objeto específico
+  if (hasWantWords && hasPurchaseWords && wordCount <= 6) {
+    return { type: 'PURCHASE_INTENT' };
+  }
+
+  // ──── 4b. CATÁLOGO / "o que vocês vendem?" ────
+  if (has(INTENT_KEYWORDS.catalog) || norm.match(/(o\s+que\s+(voces|vcs|vc)\s+(vende|vendem|tem|oferece|trabalha)|me\s+fala\s+(o\s+que|das|dos|sobre)|quais?\s+(produtos?|remedios?|medicamentos?)\s+(voces|vcs)\s+(tem|vende|oferece)|o\s+que\s+tem\s+(na|pra|de|aqui)|o\s+que\s+(essa|essa|a)\s+farmacia\s+(vende|tem|oferece))/i)) {
+    return { type: 'CATALOG_QUERY' };
+  }
+
+  // ──── 5. PEDIDO DE AJUDA ────
+  if (has(INTENT_KEYWORDS.help)) {
+    // "me ajuda", "preciso de ajuda", "tem como me ajudar", "pode me ajudar?"
+    if (!has(INTENT_KEYWORDS.purchase)) return { type: 'HELP_REQUEST' };
+  }
+  // "como funciona?" / "o que vocês fazem?" / "como uso?"
+  if (has(INTENT_KEYWORDS.howWorks) && !has(INTENT_KEYWORDS.recipe) && wordCount <= 5) {
+    // Só se NÃO é pergunta sobre receita ou delivery
+    if (!has(INTENT_KEYWORDS.delivery) && !has(INTENT_KEYWORDS.payment)) {
+      return { type: 'HELP_REQUEST' };
     }
   }
 
-  // 2. Busca direta de medicamento
-  const parsedItems = parseMedicinesFromText(rawMsg);
-  if (parsedItems.length > 0) {
-    state.pendingActionRawText = rawMsg;
-    if (!state.cpf) {
-      state.pendingItemsList = parsedItems;
-      state.simState         = 'waiting_cpf';
-      return 'Localizei o(s) medicamento(s) no estoque! 🔎\nAntes de passar o valor, você tem cadastro na nossa fidelidade com CPF? 🏷️\n\nDigite o seu CPF para consultar descontos de 10% a 30% (ou *não* para continuar sem desconto).';
+  // ──── 6. PERGUNTAS DE PREÇO ────
+  if (has(INTENT_KEYWORDS.price) || norm.match(/(quanto\s+(e|ta|fica|sai|custa)|sai\s+quanto|ta\s+quanto)/i)) {
+    // Se menciona um produto específico junto, tratamos como busca COM preço (não como price query genérica)
+    const parsedCheck = parseMedicinesFromText(rawMsg);
+    if (parsedCheck.length > 0) {
+      return { type: 'PRODUCT_SEARCH', data: parsedCheck };
     }
-    state.pendingItemsList = parsedItems;
-    return proceedToQuoteAfterCpf();
+    return { type: 'PRICE_QUERY' };
   }
 
-  // 3. Sintomas dinâmicos (RegExp tolerante a typos para maior naturalidade)
+  // ──── 7. PERGUNTAS DE DISPONIBILIDADE ────
+  if (has(INTENT_KEYWORDS.avail) && has(INTENT_KEYWORDS.pronRef)) {
+    return { type: 'AVAILABILITY_QUERY' };
+  }
+  if (norm.match(/(voces\s+tem|vcs\s+tem|ta\s+disponivel|tem\s+em\s+estoque|tem\s+(esse|essa|isso|aqui|ai))/i)) {
+    // Pode ter produto junto
+    const parsedCheck = parseMedicinesFromText(rawMsg);
+    if (parsedCheck.length > 0) {
+      return { type: 'PRODUCT_SEARCH', data: parsedCheck };
+    }
+    return { type: 'AVAILABILITY_QUERY' };
+  }
+
+  // ──── 8. FAQ ────
+  if (has(INTENT_KEYWORDS.hours) || norm.match(/que\s+horas/i))
+    return { type: 'FAQ', subtype: 'hours' };
+  if (has(INTENT_KEYWORDS.location))
+    return { type: 'FAQ', subtype: 'address' };
+  if (has(INTENT_KEYWORDS.delivery) && (has(INTENT_KEYWORDS.howWorks) || has(INTENT_KEYWORDS.price) || norm.match(/(como|quanto|qual|taxa|frete|custo)/i)))
+    return { type: 'FAQ', subtype: 'delivery' };
+  if (has(INTENT_KEYWORDS.payment) && (has(INTENT_KEYWORDS.howWorks) || norm.match(/(forma|aceita|meios?|quais)/i)))
+    return { type: 'FAQ', subtype: 'payment' };
+
+  // ──── 9. RECEITA MÉDICA (menção textual) ────
+  if (has(INTENT_KEYWORDS.recipeImg) && has(INTENT_KEYWORDS.recipe)) {
+    return { type: 'RECIPE_MENTION' };
+  }
+  // "precisa de receita?", "medicamento controlado", "tarja preta"
+  if (has(INTENT_KEYWORDS.recipe) && (has(INTENT_KEYWORDS.howWorks) || norm.match(/(precisa|necessita|tarja|controlado|preta)/i))) {
+    return { type: 'FAQ', subtype: 'prescription' };
+  }
+
+  // ──── 10. SINTOMAS ────
   const symptoms = [
     { pattern: /cabe(c|ç)a|enxaqueca|cefaleia/i, tag: 'cabeça', label: 'dor de cabeça' },
     { pattern: /azia|queima(c|ç)ao|refluxo|gastrite|est(o|ô)mago/i, tag: 'azia', label: 'dor de estômago ou azia' },
@@ -985,51 +1251,561 @@ function handleIdleState(norm, rawMsg) {
 
   for (const s of symptoms) {
     if (s.pattern.test(norm)) {
-      const suggestions = MEDICINES_DB.filter(d => d.tags.includes(s.tag)).slice(0, 3);
-      if (suggestions.length > 0) {
-        const list = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
-        return `Nossa, ${s.label} é bem incômodo. Melhoras!||Temos estas opções para ajudar:\n${list}\n\nQual delas você prefere?`;
-      }
+      return { type: 'SYMPTOM', data: s };
     }
   }
 
-  // 4. Mapa coloquial (Mapeamento genérico, roda depois dos sintomas específicos)
+  // ──── 11. MAPA COLOQUIAL ────
   for (const [colKey, tags] of Object.entries(COLLOQUIAL_MAP)) {
     if (norm.includes(colKey)) {
+      return { type: 'COLLOQUIAL', data: { key: colKey, tags } };
+    }
+  }
+
+  // ──── 12. BUSCA DE PRODUTO (última prioridade — só se nada acima matchou) ────
+  const parsedItems = parseMedicinesFromText(rawMsg);
+  if (parsedItems.length > 0) {
+    return { type: 'PRODUCT_SEARCH', data: parsedItems };
+  }
+
+  // ──── 13. FAQ catch-all ────
+  if (has(INTENT_KEYWORDS.delivery))
+    return { type: 'FAQ', subtype: 'delivery' };
+  if (has(INTENT_KEYWORDS.payment))
+    return { type: 'FAQ', subtype: 'payment' };
+  if (has(INTENT_KEYWORDS.recipe))
+    return { type: 'FAQ', subtype: 'prescription' };
+
+  // ──── 14. CONVERSACIONAL / ACKNOWLEDGMENT ────
+  // Mensagens que são puro ack, gíria, riso, ou small talk
+  if (has(INTENT_KEYWORDS.ack)) return { type: 'CONVERSATIONAL' };
+  if (count(SMALL_TALK) >= Math.ceil(wordCount * 0.6)) return { type: 'CONVERSATIONAL' };
+
+  // Frases curtas sem substantivo de produto = conversacional
+  if (wordCount <= 3) return { type: 'CONVERSATIONAL' };
+
+  // ──── 15. AMBÍGUO — NUNCA diz "não encontrei" ────
+  return { type: 'AMBIGUOUS' };
+}
+
+// ============ SEMANTIC MATCHERS FOR CONVERSATION ============
+/**
+ * Detecta se a mensagem do usuário é uma AFIRMAÇÃO / CONFIRMAÇÃO de adição ao carrinho.
+ * Cobre centenas de variações naturais de conversa de WhatsApp em português.
+ */
+function isUserConfirming(norm, rawMsg) {
+  const isNegative = norm.match(/^n[aã]o\b/i) || norm.match(/(nao\s+quero|outro|mudei\s+de\s+ideia|deixa\s+pra\s+la|cancela)/i);
+  if (isNegative) return false;
+
+  // Dosage qualification: "sim mas não nessa dosagem" is NOT a pure confirmation
+  const hasDosageQualification = /\b(n[ãa]o\s+(nessa|nesta|nesse|neste|essa|esta|esse|este)\s+(dosagem|dose|concentra[cç][aã]o|mg))|outra\s+(dosagem|dose|concentra[cç][aã]o)|dosagem\s+(diferente|errada|outra)|mas\s+(n[ãa]o\s+)?(nessa|nesta|nesse|neste|essa|esta|outra)\s+(dosagem|dose)/i.test(rawMsg || '');
+  if (hasDosageQualification) return false;
+
+  const confirmPatterns = [
+    /\b(sim|s|pode|podera|coloca|coloque|colocar|bota|botar|poe|põem|põe|inclui|incluir|adicione|adiciona|adicionar|carrinho|pedido|manda|mandar|levar|levo|quero|querer|pretendo|comprar|compra|reserva|reservar|separa|separar|garantir)\b/i,
+    /\b(e\s+esse|e\s+essa|e\s+isso|isso\s+mesmo|exato|exatamente|perfeito|otimo|ótimo|show|massa|top|beleza|blz|fechado|combinado|bora|partiu|dale)\b/i,
+    /(por\s+favor|por\s+gentileza|pode\s+ser|pode\s+sim|pode\s+mandar|pode\s+colocar|pode\s+adicionar|pode\s+botar|pode\s+enviar|pode\s+incluir|pode\s+separar|pode\s+reservar|vou\s+querer|vou\s+levar|me\s+ve|me\s+vê)/i,
+    /(no\s+carrinho|pro\s+carrinho|ao\s+carrinho|no\s+pedido|pro\s+pedido)/i
+  ];
+
+  return confirmPatterns.some(p => p.test(norm));
+}
+
+/**
+ * Detecta se a mensagem do usuário é uma NEGAÇÃO ou RECUSA do item oferecido.
+ */
+function isUserRejecting(norm, rawMsg) {
+  const startsWithNo = norm.match(/^n[aã]o\b/i) || norm.match(/^(n|nope)$/i);
+  const isExplicitNo = norm.match(/(nao\s+quero|outro|mudei\s+de\s+ideia|deixa\s+pra\s+la|cancela|desisto|prefiro|estou\s+so\s+olhando)/i);
+  return startsWithNo || isExplicitNo;
+}
+
+// ============ IDLE STATE (REFACTORED — intent-based routing) ============
+function handleIdleState(norm, rawMsg) {
+  // ── GUARDA CONTEXTUAL DE CONFIRMAÇÃO ──
+  // Se o usuário confirma em linguagem natural e existe produto no contexto
+  if (isUserConfirming(norm, rawMsg) && (state.pendingItem || state.lastMentionedProduct)) {
+    const drug = state.pendingItem ? state.pendingItem.drug : state.lastMentionedProduct;
+    const price = state.pendingItem ? (state.pendingItem.finalPrice || drug.price) : _applyDiscount(drug).price;
+    state.cart.push({ drug, quantity: state.pendingItem ? state.pendingItem.quantity : 1, finalPrice: price });
+    state.pendingItem = null;
+    state.pendingItemsList = [];
+    state.simState = 'more_items';
+    const total = cartTotal();
+    return `Adicionado! ✅\n\n*Carrinho atual:*\n${cartSummary()}\n*Subtotal: R$ ${total.toFixed(2)}*\n\nQuer adicionar mais algum medicamento? Me diga o nome ou escreva *finalizar* para fechar o pedido. 🛒`;
+  }
+
+  const intent = classifyIntent(norm, rawMsg);
+
+  switch (intent.type) {
+    case 'PHOTO_ANNOUNCEMENT':
+      return 'Com certeza! Pode enviar a foto do remédio ou da receita que eu analiso para você e verifico a disponibilidade no estoque! 📷';
+
+    case 'FAREWELL':
+      return 'De nada! Sempre que precisar de algum medicamento ou tiver alguma dúvida, é só me chamar por aqui. Tenha um ótimo dia! 😊';
+
+    case 'GREETING': {
+      const lower = rawMsg.toLowerCase();
+      let timeGreeting = '';
+      if (lower.includes('boa tarde')) timeGreeting = 'Boa tarde!';
+      else if (lower.includes('bom dia')) timeGreeting = 'Bom dia!';
+      else if (lower.includes('boa noite')) timeGreeting = 'Boa noite!';
+
+      const asksHowAreYou = lower.match(/(tudo\s+(bem|bom|certo|joia|tranquilo|beleza)|como\s+(vai|voce\s+ta|vc\s+ta|esta))/i);
+
+      if (state.hasGreeted) {
+        if (asksHowAreYou) {
+          const responses = [
+            `${timeGreeting ? timeGreeting + ' ' : ''}Tudo bem por aqui, e com você? 😊 Como posso te ajudar?`,
+            `${timeGreeting ? timeGreeting + ' ' : ''}Tudo ótimo, graças a Deus! E você, como está? 😊 Em que posso te ajudar?`,
+            `${timeGreeting ? timeGreeting + ' ' : ''}Tudo joia por aqui! 😊 O que você precisa no momento?`
+          ];
+          return responses[Math.floor(Math.random() * responses.length)];
+        } else {
+          const responses = [
+            `${timeGreeting ? timeGreeting + ' ' : 'Oi! '}Como posso te ajudar hoje? 😊`,
+            `${timeGreeting ? timeGreeting + ' ' : 'Oi! '}Em que posso te ajudar? 😊`,
+            `${timeGreeting ? timeGreeting + ' ' : 'Oi! '}O que você precisa no momento? Tô à disposição! 😊`
+          ];
+          return responses[Math.floor(Math.random() * responses.length)];
+        }
+      }
+
+      state.hasGreeted = true;
+      if (asksHowAreYou) {
+        const responses = [
+          `${timeGreeting ? timeGreeting + ' ' : ''}Tudo ótimo por aqui, e com você? 😊 Sou a Sofia da Farmácia. Como posso te ajudar hoje?`,
+          `${timeGreeting ? timeGreeting + ' ' : ''}Tudo bem, graças a Deus! 😊 Sou a Sofia da Farmácia. Em que posso te ajudar hoje?`,
+          `${timeGreeting ? timeGreeting + ' ' : ''}Tudo joia por aqui! 😊 Sou a Sofia da Farmácia. O que você precisa hoje?`
+        ];
+        return responses[Math.floor(Math.random() * responses.length)];
+      } else {
+        const prefix = timeGreeting ? `${timeGreeting} ` : 'Oi! ';
+        const responses = [
+          `${prefix}Tudo bem? 😊 Sou a Sofia da Farmácia. Como posso te ajudar hoje?`,
+          `${prefix}Seja bem-vindo(a)! 😊 Sou a Sofia da Farmácia. Em que posso te ajudar hoje?`,
+          `${prefix}Tudo bem com você? 😊 Sou a Sofia da Farmácia. O que você precisa hoje?`
+        ];
+        return responses[Math.floor(Math.random() * responses.length)];
+      }
+    }
+
+    case 'GREETING_WITH_INTENT': {
+      // Saudação com intenção de compra/ajuda — saúda E já responde
+      const alreadyGreeted = state.hasGreeted;
+      state.hasGreeted = true;
+      const lower = rawMsg.toLowerCase();
+      let timeGreeting = '';
+      if (lower.includes('boa tarde')) timeGreeting = 'Boa tarde!';
+      else if (lower.includes('bom dia')) timeGreeting = 'Bom dia!';
+      else if (lower.includes('boa noite')) timeGreeting = 'Boa noite!';
+      const prefix = alreadyGreeted ? '' : (timeGreeting ? `${timeGreeting} ` : 'Oi! ');
+
+      // Tenta extrair produto específico da mensagem
+      const parsedProducts = parseMedicinesFromText(rawMsg);
+      if (parsedProducts.length > 0) {
+        // Tem produto mencionado — já apresenta o produto!
+        state.pendingItemsList = parsedProducts;
+        return (alreadyGreeted ? '' : `${prefix}Tudo bem? 😊||`) + proceedToQuoteAfterCpf();
+      }
+
+      // Sem produto específico — saúda e pede detalhes
+      if (alreadyGreeted) {
+        const responses = [
+          'Claro, posso te ajudar! Qual medicamento você está procurando?',
+          'Show, vamos lá! Me diz o nome do remédio que você precisa.',
+          'Com certeza! Me conta o nome do medicamento ou manda uma foto da receita.'
+        ];
+        return responses[Math.floor(Math.random() * responses.length)];
+      }
+
+      const responses = [
+        `${prefix}Tudo bem? 😊 Me diz o nome do medicamento que você precisa, ou me manda uma foto que eu identifico pra você!`,
+        `${prefix}Tudo bem com você? 😊 Me conta o que você precisa — pode ser o nome do remédio, uma foto, ou até o que tá sentindo!`,
+        `${prefix}Que bom que veio! 😊 Me diz o que você precisa que eu busco aqui pra você.`
+      ];
+      return responses[Math.floor(Math.random() * responses.length)];
+    }
+
+    case 'PURCHASE_INTENT': {
+      // Intenção genérica de compra — NÃO busca produto, pede detalhes
+      const responses = [
+        'Claro! 😊 Me diz o que você precisa que eu busco aqui.',
+        'Com certeza! O que você gostaria de pedir?',
+        'Pode falar! Me diz o nome do medicamento ou produto que eu te ajudo.',
+      ];
+      return responses[Math.floor(Math.random() * responses.length)];
+    }
+
+    case 'HELP_REQUEST':
+      return 'Claro, tô aqui pra isso! 😊 Posso te ajudar com medicamentos, produtos, preços, ou tirar dúvidas. Me conta o que você precisa!';
+
+    case 'PRICE_QUERY': {
+      // Se tem um produto mencionado recentemente, referencia ele
+      if (state.lastMentionedProduct) {
+        const drug = state.lastMentionedProduct;
+        const { price } = _applyDiscount(drug);
+        state.lastMentionedProduct = drug;
+        return `O ${drug.name} (${drug.presentation}) tá R$ ${price.toFixed(2)}. Quer que eu coloque no carrinho?`;
+      }
+      return 'De qual medicamento ou produto você quer saber o preço? Me diz o nome que eu busco aqui. 😊';
+    }
+
+    case 'AVAILABILITY_QUERY': {
+      if (state.lastMentionedProduct) {
+        const drug = state.lastMentionedProduct;
+        return `Sim, temos o ${drug.name} disponível! Quer que eu passe o preço?`;
+      }
+      return 'Qual medicamento ou produto você quer verificar? Me diz o nome que eu checo no estoque!';
+    }
+
+    case 'FAQ':
+      switch (intent.subtype) {
+        case 'hours':
+          return 'Funcionamos de segunda a sábado das 7h às 22h, e aos domingos das 8h às 18h. ⏰';
+        case 'address':
+          return 'Ficamos na Rua da Saúde, 500 - Centro. Quer dar uma passada aqui ou prefere que a gente entregue?';
+        case 'delivery':
+          return 'Nosso delivery funciona de segunda a sábado das 8h às 21h30. A taxa é R$ 5,00 pra qualquer bairro. Quer pedir algo?';
+        case 'payment':
+          return 'Aceitamos Pix, cartão de crédito/débito e dinheiro na entrega. 💳';
+        case 'prescription':
+          return 'Medicamento comum precisa de receita simples. Antibiótico precisa de 2 vias (uma retida, entregamos no delivery). Tarja Preta e Roacutan só presencialmente na farmácia. 🚫';
+      }
+      break;
+
+    case 'RECIPE_MENTION': {
+      // Menção textual a receita — simula OCR com dados variados
+      return _handleRecipeOCR();
+    }
+
+    case 'SYMPTOM': {
+      const s = intent.data;
+      const suggestions = MEDICINES_DB.filter(d => d.tags.includes(s.tag)).slice(0, 3);
+      if (suggestions.length > 0) {
+        suggestions.forEach(d => state.lastMentionedProduct = d);
+        const list = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
+        return `Pra ${s.label} temos estas opções:||${list}||Qual delas você prefere?`;
+      }
+      return `Pra ${s.label}, o ideal é consultar um médico ou farmacêutico. Posso te ajudar com outra coisa?`;
+    }
+
+    case 'COLLOQUIAL': {
+      const { key, tags } = intent.data;
       const suggestions = MEDICINES_DB.filter(d => tags.some(t => d.tags.includes(t))).slice(0, 3);
       if (suggestions.length > 0) {
+        suggestions.forEach(d => state.lastMentionedProduct = d);
         const list = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
-        return `Temos estas opções para ${colKey}:\n${list}\n\nQual você costuma tomar?`;
+        return `Temos estas opções pra ${key}:||${list}||Qual você costuma usar?`;
+      }
+      return `Infelizmente não achei opções de ${key} no momento. Posso te ajudar com outra coisa?`;
+    }
+
+    case 'CATALOG_QUERY': {
+      // Resposta sobre o catálogo da farmácia — mostra categorias e exemplos
+      const categories = {};
+      MEDICINES_DB.forEach(d => {
+        const cat = d.category || 'Diversos';
+        if (!categories[cat]) categories[cat] = 0;
+        categories[cat]++;
+      });
+      const topCats = Object.entries(categories)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 8)
+        .map(([cat, count]) => `• *${cat}* (${count} produtos)`);
+      const examples = MEDICINES_DB.slice(0, 5).map(d => d.name);
+      return `Trabalhamos com uma variedade enorme de produtos! 😊 Temos mais de ${MEDICINES_DB.length} itens, incluindo:\n\n${topCats.join('\n')}\n\nAlguns exemplos: ${examples.join(', ')}...\n\nMe diz o que você precisa — pode ser o nome do remédio, ou me conta o que você tá sentindo que eu busco as melhores opções! 💊`;
+    }
+
+    case 'PRODUCT_SEARCH': {
+      const parsedItems = intent.data;
+      // Salva último produto mencionado para referências contextuais
+      if (parsedItems.length > 0) {
+        state.lastMentionedProduct = parsedItems[parsedItems.length - 1].drug;
+      }
+      state.pendingActionRawText = rawMsg;
+      // CPF movido para o checkout — vai direto para cotação
+      state.pendingItemsList = parsedItems;
+      return proceedToQuoteAfterCpf();
+    }
+
+    case 'CONVERSATIONAL': {
+      if (state.cart.length > 0) {
+        return `Seu carrinho atual tem ${state.cart.length} item(ns) (R$ ${cartTotal().toFixed(2)}).\n\nQuer adicionar mais algum medicamento ou prefere escrever *finalizar* para fechar o pedido? 🛒`;
+      }
+      if (state.lastMentionedProduct) {
+        const drug = state.lastMentionedProduct;
+        return `Você gostaria de adicionar o *${drug.name}* (R$ ${drug.price.toFixed(2)}) ao carrinho? Se sim, é só me confirmar! 😊`;
+      }
+      return 'Tô aqui pra te ajudar! 😊 Me diz o nome do medicamento que você precisa, ou me conta o que tá sentindo que eu busco as opções.';
+    }
+
+    case 'AMBIGUOUS': {
+      if (state.cart.length > 0) {
+        return `Seu carrinho tem ${state.cart.length} item(ns). Quer incluir outro produto ou prefere escrever *finalizar* para fechar o pedido? 🛒`;
+      }
+      if (state.lastMentionedProduct) {
+        const drug = state.lastMentionedProduct;
+        return `Posso colocar o *${drug.name}* no seu carrinho por R$ ${drug.price.toFixed(2)}? 😊`;
+      }
+      const trimmed = rawMsg.trim();
+      if (trimmed.length < 3) {
+        return 'Oi! Me diz o nome do medicamento ou o que você tá sentindo que eu te ajudo. 😊';
+      }
+      // Respostas variadas para evitar repetição robotica
+      const ambiguousResponses = [
+        'Posso te ajudar com medicamentos, consultar preços, verificar estoque, ou tirar dúvidas. Me conta o que você precisa! 😊',
+        'Tô aqui pra ajudar! Você pode me dizer o nome de um remédio, me contar um sintoma, ou perguntar sobre nossos produtos. 💊',
+        'Me diz o que você precisa — pode ser o nome de um remédio, um sintoma, ou qualquer dúvida sobre nossos produtos! 😊',
+      ];
+      return ambiguousResponses[Math.floor(Math.random() * ambiguousResponses.length)];
+    }
+  }
+
+  return 'Tô aqui pra te ajudar! Me diz o que você precisa. 😊';
+}
+
+// Helper: Simula OCR de receita com dados variados (não hardcoded)
+function _handleRecipeOCR() {
+  // Seleciona medicamentos variados do banco para simular OCR realista
+  let candidates = MEDICINES_DB.filter(d => d.needsRecipe && d.allowsDelivery !== false);
+
+  // Fallback: se não tem medicamentos com receita, usa qualquer um
+  if (candidates.length < 2) {
+    candidates = MEDICINES_DB.filter(d => d.allowsDelivery !== false && d.price > 0);
+  }
+
+  // Garante pelo menos 1 medicamento
+  if (candidates.length === 0) {
+    return '📋 Recebi a receita! Me diz o nome do medicamento que está nela que eu busco aqui pra você.';
+  }
+
+  const shuffled = candidates.sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, Math.min(2, shuffled.length));
+  const list = selected.map(d => ({ drug: d, quantity: 1 }));
+
+  // Salva contexto
+  state.lastMentionedProduct = selected[selected.length - 1];
+
+  // CPF movido para o checkout — vai direto para cotação
+  state.pendingItemsList = list;
+  return `🔎 *Escaneando receita médica...*\n\nIdentifiquei na receita:\n${selected.map(d => `• 1x ${d.name}`).join('\n')}\n\n` + proceedToQuoteAfterCpf();
+}
+
+// ============ FUZZY MEDICINE FINDER ============
+function _levenshtein(a, b) {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+  const matrix = [];
+  for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  return matrix[b.length][a.length];
+}
+
+function _findDrugVariantWithDose(baseDrug, targetDoseStr) {
+  if (!baseDrug || !targetDoseStr) return null;
+  const targetDose = targetDoseStr.toLowerCase().replace(/\s+/g, '');
+  const baseNameClean = normalizeText(baseDrug.name || '').replace(/[\d\.,\s]+(mg|g|ml)/gi, '').trim();
+  const activeClean = normalizeText(baseDrug.activeIngredient || baseDrug.principleActive || baseDrug.activePrinciple || '').replace(/[\d\.,\s]+(mg|g|ml)/gi, '').trim();
+
+  for (const d of MEDICINES_DB) {
+    if (d === baseDrug) continue;
+    const dName = normalizeText(d.name || '');
+    const dPres = normalizeText(d.presentation || '');
+    const dActive = normalizeText(d.activeIngredient || d.principleActive || d.activePrinciple || '');
+    const full = (dName + ' ' + dPres + ' ' + dActive).toLowerCase().replace(/\s+/g, '');
+
+    if (!full.includes(targetDose)) continue;
+
+    if ((baseNameClean.length >= 3 && dName.includes(baseNameClean)) ||
+        (activeClean.length >= 3 && dActive.includes(activeClean))) {
+      return d;
+    }
+  }
+  return null;
+}
+
+/**
+ * Finds all dosage variants of a medicine by matching on activeIngredient or base name.
+ */
+function _findAllDosageVariants(drug) {
+  if (!drug) return [];
+  const baseActive = normalizeText(drug.activeIngredient || drug.activePrinciple || drug.principleActive || '').replace(/[\d\.,\s]+(mg|g|ml)/gi, '').trim();
+  const baseName = normalizeText(drug.name || '').replace(/[\d\.,\s]+(mg|g|ml)/gi, '').replace(/\s+(generico|generica|ache|ems|medley|eurofarma|germed|neo\s+quimica|pharlab|prati).*$/i, '').trim();
+  if (!baseActive && !baseName) return [];
+
+  const variants = [];
+  const seenDoses = new Set();
+
+  for (const d of MEDICINES_DB) {
+    const dActive = normalizeText(d.activeIngredient || d.activePrinciple || d.principleActive || '').replace(/[\d\.,\s]+(mg|g|ml)/gi, '').trim();
+    const dName = normalizeText(d.name || '');
+    const isMatch = (baseActive.length >= 3 && dActive === baseActive) ||
+                    (baseName.length >= 3 && dName.includes(baseName));
+    if (!isMatch) continue;
+
+    // Extract dose from name
+    const doseMatch = d.name.match(/(\d+([\.,]\d+)?\s*(mg|g|ml))/i);
+    const doseKey = doseMatch ? doseMatch[1].toLowerCase().replace(/\s+/g, '') : d.name;
+    if (seenDoses.has(doseKey)) continue;
+    seenDoses.add(doseKey);
+    variants.push(d);
+  }
+
+  return variants;
+}
+
+function fuzzyFindMedicine(term) {
+  if (!term || typeof term !== 'string') return null;
+  const clean = term.replace(/\.[a-z0-9]+$/i, '').replace(/[^a-zA-Z0-9áéíóúâêôãõç]/g, ' ').trim();
+  const norm = normalizeText(clean).replace(/[^a-z0-9]/g, '');
+  if (norm.length < 3) return null;
+
+  const direct = parseMedicinesFromText(clean);
+  if (direct.length > 0) return direct[0].drug;
+
+  const doseMatch = clean.match(/(\d+([\.,]\d+)?)\s*(mg|g|ml)/i);
+  const targetDose = doseMatch ? doseMatch[0].toLowerCase().replace(/\s+/g, '') : null;
+
+  let bestMatch = null;
+  let minDistance = 999;
+  let matchesWithoutDose = [];
+
+  for (const drug of MEDICINES_DB) {
+    const targets = [drug.name, ...(drug.aliases || [])];
+    for (const t of targets) {
+      const normT = normalizeText(t).replace(/[^a-z0-9]/g, '');
+      if (!normT || normT.length < 3) continue;
+
+      if (normT.includes(norm) || norm.includes(normT)) {
+        if (targetDose && normT.includes(targetDose)) {
+          return drug; // Match exato com dosagem!
+        }
+        matchesWithoutDose.push(drug);
+      }
+
+      if (Math.abs(normT.length - norm.length) <= 3) {
+        let dist = _levenshtein(norm, normT);
+        if (dist < minDistance && dist <= 2) {
+          minDistance = dist;
+          bestMatch = drug;
+        }
       }
     }
   }
 
-  // 5. Perguntas gerais
-  if (norm.match(/(horario|aberto|funcionamento|que horas)/i))
-    return 'Funcionamos de segunda a sábado das 7h às 22h, e aos domingos das 8h às 18h. ⏰';
-  if (norm.match(/(endereco|onde fica|localizacao|onde vcs)/i))
-    return 'Ficamos na Rua da Saúde, 500 - Centro. Quer dar uma passada aqui ou prefere que a gente entregue?';
-  if (norm.match(/(delivery|entrega|entregam|taxa|frete)/i))
-    return 'Nosso delivery funciona de segunda a sábado das 8h às 21h30. A taxa é R$ 5,00 pra qualquer bairro. Quer pedir algo?';
-  if (norm.match(/(pagamento|forma|pagar|cartao|pix|dinheiro)/i))
-    return 'Aceitamos Pix, cartão de crédito/débito e dinheiro na entrega. 💳';
-  if (norm.match(/(oi|ola|bom dia|boa tarde|boa noite|tudo bem)/i))
-    return 'Oi! Tudo bem? Sou a Sofia, assistente virtual da Farmácia. No que posso te ajudar?';
-  if (norm.match(/(receita|controlado|antibiotico|tarja preta)/i))
-    return 'Medicamento comum precisa de receita simples. Antibiótico precisa de 2 vias (uma retida, entregamos no delivery). Tarja Preta e Roacutan só presencialmente na farmácia. 🚫';
-
-  // 6. Detecção de mensagens conversacionais (evitar tratar tudo como busca de medicamento)
-  const conversational = norm.match(/(^(sim|s|ok|certo|beleza|legal|massa|top|boa|perfeito|otimo|entendi|entendo|hmm|hm|ah|uhum|aham|ta|blz|show|maravilha|combinado|tranquilo|suave|firmeza|fechou|de\s*boa)$|tudo\s+certo|ta\s+bom|ta\s+otimo|ta\s+certo|tudo\s+ok|como\s+funciona|quanto\s+custa|qual\s+o\s+preco|o\s+que\s+e|quando|tudo\s+bem|como\s+vai)/i);
-  if (conversational) {
-    return 'Tô aqui pra te ajudar! 😊 Me diz o nome do medicamento que você precisa, ou me conta o que tá sentindo que eu busco as opções pra você.';
+  if (targetDose) {
+    const doseMatchItem = matchesWithoutDose.find(d => 
+      normalizeText(d.name + ' ' + d.presentation).toLowerCase().replace(/\s+/g, '').includes(targetDose)
+    );
+    if (doseMatchItem) return doseMatchItem;
   }
 
-  // 7. Fallback genérico (sem assumir que é busca de medicamento)
-  const trimmed = rawMsg.trim();
-  if (trimmed.length < 3) {
-    return 'Oi! Me diz o nome do medicamento ou o que você tá sentindo que eu te ajudo. 😊';
+  return matchesWithoutDose.length > 0 ? matchesWithoutDose[0] : bestMatch;
+}
+
+// ============ INTELLIGENT IMAGE SIMULATION ============
+/**
+ * Processa imagens de forma inteligente em modo simulação.
+ * REGRA DE OURO: Se identificação confiável → apresenta produto.
+ * Se ilegível/desconhecido → declara que não identificou. NUNCA INVENTA E NUNCA REPETE ITEM JÁ NO CARRINHO.
+ */
+function _handleImageSimulation(fileName) {
+  // Análise contextual: verifica as últimas mensagens para pistas
+  const recentMsgs = state.messages || [];
+  const recentUserMsgs = recentMsgs
+    .filter(m => m.sender === 'user')
+    .slice(-5)
+    .map(m => (m.text || '').toLowerCase())
+    .join(' ');
+
+  const fn = (fileName || '').toLowerCase();
+
+  // ── CENÁRIO 1: Contexto claro de RECEITA MÉDICA ──
+  const isRecipeContext = /receita|prescri|medico|consulta|exame|rx|crm/.test(recentUserMsgs)
+    || /receita|prescri|rx|crm/.test(fn);
+
+  if (isRecipeContext) {
+    return `📋 *Analisando imagem da receita...*||${_handleRecipeOCR()}`;
   }
-  return `Hmm, não encontrei nada com "${trimmed.length > 40 ? trimmed.substring(0, 40) + '...' : trimmed}" na nossa base. 😅\nSe for um medicamento, tenta me dizer o nome comercial ou o princípio ativo. Se precisar, posso te passar pra um atendente! 👤`;
+
+  // ── CENÁRIO 2: Análise do nome/pistas do arquivo ──
+  const matchedFromFileName = fuzzyFindMedicine(fileName);
+  if (matchedFromFileName) {
+    const drug = matchedFromFileName;
+    const variants = _findAllDosageVariants(drug);
+
+    // Se há múltiplas dosagens, mostra as opções ao invés de assumir uma
+    if (variants.length > 1) {
+      state.lastMentionedProduct = drug;
+      state.pendingDosageVariants = variants;
+      state.simState = 'waiting_dosage_selection';
+      const variantList = variants.map((v, i) => {
+        const { price } = _applyDiscount(v);
+        const doseMatch = v.name.match(/(\d+([\.,]\d+)?\s*(mg|g|ml))/i);
+        const doseLabel = doseMatch ? doseMatch[1] : v.name;
+        return `${i + 1}. *${v.name}* — R$ ${price.toFixed(2)}`;
+      }).join('\n');
+      const needsRecipeNote = drug.needsRecipe ? '\n\n⚠️ Este medicamento necessita de receita médica.' : '';
+      return `📷 *Analisando imagem...*||Identifiquei *${normalizeText(drug.activeIngredient || drug.name).replace(/[\d\.,\s]+(mg|g|ml)/gi, '').trim()}*! Temos em mais de uma dosagem:\n\n${variantList}${needsRecipeNote}||Qual dosagem você precisa? Me diz o número ou a dosagem (ex: *2mg*).`;
+    }
+
+    // Dosagem única — fluxo normal
+    const { price } = _applyDiscount(drug);
+    state.lastMentionedProduct = drug;
+    state.pendingItem = { drug, quantity: 1, finalPrice: price };
+    state.simState = 'confirm_add_cart';
+    const needsRecipeNote = drug.needsRecipe ? '\n⚠️ Este medicamento necessita de receita médica.' : '';
+    return `📷 *Analisando imagem...*||Identifiquei: *${drug.name}*\n📦 ${drug.presentation}\n💰 R$ ${price.toFixed(2)}${needsRecipeNote}||Esse é o medicamento que você precisa? Se sim, posso adicionar ao carrinho!`;
+  }
+
+  // ── CENÁRIO 3: Se a foto é genérica (sem nome no arquivo), usa produto recente DESDE QUE AINDA NÃO ESTEJA NO CARRINHO ──
+  const isAlreadyInCart = state.lastMentionedProduct && state.cart.some(c => (c.drug ? c.drug.id : c.id) === state.lastMentionedProduct.id);
+  if (state.lastMentionedProduct && !isAlreadyInCart) {
+    const drug = state.lastMentionedProduct;
+    const { price } = _applyDiscount(drug);
+    state.pendingItem = { drug, quantity: 1, finalPrice: price };
+    state.simState = 'confirm_add_cart';
+    return `📷 *Analisando imagem...*||Identifiquei: *${drug.name}* (${drug.presentation}).||Temos disponível por R$ ${drug.price.toFixed(2)}. Quer que eu adicione ao carrinho? 🛒`;
+  }
+
+  // ── CENÁRIO 4: Sem correspondência confiável → DECLARA QUE NÃO IDENTIFICOU (NUNCA REPETE PRODUTO ANTIGO) ──
+  return '📷 *Analisando imagem...*||Não consegui identificar com clareza o nome do medicamento na foto. 🤔\n\nPoderia digitar o nome do produto ou enviar uma imagem com o rótulo bem visível? Assim consigo te ajudar certinho! 😊';
+}
+
+/**
+ * Processa áudio de forma inteligente em modo simulação.
+ * Seleciona medicamentos variados do banco ao invés de hardcoded.
+ */
+function _handleAudioSimulation() {
+  // Seleciona medicamentos variados e comuns para simular reconhecimento
+  const commonDrugs = MEDICINES_DB.filter(d => !d.isGeneric && d.allowsDelivery !== false);
+  const pick = commonDrugs.length > 0
+    ? commonDrugs[Math.floor(Math.random() * commonDrugs.length)]
+    : MEDICINES_DB[0];
+
+  if (pick) {
+    state.lastMentionedProduct = pick;
+    const parsedItems = [{ drug: pick, quantity: 1 }];
+    state.pendingItemsList = parsedItems;
+    // CPF movido para o checkout — vai direto para cotação
+    return `🎤 *Processando áudio...*||Entendi que você precisa de *${pick.name}*.||${proceedToQuoteAfterCpf()}`;
+  }
+
+  return '🎤 Recebi seu áudio, mas não consegui entender claramente. Pode digitar o que você precisa?';
 }
 
 // ============ CALCULATION ============
@@ -1082,7 +1858,8 @@ function handleConfirmBrandOrGeneric(norm) {
   } else if (hasYes) {
     wantsGeneric = true;
   } else {
-    wantsGeneric = false;
+    // Ambíguo — pede clarificação ao invés de assumir
+    return `Não entendi qual você prefere. 🤔\n\n• *Genérico* (${pG.drug.name}) — R$ ${(pG.finalPrice || pG.drug.price).toFixed(2)}\n• *Referência* (${pB.drug.name}) — R$ ${(pB.finalPrice || pB.drug.price).toFixed(2)}\n\nDigite *genérico* ou *referência*!`;
   }
 
   const chosen = wantsGeneric ? pG : pB;
@@ -1105,18 +1882,56 @@ function handleConfirmBrandOrGeneric(norm) {
  * State: confirm_add_cart — "Posso colocar no carrinho?"  (FIX #1)
  */
 function handleConfirmAddCartState(norm, rawMsg) {
-  // PRIORIDADE: verificar NEGAÇÃO primeiro (resolve "Não. Quero X" adicionando item errado)
-  const startsWithNo = norm.match(/^n[aã]o\b/i) || norm.match(/^(n|nope)$/i);
-  const isExplicitNo = norm.match(/(^nao$|^n$|cancela|desisto)/i);
+  const currentPending = state.pendingItem || (state.lastMentionedProduct ? { drug: state.lastMentionedProduct, quantity: 1 } : null);
 
-  if (startsWithNo || isExplicitNo) {
+  // ── PASSO 1: Detecta QUALQUER menção a dosagem na resposta ──
+  const doseMatch = rawMsg.match(/(\d+([\.,]\d+)?)\s*(mg|g|ml)/i);
+  const userDose = doseMatch ? doseMatch[0] : null;
+
+  // ── PASSO 2: Detecta frases de CORREÇÃO DE DOSAGEM (sem dose explícita) ──
+  // Ex: "é este mas nao nesta dosagem", "sim mas nao nessa dosagem", "sim mas outra dosagem"
+  const hasDosageCorrection = /\b(n[ãa]o\s+(nessa|nesta|nesse|neste|essa|esta|esse|este)\s+(dosagem|dose|concentra[cç][aã]o|mg))|\b(outra\s+(dosagem|dose|concentra[cç][aã]o))|\b(dosagem\s+(diferente|errada|outra))|\b(mas\s+(n[ãa]o\s+)?(nessa|nesta|nesse|neste|essa|esta|outra)\s+(dosagem|dose))/i.test(rawMsg);
+
+  // ── PASSO 3: Se tem dose explícita DIFERENTE da pendente → corrige direto ──
+  if (userDose && currentPending && currentPending.drug) {
+    const currentPres = (currentPending.drug.name + ' ' + (currentPending.drug.presentation || '')).toLowerCase().replace(/\s+/g, '');
+    const userDoseNorm = userDose.toLowerCase().replace(/\s+/g, '');
+    if (!currentPres.includes(userDoseNorm)) {
+      const correctedDrug = _findDrugVariantWithDose(currentPending.drug, userDose) || fuzzyFindMedicine(`${currentPending.drug.name} ${userDose}`);
+      if (correctedDrug) {
+        const { price } = _applyDiscount(correctedDrug);
+        state.pendingItem = { drug: correctedDrug, quantity: currentPending.quantity || 1, finalPrice: price };
+        state.lastMentionedProduct = correctedDrug;
+        state.simState = 'confirm_add_cart';
+        const needsRecipeNote = correctedDrug.needsRecipe ? '\n⚠️ Este medicamento necessita de receita médica.' : '';
+        return `Entendi! Encontrei *${correctedDrug.name}* (${correctedDrug.presentation}) por R$ ${price.toFixed(2)}.${needsRecipeNote}||Posso colocar esse no carrinho? 😊`;
+      }
+    }
+  }
+
+  // ── PASSO 4: Se pede dosagem diferente SEM especificar qual → mostra opções ──
+  if (hasDosageCorrection && currentPending && currentPending.drug) {
+    const variants = _findAllDosageVariants(currentPending.drug);
+    if (variants.length > 1) {
+      state.pendingDosageVariants = variants;
+      state.simState = 'waiting_dosage_selection';
+      const variantList = variants.map((v, i) => {
+        const { price } = _applyDiscount(v);
+        return `${i + 1}. *${v.name}* — R$ ${price.toFixed(2)}`;
+      }).join('\n');
+      return `Sem problema! Temos essas dosagens disponíveis:\n\n${variantList}\n\nQual você precisa? Me diz o número ou a dosagem (ex: *2mg*). 😊`;
+    } else {
+      return `Infelizmente só temos *${currentPending.drug.name}* nessa dosagem. Quer que eu adicione ao carrinho mesmo assim, ou prefere outro medicamento?`;
+    }
+  }
+
+  // ── PASSO 5: Negação pura ──
+  if (isUserRejecting(norm, rawMsg)) {
     state.pendingItem      = null;
     state.pendingItemsList = [];
 
-    // Extrai o que vem DEPOIS da negação para verificar se é um novo pedido
     const afterNo = rawMsg.replace(/^[Nn][ãa]o\.?\s*/i, '').trim();
     if (afterNo.length >= 3) {
-      // Remove "quero", "preciso de", etc. e tenta encontrar um novo medicamento
       const newItems = parseMedicinesFromText(afterNo);
       if (newItems.length > 0) {
         state.pendingItemsList = newItems;
@@ -1130,10 +1945,13 @@ function handleConfirmAddCartState(norm, rawMsg) {
       : 'Sem problemas! Se quiser ver outro remédio, é só me chamar. 😊';
   }
 
-  // Depois verifica AFIRMAÇÃO
-  const isYes = norm.match(/(^sim$|^s$|pode|coloca|^quero$|ok|claro|isso|confirma|adiciona|bora|vai|manda)/i);
-
-  if (isYes) {
+  // ── PASSO 6: Confirmação pura ──
+  if (isUserConfirming(norm, rawMsg)) {
+    if (!state.pendingItem && state.lastMentionedProduct) {
+      const drug = state.lastMentionedProduct;
+      const { price } = _applyDiscount(drug);
+      state.pendingItem = { drug, quantity: 1, finalPrice: price };
+    }
     if (state.pendingItem) {
       state.cart.push(state.pendingItem);
       state.pendingItem = null;
@@ -1148,7 +1966,111 @@ function handleConfirmAddCartState(norm, rawMsg) {
     return `${addedMsg}\n\nQuer adicionar mais algum medicamento? Me diga o nome ou escreva *finalizar* para fechar o pedido. 🛒`;
   }
 
-  return 'Quer que eu coloque no carrinho? 😊';
+  const fallbacks = [
+    'Posso colocar no carrinho? Responde *sim* ou *não*! 😊',
+    'Então, coloco no carrinho? 🛒',
+    'Quer levar esse? Me diz *sim* ou *não*!'
+  ];
+  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+}
+
+/**
+ * State: waiting_dosage_selection — user must choose a dosage from variants list.
+ * Accepts: number (1, 2, 3...), dosage string ("2mg", "0.5mg"), or name fragment.
+ */
+function handleWaitingDosageSelection(norm, rawMsg) {
+  const variants = state.pendingDosageVariants || [];
+  if (variants.length === 0) {
+    state.simState = 'idle';
+    return 'Desculpe, me perdi. Me diga o nome do medicamento que você precisa!';
+  }
+
+  // Rejection/cancel
+  if (isUserRejecting(norm, rawMsg)) {
+    state.pendingDosageVariants = [];
+    state.simState = state.cart.length > 0 ? 'more_items' : 'idle';
+    return state.cart.length > 0
+      ? 'Ok! Quer adicionar outro medicamento ou *finalizar* o pedido?'
+      : 'Sem problemas! Se precisar de algum remédio, é só me chamar. 😊';
+  }
+
+  let selectedDrug = null;
+
+  // Match by number (1, 2, 3...)
+  const numMatch = rawMsg.match(/^\s*(\d+)\s*$/);
+  if (numMatch) {
+    const idx = parseInt(numMatch[1], 10) - 1;
+    if (idx >= 0 && idx < variants.length) {
+      selectedDrug = variants[idx];
+    }
+  }
+
+  // Match by dosage string ("2mg", "0.5 mg", etc.)
+  if (!selectedDrug) {
+    const doseMatch = rawMsg.match(/(\d+([.,]\d+)?)\s*(mg|g|ml)/i);
+    if (doseMatch) {
+      const targetDose = doseMatch[0].toLowerCase().replace(/\s+/g, '');
+      selectedDrug = variants.find(v => {
+        const vName = (v.name + ' ' + (v.presentation || '')).toLowerCase().replace(/\s+/g, '');
+        return vName.includes(targetDose);
+      });
+    }
+  }
+
+  // Match by bare number as dose: "de 2", "o de 2", "quero 2", "a 2" → try 2mg, 2g, 2ml
+  if (!selectedDrug) {
+    const bareNumMatch = rawMsg.match(/(?:^|\s)(\d+([.,]\d+)?)\s*$/i) || rawMsg.match(/\b(?:de|o|a|quero|preciso)\s+(\d+([.,]\d+)?)\b/i);
+    if (bareNumMatch) {
+      const num = bareNumMatch[1] || bareNumMatch[3];
+      if (num) {
+        const numNorm = num.replace(',', '.');
+        // Try matching as dose (append mg, g, ml)
+        for (const unit of ['mg', 'g', 'ml']) {
+          const tryDose = numNorm + unit;
+          const found = variants.find(v => {
+            const vName = (v.name + ' ' + (v.presentation || '')).toLowerCase().replace(/\s+/g, '').replace(',', '.');
+            return vName.includes(tryDose);
+          });
+          if (found) { selectedDrug = found; break; }
+        }
+        // Also try as option number if still no match
+        if (!selectedDrug) {
+          const idx = parseInt(num, 10) - 1;
+          if (idx >= 0 && idx < variants.length) {
+            selectedDrug = variants[idx];
+          }
+        }
+      }
+    }
+  }
+
+  // Match by name fragment
+  if (!selectedDrug) {
+    const words = norm.split(/\s+/).filter(w => w.length >= 3);
+    if (words.length > 0) {
+      selectedDrug = variants.find(v => {
+        const vName = normalizeText(v.name).toLowerCase();
+        return words.some(w => vName.includes(w));
+      });
+    }
+  }
+
+  if (selectedDrug) {
+    const { price } = _applyDiscount(selectedDrug);
+    state.pendingItem = { drug: selectedDrug, quantity: 1, finalPrice: price };
+    state.lastMentionedProduct = selectedDrug;
+    state.pendingDosageVariants = [];
+    state.simState = 'confirm_add_cart';
+    const needsRecipeNote = selectedDrug.needsRecipe ? '\n⚠️ Este medicamento necessita de receita médica.' : '';
+    return `Boa escolha! *${selectedDrug.name}* (${selectedDrug.presentation}) por R$ ${price.toFixed(2)}.${needsRecipeNote}\n\nPosso colocar no carrinho? 😊`;
+  }
+
+  // Fallback: re-prompt
+  const variantList = variants.map((v, i) => {
+    const { price } = _applyDiscount(v);
+    return `${i + 1}. *${v.name}* — R$ ${price.toFixed(2)}`;
+  }).join('\n');
+  return `Não entendi qual dosagem você quer. Pode me dizer o número ou a dosagem?\n\n${variantList}`;
 }
 
 /**
@@ -1162,9 +2084,50 @@ function handleMoreItemsState(norm, rawMsg) {
       state.simState = 'idle';
       return 'Seu carrinho está vazio. Se precisar de algo, é só me falar!';
     }
+    // CPF é pedido aqui no checkout, antes de fechar
+    if (!state.cpf) {
+      state.simState = 'waiting_cpf';
+      return `Perfeito! Vamos fechar seu pedido! 🛒\n\nResumo:\n${cartSummary()}\n\n*Subtotal: R$ ${cartTotal().toFixed(2)}*\n\nAntes de prosseguir, você tem cadastro de fidelidade com CPF? 🏷️\nDescontos de *10% a 30%* em medicamentos de marca!\n\nDigite seu CPF ou *não* para continuar sem desconto.`;
+    }
     const total    = cartTotal();
     state.simState = 'waiting_delivery_method';
     return `Perfeito! Resumo do pedido:\n${cartSummary()}\n\n*Subtotal: R$ ${total.toFixed(2)}*\n*(+ R$ 5,00 taxa de entrega se delivery)*\n\nComo prefere receber: *entrega* no seu endereço ou *retirada* aqui na farmácia?`;
+  }
+
+  // Detectar sintomas (igual ao idle — permite busca por sintoma dentro do carrinho)
+  const symptoms = [
+    { pattern: /cabe(c|ç)a|enxaqueca|cefaleia/i, tag: 'cabeça', label: 'dor de cabeça' },
+    { pattern: /azia|queima(c|ç)ao|refluxo|gastrite|est(o|ô)mago/i, tag: 'azia', label: 'dor de estômago ou azia' },
+    { pattern: /gripe|resfriad|coriza|espirro/i, tag: 'gripe', label: 'sintomas de gripe' },
+    { pattern: /garganta/i, tag: 'garganta', label: 'dor de garganta' },
+    { pattern: /tosse/i, tag: 'tosse', label: 'tosse' },
+    { pattern: /barriga|diarreia|intestino/i, tag: 'diarreia', label: 'dor de barriga ou diarreia' },
+    { pattern: /enjoo|nausea|v(o|ô)mito/i, tag: 'enjoo', label: 'enjoo ou náusea' },
+    { pattern: /febre/i, tag: 'febre', label: 'febre' },
+    { pattern: /alergia|rinite/i, tag: 'alergia', label: 'alergia' }
+  ];
+
+  for (const s of symptoms) {
+    if (s.pattern.test(norm)) {
+      const suggestions = MEDICINES_DB.filter(d => d.tags.includes(s.tag)).slice(0, 3);
+      if (suggestions.length > 0) {
+        suggestions.forEach(d => state.lastMentionedProduct = d);
+        const list = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
+        return `Pra ${s.label} temos:\n${list}\n\nQual delas quer adicionar ao pedido?`;
+      }
+    }
+  }
+
+  // Coloquial no carrinho
+  for (const [colKey, tags] of Object.entries(COLLOQUIAL_MAP)) {
+    if (norm.includes(colKey)) {
+      const suggestions = MEDICINES_DB.filter(d => tags.some(t => d.tags.includes(t))).slice(0, 3);
+      if (suggestions.length > 0) {
+        suggestions.forEach(d => state.lastMentionedProduct = d);
+        const list = suggestions.map(d => `• ${d.name} (${d.presentation}) - R$ ${d.price.toFixed(2)}`).join('\n');
+        return `Pra ${colKey} temos:\n${list}\n\nQual quer adicionar?`;
+      }
+    }
   }
 
   // Tenta encontrar mais medicamentos na mensagem
@@ -1172,35 +2135,63 @@ function handleMoreItemsState(norm, rawMsg) {
   if (parsedItems.length > 0) {
     state.pendingActionRawText = rawMsg;
     state.pendingItemsList     = parsedItems;
+    parsedItems.forEach(p => state.lastMentionedProduct = p.drug);
     // CPF já está definido — vai direto para cotação
     return proceedToQuoteAfterCpf();
   }
 
-  // Detecção de mensagens conversacionais (evitar tratar como busca de medicamento)
-  const isConversational = norm.match(/(^(sim|s|ok|certo|beleza|legal|massa|top|boa|perfeito|otimo|entendi|hmm|uhum|aham|ta|blz|show|maravilha|combinado|tranquilo|suave|firmeza|fechou|de\s*boa)$|obrigad[oa]|valeu|brigadao|vlw)/i);
+  // ── DETECÇÃO DE ANÚNCIO DE ENVIO DE FOTO OU ÁUDIO NO CARRINHO ──
+  const isPhotoAnnounce = (norm.match(/(foto|imagem)/i) && norm.match(/(enviar|mandar|mandei|vou|tirar|olha|ve|ver|passar|mais|outro)/i))
+    || norm.match(/(mais\s+um\s+remedio\s+irei\s+enviar|vou\s+enviar\s+(a\s+)?foto|vou\s+mandar\s+(a\s+)?foto|espera\s+vou\s+tirar|tirar\s+foto)/i);
+
+  if (isPhotoAnnounce) {
+    return 'Com certeza! Pode enviar a foto do próximo remédio ou produto que eu analiso para você e verifico no estoque! 📷';
+  }
+
+  // Detecção expandida de mensagens conversacionais
+  const isConversational = norm.match(/(^(sim|s|ok|certo|beleza|legal|massa|top|boa|perfeito|otimo|entendi|hmm|uhum|aham|ta|blz|show|maravilha|combinado|tranquilo|suave|firmeza|fechou|de\s*boa|pode\s*ser|claro|com\s*certeza|isso\s*mesmo|exato|vlw|obg|tmj)$|obrigad[oa]|valeu|brigadao|vlw)/i);
   if (isConversational) {
     return 'Quer adicionar mais algum medicamento? Me diz o nome ou escreva *finalizar* pra fechar o pedido. 🛒';
   }
 
-  // O usuário nomeou algo que não está no banco — responde que não encontrou
-  const productRequested = _extractMedicineRequest(rawMsg);
-  if (productRequested) {
-    return `⚠️ Não encontrei "${productRequested}" no nosso estoque. Pode tentar com outro nome, a dosagem ou a marca completa?\n\nOu escreva *finalizar* se quiser fechar o pedido com os itens já adicionados. 🛒`;
+  // Intenção genérica de compra no contexto do carrinho
+  if (norm.match(/(quero\s+(mais|outro|outra)|preciso\s+de\s+mais|tem\s+mais\s+coisa|mais\s+alguma\s+coisa|mais\s+um\s+remedio|mais\s+um\s+medicamento|mais\s+um)/i)) {
+    return 'Pode falar! Me diz o nome do próximo medicamento ou pode mandar a foto dele que eu busco pra você! 😊';
   }
 
-  return 'Me diz o nome do próximo medicamento ou escreva *finalizar* pra fechar o pedido. 🛒';
+  // O usuário pode ter digitado um nome de produto que não está no banco
+  const productRequested = _extractMedicineRequest(rawMsg);
+  if (productRequested) {
+    return `Não encontrei *${productRequested}* no nosso estoque no momento. 🤔\n\nQuer tentar pesquisar por outro nome, marca de referência ou enviar a foto dele? (Ou escreva *finalizar* se quiser concluir o pedido com os itens atuais). 🛒`;
+  }
+
+  return 'Pode me dizer o nome do próximo medicamento ou mandar a foto dele? Se quiser concluir o pedido com os itens atuais, é só escrever *finalizar*. 🛒';
 }
 
 /**
  * State: waiting_delivery_method — "Entrega ou retirada?"  (FIX #1)
  */
-function handleWaitingDeliveryMethod(norm) {
+function handleWaitingDeliveryMethod(norm, rawMsg) {
   const wantsDelivery = norm.match(/(entrega|delivery|entregar|meu\s+endereco|trazer|levar|mandar)/i);
   const wantsPickup   = norm.match(/(retirada|retirar|buscar|busco|pegar|loja|farmacia|presencial|vou\s+buscar|vou\s+la)/i);
 
   if (wantsDelivery) {
     state.deliveryMethod = 'delivery';
-    state.simState       = 'waiting_address';
+    
+    // Tenta extrair o endereço se o cliente já digitou junto com a indicação de entrega
+    const extractedAddr = rawMsg
+      .replace(/^(entrega\s+em|entrega\s+na|entrega\s+no|entrega|delivery|entregar|manda\s+entregar)\s*/i, '')
+      .trim();
+
+    if (extractedAddr.length >= 6) {
+      state.deliveryAddress = extractedAddr;
+      state.simState        = 'waiting_payment';
+      const total           = cartTotal();
+      const grandTotal      = total + 5.00;
+      return `Ótimo! 🛵 Delivery para *${state.deliveryAddress}* anotado com sucesso! ✅\n\n*Medicamentos:* R$ ${total.toFixed(2)}\n*Taxa de entrega:* R$ 5,00\n*Total geral: R$ ${grandTotal.toFixed(2)}*\n\nQual forma de pagamento prefere?\n• *Pix* — 5% de desconto no total\n• *Cartão* de débito/crédito\n• *Dinheiro*`;
+    }
+
+    state.simState = 'waiting_address';
     return 'Ótimo! 🛵 Delivery confirmado.\n\nQual é o seu endereço completo? (Rua, número, bairro)';
   }
 
@@ -1208,18 +2199,19 @@ function handleWaitingDeliveryMethod(norm) {
     state.deliveryMethod = 'retirada';
     state.simState       = 'waiting_payment';
     const total          = cartTotal();
-    return `Ótimo! 🏪 Pode vir retirar aqui na Rua da Saúde, 500 - Centro.\n\n*Total: R$ ${total.toFixed(2)}*\n\nQual forma de pagamento prefere?\n• *Pix* — 5% de desconto\n• *Cartão* de débito/crédito\n• *Dinheiro*`;
+    return `Ótimo! 🏪 Pode vir retirar aqui na Rua da Saúde, 500 - Centro.\n\n*Total: R$ ${total.toFixed(2)}*\n\nQual forma de pagamento prefere?\n• *Pix* — 5% de desconto no total\n• *Cartão* de débito/crédito\n• *Dinheiro*`;
   }
 
-  return 'Como prefere receber: *entrega* no seu endereço ou *retirada* aqui na farmácia?';
+  return 'Só preciso saber: quer *entrega* no seu endereço ou *retirada* aqui na farmácia? 🏪';
 }
 
 /**
  * State: waiting_address — bot aguarda endereço de entrega  (FIX #1)
  */
 function handleWaitingAddressState(rawMsg) {
-  if (rawMsg.trim().length < 5) {
-    return 'Por favor, me diga o endereço completo (Rua, número e bairro) para organizarmos a entrega.';
+  const addr = (rawMsg || '').trim();
+  if (addr.length < 5) {
+    return 'Preciso do endereço completo pra entregar certinho! Me manda: Rua, número e bairro. 📍';
   }
   state.deliveryAddress = rawMsg.trim();
   state.simState        = 'waiting_payment';
@@ -1246,7 +2238,7 @@ function handleWaitingPaymentState(norm) {
   }
 
   if (!paymentLabel) {
-    return 'Não entendi a forma de pagamento. Escolha:\n• *Pix* (5% de desconto)\n• *Cartão* de débito/crédito\n• *Dinheiro*';
+    return 'Não entendi! Qual forma de pagamento você prefere?\n• *Pix* (5% de desconto)\n• *Cartão* de débito/crédito\n• *Dinheiro*';
   }
 
   state.paymentMethod = paymentLabel;
@@ -1267,12 +2259,12 @@ function handleWaitingPaymentState(norm) {
 /**
  * State: waiting_confirm — confirmação final do pedido  (FIX #1)
  */
-function handleWaitingConfirmState(norm) {
-  const isConfirm = norm.match(/(confirmar|confirmo|^sim$|^s$|ok|pode|bora|feito|certo|isso\s+mesmo|vai)/i);
+function handleWaitingConfirmState(norm, rawMsg) {
+  const isConfirm = isUserConfirming(norm, rawMsg)
+    || norm.match(/(confirmar|confirmo|fecha|fechar|pode\s+fechar|pode\s+confirmar|tudo\s+certo|manda\s+ver|pode\s+manda|concluir|concluido)/i);
   const isCancel  = norm.match(/(cancelar|^nao$|^n$|desistir|cancela)/i);
 
   if (isConfirm) {
-    // Capture values BEFORE resetting state
     const total       = cartTotal();
     const deliveryFee = state.deliveryMethod === 'delivery' ? 5 : 0;
     const grandTotal  = total + deliveryFee;
@@ -1283,7 +2275,7 @@ function handleWaitingConfirmState(norm) {
 
     resetSimState();
 
-    return `✅ *Pedido confirmado!*\n\n${deliveryInfo}\n\nTotal cobrado: *R$ ${grandTotal.toFixed(2)}* via ${payment}.\n\nVocê receberá uma confirmação em breve. Obrigada pela preferência! 💊||Tem mais alguma coisa em que eu possa te ajudar?`;
+    return `✅ *Pedido confirmado com sucesso!* 🎉\n\n${deliveryInfo}\n\nTotal cobrado: *R$ ${grandTotal.toFixed(2)}* via ${payment}.\n\nSeu pedido já está em separação na farmácia e você receberá atualizações sobre a entrega. Muito obrigada pela preferência! 💊||Tem mais alguma coisa em que eu possa te ajudar?`;
   }
 
   if (isCancel) {
@@ -1291,14 +2283,14 @@ function handleWaitingConfirmState(norm) {
     return 'Pedido cancelado. Se mudar de ideia ou precisar de outra coisa, é só me chamar! 😊';
   }
 
-  return 'Para finalizar o pedido, digite *confirmar*. Para cancelar, escreva *cancelar*.';
+  return 'Podemos fechar e confirmar o seu pedido com os itens atuais? É só me dizer *sim* ou *pode fechar*! 😊';
 }
 
 /**
  * State: waiting_calculation_days — bot aguarda número de dias de tratamento  (FIX #1)
  */
 function handleWaitingCalculationDays(norm, rawMsg) {
-  const src      = rawMsg || norm;
+  const src      = rawMsg || norm || '';
   const dayMatch = src.match(/(\d+)\s*(dias?|semanas?|m[eê]ses?)/i);
 
   if (!dayMatch) {
@@ -1346,8 +2338,8 @@ function handleConfirmUpsell(norm) {
 async function sendToWebhook(message, mediaType = 'text', fileName = '', attempt = 0) {
   if (CONFIG.simulationMode) {
     await delay(600 + Math.random() * 400);
-    if (mediaType === 'image') return runSimulation('foto_receita_simulada');
-    if (mediaType === 'audio') return 'Recebi seu áudio e já estou analisando...||Identifiquei que você precisa de Amoxicilina e Advil. Deseja adicionar ao carrinho?';
+    if (mediaType === 'image') return _handleImageSimulation(fileName);
+    if (mediaType === 'audio') return _handleAudioSimulation();
     return runSimulation(message);
   }
 
@@ -1617,6 +2609,9 @@ function resetSimState() {
   state.pendingVariantQty   = null;
   state.cpf                 = null;
   state.discountPercent     = 0;
+  state.lastMentionedProduct = null;
+  state.lastImageContext     = null;
+  state.pendingDosageVariants = [];
 }
 
 function startNewConversation() {
