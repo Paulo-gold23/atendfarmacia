@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#00a884">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%2300a884%22/><path d=%22M50 25v50M25 50h50%22 stroke=%22white%22 stroke-width=%2214%22 stroke-linecap=%22round%22/></svg>" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=20260810">
 </head>
 <body>
 <div id="app" class="whatsapp-app">
@@ -128,6 +128,12 @@
       <input type="file" id="imageFileInput" style="display: none;" accept="image/*">
       <input type="file" id="docFileInput" style="display: none;" accept=".pdf,.doc,.docx,.txt">
       <div class="input-wrapper"><textarea id="messageInput" placeholder="Digite uma mensagem" rows="1"></textarea></div>
+      <div class="recording-panel" id="recordingPanel" style="display:none;">
+        <div class="recording-dot"></div>
+        <button class="recording-cancel" id="recordingCancel" title="Cancelar gravação"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg></button>
+        <div class="recording-waveform" id="recordingWaveform"></div>
+        <span class="recording-timer" id="recordingTimer">0:00</span>
+      </div>
       <button class="btn-mic" id="micBtn" title="Gravar áudio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill: none; stroke: currentColor;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></button>
       <button class="btn-send" id="sendBtn" title="Enviar" style="display: none;"><svg viewBox="0 0 24 24"><path d="M1.1 21.8L23.8 12 1.1 2.3l0 7.9 13.6 1.8-13.6 1.8 0 7.9z"/></svg></button>
     </footer>
@@ -150,7 +156,7 @@
 
 </div>
 <script src="medicines_database.js?v=20250804d"></script>
-<script src="app.js?v=20250804prod"></script>
+<script src="app.js?v=20260810"></script>
 <script>
   // Force reload if cached version is stale
   if (!window._findAllDosageVariants && typeof _findAllDosageVariants === 'undefined') {

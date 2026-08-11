@@ -72,6 +72,12 @@ const state = {
   mediaRecorder: null,
   audioChunks: [],
   isRecording: false,
+  recordingCancelled: false,
+  recordingStartTime: null,
+  recordingTimerInterval: null,
+  audioContext: null,
+  analyserNode: null,
+  animationFrameId: null,
 };
 
 // ============ DOM REFS ============
@@ -116,6 +122,10 @@ function cacheDom() {
   dom.micBtn           = document.getElementById('micBtn');
   dom.imageFileInput   = document.getElementById('imageFileInput');
   dom.docFileInput     = document.getElementById('docFileInput');
+  dom.recordingPanel   = document.getElementById('recordingPanel');
+  dom.recordingCancel  = document.getElementById('recordingCancel');
+  dom.recordingWaveform= document.getElementById('recordingWaveform');
+  dom.recordingTimer   = document.getElementById('recordingTimer');
 }
 
 // ============ INIT ============
@@ -177,29 +187,193 @@ function loadHistory() {
 
 function saveHistory() {
   try {
-    localStorage.setItem(CONFIG.historyKey, JSON.stringify(state.messages.slice(-100)));
+    const toSave = state.messages.map(m => {
+      if (m.audioUrl) { const { audioUrl, ...rest } = m; return rest; }
+      return m;
+    });
+    localStorage.setItem(CONFIG.historyKey, JSON.stringify(toSave.slice(-100)));
   } catch { /* ignore quota errors */ }
 }
 
 // ============ RECORDING ============
 // FIX #9: use state.mediaRecorder / state.audioChunks / state.isRecording
+// Enhanced: waveform animation, timer, audio player bubbles
+
+function formatDuration(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function generateStaticWaveform(container, barCount) {
+  for (let i = 0; i < barCount; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    const t = i / barCount;
+    const h = Math.max(4, Math.sin(t * Math.PI) * 16 + Math.sin(t * 7.3) * 5 + Math.sin(t * 13.7) * 3 + 4);
+    bar.style.height = Math.round(h) + 'px';
+    container.appendChild(bar);
+  }
+}
+
+function createRecordingWaveformBars() {
+  dom.recordingWaveform.innerHTML = '';
+  for (let i = 0; i < 45; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.height = '4px';
+    dom.recordingWaveform.appendChild(bar);
+  }
+}
+
+function startRecordingUI(stream) {
+  if (!dom.recordingPanel) return;
+  dom.recordingPanel.style.display = 'flex';
+  dom.messageInput.parentElement.style.display = 'none';
+  document.querySelector('.btn-emoji').style.display = 'none';
+  document.querySelector('.btn-attach').style.display = 'none';
+  createRecordingWaveformBars();
+  state.recordingStartTime = Date.now();
+  dom.recordingTimer.textContent = '0:00';
+  state.recordingTimerInterval = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - state.recordingStartTime) / 1000);
+    dom.recordingTimer.textContent = formatDuration(elapsed);
+  }, 1000);
+  try {
+    state.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const source = state.audioContext.createMediaStreamSource(stream);
+    state.analyserNode = state.audioContext.createAnalyser();
+    state.analyserNode.fftSize = 128;
+    source.connect(state.analyserNode);
+    animateRecordingWaveform();
+  } catch (e) {
+    console.warn('[Sofia] AudioContext waveform unavailable:', e);
+  }
+}
+
+function animateRecordingWaveform() {
+  if (!state.isRecording || !state.analyserNode) return;
+  const data = new Uint8Array(state.analyserNode.frequencyBinCount);
+  state.analyserNode.getByteFrequencyData(data);
+  const bars = dom.recordingWaveform.querySelectorAll('.bar');
+  const step = Math.max(1, Math.floor(data.length / bars.length));
+  bars.forEach((bar, i) => {
+    const val = data[Math.min(i * step, data.length - 1)] || 0;
+    bar.style.height = Math.max(4, (val / 255) * 28) + 'px';
+  });
+  state.animationFrameId = requestAnimationFrame(animateRecordingWaveform);
+}
+
+function stopRecordingUI() {
+  if (dom.recordingPanel) dom.recordingPanel.style.display = 'none';
+  dom.messageInput.parentElement.style.display = '';
+  document.querySelector('.btn-emoji').style.display = '';
+  document.querySelector('.btn-attach').style.display = '';
+  if (state.recordingTimerInterval) { clearInterval(state.recordingTimerInterval); state.recordingTimerInterval = null; }
+  if (state.animationFrameId) { cancelAnimationFrame(state.animationFrameId); state.animationFrameId = null; }
+  if (state.audioContext) { state.audioContext.close().catch(() => {}); state.audioContext = null; state.analyserNode = null; }
+}
+
+function cancelRecording() {
+  if (!state.isRecording) return;
+  state.recordingCancelled = true;
+  if (state.mediaRecorder && state.mediaRecorder.state !== 'inactive') state.mediaRecorder.stop();
+  if (state.mediaRecorder && state.mediaRecorder.stream) state.mediaRecorder.stream.getTracks().forEach(t => t.stop());
+  state.isRecording = false;
+  dom.micBtn.classList.remove('recording');
+  stopRecordingUI();
+  showToast('\ud83d\uddd1\ufe0f Gravação cancelada.');
+}
+
+function addUserAudioMessage(audioUrl, duration) {
+  const msg = { role: 'user', type: 'audio', audioUrl, duration, content: '\ud83c\udf99\ufe0f Áudio', time: now() };
+  state.messages.push(msg);
+  saveHistory();
+  renderMessage(msg);
+  updateSidebar('\ud83c\udf99\ufe0f Mensagem de áudio');
+  scrollToBottom();
+}
+
+function renderAudioPlayer(msg, bubble) {
+  bubble.classList.add('voice-message-bubble');
+  const player = document.createElement('div');
+  player.className = 'voice-message';
+  const playBtn = document.createElement('button');
+  playBtn.className = 'vm-play-btn';
+  playBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+  const progressWrap = document.createElement('div');
+  progressWrap.className = 'vm-progress-wrap';
+  const waveformBars = document.createElement('div');
+  waveformBars.className = 'vm-waveform-bars';
+  generateStaticWaveform(waveformBars, 45);
+  const durationEl = document.createElement('span');
+  durationEl.className = 'vm-duration';
+  durationEl.textContent = formatDuration(msg.duration || 0);
+  progressWrap.appendChild(waveformBars);
+  progressWrap.appendChild(durationEl);
+  player.appendChild(playBtn);
+  player.appendChild(progressWrap);
+  bubble.appendChild(player);
+
+  if (msg.audioUrl) {
+    const audio = new Audio(msg.audioUrl);
+    let isPlaying = false;
+    audio.addEventListener('loadedmetadata', () => {
+      if (audio.duration && isFinite(audio.duration)) durationEl.textContent = formatDuration(Math.round(audio.duration));
+    });
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      const pct = audio.currentTime / audio.duration;
+      const allBars = waveformBars.querySelectorAll('.bar');
+      allBars.forEach((b, i) => b.classList.toggle('played', i < Math.floor(pct * allBars.length)));
+      durationEl.textContent = formatDuration(Math.round(audio.currentTime));
+    });
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+      waveformBars.querySelectorAll('.bar').forEach(b => b.classList.remove('played'));
+      durationEl.textContent = formatDuration(Math.round(audio.duration));
+    });
+    playBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (isPlaying) { audio.pause(); playBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>'; }
+      else { audio.play(); playBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/></svg>'; }
+      isPlaying = !isPlaying;
+    });
+    waveformBars.addEventListener('click', e => {
+      e.stopPropagation();
+      if (!audio.duration) return;
+      const rect = waveformBars.getBoundingClientRect();
+      audio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * audio.duration;
+      if (!isPlaying) { audio.play(); isPlaying = true; playBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/></svg>'; }
+    });
+  } else {
+    playBtn.disabled = true;
+    playBtn.style.opacity = '0.5';
+  }
+}
+
 async function toggleRecording() {
   if (!state.isRecording) {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       state.mediaRecorder = new MediaRecorder(stream);
       state.audioChunks   = [];
+      state.recordingCancelled = false;
 
       state.mediaRecorder.addEventListener('dataavailable', e => {
         state.audioChunks.push(e.data);
       });
 
       state.mediaRecorder.addEventListener('stop', async () => {
+        if (state.recordingCancelled) { state.recordingCancelled = false; return; }
+        const duration = state.recordingStartTime ? Math.floor((Date.now() - state.recordingStartTime) / 1000) : 0;
         const blob   = new Blob(state.audioChunks, { type: 'audio/ogg' });
+        const audioUrl = URL.createObjectURL(blob);
+        addUserAudioMessage(audioUrl, duration);
+        showTyping();
         const reader = new FileReader();
         reader.onloadend = async () => {
-          addUserMessage('🎙️ *Mensagem de Áudio* (Áudio enviado)');
-          showTyping();
           try {
             const response = await sendToWebhook(reader.result, 'audio');
             hideTyping();
@@ -207,7 +381,7 @@ async function toggleRecording() {
           } catch (err) {
             hideTyping();
             addBotMessage('Desculpe, ocorreu um erro na comunicação.');
-            console.error('[ClinicAI] Webhook error:', err);
+            console.error('[Sofia] Webhook error:', err);
           }
         };
         reader.readAsDataURL(blob);
@@ -217,10 +391,10 @@ async function toggleRecording() {
       state.mediaRecorder.start();
       state.isRecording = true;
       dom.micBtn.classList.add('recording');
-      showToast('🎙️ Gravando áudio... Clique no microfone novamente para enviar.');
+      startRecordingUI(stream);
     } catch (err) {
       console.error('Error starting recording:', err);
-      showToast('⚠️ Não foi possível acessar o microfone. Enviando áudio simulado...');
+      showToast('\u26a0\ufe0f Não foi possível acessar o microfone. Enviando áudio simulado...');
       sendSimulatedAudio();
     }
   } else {
@@ -229,11 +403,12 @@ async function toggleRecording() {
     }
     state.isRecording = false;
     dom.micBtn.classList.remove('recording');
+    stopRecordingUI();
   }
 }
 
 async function sendSimulatedAudio() {
-  addUserMessage('🎙️ *Mensagem de Áudio* (Simulado)');
+  addUserAudioMessage(null, 3);
   showTyping();
   try {
     const dummy   = 'data:audio/ogg;base64,T2dnUwACAAAAAAAAAAA+AAAAAAAAAAAAAAABaGVhZAAAAAA=';
@@ -243,7 +418,7 @@ async function sendSimulatedAudio() {
   } catch (err) {
     hideTyping();
     addBotMessage('Desculpe, ocorreu um erro na comunicação.');
-    console.error('[ClinicAI] Webhook error:', err);
+    console.error('[Sofia] Webhook error:', err);
   }
 }
 
@@ -265,6 +440,7 @@ function setupEventListeners() {
   });
 
   dom.micBtn.addEventListener('click', toggleRecording);
+  if (dom.recordingCancel) dom.recordingCancel.addEventListener('click', cancelRecording);
 
   dom.backBtn.addEventListener('click', () => dom.sidebar.classList.remove('sidebar-closed'));
 
@@ -2519,9 +2695,14 @@ function renderMessage(msg) {
   const bubble = document.createElement('div');
   bubble.className = 'message-bubble';
 
-  const textEl = document.createElement('span');
-  textEl.className = 'message-text';
-  textEl.innerHTML = linkify(msg.content);
+  if (msg.type === 'audio') {
+    renderAudioPlayer(msg, bubble);
+  } else {
+    const textEl = document.createElement('span');
+    textEl.className = 'message-text';
+    textEl.innerHTML = linkify(msg.content);
+    bubble.appendChild(textEl);
+  }
 
   const meta   = document.createElement('span');
   meta.className = 'message-meta';
@@ -2538,11 +2719,12 @@ function renderMessage(msg) {
     meta.appendChild(status);
   }
 
-  bubble.appendChild(textEl);
   bubble.appendChild(meta);
   wrapper.appendChild(bubble);
 
-  bubble.addEventListener('click', () => copyMessage(bubble, msg.content));
+  if (msg.type !== 'audio') {
+    bubble.addEventListener('click', () => copyMessage(bubble, msg.content));
+  }
   dom.chatMessages.insertBefore(wrapper, dom.typingIndicator);
 }
 

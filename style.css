@@ -1309,8 +1309,11 @@ body {
 }
 
 .btn-mic.recording {
-  color: #ef4444 !important;
+  color: #fff !important;
+  background: #ef4444 !important;
+  border-radius: 50%;
   animation: pulseRecording 1.5s infinite ease-in-out;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
 }
 
 @keyframes pulseRecording {
@@ -1321,6 +1324,171 @@ body {
 
 .btn-mic:active {
   transform: scale(0.92);
+}
+
+/* ============ RECORDING PANEL ============ */
+.recording-panel {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+  padding: 0 8px;
+  animation: fadeInPanel 0.25s ease;
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.recording-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  flex-shrink: 0;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.recording-cancel {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.recording-cancel:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: scale(1.08);
+}
+
+.recording-waveform {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.recording-waveform .bar {
+  width: 3px;
+  border-radius: 2px;
+  background: #ef4444;
+  min-height: 4px;
+  transition: height 0.08s ease;
+}
+
+.recording-timer {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #ef4444;
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ============ VOICE MESSAGE (Audio Player Bubble) ============ */
+.voice-message-bubble {
+  padding: 6px !important;
+}
+
+.voice-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+  max-width: 300px;
+  padding: 2px 4px;
+}
+
+.vm-play-btn {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--wa-teal, #00a884);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.vm-play-btn:hover {
+  transform: scale(1.08);
+  background: #009973;
+}
+
+.vm-play-btn:active {
+  transform: scale(0.95);
+}
+
+.vm-play-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+.vm-progress-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.vm-waveform-bars {
+  display: flex;
+  align-items: center;
+  gap: 1.5px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+}
+
+.vm-waveform-bars .bar {
+  width: 2.5px;
+  border-radius: 1.5px;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.vm-waveform-bars .bar.played {
+  background: var(--wa-teal, #00a884);
+}
+
+.vm-duration {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.45);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.incoming .vm-waveform-bars .bar {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.incoming .vm-waveform-bars .bar.played {
+  background: var(--wa-teal, #00a884);
 }
 
 
